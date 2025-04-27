@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-white font-sans;
+  cursor: url('/cursor.png'), auto;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.2;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0px 4px,
+    4px 4px,
+    4px 0px,
+    calc(100% - 4px) 0px,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0px calc(100% - 4px)
+  );
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  pointer-events: none;
+  animation: scan-line 2s linear infinite;
+}
+
+.console {
+  height: 300px;
+  transform: translateY(calc(100% - 40px));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.console.open {
+  transform: translateY(0);
+}
+
+.pixel-border {
+  box-shadow: 
+    -3px 0 0 0 #fff,
+    3px 0 0 0 #fff,
+    0 -3px 0 0 #fff,
+    0 3px 0 0 #fff;
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-4 py-2 font-pixel text-sm tracking-wider uppercase transition-all duration-300 border-2 border-current;
+  }
+  
+  .btn-primary {
+    @apply text-neon-cse bg-transparent hover:bg-neon-cse hover:bg-opacity-20 shadow-neon-cse;
+  }
+  
+  .btn-secondary {
+    @apply text-neon-ece bg-transparent hover:bg-neon-ece hover:bg-opacity-20 shadow-neon-ece;
+  }
+  
+  .btn-accent {
+    @apply text-neon-me bg-transparent hover:bg-neon-me hover:bg-opacity-20 shadow-neon-me;
+  }
+  
+  .btn-green {
+    @apply text-neon-ce bg-transparent hover:bg-neon-ce hover:bg-opacity-20 shadow-neon-ce;
+  }
+
+  .neon-text-cse {
+    @apply text-neon-cse;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+  }
+  
+  .neon-text-ece {
+    @apply text-neon-ece;
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+  }
+  
+  .neon-text-me {
+    @apply text-neon-me;
+    text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
+  }
+  
+  .neon-text-ce {
+    @apply text-neon-ce;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-pixel mb-8 text-center;
+  }
+}
