@@ -1,6 +1,32 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import G1 from '../picture/G1.jpg';
+import G2 from '../picture/G2.jpg';
+import G3 from '../picture/G3.jpg';
+import G4 from '../picture/G4.jpg';
+import G6 from '../picture/G6.jpg';
+import G7 from '../picture/G7.jpg';
+import G8 from '../picture/G8.jpg';
+import G9 from '../picture/G9.jpg';
+import G10 from '../picture/G10.jpg';
+import G11 from '../picture/G11.jpg';
+import G13 from '../picture/G13.jpg';
+import G14 from '../picture/G14.jpg';
+import G16 from '../picture/G16.jpg';
+import G17 from '../picture/G17.jpg';
+import G18 from '../picture/G18.jpg';
+import G19 from '../picture/G19.jpg';
+import G20 from '../picture/G20.jpg';
+import G22 from '../picture/G22.jpg';
+import G23 from '../picture/G23.jpg';
+import G24 from '../picture/G24.jpg';
+import G25 from '../picture/G25.jpg';
+import G26 from '../picture/G26.jpg';
+import G27 from '../picture/G27.jpg';
+import G28 from '../picture/G28.jpg';
+import G29 from '../picture/G29.jpg';
+import G30 from '../picture/G30.jpg';
 
 interface GalleryImage {
   src: string;
@@ -14,82 +40,41 @@ const GalleryPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   
   const galleryImages: GalleryImage[] = [
-    // CSE
-    {
-      src: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Hackathon participants coding through the night",
-      category: "cse",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Tech presentation on AI innovations",
-      category: "cse",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Code sprint competition in progress",
-      category: "cse",
-      year: "2022"
-    },
-    // ECE
-    {
-      src: "https://images.pexels.com/photos/3912982/pexels-photo-3912982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Circuit building competition team at work",
-      category: "ece",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "IoT demonstration with smart home devices",
-      category: "ece",
-      year: "2022"
-    },
-    {
-      src: "https://images.pexels.com/photos/2399840/pexels-photo-2399840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Students working on embedded systems project",
-      category: "ece",
-      year: "2023"
-    },
-    // ME
-    {
-      src: "https://images.pexels.com/photos/3846033/pexels-photo-3846033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Robotics workshop with students assembling parts",
-      category: "me",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/2531353/pexels-photo-2531353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "3D printing showcase with intricate models",
-      category: "me",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/4665064/pexels-photo-4665064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "RoboWars arena during an exciting match",
-      category: "me",
-      year: "2022"
-    },
-    // CE
-    {
-      src: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Bridge model competition with students testing designs",
-      category: "ce",
-      year: "2023"
-    },
-    {
-      src: "https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Structural design exhibition with scale models",
-      category: "ce",
-      year: "2022"
-    },
-    {
-      src: "https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Earthquake resistance testing platform in action",
-      category: "ce",
-      year: "2023"
-    }
+    { src: G1, alt: "Hackathon participants coding through the night", category: "cse", year: "2023" },
+    { src: G2, alt: "Tech presentation on AI innovations", category: "cse", year: "2023" },
+    { src: G3, alt: "Code sprint competition in progress", category: "cse", year: "2022" },
+    
+    { src: G4, alt: "Circuit building competition team at work", category: "ece", year: "2023" },
+    { src: G6, alt: "IoT demonstration with smart home devices", category: "ece", year: "2022" },
+    { src: G7, alt: "Students working on embedded systems project", category: "ece", year: "2023" },
+    
+    { src: G8, alt: "Robotics workshop with students assembling parts", category: "me", year: "2023" },
+    { src: G9, alt: "3D printing showcase with intricate models", category: "me", year: "2023" },
+    { src: G10, alt: "RoboWars arena during an exciting match", category: "me", year: "2022" },
+    
+    { src: G11, alt: "Bridge model competition with students testing designs", category: "ce", year: "2023" },
+    { src: G13, alt: "Structural design exhibition with scale models", category: "ce", year: "2022" },
+    { src: G14, alt: "Workshop on sustainable building practices", category: "ce", year: "2022" },
+    
+    { src: G16, alt: "Mechanical CAD design contest entries", category: "me", year: "2022" },
+    { src: G17, alt: "Showcase of mechatronics projects", category: "me", year: "2023" },
+    { src: G18, alt: "Advanced manufacturing workshop", category: "me", year: "2023" },
+    
+    { src: G19, alt: "IoT car race event with autonomous vehicles", category: "ece", year: "2023" },
+    { src: G20, alt: "Students presenting final year IoT projects", category: "ece", year: "2022" },
+    { src: G22, alt: "Competitive coding finals", category: "cse", year: "2023" },
+    
+    { src: G23, alt: "Software demo session for hackathon winners", category: "cse", year: "2022" },
+    { src: G24, alt: "Students gaming and coding simultaneously", category: "cse", year: "2023" },
+    { src: G25, alt: "Hackathon prize distribution", category: "cse", year: "2023" },
+    
+    { src: G26, alt: "College fest decorations with department banners", category: "general", year: "2023" },
+    { src: G27, alt: "Creative project presentations", category: "general", year: "2022" },
+    { src: G28, alt: "Project exhibition at tech event", category: "general", year: "2023" },
+    
+    { src: G29, alt: "Late night coding challenge", category: "cse", year: "2022" },
+    { src: G30, alt: "Campus view during event inauguration", category: "general", year: "2023" },
+
   ];
 
   const filteredImages = filter === 'all' 
