@@ -41,7 +41,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-105 transition-all duration-300 h-full shadow-md hover:shadow-lg relative`}
+      className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-102 transition-all duration-300 h-full shadow-${color} hover:shadow-lg`}
     >
       <div className={`p-4 bg-${color} bg-opacity-10 flex items-center justify-between`}>
         <div className="flex items-center">
@@ -52,7 +52,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
           {event.departmentName}
         </span>
       </div>
-      
+
       {/* Banner image container */}
       {event.bannerImage && (
         <div className="w-full h-32 relative overflow-hidden">
@@ -92,7 +92,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
         </div>
         
         <Link 
-          to={`/department/${event.department}?event=${event.id}`}
+          to={`/departmentpage/${event.department}?event=${event.id}`}
           className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
         >
           View Details

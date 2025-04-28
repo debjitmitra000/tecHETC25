@@ -9,11 +9,21 @@ export default {
         primary: '#8B5CF6',
         secondary: '#EC4899',
         accent: '#10B981',
-        'neon-cse': '#00FFFF', // Cyan
-        'neon-ece': '#FF00FF', // Magenta
-        'neon-me': '#FFFF00',  // Yellow
-        'neon-ce': '#00FF00',  // Green
-        'neon-ee': '#FF8800',  // Orange
+        // 'neon-cse': '#00FFFF', // Cyan
+        // 'neon-ece': '#FF00FF', // Magenta
+        // 'neon-me': '#FFFF00',  // Yellow
+        // 'neon-ce': '#00FF00',  // Green
+        // 'neon-ee': '#FF8800',  // Orange
+  //       'neon-cse': '#5ECBF9', // Softer Cyan
+  // 'neon-ece': '#D185C6', // Muted Magenta
+  // 'neon-me': '#EEDC82',  // Warm Yellow
+  // 'neon-ce': '#82C882',  // Gentle Green
+  // 'neon-ee': '#E3A261',  // Soft Orange
+  'neon-cse': '#4A90E2', // Soft Blue
+  'neon-ece': '#FF6B81', // Warm Coral
+  'neon-me': '#FFC857',  // Gentle Gold
+  'neon-ce': '#6FCF97',  // Calming Teal
+  'neon-ee': '#D37676',  // Muted Red
       },
       fontFamily: {
         pixel: ['"Press Start 2P"', 'cursive'],

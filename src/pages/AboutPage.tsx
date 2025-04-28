@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Award, Calendar, Users, MapPin } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const stats = [
     { value: '8', label: 'Events', icon: <Award className="h-8 w-8 text-neon-cse" /> },
     { value: '2', label: 'Days', icon: <Calendar className="h-8 w-8 text-neon-ece" /> },
