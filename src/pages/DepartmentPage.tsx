@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useRegistration } from '../contexts/RegistrationContext';
+
 import { useParams, useSearchParams, useNavigate} from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { EventProps } from '../components/EventCard';
@@ -6,14 +8,14 @@ import { Cpu, Zap, Cog, Building2, Users, Trophy, Clock, Calendar, MapPin, Credi
 
 const DepartmentPage: React.FC = () => {
   const { dept } = useParams<{ dept: string }>();
+  const { openModal, setSelectedEvents } = useRegistration();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate(); // Add this hook for programmatic navigation
   const eventId = searchParams.get('event');
-
+  
   const [activeTab, setActiveTab] = useState<'events' | 'team' | 'about'>('events');
   const [selectedEvent, setSelectedEvent] = useState<EventProps | null>(null);
-
-
+  
 
   const closeModal = () => {
     navigate('/', { replace: true });
@@ -455,7 +457,8 @@ const DepartmentPage: React.FC = () => {
         setSelectedEvent(event);
       }
     }
-  }, [dept, eventId, departmentInfo]);
+  }, []);
+  // }, [dept, eventId, departmentInfo]);
   
   if (!departmentInfo) {
     return (
@@ -613,7 +616,10 @@ const DepartmentPage: React.FC = () => {
                 <span>Registration: </span>
                 <span className="font-mono">{selectedEvent.registration}</span>
               </div>
-              <button className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}>
+              <button onClick={()=>{
+                setSelectedEvents([selectedEvent.id]);
+                
+                openModal()}} className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}>
                 Register Now
               </button>
             </div>

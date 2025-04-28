@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import EventCard2, { EventProps } from '../components/EventCard2';
+import EventCard from '../components/EventCard';
 import { Cpu, Zap, Cog, Building2, Search } from 'lucide-react';
 
 const EventsPage: React.FC = () => {
@@ -191,7 +192,7 @@ const EventsPage: React.FC = () => {
         {filteredEvents.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event, index) => (
-              <EventCard2 key={event.id} event={event} index={index} />
+              <EventCard key={event.id} event={event} index={index} />
             ))}
           </div>
         ) : (
