@@ -1,48 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import G23 from '../picture/G23.jpg';
+import G24 from '../picture/G24.jpg';
+import G25 from '../picture/G25.jpg';
+import G26 from '../picture/G26.jpg';
+import G27 from '../picture/G27.jpg';
+import G28 from '../picture/G28.jpg';
+import G29 from '../picture/G29.jpg';
+import G30 from '../picture/G30.jpg';
 
 const GallerySection: React.FC = () => {
   const galleryImages = [
-    {
-      src: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Hackathon participants",
-      category: "cse"
-    },
-    {
-      src: "https://images.pexels.com/photos/3912982/pexels-photo-3912982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Circuit building competition",
-      category: "ece"
-    },
-    {
-      src: "https://images.pexels.com/photos/3846033/pexels-photo-3846033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Robotics workshop",
-      category: "me"
-    },
-    {
-      src: "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Bridge model competition",
-      category: "ce"
-    },
-    {
-      src: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Tech presentation",
-      category: "cse"
-    },
-    {
-      src: "https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "IoT demonstration",
-      category: "ece"
-    },
-    {
-      src: "https://images.pexels.com/photos/2531353/pexels-photo-2531353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "3D printing showcase",
-      category: "me"
-    },
-    {
-      src: "https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Structural design exhibition",
-      category: "ce"
-    }
+    { src: G23, alt: "Software demo session for hackathon winners", category: "cse", year: "2022" },
+    { src: G24, alt: "Students gaming and coding simultaneously", category: "cse", year: "2023" },
+    { src: G25, alt: "Hackathon prize distribution", category: "cse", year: "2023" },
+    
+    { src: G26, alt: "College fest decorations with department banners", category: "general", year: "2023" },
+    { src: G27, alt: "Creative project presentations", category: "general", year: "2022" },
+    { src: G28, alt: "Project exhibition at tech event", category: "general", year: "2023" },
+    
+    { src: G29, alt: "Late night coding challenge", category: "cse", year: "2022" },
+    { src: G30, alt: "Campus view during event inauguration", category: "general", year: "2023" }
   ];
 
   const getCategoryColor = (category: string) => {
