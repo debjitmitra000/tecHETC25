@@ -140,3 +140,41 @@ body::before {
     @apply text-3xl md:text-4xl lg:text-5xl font-pixel mb-8 text-center;
   }
 }
+
+@keyframes lightSweep {
+  0% {
+    background-position: -100% 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.after\:animate-lightSweep::after {
+  background-size: 200% 10%;
+  animation: lightSweep 5s infinite linear;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.gradient-bg-transactions {
+  background-color: #121212;
+  background-image:
+    radial-gradient(at 0% 100%, rgba(0, 0, 0, 0.044) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgb(61, 74, 112) 0, transparent 50%);
+    /* radial-gradient(at 0% 0%, rgb(25, 75, 225) 0, transparent 50%); */
+    /* border-radius: 16px; */
+      /* box-shadow: 0 4px 30px rgba(209, 206, 206, 0.2); */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      /* border: 1px solid rgba(0, 0, 0, 0.3); */
+}
