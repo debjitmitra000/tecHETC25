@@ -40,27 +40,25 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 font-mono transition-all duration-300 ${
-        scrolled ? 'bg-background bg-opacity-90 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      }`}
-    >
+    
+    <header className={`fixed top-0 left-0 right-0 z-50 font-mono transition-all duration-300 ${ scrolled ? 'bg-background backdrop-blur-md shadow-lg after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-[rgb(61,74,112)]/30 after:to-transparent after:animate-lightSweep' : 'gradient-bg-transactions' }`}>
+ 
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-pixel text-xl tracking-wider">
+          <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
             <span className="text-primary">Tec</span>
             <span className="text-secondary">H</span>
             <span className="text-accent">ETC</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1" style={{ zIndex: 60 }}>
             {navItems.map((item) => (
               <NavLink 
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) => 
-                  `px-3 py-2 text-sm uppercase tracking-wider transition-colors duration-300 ${
+                  `px-3 py-2 text-base uppercase tracking-wider transition-colors duration-300 ${
                     isActive 
                       ? 'text-primary font-semibold' 
                       : 'text-white hover:text-primary'
@@ -72,10 +70,10 @@ const Navbar: React.FC = () => {
             ))}
 
             <div className="relative group px-3 py-2">
-              <button className="text-sm uppercase tracking-wider transition-colors duration-300 flex items-center">
+              <button className="text-base uppercase tracking-wider transition-colors duration-300 flex items-center">
                 Departments
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-surface border border-primary rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pixel-corners">
+              <div className="absolute left-0 mt-2 w-48 bg-surface border border-primary rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pixel-corners">
                 <div className="py-1">
                   {departmentItems.map((dept) => (
                     <NavLink
@@ -100,7 +98,7 @@ const Navbar: React.FC = () => {
           {/* Mobile menu button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden"
+            className="md:hidden" style={{ zIndex: 60 }}
           >
             {isOpen ? (
               <X className="h-6 w-6 text-white" />
@@ -122,7 +120,7 @@ const Navbar: React.FC = () => {
           <div className="container mx-auto px-4 py-3">
             <nav className="flex flex-col">
               {navItems.map((item) => (
-                <NavLink 
+                <NavLink style={{ zIndex: 60 }}
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) => 
@@ -138,7 +136,7 @@ const Navbar: React.FC = () => {
                 </NavLink>
               ))}
               
-              <div className="mt-2 pt-2 border-t border-gray-700">
+              <div className="mt-2 pt-2 border-t border-gray-700" style={{ zIndex: 60 }}>
                 <p className="px-3 py-1 text-sm text-gray-400">Departments</p>
                 {departmentItems.map((dept) => (
                   <NavLink
