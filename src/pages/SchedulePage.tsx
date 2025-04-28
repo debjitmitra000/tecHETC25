@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const SchedulePage: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [activeDay, setActiveDay] = useState<number>(1);
   
   const scheduleData = {

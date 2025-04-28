@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 
@@ -9,6 +9,9 @@ interface FaqItem {
 }
 
 const FaqPage: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');

@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import EventCard2, { EventProps } from '../components/EventCard2';
 // import EventCard from '../components/EventCard';
 import { Cpu, Zap, Cog, Building2, Search } from 'lucide-react';
 
 const EventsPage: React.FC = () => {
+  // Add useEffect to scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [filter, setFilter] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
   

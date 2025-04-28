@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import G1 from '../picture/G1.jpg';
@@ -36,6 +36,9 @@ interface GalleryImage {
 }
 
 const GalleryPage: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, []);
   const [filter, setFilter] = useState<string>('all');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   

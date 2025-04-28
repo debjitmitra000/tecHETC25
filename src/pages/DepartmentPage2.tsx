@@ -1,25 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams, useNavigate} from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { EventProps } from '../components/EventCard';
-import { Cpu, Zap, Cog, Building2, Users, Trophy, Clock, Calendar, MapPin, CreditCard, BadgeCheck, Bolt } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { useRegistration } from "../contexts/RegistrationContext";
+
+import { useParams, useSearchParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { EventProps } from "../components/EventCard";
+import {
+  Cpu,
+  Zap,
+  Cog,
+  Building2,
+  Users,
+  Trophy,
+  Clock,
+  Calendar,
+  MapPin,
+  CreditCard,
+  BadgeCheck,
+  Bolt,
+} from "lucide-react";
 
 const DepartmentPage: React.FC = () => {
   const { dept } = useParams<{ dept: string }>();
+  const { openModal, setSelectedEvents } = useRegistration();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate(); // Add this hook for programmatic navigation
-  const eventId = searchParams.get('event');
+  const eventId = searchParams.get("event");
 
-  const [activeTab, setActiveTab] = useState<'events' | 'team' | 'about'>('events');
+  const [activeTab, setActiveTab] = useState<"events" | "team" | "about">(
+    "events"
+  );
   const [selectedEvent, setSelectedEvent] = useState<EventProps | null>(null);
-
-
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeModal = () => {
     navigate('/events', { replace: true });
   };
-  
-
   
   // Department data
   const departments = {
@@ -43,6 +58,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15-16",
           time: "10:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams must consist of 2-4 members",
             "All code must be written during the event",
@@ -65,6 +81,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "9:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Individual participation only",
             "Three rounds of increasing difficulty",
@@ -87,6 +104,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "11:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 1-2 members",
             "Design must be created during the event",
@@ -126,6 +144,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "10:30 AM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-3 members",
             "Use only provided components",
@@ -148,6 +167,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "11:00 AM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-4 members",
             "Hardware and software integration required",
@@ -170,6 +190,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "2:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Individual participation",
             "Three rounds of signal processing challenges",
@@ -209,6 +230,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15-16",
           time: "1:00 PM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 3-5 members",
             "Robot weight limit: 5kg",
@@ -232,6 +254,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "2:00 PM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Individual participation",
             "4-hour time limit",
@@ -254,6 +277,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "10:00 AM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2 members",
             "Design and build a thermal system",
@@ -293,6 +317,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "3:30 PM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-3 members",
             "Bridge must be built only with provided materials",
@@ -315,6 +340,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "3:30 PM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-4 members",
             "Structure must be built with provided materials",
@@ -337,6 +363,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "1:00 PM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-3 members",
             "Design must use renewable materials",
@@ -376,6 +403,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15",
           time: "10:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 2-3 members",
             "Use provided simulation software",
@@ -398,6 +426,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "11:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Individual or team of 2",
             "Original motor design required",
@@ -420,6 +449,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 15-16",
           time: "9:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
+          bannerImage: "/images/1.png",
           rules: [
             "Teams of 3-4 members",
             "Project must be sustainable",
@@ -441,373 +471,577 @@ const DepartmentPage: React.FC = () => {
     }
   };
   
-  // Find department and event
-  const departmentInfo = dept && departments[dept as keyof typeof departments];
-  
-  useEffect(() => {
-    if (departmentInfo && eventId) {
-      const event = departmentInfo.events.find(e => e.id === eventId);
-      if (event) {
-        setSelectedEvent(event);
-      }
-    }
-  }, [dept, eventId, departmentInfo]);
-  
-  if (!departmentInfo) {
-    return (
-      <div className="pt-24 pb-16 text-center">
-        <h2 className="section-title">Department Not Found</h2>
-        <p>The requested department does not exist.</p>
-      </div>
-    );
-  }
+   // Find department and event
+   const departmentInfo = dept && departments[dept as keyof typeof departments];
 
-  const color = departmentInfo.color;
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="pt-24 pb-16"
-    >
-      <div className="container mx-auto px-4">
-        {/* Department Header */}
-        <div className={`mb-10 p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden`}>
-          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5"></div>
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-            <div className={`w-20 h-20 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color}`}>
-              {React.cloneElement(departmentInfo.icon as React.ReactElement, { className: `h-10 w-10 text-${color}` })}
-            </div>
-            
-            <div className="text-center md:text-left">
-              <h1 className={`font-pixel text-3xl md:text-4xl text-${color} mb-2`}>
-                {departmentInfo.name}
-              </h1>
-              <p className="text-gray-300 max-w-2xl">
-                {departmentInfo.description}
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        {/* Navigation Tabs */}
-        <div className="flex justify-center mb-10">
-          <div className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}>
-            <button
-              onClick={() => setActiveTab('events')}
-              className={`px-6 py-3 font-mono ${activeTab === 'events' ? `bg-${color} text-white` : `text-${color} hover:bg-${color} hover:bg-opacity-20`}`}
-            >
-              EVENTS
-            </button>
-            <button
-              onClick={() => setActiveTab('team')}
-              className={`px-6 py-3 font-mono ${activeTab === 'team' ? `bg-${color} text-white` : `text-${color} hover:bg-${color} hover:bg-opacity-20`}`}
-            >
-              TEAM
-            </button>
-            <button
-              onClick={() => setActiveTab('about')}
-              className={`px-6 py-3 font-mono ${activeTab === 'about' ? `bg-${color} text-white` : `text-${color} hover:bg-${color} hover:bg-opacity-20`}`}
-            >
-              ABOUT
-            </button>
-          </div>
-        </div>
-        
-        {/* Event Detail Modal */}
-        {selectedEvent && (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80"
-    onClick={() => setSelectedEvent(null)} // Close when clicking the backdrop
-  >
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-80">
-      <div className="flex items-center justify-center h-full p-4">
-        <div 
-          className={`bg-surface border-2 border-${color} rounded-lg pixel-corners max-w-3xl w-full max-h-[90vh] overflow-y-auto`}
-          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal content
-        >
-          <div className={`p-4 bg-${color} bg-opacity-20 flex justify-between items-center sticky top-0`}>
-            <h3 className={`font-pixel text-xl text-${color}`}>{selectedEvent.title}</h3>
-            <button 
-               onClick={closeModal}
-              className="p-1 rounded-full hover:bg-black hover:bg-opacity-20"
-              aria-label="Close modal"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          
-          {/* Rest of the modal content remains the same */}
-          <div className="p-6">
-            <p className="text-gray-300 mb-6">{selectedEvent.description}</p>
-            
-            {/* Event details sections */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className={`flex items-center p-3 bg-background rounded border border-${color}`}>
-                <Calendar className={`h-5 w-5 mr-2 text-${color}`} />
-                <div>
-                  <span className="text-gray-400 text-sm block">Date</span>
-                  <span className="font-mono">{selectedEvent.date}</span>
-                </div>
-              </div>
-              
-              <div className={`flex items-center p-3 bg-background rounded border border-${color}`}>
-                <Clock className={`h-5 w-5 mr-2 text-${color}`} />
-                <div>
-                  <span className="text-gray-400 text-sm block">Time</span>
-                  <span className="font-mono">{selectedEvent.time}</span>
-                </div>
-              </div>
-              
-              <div className={`flex items-center p-3 bg-background rounded border border-${color}`}>
-                <MapPin className={`h-5 w-5 mr-2 text-${color}`} />
-                <div>
-                  <span className="text-gray-400 text-sm block">Location</span>
-                  <span className="font-mono">{selectedEvent.location}</span>
-                </div>
-              </div>
-              
-              <div className={`flex items-center p-3 bg-background rounded border border-${color}`}>
-                <CreditCard className={`h-5 w-5 mr-2 text-${color}`} />
-                <div>
-                  <span className="text-gray-400 text-sm block">Entry Fee</span>
-                  <span className="font-mono">₹{selectedEvent.entryFee}</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className={`mb-6 p-4 bg-background rounded border border-${color}`}>
-              <div className="flex items-center mb-3">
-                <Trophy className={`h-5 w-5 mr-2 text-${color}`} />
-                <h4 className="font-mono text-lg">Prize Pool</h4>
-              </div>
-              <div className={`text-2xl font-pixel text-${color}`}>₹{selectedEvent.prize}</div>
-            </div>
-            
-            <div className="mb-6">
-              <h4 className={`font-mono text-lg border-b border-${color} pb-2 mb-3`}>Rules & Guidelines</h4>
-              <ul className="space-y-2">
-                {selectedEvent.rules.map((rule, index) => (
-                  <li key={index} className="flex items-start">
-                    <BadgeCheck className={`h-5 w-5 mr-2 text-${color} mt-0.5 flex-shrink-0`} />
-                    <span className="text-gray-300">{rule}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="text-center">
-              <div className="mb-2 text-gray-400">
-                <span>Registration: </span>
-                <span className="font-mono">{selectedEvent.registration}</span>
-              </div>
-              <button className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}>
-                Register Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-)}
-        
-        {/* Content Tabs */}
-        <div>
-          {/* Events Tab */}
-          {activeTab === 'events' && (
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {departmentInfo.events.map((event, index) => (
-                  <motion.div
-                    key={event.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-102 transition-all duration-300 shadow-${color} hover:shadow-lg`}
-                  >
-                    <div className={`p-4 bg-${color} bg-opacity-10 flex items-center justify-between`}>
-                      <div className="flex items-center">
-                        <span className="mr-2">{event.icon}</span>
-                        <h3 className={`font-pixel text-lg text-${color}`}>{event.title}</h3>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4">
-                      <p className="text-gray-300 mb-4">{event.description}</p>
-                      
-                      <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
-                        <div className="bg-background rounded p-2">
-                          <span className="block text-gray-400">Entry Fee</span>
-                          <span className="font-mono text-white">₹{event.entryFee}</span>
-                        </div>
-                        <div className="bg-background rounded p-2">
-                          <span className="block text-gray-400">Prize</span>
-                          <span className="font-mono text-white">₹{event.prize}</span>
-                        </div>
-                        <div className="bg-background rounded p-2">
-                          <span className="block text-gray-400">Date</span>
-                          <span className="font-mono text-white">{event.date}</span>
-                        </div>
-                        <div className="bg-background rounded p-2">
-                          <span className="block text-gray-400">Time</span>
-                          <span className="font-mono text-white">{event.time}</span>
-                        </div>
-                      </div>
-                      
-                      <button 
-                        onClick={() => setSelectedEvent(event)}
-                        className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
-                      >
-                        View Details
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* Team Tab */}
-          {activeTab === 'team' && (
-            <div>
-              <div className={`p-6 mb-8 bg-surface border border-${color} rounded-lg pixel-corners`}>
-                <h2 className={`font-pixel text-xl text-${color} mb-4`}>Faculty & Coordinators</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-center bg-background p-4 rounded-lg">
-                    <div className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}>
-                      <Users className={`h-6 w-6 text-${color}`} />
-                    </div>
-                    <div>
-                      <div className="font-mono text-lg">{departmentInfo.coordinator}</div>
-                      <div className="text-gray-400">Faculty Coordinator</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center bg-background p-4 rounded-lg">
-                    <div className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}>
-                      <Users className={`h-6 w-6 text-${color}`} />
-                    </div>
-                    <div>
-                      <div className="font-mono text-lg">{departmentInfo.studentCoordinator}</div>
-                      <div className="text-gray-400">Student Coordinator</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <h2 className={`font-pixel text-xl text-${color} mb-6`}>Team Members</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {departmentInfo.teamMembers.map((member, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`bg-surface border border-${color} rounded-lg pixel-corners overflow-hidden`}
-                  >
-                    <div className="aspect-square overflow-hidden">
-                      <img 
-                        src={member.avatar} 
-                        alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="font-mono text-lg">{member.name}</h3>
-                      <p className={`text-${color} text-sm`}>{member.role}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          )}
-          
-          {/* About Tab */}
-          {activeTab === 'about' && (
-            <div className="max-w-4xl mx-auto">
-              <div className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners mb-8`}>
-                <h2 className={`font-pixel text-xl text-${color} mb-4`}>About {departmentInfo.shortName} Department</h2>
-                <p className="text-gray-300 mb-4">
-                  {departmentInfo.description} Our department is committed to fostering innovation and technical excellence through hands-on competitions and collaborative events.
-                </p>
-                <p className="text-gray-300">
-                  The {departmentInfo.name} department at TecHETC features a series of challenging events designed to test students' technical knowledge, creativity, and problem-solving abilities. Our competitions are judged by faculty experts and industry professionals.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}>
-                  <h3 className={`font-pixel text-lg text-${color} mb-4`}>Participation Guidelines</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}></span>
-                      <span>Registration is mandatory for all events</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}></span>
-                      <span>Participants must carry valid ID proof</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}></span>
-                      <span>Teams must adhere to the specified team size</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}></span>
-                      <span>Event-specific rules must be followed</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}></span>
-                      <span>Judges' decisions are final</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}>
-                  <h3 className={`font-pixel text-lg text-${color} mb-4`}>Contact Information</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <span className={`mr-3 text-${color}`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </span>
-                      <span>{departmentInfo.shortName.toLowerCase()}@techetc.edu</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`mr-3 text-${color}`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                      </span>
-                      <span>+91 9876543210</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className={`mr-3 text-${color}`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </span>
-                      <span>{departmentInfo.shortName} Department, Engineering College Campus, Tech Avenue</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export default DepartmentPage;
-
+   useEffect(() => {
+     if (departmentInfo && eventId) {
+       const event = departmentInfo.events.find((e) => e.id === eventId);
+       if (event) {
+         setSelectedEvent(event);
+       }
+     }
+   }, []);
+   // }, [dept, eventId, departmentInfo]);
+ 
+   // Add this effect to detect scrolling within the modal
+   useEffect(() => {
+     if (selectedEvent) {
+       const modalContent = document.querySelector('.modal-content');
+       if (modalContent) {
+         const handleScroll = () => {
+           setIsScrolled(modalContent.scrollTop > 10);
+         };
+         modalContent.addEventListener('scroll', handleScroll);
+         return () => modalContent.removeEventListener('scroll', handleScroll);
+       }
+     }
+   }, [selectedEvent]);
+ 
+   if (!departmentInfo) {
+     return (
+       <div className="pt-24 pb-16 text-center">
+         <h2 className="section-title">Department Not Found</h2>
+         <p>The requested department does not exist.</p>
+       </div>
+     );
+   }
+ 
+   const color = departmentInfo.color;
+ 
+   return (
+     <motion.div
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+       transition={{ duration: 0.5 }}
+       className="pt-24 pb-16"
+     >
+       <div className="container my-32 mx-auto px-4">
+         {/* Department Header */}
+         <div
+           className={`mb-10 p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden`}
+         >
+           <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5"></div>
+ 
+           <div className="relative z-50 flex flex-col md:flex-row items-center gap-6">
+             <div
+               className={`w-20 h-20 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color}`}
+             >
+               {React.cloneElement(departmentInfo.icon as React.ReactElement, {
+                 className: `h-10 w-10 text-${color}`,
+               })}
+             </div>
+ 
+             <div className="text-center md:text-left">
+               <h1
+                 className={`font-pixel text-3xl md:text-4xl text-${color} mb-2`}
+               >
+                 {departmentInfo.name}
+               </h1>
+               <p className="text-gray-300 max-w-2xl">
+                 {departmentInfo.description}
+               </p>
+             </div>
+           </div>
+         </div>
+ 
+         {/* Navigation Tabs */}
+         <div className="flex justify-center mb-10">
+           <div
+             className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
+           >
+             <button
+               onClick={() => setActiveTab("events")}
+               className={`px-6 py-3 font-mono ${
+                 activeTab === "events"
+                   ? `bg-${color} text-white`
+                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+               }`}
+             >
+               EVENTS
+             </button>
+             <button
+               onClick={() => setActiveTab("team")}
+               className={`px-6 py-3 font-mono ${
+                 activeTab === "team"
+                   ? `bg-${color} text-white`
+                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+               }`}
+             >
+               TEAM
+             </button>
+             <button
+               onClick={() => setActiveTab("about")}
+               className={`px-6 py-3 font-mono ${
+                 activeTab === "about"
+                   ? `bg-${color} text-white`
+                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+               }`}
+             >
+               ABOUT
+             </button>
+           </div>
+         </div>
+ 
+         {/* Event Detail Modal */}
+         {selectedEvent && (
+           <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             animate={{ opacity: 1, scale: 1 }}
+             exit={{ opacity: 0 }}
+             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75"
+             onClick={() => setSelectedEvent(null)}
+           >
+             <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+               <div className="flex items-center justify-center h-full p-4 pt-16 pb-16">
+                 <div
+                   className={`modal-content bg-surface border-2 border-${color} rounded-lg pixel-corners max-w-3xl w-full max-h-[80vh] overflow-y-auto`}
+                   onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal content
+                 >
+                   <div
+                     className={`p-4 ${isScrolled ? `bg-${color}` : `bg-${color} bg-opacity-20`} 
+                     flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
+                   >
+                     <h3 className={`font-pixel text-xl ${isScrolled ? 'text-white' : `text-${color}`}`}>
+                       {selectedEvent.title}
+                     </h3>
+                     <button
+                       onClick={closeModal}
+                       className="p-1 rounded-full hover:bg-black hover:bg-opacity-20"
+                       aria-label="Close modal"
+                     >
+                       <svg
+                         xmlns="http://www.w3.org/2000/svg"
+                         className="h-6 w-6"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                       >
+                         <path
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                           strokeWidth={2}
+                           d="M6 18L18 6M6 6l12 12"
+                         />
+                       </svg>
+                     </button>
+                   </div>
+ 
+                   {/* Banner image */}
+                   {selectedEvent.bannerImage && (
+                     <div className="w-full h-48 relative overflow-hidden">
+                       <img
+                         src={selectedEvent.bannerImage}
+                         alt="Event Banner"
+                         className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity"
+                       />
+                     </div>
+                   )}
+ 
+                   {/* Rest of the modal content remains the same */}
+                   <div className="p-6">
+                     <p className="text-gray-300 mb-6">
+                       {selectedEvent.description}
+                     </p>
+ 
+                     {/* Event details sections */}
+                     <div className="grid grid-cols-2 gap-4 mb-6">
+                       <div
+                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                       >
+                         <Calendar className={`h-5 w-5 mr-2 text-${color}`} />
+                         <div>
+                           <span className="text-gray-400 text-sm block">
+                             Date
+                           </span>
+                           <span className="font-mono">
+                             {selectedEvent.date}
+                           </span>
+                         </div>
+                       </div>
+ 
+                       <div
+                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                       >
+                         <Clock className={`h-5 w-5 mr-2 text-${color}`} />
+                         <div>
+                           <span className="text-gray-400 text-sm block">
+                             Time
+                           </span>
+                           <span className="font-mono">
+                             {selectedEvent.time}
+                           </span>
+                         </div>
+                       </div>
+ 
+                       <div
+                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                       >
+                         <MapPin className={`h-5 w-5 mr-2 text-${color}`} />
+                         <div>
+                           <span className="text-gray-400 text-sm block">
+                             Location
+                           </span>
+                           <span className="font-mono">
+                             {selectedEvent.location}
+                           </span>
+                         </div>
+                       </div>
+ 
+                       <div
+                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                       >
+                         <CreditCard className={`h-5 w-5 mr-2 text-${color}`} />
+                         <div>
+                           <span className="text-gray-400 text-sm block">
+                             Entry Fee
+                           </span>
+                           <span className="font-mono">
+                             ₹{selectedEvent.entryFee}
+                           </span>
+                         </div>
+                       </div>
+                     </div>
+ 
+                     <div
+                       className={`mb-6 p-4 bg-background rounded border border-${color}`}
+                     >
+                       <div className="flex items-center mb-3">
+                         <Trophy className={`h-5 w-5 mr-2 text-${color}`} />
+                         <h4 className="font-mono text-lg">Prize Pool</h4>
+                       </div>
+                       <div className={`text-2xl font-pixel text-${color}`}>
+                         ₹{selectedEvent.prize}
+                       </div>
+                     </div>
+ 
+                     <div className="mb-6">
+                       <h4
+                         className={`font-mono text-lg border-b border-${color} pb-2 mb-3`}
+                       >
+                         Rules & Guidelines
+                       </h4>
+                       <ul className="space-y-2">
+                         {selectedEvent.rules.map((rule, index) => (
+                           <li key={index} className="flex items-start">
+                             <BadgeCheck
+                               className={`h-5 w-5 mr-2 text-${color} mt-0.5 flex-shrink-0`}
+                             />
+                             <span className="text-gray-300">{rule}</span>
+                           </li>
+                         ))}
+                       </ul>
+                     </div>
+ 
+                     <div className="text-center">
+                       <div className="mb-2 text-gray-400">
+                         <span>Registration: </span>
+                         <span className="font-mono">
+                           {selectedEvent.registration}
+                         </span>
+                       </div>
+                       <button
+                         onClick={() => {
+                           setSelectedEvents([selectedEvent.id]);
+                           openModal();
+                         }}
+                         className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}
+                       >
+                         Register Now
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </motion.div>
+         )}
+ 
+         {/* Content Tabs */}
+         <div>
+           {/* Events Tab */}
+           {activeTab === "events" && (
+             <div>
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 {departmentInfo.events.map((event, index) => (
+                   <motion.div
+                     key={event.id}
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                     className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-102 transition-all duration-300 shadow-${color} hover:shadow-lg`}
+                   >
+                     <div
+                       className={`p-4 bg-${color} bg-opacity-10 flex items-center justify-between`}
+                     >
+                       <div className="flex items-center">
+                         <span className="mr-2">{event.icon}</span>
+                         <h3 className={`font-pixel text-lg text-${color}`}>
+                           {event.title}
+                         </h3>
+                       </div>
+                     </div>
+ 
+                     <div className="p-4">
+                       <p className="text-gray-300 mb-4">{event.description}</p>
+ 
+                       <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
+                         <div className="bg-background rounded p-2">
+                           <span className="block text-gray-400">Entry Fee</span>
+                           <span className="font-mono text-white">
+                             ₹{event.entryFee}
+                           </span>
+                         </div>
+                         <div className="bg-background rounded p-2">
+                           <span className="block text-gray-400">Prize</span>
+                           <span className="font-mono text-white">
+                             ₹{event.prize}
+                           </span>
+                         </div>
+                         <div className="bg-background rounded p-2">
+                           <span className="block text-gray-400">Date</span>
+                           <span className="font-mono text-white">
+                             {event.date}
+                           </span>
+                         </div>
+                         <div className="bg-background rounded p-2">
+                           <span className="block text-gray-400">Time</span>
+                           <span className="font-mono text-white">
+                             {event.time}
+                           </span>
+                         </div>
+                       </div>
+ 
+                       <button
+                         onClick={() => setSelectedEvent(event)}
+                         className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
+                       >
+                         View Details
+                       </button>
+                     </div>
+                   </motion.div>
+                 ))}
+               </div>
+             </div>
+           )}
+ 
+           {/* Team Tab */}
+           {activeTab === "team" && (
+             <div>
+               <div
+                 className={`p-6 mb-8 bg-surface border border-${color} rounded-lg pixel-corners`}
+               >
+                 <h2 className={`font-pixel text-xl text-${color} mb-4`}>
+                   Faculty & Coordinators
+                 </h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                   <div className="flex items-center bg-background p-4 rounded-lg">
+                     <div
+                       className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
+                     >
+                       <Users className={`h-6 w-6 text-${color}`} />
+                     </div>
+                     <div>
+                       <div className="font-mono text-lg">
+                         {departmentInfo.coordinator}
+                       </div>
+                       <div className="text-gray-400">Faculty Coordinator</div>
+                     </div>
+                   </div>
+                   <div className="flex items-center bg-background p-4 rounded-lg">
+                     <div
+                       className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
+                     >
+                       <Users className={`h-6 w-6 text-${color}`} />
+                     </div>
+                     <div>
+                       <div className="font-mono text-lg">
+                         {departmentInfo.studentCoordinator}
+                       </div>
+                       <div className="text-gray-400">Student Coordinator</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+ 
+               <h2 className={`font-pixel text-xl text-${color} mb-6`}>
+                 Team Members
+               </h2>
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                 {departmentInfo.teamMembers.map((member, index) => (
+                   <motion.div
+                     key={index}
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                     className={`bg-surface border border-${color} rounded-lg pixel-corners overflow-hidden`}
+                   >
+                     <div className="aspect-square overflow-hidden">
+                       <img
+                         src={member.avatar}
+                         alt={member.name}
+                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                       />
+                     </div>
+                     <div className="p-4">
+                       <h3 className="font-mono text-lg">{member.name}</h3>
+                       <p className={`text-${color} text-sm`}>{member.role}</p>
+                     </div>
+                   </motion.div>
+                 ))}
+               </div>
+             </div>
+           )}
+ 
+           {/* About Tab */}
+           {activeTab === "about" && (
+             <div className="max-w-4xl mx-auto">
+               <div
+                 className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners mb-8`}
+               >
+                 <h2 className={`font-pixel text-xl text-${color} mb-4`}>
+                   About {departmentInfo.shortName} Department
+                 </h2>
+                 <p className="text-gray-300 mb-4">
+                   {departmentInfo.description} Our department is committed to
+                   fostering innovation and technical excellence through hands-on
+                   competitions and collaborative events.
+                 </p>
+                 <p className="text-gray-300">
+                   The {departmentInfo.name} department at TecHETC features a
+                   series of challenging events designed to test students'
+                   technical knowledge, creativity, and problem-solving
+                   abilities. Our competitions are judged by faculty experts and
+                   industry professionals.
+                 </p>
+               </div>
+ 
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div
+                   className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
+                 >
+                   <h3 className={`font-pixel text-lg text-${color} mb-4`}>
+                     Participation Guidelines
+                   </h3>
+                   <ul className="space-y-3">
+                     <li className="flex items-start">
+                       <span
+                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                       ></span>
+                       <span>Registration is mandatory for all events</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span
+                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                       ></span>
+                       <span>Participants must carry valid ID proof</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span
+                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                       ></span>
+                       <span>Teams must adhere to the specified team size</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span
+                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                       ></span>
+                       <span>Event-specific rules must be followed</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span
+                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                       ></span>
+                       <span>Judges' decisions are final</span>
+                     </li>
+                   </ul>
+                 </div>
+ 
+                 <div
+                   className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
+                 >
+                   <h3 className={`font-pixel text-lg text-${color} mb-4`}>
+                     Contact Information
+                   </h3>
+                   <ul className="space-y-4">
+                     <li className="flex items-start">
+                       <span className={`mr-3 text-${color}`}>
+                         <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           className="h-5 w-5"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke="currentColor"
+                         >
+                           <path
+                             strokeLinecap="round"
+                             strokeLinejoin="round"
+                             strokeWidth={2}
+                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                           />
+                         </svg>
+                       </span>
+                       <span>
+                         {departmentInfo.shortName.toLowerCase()}@techetc.edu
+                       </span>
+                     </li>
+                     <li className="flex items-start">
+                       <span className={`mr-3 text-${color}`}>
+                         <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           className="h-5 w-5"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke="currentColor"
+                         >
+                           <path
+                             strokeLinecap="round"
+                             strokeLinejoin="round"
+                             strokeWidth={2}
+                             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                           />
+                         </svg>
+                       </span>
+                       <span>+91 9876543210</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span className={`mr-3 text-${color}`}>
+                         <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           className="h-5 w-5"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke="currentColor"
+                         >
+                           <path
+                             strokeLinecap="round"
+                             strokeLinejoin="round"
+                             strokeWidth={2}
+                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                           />
+                           <path
+                             strokeLinecap="round"
+                             strokeLinejoin="round"
+                             strokeWidth={2}
+                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                           />
+                         </svg>
+                       </span>
+                       <span>
+                         {departmentInfo.shortName} Department, Engineering
+                         College Campus, Tech Avenue
+                       </span>
+                     </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           )}
+         </div>
+       </div>
+     </motion.div>
+   );
+ };
+ 
+ export default DepartmentPage;
