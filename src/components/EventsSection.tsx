@@ -16,7 +16,9 @@ const EventsSection: React.FC = () => {
       prize: 25000,
       date: "Nov 15-16",
       time: "10:00 AM",
-      icon: <Cpu className="h-5 w-5 text-neon-cse" />
+      icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "circuit-design",
@@ -28,7 +30,9 @@ const EventsSection: React.FC = () => {
       prize: 20000,
       date: "Nov 15",
       time: "10:30 AM",
-      icon: <Zap className="h-5 w-5 text-neon-ece" />
+      icon: <Zap className="h-5 w-5 text-neon-ece" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "robo-wars",
@@ -40,7 +44,9 @@ const EventsSection: React.FC = () => {
       prize: 30000,
       date: "Nov 15-16",
       time: "1:00 PM",
-      icon: <Cog className="h-5 w-5 text-neon-me" />
+      icon: <Cog className="h-5 w-5 text-neon-me" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "bridge-building",
@@ -52,7 +58,9 @@ const EventsSection: React.FC = () => {
       prize: 15000,
       date: "Nov 15",
       time: "3:30 PM",
-      icon: <Building2 className="h-5 w-5 text-neon-ce" />
+      icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     }
   ];
   

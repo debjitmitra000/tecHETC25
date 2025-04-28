@@ -16,11 +16,7 @@ const DepartmentPage: React.FC = () => {
 
 
   const closeModal = () => {
-    navigate('/', { replace: true });
-    setTimeout(() => {
-      const eventsSection = document.getElementById('events');
-      eventsSection?.scrollIntoView({ behavior: 'smooth' });
-    }, 10); 
+    navigate('/events', { replace: true });
   };
   
 

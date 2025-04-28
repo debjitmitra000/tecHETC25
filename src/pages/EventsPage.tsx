@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import EventCard, { EventProps } from '../components/EventCard';
+import EventCard2, { EventProps } from '../components/EventCard2';
 import { Cpu, Zap, Cog, Building2, Search } from 'lucide-react';
 
 const EventsPage: React.FC = () => {
@@ -19,7 +19,9 @@ const EventsPage: React.FC = () => {
       prize: 25000,
       date: "Nov 15-16",
       time: "10:00 AM",
-      icon: <Cpu className="h-5 w-5 text-neon-cse" />
+      icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "code-sprint",
@@ -31,7 +33,9 @@ const EventsPage: React.FC = () => {
       prize: 15000,
       date: "Nov 16",
       time: "9:00 AM",
-      icon: <Cpu className="h-5 w-5 text-neon-cse" />
+      icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     // ECE Events
     {
@@ -44,7 +48,9 @@ const EventsPage: React.FC = () => {
       prize: 20000,
       date: "Nov 15",
       time: "10:30 AM",
-      icon: <Zap className="h-5 w-5 text-neon-ece" />
+      icon: <Zap className="h-5 w-5 text-neon-ece" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "iot-challenge",
@@ -56,7 +62,9 @@ const EventsPage: React.FC = () => {
       prize: 18000,
       date: "Nov 16",
       time: "11:00 AM",
-      icon: <Zap className="h-5 w-5 text-neon-ece" />
+      icon: <Zap className="h-5 w-5 text-neon-ece" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     // ME Events
     {
@@ -69,7 +77,9 @@ const EventsPage: React.FC = () => {
       prize: 30000,
       date: "Nov 15-16",
       time: "1:00 PM",
-      icon: <Cog className="h-5 w-5 text-neon-me" />
+      icon: <Cog className="h-5 w-5 text-neon-me" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "cad-contest",
@@ -81,7 +91,9 @@ const EventsPage: React.FC = () => {
       prize: 12000,
       date: "Nov 16",
       time: "2:00 PM",
-      icon: <Cog className="h-5 w-5 text-neon-me" />
+      icon: <Cog className="h-5 w-5 text-neon-me" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     // CE Events
     {
@@ -94,7 +106,9 @@ const EventsPage: React.FC = () => {
       prize: 15000,
       date: "Nov 15",
       time: "3:30 PM",
-      icon: <Building2 className="h-5 w-5 text-neon-ce" />
+      icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "earthquake-proof",
@@ -106,7 +120,9 @@ const EventsPage: React.FC = () => {
       prize: 16000,
       date: "Nov 16",
       time: "3:30 PM",
-      icon: <Building2 className="h-5 w-5 text-neon-ce" />
+      icon: <Building2 className="h-5 w-5 text-neon-ce" />,
+      bannerImage: "/images/Banner.webp", 
+      bannerText: "FLAGSHIP EVENT", 
     }
   ];
   
@@ -180,7 +196,7 @@ const EventsPage: React.FC = () => {
         {filteredEvents.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event, index) => (
-              <EventCard key={event.id} event={event} index={index} />
+              <EventCard2 key={event.id} event={event} index={index} />
             ))}
           </div>
         ) : (
