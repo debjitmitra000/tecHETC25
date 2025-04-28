@@ -11,7 +11,7 @@ const EventsPage: React.FC = () => {
     // CSE Events
     {
       id: "hackathon",
-      title: "Hackathon",
+      title: "UI/UX Design",
       department: "cse",
       departmentName: "CSE",
       description: "24-hour coding marathon to build innovative software solutions for real-world problems.",
@@ -20,12 +20,11 @@ const EventsPage: React.FC = () => {
       date: "Nov 15-16",
       time: "10:00 AM",
       icon: <Cpu className="h-5 w-5 text-neon-cse" />,
-      bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
+      bannerImage: "/images/2.png", 
     },
     {
       id: "code-sprint",
-      title: "Code Sprint",
+      title: "Code-2-Duo",
       department: "cse",
       departmentName: "CSE",
       description: "Fast-paced coding competition with time constraints to test algorithmic problem-solving skills.",
@@ -34,8 +33,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 16",
       time: "9:00 AM",
       icon: <Cpu className="h-5 w-5 text-neon-cse" />,
-      bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
+      bannerImage: "/images/1.png", 
     },
     // ECE Events
     {
@@ -50,7 +48,6 @@ const EventsPage: React.FC = () => {
       time: "10:30 AM",
       icon: <Zap className="h-5 w-5 text-neon-ece" />,
       bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "iot-challenge",
@@ -64,7 +61,6 @@ const EventsPage: React.FC = () => {
       time: "11:00 AM",
       icon: <Zap className="h-5 w-5 text-neon-ece" />,
       bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
     },
     // ME Events
     {
@@ -79,7 +75,6 @@ const EventsPage: React.FC = () => {
       time: "1:00 PM",
       icon: <Cog className="h-5 w-5 text-neon-me" />,
       bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
     },
     {
       id: "cad-contest",
@@ -98,7 +93,7 @@ const EventsPage: React.FC = () => {
     // CE Events
     {
       id: "bridge-building",
-      title: "Bridge Building",
+      title: "Bridge The Gap",
       department: "ce",
       departmentName: "CE",
       description: "Construct model bridges and test their strength-to-weight ratio against strict specifications.",
@@ -107,7 +102,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 15",
       time: "3:30 PM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-      bannerImage: "/images/Banner.webp", 
+      bannerImage: "/images/3.png", 
       bannerText: "FLAGSHIP EVENT", 
     },
     {
