@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -8,6 +7,7 @@ import GalleryPage from './pages/GalleryPage';
 import AboutPage from './pages/AboutPage';
 import FaqPage from './pages/FaqPage';
 import DepartmentPage from './pages/DepartmentPage';
+import DepartmentPage2 from './pages/DepartmentPage2';
 import NotFoundPage from './pages/NotFoundPage';
 import RegistrationModal from './components/RegistrationModal';
 
@@ -23,6 +23,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="faq" element={<FaqPage />} />
           <Route path="department/:dept" element={<DepartmentPage />} />
+          <Route path="departmentpage/:dept" element={<DepartmentPage2 />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

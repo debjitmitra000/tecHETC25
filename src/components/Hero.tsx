@@ -7,17 +7,31 @@ import { useRegistration } from '../contexts/RegistrationContext';
 const Hero: React.FC = () => {
   const { openModal } = useRegistration();
   const [currentColor, setCurrentColor] = useState<string>('neon-cse');
+  const [currentDateColor, setCurrentDateColor] = useState<string>('neon-cse');
+  const [roboGlowColor, setRoboGlowColor] = useState<string>('#4A90E2');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   
+  // Theme colors
+  const themeColors = {
+    'neon-cse': '#4A90E2', // Soft Blue
+    'neon-ece': '#FF6B81', // Warm Coral
+    'neon-me': '#FFC857',  // Gentle Gold
+    'neon-ce': '#6FCF97',  // Calming Teal
+    'neon-ee': '#D37676',  // Muted Red
+  };
+  
   useEffect(() => {
-    const colors = ['neon-cse', 'neon-ece', 'neon-me', 'neon-ce'];
+    const colors = ['neon-cse', 'neon-ece', 'neon-me', 'neon-ce', 'neon-ee'];
     let index = 0;
     
     const interval = setInterval(() => {
       index = (index + 1) % colors.length;
       setCurrentColor(colors[index]);
+      setCurrentDateColor(colors[index]); // Set the date color to match the current theme color
+      // Update robo glow color
+      setRoboGlowColor(themeColors[colors[index]]);
     }, 3000);
     
     return () => clearInterval(interval);
@@ -68,19 +82,24 @@ const Hero: React.FC = () => {
               height: '1px',
               boxShadow: `0 0 ${15 + i * 2}px ${8 + i}px currentColor`,
               transform: calculateTransform(i),
-              color: i % 4 === 0 ? '#00FFFF' : i % 4 === 1 ? '#FF00FF' : i % 4 === 2 ? '#FFFF00' : '#00FF00',
+              color: i % 5 === 0 ? themeColors['neon-cse'] : 
+                    i % 5 === 1 ? themeColors['neon-ece'] : 
+                    i % 5 === 2 ? themeColors['neon-me'] : 
+                    i % 5 === 3 ? themeColors['neon-ce'] : 
+                    themeColors['neon-ee'],
             }}
           />
         ))}
       </div>
 
-      <div className="container px-4 mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+          {/* Left Content Section - Text content with equal padding */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:pr-8"
           >
             <motion.h4 
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +122,7 @@ const Hero: React.FC = () => {
                     animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    Tec
+                    tec
                   </motion.span>
                   <motion.span
                     className="inline-block text-neon-ece"
@@ -142,6 +161,31 @@ const Hero: React.FC = () => {
               across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines.
             </motion.p>
             
+            {/* Date information with proper alignment - centered on small screens, left on large */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.3 }}
+              className="font-pixel mb-8 mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start"
+            >
+              <motion.div
+                animate={{ y: [-2, 2, -2] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                style={{ color: themeColors[currentDateColor] }}
+                className="text-2xl mb-2"
+              >
+                2025
+              </motion.div>
+              <motion.div
+                animate={{ y: [2, -2, 2] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                style={{ color: themeColors[currentDateColor] }}
+                className="text-lg"
+              >
+                NOV 15-16
+              </motion.div>
+            </motion.div>
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -166,44 +210,41 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
           
+          {/* Robot GIF Animation - only visible on large screens with proper spacing and larger size */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="hidden lg:block relative"
-            style={{ transform: calculateTransform(5) }}
+            className="hidden lg:flex justify-center items-center lg:pl-8"
           >
-            <div className="relative aspect-square max-w-md mx-auto">
-              <motion.div
+            <motion.div
+              animate={{
+                scale: [1, 1.02, 1],
+                rotate: [0, 1, -1, 0],
+                y: [-5, 5, -5],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative w-full"
+              style={{ transform: calculateTransform(3) }}
+            >
+              <motion.img 
+                src="/images/robo.gif" 
+                alt="Animated Robot"
+                className="w-full h-auto object-contain max-w-lg xl:max-w-xl mx-auto"
                 animate={{
-                  scale: [1, 1.02, 1],
-                  rotate: [0, 1, -1, 0],
+                  filter: [
+                    `drop-shadow(0 0 10px ${roboGlowColor})`,
+                    `drop-shadow(0 0 15px ${roboGlowColor})`, 
+                    `drop-shadow(0 0 10px ${roboGlowColor})`
+                  ]
                 }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <div className="font-pixel text-center">
-                  <motion.div
-                    animate={{ y: [-2, 2, -2] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-3xl mb-2"
-                  >
-                    2025
-                  </motion.div>
-                  <motion.div
-                    animate={{ y: [2, -2, 2] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-lg"
-                  >
-                    NOV 15-16
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -227,4 +268,17 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero
+// Helper function to convert hex to RGB (kept for potential future use)
+function hexToRgb(hex: string): string {
+  // Remove the hash if it exists
+  hex = hex.replace('#', '');
+  
+  // Parse the hex values
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  
+  return `${r}, ${g}, ${b}`;
+}
+
+export default Hero;

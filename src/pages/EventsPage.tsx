@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import EventCard2, { EventProps } from '../components/EventCard2';
-import EventCard from '../components/EventCard';
+// import EventCard from '../components/EventCard';
 import { Cpu, Zap, Cog, Building2, Search } from 'lucide-react';
 
 const EventsPage: React.FC = () => {
@@ -35,6 +35,19 @@ const EventsPage: React.FC = () => {
       time: "9:00 AM",
       icon: <Cpu className="h-5 w-5 text-neon-cse" />,
       bannerImage: "/images/1.png", 
+    },
+    {
+      id: "bgmi",
+      title: "BGMI",
+      department: "cse",
+      departmentName: "CSE",
+      description: "Fast-paced coding competition with time constraints to test algorithmic problem-solving skills.",
+      entryFee: 300,
+      prize: 15000,
+      date: "Nov 16",
+      time: "9:00 AM",
+      icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+      bannerImage: "/images/3.png", 
     },
     // ECE Events
     {
@@ -89,7 +102,6 @@ const EventsPage: React.FC = () => {
       time: "2:00 PM",
       icon: <Cog className="h-5 w-5 text-neon-me" />,
       bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
     },
     // CE Events
     {
@@ -103,8 +115,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 15",
       time: "3:30 PM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-      bannerImage: "/images/3.png", 
-      bannerText: "FLAGSHIP EVENT", 
+      bannerImage: "/images/4.png", 
     },
     {
       id: "earthquake-proof",
@@ -118,7 +129,6 @@ const EventsPage: React.FC = () => {
       time: "3:30 PM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
       bannerImage: "/images/Banner.webp", 
-      bannerText: "FLAGSHIP EVENT", 
     }
   ];
   
@@ -192,7 +202,7 @@ const EventsPage: React.FC = () => {
         {filteredEvents.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map((event, index) => (
-              <EventCard key={event.id} event={event} index={index} />
+              <EventCard2 key={event.id} event={event} index={index} />
             ))}
           </div>
         ) : (
