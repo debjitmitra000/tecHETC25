@@ -2,8 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useRegistration } from '../contexts/RegistrationContext';
 
 const Hero: React.FC = () => {
+  const { openModal } = useRegistration();
   const [currentColor, setCurrentColor] = useState<string>('neon-cse');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
@@ -146,11 +148,11 @@ const Hero: React.FC = () => {
               transition={{ delay: 1.4 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <Link to="/events" className="btn btn-primary">
+              <button onClick={() => openModal()} className="btn btn-primary">
+                Register Now
+              </button>
+              <Link to="/events" className="btn btn-secondary">
                 Explore Events
-              </Link>
-              <Link to="/about" className="btn btn-secondary">
-                About TecHETC
               </Link>
             </motion.div>
             
@@ -197,7 +199,7 @@ const Hero: React.FC = () => {
                     transition={{ duration: 2, repeat: Infinity }}
                     className="text-lg"
                   >
-                    APR 15-16
+                    NOV 15-16
                   </motion.div>
                 </div>
               </motion.div>
@@ -225,5 +227,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
-
+export default Hero

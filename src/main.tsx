@@ -5,13 +5,16 @@ import App from './App';
 import './index.css';
 import { AudioProvider } from './contexts/AudioContext';
 import { CommandProvider } from './contexts/CommandContext';
+import { RegistrationProvider } from './contexts/RegistrationContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <AudioProvider>
         <CommandProvider>
-          <App />
+          <RegistrationProvider>
+            <App />
+          </RegistrationProvider>
         </CommandProvider>
       </AudioProvider>
     </BrowserRouter>
