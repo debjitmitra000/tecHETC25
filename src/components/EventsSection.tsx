@@ -74,7 +74,7 @@ const EventsSection: React.FC = () => {
   return (
     <section id="events" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Featured Events</h2>
+        <h2 className="section-title text-gradient">Featured Events</h2>
         
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10"

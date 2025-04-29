@@ -185,9 +185,25 @@ body::before {
   -webkit-text-fill-color: transparent;
 }
 
+.text-gradient-1 {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    /* #def9fa 0.89%, */
+    #bef3f5 17.23%,
+    /* #f0a79d 42.04%, */
+    #e07deb 55.12%,
+    #5cade6 71.54%,
+    #f6f6f6 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .text-gradient-2 {
   background-color: #fff;
-  background-image: radial-gradient(at 4% 36%, rgb(202, 249, 250) 0, transparent 53%), radial-gradient(at 100% 60%, rgb(182, 150, 179) 0, transparent 50%);
+  background-image: radial-gradient(at 4% 36%, rgb(202, 249, 250) 0, transparent 53%), radial-gradient(at 100% 60%, rgb(11, 151, 176) 0, transparent 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

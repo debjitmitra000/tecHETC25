@@ -30,7 +30,7 @@ const AboutPage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title">About TecHETC</h1>
+        <h1 className="section-title text-gradient-1">About TecHETC</h1>
         
         <div className="max-w-4xl mx-auto mb-16">
           <p className="text-xl text-center text-gray-300 mb-8">

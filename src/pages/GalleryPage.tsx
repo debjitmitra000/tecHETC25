@@ -117,7 +117,7 @@ const GalleryPage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title">Event Gallery</h1>
+        <h1 className="section-title text-gradient-1">Event Gallery</h1>
         
         <div className="flex justify-center mb-10">
           <div className="flex flex-wrap gap-2 justify-center">

@@ -91,7 +91,7 @@ const AboutSection: React.FC = () => {
     <section id="about" className="py-20 bg-surface overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="section-title"
+          className="section-title text-gradient"
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"

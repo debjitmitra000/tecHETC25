@@ -196,7 +196,7 @@ const EventsPage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title">All Events</h1>
+        <h1 className="section-title text-gradient-1">All Events</h1>
         
         <div className="mb-8 max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 items-center">

@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
           </Link> */}
 
           <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
-            <span className="text-gradient">TECHetc 25</span>
+            <span className="text-gradient">TECHetc</span>
           </Link>
 
           {/* Desktop Nav */}
