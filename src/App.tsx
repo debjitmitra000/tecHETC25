@@ -10,7 +10,7 @@ import DepartmentPage from './pages/DepartmentPage';
 import DepartmentPage2 from './pages/DepartmentPage2';
 import NotFoundPage from './pages/NotFoundPage';
 import RegistrationModal from './components/RegistrationModal';
-
+import Admin from './pages/Admin';
 function App() {
   return (
     <>
@@ -22,9 +22,11 @@ function App() {
           <Route path="gallery" element={<GalleryPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="faq" element={<FaqPage />} />
+          <Route path="admin" element={<Admin />} />
           <Route path="department/:dept" element={<DepartmentPage />} />
           <Route path="departmentpage/:dept" element={<DepartmentPage2 />} />
           <Route path="*" element={<NotFoundPage />} />
+
         </Route>
       </Routes>
       <RegistrationModal />
