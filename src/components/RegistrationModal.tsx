@@ -16,6 +16,7 @@ const RegistrationModal: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phoneNumber: '',
     department: '',
     year: '',
   });
@@ -118,7 +119,7 @@ const RegistrationModal: React.FC = () => {
                       type="number"
                       name="phoneNumber"  // changed
                       required
-                      value={formData.number}
+                      value={formData.phoneNumber}
                       onChange={handleInputChange}
                       className="w-full bg-background border border-primary rounded-md p-2 font-mono focus:outline-none focus:ring-2 focus:ring-primary"
                     />
@@ -208,6 +209,7 @@ const RegistrationModal: React.FC = () => {
                   <button
                     type="submit"
                     className="px-4 py-2 bg-primary bg-opacity-20 border border-primary rounded-md hover:bg-opacity-30 transition-colors font-mono text-primary"
+                  
                   >
                     Register
                   </button>
