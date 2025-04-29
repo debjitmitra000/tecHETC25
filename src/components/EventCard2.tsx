@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export interface EventProps {
   id: string;
   title: string;
-  department: 'cse' | 'ece' | 'me' | 'ce' | 'ee';
+  department: 'cse' | 'ece' | 'me' | 'ce' | 'ee'| 'general';
   departmentName: string;
   description: string;
   entryFee: number;

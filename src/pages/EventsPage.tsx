@@ -98,14 +98,14 @@ const EventsPage: React.FC = () => {
     {
       id: "cad-contest",
       title: "CAD Contest",
-      department: "me",
-      departmentName: "ME",
+      department: "general",
+      departmentName: "GENERAL",
       description: "Design complex 3D models using CAD software within time limits based on specification requirements.",
       entryFee: 350,
       prize: 12000,
       date: "Nov 16",
       time: "2:00 PM",
-      icon: <Cog className="h-5 w-5 text-neon-me" />,
+      icon: <Brain className="h-5 w-5 text-neon-general" />,
       bannerImage: "/images/Banner.webp", 
     },
     // CE Events
