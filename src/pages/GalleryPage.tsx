@@ -27,6 +27,7 @@ import G27 from '../picture/G27.jpg';
 import G28 from '../picture/G28.jpg';
 import G29 from '../picture/G29.jpg';
 import G30 from '../picture/G30.jpg';
+import G21 from '../picture/G21.jpg';
 
 interface GalleryImage {
   src: string;
@@ -43,40 +44,41 @@ const GalleryPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   
   const galleryImages: GalleryImage[] = [
-    { src: G1, alt: "Hackathon participants coding through the night", category: "cse", year: "2023" },
-    { src: G2, alt: "Tech presentation on AI innovations", category: "cse", year: "2023" },
-    { src: G3, alt: "Code sprint competition in progress", category: "cse", year: "2022" },
+    { src: G1, alt: "Previous Year Tech Team", category: "General", year: "2023" },
+    { src: G2, alt: "Chess Competition", category: "General", year: "2023" },
+    { src: G3, alt: "Beautiful Moment", category: "cse", year: "2023" },
     
-    { src: G4, alt: "Circuit building competition team at work", category: "ece", year: "2023" },
-    { src: G6, alt: "IoT demonstration with smart home devices", category: "ece", year: "2022" },
-    { src: G7, alt: "Students working on embedded systems project", category: "ece", year: "2023" },
+    { src: G4, alt: "Event Inaugration with the Secretary Sir", category: "ee", year: "2023" },
+    { src: G6, alt: "Bridge The Gap", category: "ce", year: "2023" },
+    { src: G7, alt: "Some Fun", category: "general", year: "2023" },
     
-    { src: G8, alt: "Robotics workshop with students assembling parts", category: "me", year: "2023" },
-    { src: G9, alt: "3D printing showcase with intricate models", category: "me", year: "2023" },
-    { src: G10, alt: "RoboWars arena during an exciting match", category: "me", year: "2022" },
+    { src: G8, alt: "Robozigger Track", category: "me", year: "2023" },
+    { src: G9, alt: "Model Of Rocket", category: "me", year: "2023" },
+    { src: G10, alt: "Green Campus", category: "General", year: "2023" },
     
-    { src: G11, alt: "Bridge model competition with students testing designs", category: "ce", year: "2023" },
-    { src: G13, alt: "Structural design exhibition with scale models", category: "ce", year: "2022" },
-    { src: G14, alt: "Workshop on sustainable building practices", category: "ce", year: "2022" },
+    { src: G11, alt: "Chess Competition", category: "General", year: "2023" },
+    { src: G13, alt: "Quiz Competition", category: "General", year: "2023" },
+    { src: G14, alt: "Quiz Competition", category: "General", year: "2023" },
     
-    { src: G16, alt: "Mechanical CAD design contest entries", category: "me", year: "2022" },
-    { src: G17, alt: "Showcase of mechatronics projects", category: "me", year: "2023" },
-    { src: G18, alt: "Advanced manufacturing workshop", category: "me", year: "2023" },
+    { src: G16, alt: "Bridge The Gap", category: "ce", year: "2023" },
+    { src: G17, alt: "Mechanical Bot", category: "me", year: "2023" },
+    { src: G18, alt: "Track", category: "me", year: "2023" },
     
     { src: G19, alt: "IoT car race event with autonomous vehicles", category: "ece", year: "2023" },
     { src: G20, alt: "Students presenting final year IoT projects", category: "ece", year: "2022" },
-    { src: G22, alt: "Competitive coding finals", category: "cse", year: "2023" },
+    { src: G22, alt: "Gamming", category: "cse", year: "2023" },
     
-    { src: G23, alt: "Software demo session for hackathon winners", category: "cse", year: "2022" },
+    { src: G23, alt: "Gamming", category: "cse", year: "2023" },
     { src: G24, alt: "Students gaming and coding simultaneously", category: "cse", year: "2023" },
-    { src: G25, alt: "Hackathon prize distribution", category: "cse", year: "2023" },
+    { src: G25, alt: "Campus", category: "General", year: "2023" },
     
     { src: G26, alt: "College fest decorations with department banners", category: "general", year: "2023" },
     { src: G27, alt: "Creative project presentations", category: "general", year: "2022" },
-    { src: G28, alt: "Project exhibition at tech event", category: "general", year: "2023" },
+    { src: G28, alt: "Gamming", category: "cse", year: "2023" },
     
-    { src: G29, alt: "Late night coding challenge", category: "cse", year: "2022" },
+    { src: G29, alt: "Gamming", category: "cse", year: "2023" },
     { src: G30, alt: "Campus view during event inauguration", category: "general", year: "2023" },
+    { src: G21, alt: "Food Stall", category: "general", year: "2023" },
 
   ];
 
@@ -90,6 +92,7 @@ const GalleryPage: React.FC = () => {
       case 'ece': return 'Electronics';
       case 'me': return 'Mechanical';
       case 'ce': return 'Civil';
+      case 'ee': return 'Electrical'
       default: return category;
     }
   };
@@ -100,6 +103,7 @@ const GalleryPage: React.FC = () => {
       case 'ece': return 'neon-ece';
       case 'me': return 'neon-me';
       case 'ce': return 'neon-ce';
+      case 'ee': return 'neon-ee';
       default: return 'primary';
     }
   };
@@ -134,6 +138,12 @@ const GalleryPage: React.FC = () => {
               className={`px-4 py-2 rounded-md font-mono ${filter === 'ece' ? 'bg-neon-ece bg-opacity-20 text-neon-ece border border-neon-ece' : 'bg-surface text-gray-300 border border-gray-700'}`}
             >
               Electronics
+            </button>
+            <button
+              onClick={() => setFilter('ee')}
+              className={`px-4 py-2 rounded-md font-mono ${filter === 'ee' ? 'bg-neon-ee bg-opacity-20 text-neon-ee border border-neon-ee' : 'bg-surface text-gray-300 border border-gray-700'}`}
+            >
+              Electrical
             </button>
             <button
               onClick={() => setFilter('me')}

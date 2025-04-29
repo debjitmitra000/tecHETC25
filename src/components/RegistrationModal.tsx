@@ -113,6 +113,18 @@ const RegistrationModal: React.FC = () => {
                     />
                   </div>
                   <div>
+                    <label className="block text-sm font-mono mb-2">Phone No</label>
+                    <input
+                      type="number"
+                      name="phoneNumber"  // changed
+                      required
+                      value={formData.number}
+                      onChange={handleInputChange}
+                      className="w-full bg-background border border-primary rounded-md p-2 font-mono focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+
+                  <div>
                     <label className="block text-sm font-mono mb-2">Department</label>
                     <select
                       name="department"

@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
                     animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    tec
+                    TEC
                   </motion.span>
                   <motion.span
                     className="inline-block text-neon-ece"
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
                     animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
                     transition={{ duration: 2, delay: 0.6, repeat: Infinity }}
                   >
-                    ETC
+                    etc
                   </motion.span>
                 </h1>
               </motion.div>
@@ -182,7 +182,7 @@ const Hero: React.FC = () => {
                 style={{ color: themeColors[currentDateColor] }}
                 className="text-lg"
               >
-                NOV 15-16
+                MAY 15-16
               </motion.div>
             </motion.div>
             

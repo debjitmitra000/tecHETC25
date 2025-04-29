@@ -1,25 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import G8 from '../picture/G8.jpg';
 import G23 from '../picture/G23.jpg';
 import G24 from '../picture/G24.jpg';
 import G25 from '../picture/G25.jpg';
 import G26 from '../picture/G26.jpg';
 import G27 from '../picture/G27.jpg';
-import G28 from '../picture/G28.jpg';
+import G14 from '../picture/G14.jpg';
 import G29 from '../picture/G29.jpg';
 import G30 from '../picture/G30.jpg';
 
 const GallerySection: React.FC = () => {
   const galleryImages = [
-    { src: G23, alt: "Software demo session for hackathon winners", category: "cse", year: "2022" },
-    { src: G24, alt: "Students gaming and coding simultaneously", category: "cse", year: "2023" },
-    { src: G25, alt: "Hackathon prize distribution", category: "cse", year: "2023" },
+    { src: G23, alt: "Gamming Competetion", category: "CSE", year: "2023" },
+    { src: G24, alt: "Gamming Competetion", category: "cse", year: "2023" },
+    { src: G25, alt: "Green Campus", category: "General", year: "2023" },
     
-    { src: G26, alt: "College fest decorations with department banners", category: "general", year: "2023" },
-    { src: G27, alt: "Creative project presentations", category: "general", year: "2022" },
-    { src: G28, alt: "Project exhibition at tech event", category: "general", year: "2023" },
+    { src: G26, alt: "College fest decorations", category: "general", year: "2023" },
+    { src: G27, alt: "Carrom Competetion", category: "general", year: "2023" },
+    { src: G8, alt: "Robozigger Track", category: "ME", year: "2023" },
     
-    { src: G29, alt: "Late night coding challenge", category: "cse", year: "2022" },
+    { src: G14, alt: "QUiz Competition", category: "General", year: "2023" },
     { src: G30, alt: "Campus view during event inauguration", category: "general", year: "2023" }
   ];
 
