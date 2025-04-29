@@ -60,16 +60,49 @@ const EventsSection: React.FC = () => {
     }
   ];
   
+  // Animation variants for staggered card animations
+  const cardContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
   return (
     <section id="events" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="section-title">Featured Events</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10"
+          variants={cardContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {featuredEvents.map((event, index) => (
-            <EventCard key={event.id} event={event} index={index} />
+            <motion.div
+              key={event.id}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    damping: 12,
+                    stiffness: 100
+                  }
+                }
+              }}
+            >
+              <EventCard event={event} index={index} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
