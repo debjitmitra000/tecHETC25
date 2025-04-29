@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import EventCard2, { EventProps } from '../components/EventCard2';
 // import EventCard from '../components/EventCard';
-import { Cpu, Zap, Cog, Building2, Search } from 'lucide-react';
+import { Cpu, Zap, Cog, Building2, Brain, Bolt, Search } from 'lucide-react';
 
 const EventsPage: React.FC = () => {
   // Add useEffect to scroll to top when component mounts
@@ -134,7 +134,49 @@ const EventsPage: React.FC = () => {
       time: "3:30 PM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
       bannerImage: "/images/Banner.webp", 
-    }
+    },
+
+    // General Events
+    {
+      id: "quizard",
+      title: "Quizard",
+      department: "general",
+      departmentName: "GENERAL",
+      description: "Construct model bridges and test their strength-to-weight ratio against strict specifications.",
+      entryFee: 350,
+      prize: 15000,
+      date: "Nov 15",
+      time: "3:30 PM",
+      icon: <Brain className="h-5 w-5 text-primary" />,
+      bannerImage: "/images/4.png", 
+    },
+    {
+      id: "Sudoku",
+      title: "sudoku",
+      department: "general",
+      departmentName: "GENERAL",
+      description: "Construct model bridges and test their strength-to-weight ratio against strict specifications.",
+      entryFee: 350,
+      prize: 15000,
+      date: "Nov 15",
+      time: "3:30 PM",
+      icon: <Brain className="h-5 w-5 text-primary" />,
+      bannerImage: "/images/4.png", 
+    },
+    {
+      id: "hunt4fun",
+      title: "Hunt4Fun",
+      department: "general",
+      departmentName: "GENERAL",
+      description: "Construct model bridges and test their strength-to-weight ratio against strict specifications.",
+      entryFee: 350,
+      prize: 15000,
+      date: "Nov 15",
+      time: "3:30 PM",
+      icon: <Brain className="h-5 w-5 text-primary" />,
+      bannerImage: "/images/4.png", 
+    },
+   
   ];
   
   const filteredEvents = allEvents.filter(event => {
@@ -169,7 +211,7 @@ const EventsPage: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             </div>
             
-            <div className="flex space-x-2 w-full md:w-auto">
+            {/* <div className="flex space-x-2 w-full md:w-auto">
               <button
                 onClick={() => setFilter('all')}
                 className={`px-3 py-2 rounded-md font-mono ${filter === 'all' ? 'bg-primary text-white' : 'border border-primary text-primary'}`}
@@ -200,7 +242,13 @@ const EventsPage: React.FC = () => {
               >
                 <Building2 className="h-4 w-4 mr-1" /> CE
               </button>
-            </div>
+              <button
+                onClick={() => setFilter('ee')}
+                className={`px-3 py-2 rounded-md font-mono flex items-center ${filter === 'ee' ? 'bg-neon-ee bg-opacity-20 text-neon-ee border border-neon-ee' : 'border border-gray-700 text-gray-300'}`}
+              >
+                <Bolt className="h-4 w-4 mr-1" /> EE
+              </button>
+            </div> */}
           </div>
         </div>
         

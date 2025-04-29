@@ -181,10 +181,10 @@ const AboutSection: React.FC = () => {
               >
                 <motion.div 
                   className="mb-4"
-                  animate={{ 
-                    rotateZ: [0, 10, -10, 0],
-                    scale: [1, 1.1, 1]
-                  }}
+                  // animate={{ 
+                  //   rotateZ: [0, 10, -10, 0],
+                  //   scale: [1, 1.1, 1]
+                  // }}
                   transition={{ 
                     duration: 3,
                     repeat: Infinity,

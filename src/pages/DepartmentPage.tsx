@@ -593,6 +593,114 @@ const DepartmentPage: React.FC = () => {
         },
       ],
     },
+    general: {
+      name: "Basic Science Engineering",
+      shortName: "BSH",
+      color: "primary",
+      icon: <Bolt className="h-6 w-6" />,
+      description:
+        "The Basic Science department serves as the foundation of engineering education, nurturing analytical thinking and scientific principles across physics, chemistry, and mathematics.",
+      coordinator: "Dr. Michael Faraday",
+      studentCoordinator: "Max Mayfield",
+      events: [
+        {
+          id: "quizard",
+          title: "Quizard",
+          department: "bsh",
+          departmentName: "BSH",
+          description:
+            "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
+          entryFee: 100,
+          prize: 5000,
+          date: "Nov 14",
+          time: "2:00 PM",
+          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          bannerImage: "/images/quizard-banner.png",
+          rules: [
+            "Teams of 2-3 members",
+            "Multiple rounds including rapid fire and buzzer",
+            "No use of electronic devices",
+            "Fair play is mandatory",
+            "Decision of the quizmaster is final",
+          ],
+          location: "Main Seminar Hall",
+          registration: "Open until Nov 10",
+        },
+        {
+          id: "hunt4fun",
+          title: "Hunt 4 Fun",
+          department: "bsh",
+          departmentName: "BSH",
+          description:
+            "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
+          entryFee: 100,
+          prize: 5000,
+          date: "Nov 14",
+          time: "2:00 PM",
+          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          bannerImage: "/images/quizard-banner.png",
+          rules: [
+            "Teams of 2-3 members",
+            "Multiple rounds including rapid fire and buzzer",
+            "No use of electronic devices",
+            "Fair play is mandatory",
+            "Decision of the quizmaster is final",
+          ],
+          location: "Main Seminar Hall",
+          registration: "Open until Nov 10",
+        },
+        {
+          id: "sudoku",
+          title: "Sudoku",
+          department: "bsh",
+          departmentName: "BSH",
+          description:
+            "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
+          entryFee: 100,
+          prize: 5000,
+          date: "Nov 14",
+          time: "2:00 PM",
+          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          bannerImage: "/images/quizard-banner.png",
+          rules: [
+            "Teams of 2-3 members",
+            "Multiple rounds including rapid fire and buzzer",
+            "No use of electronic devices",
+            "Fair play is mandatory",
+            "Decision of the quizmaster is final",
+          ],
+          location: "Main Seminar Hall",
+          registration: "Open until Nov 10",
+        },
+      ],
+      teamMembers: [
+        {
+          name: "Max Mayfield",
+          role: "Student Coordinator",
+          avatar:
+            "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "Eddie Munson",
+          role: "Technical Lead",
+          avatar:
+            "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "Robin Buckley",
+          role: "Event Manager",
+          avatar:
+            "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          name: "Steve Harrington",
+          role: "Equipment Manager",
+          avatar:
+            "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+      ],
+    },
+    
   };
  // Find department and event
  const departmentInfo = dept && departments[dept as keyof typeof departments];

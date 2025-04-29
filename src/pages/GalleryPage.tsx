@@ -121,7 +121,7 @@ const GalleryPage: React.FC = () => {
         
         <div className="flex justify-center mb-10">
           <div className="flex flex-wrap gap-2 justify-center">
-            <button
+            {/* <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-md font-mono ${filter === 'all' ? 'bg-primary text-white' : 'bg-surface text-primary border border-primary'}`}
             >
@@ -156,7 +156,7 @@ const GalleryPage: React.FC = () => {
               className={`px-4 py-2 rounded-md font-mono ${filter === 'ce' ? 'bg-neon-ce bg-opacity-20 text-neon-ce border border-neon-ce' : 'bg-surface text-gray-300 border border-gray-700'}`}
             >
               Civil
-            </button>
+            </button> */}
           </div>
         </div>
         

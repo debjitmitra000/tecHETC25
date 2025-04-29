@@ -30,6 +30,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
       case 'ece': return 'neon-ece';
       case 'me': return 'neon-me';
       case 'ce': return 'neon-ce';
+      case 'ee': return 'neon-ee'
       default: return 'primary';
     }
   };
@@ -48,9 +49,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
           <span className="mr-2">{event.icon}</span>
           <h3 className={`font-pixel text-lg text-${color}`}>{event.title}</h3>
         </div>
-        <span className={`text-${color} font-mono text-sm px-2 py-1 border border-current rounded`}>
+        {/* <span className={`text-${color} font-mono text-sm px-2 py-1 border border-current rounded`}>
           {event.departmentName}
-        </span>
+        </span> */}
       </div>
       
       {/* Banner image container */}

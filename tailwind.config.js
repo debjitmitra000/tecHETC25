@@ -20,10 +20,12 @@ export default {
   // 'neon-ce': '#82C882',  // Gentle Green
   // 'neon-ee': '#E3A261',  // Soft Orange
   'neon-cse': '#4A90E2', // Soft Blue
-  'neon-ece': '#FF6B81', // Warm Coral
+  'neon-ece': '#FF00FF', // Warm Coral
   'neon-me': '#FFC857',  // Gentle Gold
   'neon-ce': '#6FCF97',  // Calming Teal
-  'neon-ee': '#D37676',  // Muted Red
+  'neon-ee': '#D37676',
+  'neon-general':'#A3A3FF'
+  // Muted Red
       },
       fontFamily: {
         pixel: ['"Press Start 2P"', 'cursive'],

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu, Zap, Cog, Building2, Bolt } from 'lucide-react';
+import { Menu, X, Cpu, Zap, Cog, Building2, Bolt, Brain } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
   ];
 
   const departmentItems = [
+    { path: '/department/general', label: 'GENERAL', icon: <Brain className="w-4 h-4 inline mr-1 text-neon-general" /> },
     { path: '/department/cse', label: 'CSE', icon: <Cpu className="w-4 h-4 inline mr-1 text-neon-cse" /> },
     { path: '/department/ece', label: 'ECE', icon: <Zap className="w-4 h-4 inline mr-1 text-neon-ece" /> },
     { path: '/department/me', label: 'ME', icon: <Cog className="w-4 h-4 inline mr-1 text-neon-me" /> },
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
           </Link> */}
 
           <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
-            <span className="text-gradient">TECHetc 2K25</span>
+            <span className="text-gradient">TECHetc 25</span>
           </Link>
 
           {/* Desktop Nav */}
