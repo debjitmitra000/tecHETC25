@@ -1,7 +1,7 @@
 import {z} from "zod";
 const validSubmit  = z.object({
     name: z.string(),
-    phone: z.number(),
+    phone: z.string(),
     email: z.string().email(),
     department: z.string(),
     year: z.string(),

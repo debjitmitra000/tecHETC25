@@ -1,8 +1,10 @@
 import express from "express";
 import Entry from "./db.js";
+import cors from "cors";
 import { validSubmit } from "./auth.js";
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.post('/register', async (req, res)=>{
 const {success} = validSubmit.safeParse(req.body);
 if(!success)
