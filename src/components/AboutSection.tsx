@@ -26,50 +26,179 @@ const AboutSection: React.FC = () => {
     }
   ];
 
+  // Animation variants
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.7,
+        ease: "easeOut"
+      } 
+    }
+  };
+
+  const textContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      }
+    }
+  };
+
+  const textItemVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        type: "spring",
+        damping: 12,
+        stiffness: 100
+      }
+    }
+  };
+
+  const featureContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const featureItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <section id="about" className="py-20 bg-surface">
+    <section id="about" className="py-20 bg-surface overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">
-          About <span className="text-neon-cse">Tec</span><span className="text-neon-ece">H</span><span className="text-neon-me">ETC</span>
-        </h2>
+        <motion.h2 
+          className="section-title"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          About <motion.span 
+            className="text-neon-cse"
+            initial={{ textShadow: "0 0 0px #ff0055" }}
+            whileInView={{ textShadow: "0 0 10px #ff0055" }}
+            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+          >Tec</motion.span>
+          <motion.span 
+            className="text-neon-ece"
+            initial={{ textShadow: "0 0 0px #00efff" }}
+            whileInView={{ textShadow: "0 0 10px #00efff" }}
+            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
+          >H</motion.span>
+          <motion.span 
+            className="text-neon-me"
+            initial={{ textShadow: "0 0 0px #00ff8a" }}
+            whileInView={{ textShadow: "0 0 10px #00ff8a" }}
+            transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.6 }}
+          >ETC</motion.span>
+        </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={textContainerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <p className="text-lg mb-6 text-gray-300">
+            <motion.p 
+              className="text-lg mb-6 text-gray-300"
+              variants={textItemVariants}
+            >
               TecHETC is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines.
-            </p>
-            <p className="mb-6 text-gray-400">
+            </motion.p>
+            <motion.p 
+              className="mb-6 text-gray-400"
+              variants={textItemVariants}
+            >
               Founded in 2015, our tech fest has grown to become one of the most anticipated events in the academic calendar, attracting participants from colleges across the region.
-            </p>
-            <p className="mb-6 text-gray-400">
-              This year's theme "<span className="font-pixel text-neon-cse">Retro Genesis</span>" bridges the gap between classic 8-bit computing and cutting-edge technology, showcasing how far we've come while honoring the foundations of digital innovation.
-            </p>
-            <p className="text-gray-400">
+            </motion.p>
+            <motion.p 
+              className="mb-6 text-gray-400"
+              variants={textItemVariants}
+            >
+              This year's theme "<motion.span 
+                className="font-pixel text-neon-cse"
+                animate={{ 
+                  textShadow: ["0 0 4px #ff0055", "0 0 10px #ff0055", "0 0 4px #ff0055"],
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  repeatType: "loop"
+                }}
+              >Retro Genesis</motion.span>" bridges the gap between classic 8-bit computing and cutting-edge technology, showcasing how far we've come while honoring the foundations of digital innovation.
+            </motion.p>
+            <motion.p 
+              className="text-gray-400"
+              variants={textItemVariants}
+            >
               Each department contributes unique events that highlight their specific domains while encouraging cross-disciplinary collaboration and learning.
-            </p>
+            </motion.p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            variants={featureContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={featureItemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(120, 120, 255, 0.3)",
+                  transition: { type: "spring", stiffness: 400, damping: 10 }
+                }}
                 className="bg-background p-6 border border-primary rounded-lg pixel-corners"
               >
-                <div className="mb-4">{feature.icon}</div>
+                <motion.div 
+                  className="mb-4"
+                  animate={{ 
+                    rotateZ: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    repeatDelay: index
+                  }}
+                >
+                  {feature.icon}
+                </motion.div>
                 <h3 className="font-pixel text-lg mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
