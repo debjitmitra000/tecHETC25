@@ -47,6 +47,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <h4 className="font-mono text-lg mb-4 text-neon-ece">Departments</h4>
             <ul className="space-y-2">
+              <li><Link to="/department/general" className="text-gray-400 hover:text-neon-general transition-colors">General</Link></li>
               <li><Link to="/department/cse" className="text-gray-400 hover:text-neon-cse transition-colors">Computer Science</Link></li>
               <li><Link to="/department/ece" className="text-gray-400 hover:text-neon-ece transition-colors">Electronics</Link></li>
               <li><Link to="/department/me" className="text-gray-400 hover:text-neon-me transition-colors">Mechanical</Link></li>
@@ -60,12 +61,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="flex items-center text-gray-400">
                 <Mail size={16} className="mr-2" />
-                <a href="mailto:info@techetc.edu" className="hover:text-white transition-colors">info@techetc.edu</a>
+                <a href="mailto:info@techetc.edu" className="hover:text-white transition-colors">mail@hetc.ac.in</a>
               </li>
               <li className="text-gray-400 mt-4">
-                Engineering College Campus,<br />
-                Tech Avenue, Digital City,<br />
-                Innovation State - 100101
+                Vivekananda Rd,  <br />
+                Pipulpati Post, Chinsurah,<br />
+                West Bengal 712103
               </li>
             </ul>
           </div>
