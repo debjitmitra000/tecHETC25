@@ -16,8 +16,9 @@ import {
   MapPin,
   CreditCard,
   BadgeCheck,
+  FlaskConical,
   Bolt,
-  Brain,
+  Brain
 } from "lucide-react";
 
 const DepartmentPage: React.FC = () => {
@@ -37,7 +38,6 @@ const DepartmentPage: React.FC = () => {
     navigate('/events', { replace: true });
   };
   
-  // Department data
   const departments = {
     cse: {
       name: "Computer Science Engineering",
@@ -49,73 +49,70 @@ const DepartmentPage: React.FC = () => {
       studentCoordinator: "Jane Hopper",
       events: [
         {
-          id: "hackathon",
-          title: "Hackathon",
+          id: "code-2-duo",
+          title: "CODE – 2 – DUO",
           department: "cse",
           departmentName: "CSE",
-          description: "24-hour coding marathon to build innovative software solutions for real-world problems.",
-          entryFee: 500,
-          prize: 25000,
-          date: "Nov 15-16",
-          time: "10:00 AM",
+          description: "Pair up and compete in this coding challenge designed for speed and logic.",
+          entryFee: 150,
+          prize: 5000,
+          date: "Nov 15",
+          time: "11:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/code-2-duo.webp",
           rules: [
-            "Teams must consist of 2-4 members",
+            "Teams must consist of 2 members",
             "All code must be written during the event",
             "Use of open-source libraries is permitted",
-            "Projects must address one of the provided themes",
-            "Final submissions include code repository and demo video",
-            "Judging based on innovation, technical difficulty, and presentation"
+            "Time constraints will be enforced",
+            "Judging based on logic, efficiency, and correctness"
           ],
           location: "CSE Labs, Main Building",
           registration: "Open until Nov 10"
         },
         {
-          id: "code-sprint",
-          title: "Code Sprint",
+          id: "user-interface-user-experience",
+          title: "USER INTERFACE – USER EXPERIENCE (UI – UX)",
           department: "cse",
           departmentName: "CSE",
-          description: "Fast-paced coding competition with time constraints to test algorithmic problem-solving skills.",
-          entryFee: 300,
-          prize: 15000,
+          description: "Design modern and user-friendly interfaces with top-notch UX principles.",
+          entryFee: 200,
+          prize: 5000,
           date: "Nov 16",
-          time: "9:00 AM",
+          time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Individual participation only",
-            "Three rounds of increasing difficulty",
-            "Each round has a time limit of 60 minutes",
-            "Participants must solve algorithmic problems",
-            "Ranking based on number of problems solved and time taken",
-            "Top 10 advance to final round"
-          ],
-          location: "CSE Seminar Hall",
-          registration: "Open until Nov 12"
-        },
-        {
-          id: "ui-ux-challenge",
-          title: "UI/UX Challenge",
-          department: "cse",
-          departmentName: "CSE",
-          description: "Design challenge focusing on creating intuitive and visually appealing user interfaces for given scenarios.",
-          entryFee: 250,
-          prize: 10000,
-          date: "Nov 15",
-          time: "11:00 AM",
-          icon: <Cpu className="h-5 w-5 text-neon-cse" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/user-interface-user-experience.webp",
           rules: [
             "Teams of 1-2 members",
             "Design must be created during the event",
             "Use any design software of your choice",
             "Submit wireframes, mockups, and prototype",
-            "Presentation to judges required",
             "Judging based on creativity, usability, and adherence to design principles"
           ],
           location: "Design Lab, Tech Building",
-          registration: "Open until Nov 10"
+          registration: "Open until Nov 12"
+        },
+        {
+          id: "battle-grounds-mobile-india",
+          title: "BATTLE GROUNDS MOBILE INDIA (BGMI)",
+          department: "cse",
+          departmentName: "CSE",
+          description: "Compete in the ultimate mobile battle royale tournament.",
+          entryFee: 100,
+          prize: 3000,
+          date: "Nov 17",
+          time: "01:00 PM",
+          icon: <Cpu className="h-5 w-5 text-neon-cse" />,
+          bannerImage: "/images/battle-grounds-mobile-india.webp",
+          rules: [
+            "Teams of 4 members",
+            "Players must bring their own devices",
+            "Classic mode matches",
+            "Tournament structure will be announced on event day",
+            "Fair play is mandatory"
+          ],
+          location: "Gaming Arena, CSE Building",
+          registration: "Open until Nov 14"
         }
       ],
       teamMembers: [
@@ -135,73 +132,70 @@ const DepartmentPage: React.FC = () => {
       studentCoordinator: "Will Byers",
       events: [
         {
-          id: "circuit-design",
-          title: "Circuit Challenge",
+          id: "robo-soccer",
+          title: "ROBO SOCCER",
           department: "ece",
           departmentName: "ECE",
-          description: "Design and build electronic circuits that solve specific challenges with limited components.",
-          entryFee: 400,
-          prize: 20000,
+          description: "Program and control your bots to score goals and defeat your opponents.",
+          entryFee: 200,
+          prize: 6000,
           date: "Nov 15",
-          time: "10:30 AM",
+          time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Teams of 2-3 members",
-            "Use only provided components",
-            "Circuit must be assembled within 3 hours",
-            "Circuit must perform the specified function",
-            "Judging based on efficiency, creativity, and performance",
-            "Safety protocols must be followed"
-          ],
-          location: "ECE Lab 1",
-          registration: "Open until Nov 8"
-        },
-        {
-          id: "iot-challenge",
-          title: "IoT Showcase",
-          department: "ece",
-          departmentName: "ECE",
-          description: "Create innovative IoT solutions that address real-world problems and demonstrate their application.",
-          entryFee: 450,
-          prize: 18000,
-          date: "Nov 16",
-          time: "11:00 AM",
-          icon: <Zap className="h-5 w-5 text-neon-ece" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/robo-soccer.webp",
           rules: [
             "Teams of 2-4 members",
-            "Hardware and software integration required",
-            "Project must use at least one IoT protocol",
-            "Demonstration video submission required",
-            "Live demonstration to judges",
-            "Judging based on innovation, application, and scalability"
+            "Bot weight limit: 3kg",
+            "Bot must fit within 30x30x30cm box",
+            "Matches last 5 minutes",
+            "Standard robot soccer rules apply"
           ],
-          location: "ECE Lab 2",
+          location: "ECE Robotics Lab",
           registration: "Open until Nov 10"
         },
         {
-          id: "signal-processing",
-          title: "Signal Masters",
+          id: "line-follower-robot",
+          title: "LINE FOLLOWER ROBOT",
           department: "ece",
           departmentName: "ECE",
-          description: "Competition focused on digital signal processing algorithms and applications.",
-          entryFee: 350,
-          prize: 15000,
-          date: "Nov 15",
-          time: "2:00 PM",
+          description: "Build a robot that can smartly follow a line across complex paths.",
+          entryFee: 150,
+          prize: 4000,
+          date: "Nov 16",
+          time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/line-follower-robot.webp",
           rules: [
-            "Individual participation",
-            "Three rounds of signal processing challenges",
-            "MATLAB or Python implementation",
-            "Time limit of 90 minutes per round",
-            "Algorithms judged on accuracy and efficiency",
-            "Top 5 advance to final round"
+            "Teams of 2-3 members",
+            "Robot must be autonomous",
+            "Time trial format",
+            "Path includes curves and intersections",
+            "Best time wins"
           ],
-          location: "Signal Processing Lab",
-          registration: "Open until Nov 10"
+          location: "ECE Lab 2",
+          registration: "Open until Nov 12"
+        },
+        {
+          id: "electrotech-exploration",
+          title: "ELECTROTECH EXPLORATION",
+          department: "ece",
+          departmentName: "ECE",
+          description: "Dive into exciting electronics experiments and innovations.",
+          entryFee: 150,
+          prize: 5000,
+          date: "Nov 17",
+          time: "03:00 PM",
+          icon: <Zap className="h-5 w-5 text-neon-ece" />,
+          bannerImage: "/images/Banner.webp",
+          rules: [
+            "Teams of 2-3 members",
+            "Create innovative electronic solutions",
+            "Limited components provided",
+            "Project must serve a practical purpose",
+            "Judging based on innovation and functionality"
+          ],
+          location: "ECE Innovation Lab",
+          registration: "Open until Nov 14"
         }
       ],
       teamMembers: [
@@ -221,74 +215,26 @@ const DepartmentPage: React.FC = () => {
       studentCoordinator: "Steve Harrington",
       events: [
         {
-          id: "robo-wars",
-          title: "RoboWars",
+          id: "cadmania",
+          title: "CADMANIA",
           department: "me",
           departmentName: "ME",
-          description: "Battle your custom-built robots in an arena to determine the ultimate mechanical champion.",
-          entryFee: 600,
-          prize: 30000,
-          date: "Nov 15-16",
-          time: "1:00 PM",
-          icon: <Cog className="h-5 w-5 text-neon-me" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Teams of 3-5 members",
-            "Robot weight limit: 5kg",
-            "Robot must fit within 40x40x40cm box",
-            "No hazardous materials or weapons",
-            "Matches last 3 minutes or until immobilization",
-            "Double elimination tournament format",
-            "Safety protocols must be followed"
-          ],
-          location: "ME Workshop",
-          registration: "Open until Nov 5"
-        },
-        {
-          id: "cad-contest",
-          title: "CAD Contest",
-          department: "me",
-          departmentName: "ME",
-          description: "Design complex 3D models using CAD software within time limits based on specification requirements.",
-          entryFee: 350,
-          prize: 12000,
+          description: "Showcase your design and drafting skills using CAD software.",
+          entryFee: 150,
+          prize: 4500,
           date: "Nov 16",
-          time: "2:00 PM",
+          time: "11:00 AM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/Banner.webp",
           rules: [
             "Individual participation",
             "4-hour time limit",
             "Use provided CAD software",
             "Model must meet given specifications",
-            "Export in specified format",
             "Judging based on accuracy, efficiency, and innovation"
           ],
           location: "ME Design Studio",
           registration: "Open until Nov 12"
-        },
-        {
-          id: "thermo-challenge",
-          title: "ThermoChallenge",
-          department: "me",
-          departmentName: "ME",
-          description: "Competition based on thermodynamics principles and heat transfer applications.",
-          entryFee: 300,
-          prize: 10000,
-          date: "Nov 15",
-          time: "10:00 AM",
-          icon: <Cog className="h-5 w-5 text-neon-me" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Teams of 2 members",
-            "Design and build a thermal system",
-            "System must achieve specified temperature control",
-            "Use only provided materials",
-            "Judging based on efficiency, innovation, and performance",
-            "Technical report submission required"
-          ],
-          location: "Thermo Lab",
-          registration: "Open until Nov 10"
         }
       ],
       teamMembers: [
@@ -308,73 +254,48 @@ const DepartmentPage: React.FC = () => {
       studentCoordinator: "Lucas Sinclair",
       events: [
         {
-          id: "bridge-building",
-          title: "Bridge Building",
+          id: "bridge-the-gap",
+          title: "BRIDGE THE GAP",
           department: "ce",
           departmentName: "CE",
-          description: "Construct model bridges and test their strength-to-weight ratio against strict specifications.",
-          entryFee: 350,
-          prize: 15000,
-          date: "Nov 15",
-          time: "3:30 PM",
+          description: "Design and build model bridges to test structural strength and creativity.",
+          entryFee: 150,
+          prize: 4000,
+          date: "Nov 16",
+          time: "10:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/bridge-the-gap.webp",
           rules: [
             "Teams of 2-3 members",
             "Bridge must be built only with provided materials",
             "Maximum dimensions: 60cm length, 15cm width, 20cm height",
-            "Construction time: 3 hours",
-            "Bridge must support minimum 5kg load",
+            "Bridge must support minimum weight specified",
             "Judging based on strength-to-weight ratio and aesthetics"
           ],
           location: "CE Courtyard",
-          registration: "Open until Nov 10"
+          registration: "Open until Nov 14"
         },
         {
-          id: "earthquake-proof",
-          title: "Quake Proof",
+          id: "insta-plan",
+          title: "INSTA-PLAN",
           department: "ce",
           departmentName: "CE",
-          description: "Design structures that can withstand simulated earthquake conditions while maintaining integrity.",
-          entryFee: 400,
-          prize: 16000,
-          date: "Nov 16",
-          time: "3:30 PM",
+          description: "Create quick architectural plans under real-world constraints.",
+          entryFee: 150,
+          prize: 4500,
+          date: "Nov 17",
+          time: "11:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Teams of 2-4 members",
-            "Structure must be built with provided materials",
-            "Maximum dimensions: 30x30x50cm",
-            "Construction time: 4 hours",
-            "Structure tested on shake table at multiple intensities",
-            "Judging based on structural integrity after testing"
-          ],
-          location: "CE Structures Lab",
-          registration: "Open until Nov 12"
-        },
-        {
-          id: "eco-construction",
-          title: "EcoConstruct",
-          department: "ce",
-          departmentName: "CE",
-          description: "Competition focused on sustainable construction techniques using eco-friendly materials.",
-          entryFee: 300,
-          prize: 12000,
-          date: "Nov 15",
-          time: "1:00 PM",
-          icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/Banner.webp",
           rules: [
             "Teams of 2-3 members",
-            "Design must use renewable materials",
-            "Structural stability must be maintained",
-            "Presentation of sustainability features required",
-            "Judging based on innovation, sustainability, and structural integrity",
-            "Technical report submission required"
+            "Plans must be created within time limit",
+            "Use provided software or manual drafting",
+            "Design must meet given requirements",
+            "Judging based on creativity, functionality, and adherence to constraints"
           ],
-          location: "Environmental Engineering Lab",
-          registration: "Open until Nov 10"
+          location: "CE Design Studio",
+          registration: "Open until Nov 15"
         }
       ],
       teamMembers: [
@@ -394,73 +315,48 @@ const DepartmentPage: React.FC = () => {
       studentCoordinator: "Max Mayfield",
       events: [
         {
-          id: "power-systems",
-          title: "Power Systems Challenge",
+          id: "instant-circuit-making",
+          title: "INSTANT CIRCUIT MAKING",
           department: "ee",
           departmentName: "EE",
-          description: "Design and simulate power distribution systems with focus on efficiency and reliability.",
-          entryFee: 400,
-          prize: 20000,
+          description: "Quick-fire circuit building under pressure using provided components.",
+          entryFee: 100,
+          prize: 3000,
           date: "Nov 15",
-          time: "10:00 AM",
+          time: "01:00 PM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/instant-circuit-making.webp",
           rules: [
-            "Teams of 2-3 members",
-            "Use provided simulation software",
-            "System must meet efficiency requirements",
-            "Include protection mechanisms",
-            "Present design considerations",
-            "Technical documentation required"
+            "Teams of 2 members",
+            "Use only provided components",
+            "Circuit must be assembled within specified time",
+            "Circuit must perform the specified function",
+            "Judging based on speed, efficiency, and functionality"
           ],
-          location: "Power Systems Lab",
-          registration: "Open until Nov 10"
-        },
-        {
-          id: "motor-design",
-          title: "Motor Design Competition",
-          department: "ee",
-          departmentName: "EE",
-          description: "Create innovative electric motor designs focusing on efficiency and performance.",
-          entryFee: 450,
-          prize: 18000,
-          date: "Nov 16",
-          time: "11:00 AM",
-          icon: <Bolt className="h-5 w-5 text-neon-ee" />,
-          bannerImage: "/images/1.png",
-          rules: [
-            "Individual or team of 2",
-            "Original motor design required",
-            "Performance testing mandatory",
-            "Efficiency calculations needed",
-            "Cost analysis included",
-            "Presentation to judges"
-          ],
-          location: "Machines Lab",
+          location: "EE Lab 1",
           registration: "Open until Nov 12"
         },
         {
-          id: "energy-innovation",
-          title: "Energy Innovation",
+          id: "electromat",
+          title: "ELECTROMAT",
           department: "ee",
           departmentName: "EE",
-          description: "Develop innovative solutions for renewable energy integration and smart grid applications.",
-          entryFee: 500,
-          prize: 25000,
-          date: "Nov 15-16",
-          time: "9:00 AM",
+          description: "Solve electromagnetism-based challenges in this electrifying competition.",
+          entryFee: 100,
+          prize: 3500,
+          date: "Nov 17",
+          time: "10:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
-          bannerImage: "/images/1.png",
+          bannerImage: "/images/Banner.webp",
           rules: [
-            "Teams of 3-4 members",
-            "Project must be sustainable",
-            "Include smart grid integration",
-            "Real-time monitoring required",
-            "Cost-benefit analysis needed",
-            "Final presentation and demo"
+            "Individual or teams of 2",
+            "Multiple rounds with electromagnetic challenges",
+            "Both theoretical and practical components",
+            "Time limits for each challenge",
+            "Highest combined score wins"
           ],
-          location: "Smart Grid Lab",
-          registration: "Open until Nov 8"
+          location: "Electromagnetic Lab",
+          registration: "Open until Nov 15"
         }
       ],
       teamMembers: [
@@ -470,115 +366,131 @@ const DepartmentPage: React.FC = () => {
         { name: "Steve Harrington", role: "Equipment Manager", avatar: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
       ]
     },
-     general: {
-          name: "Basic Science Engineering",
-          shortName: "BSH",
-          color: "neon-general",
-          icon: <Brain className="h-6 w-6" />,
-          description:
-            "The Basic Science department serves as the foundation of engineering education, nurturing analytical thinking and scientific principles across physics, chemistry, and mathematics.",
-          coordinator: "Dr. Michael Faraday",
-          studentCoordinator: "Max Mayfield",
-          events: [
-            {
-                      id: "quizard",
-                      title: "Quizard",
-                      department: "bsh",
-                      departmentName: "BSH",
-                      description:
-                        "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
-                      entryFee: 100,
-                      prize: 5000,
-                      date: "Nov 14",
-                      time: "2:00 PM",
-                      icon: <Brain className="h-5 w-5 text-neon-general" />,
-                      bannerImage: "/images/quizard-banner.png",
-                      rules: [
-                        "Teams of 2-3 members",
-                        "Multiple rounds including rapid fire and buzzer",
-                        "No use of electronic devices",
-                        "Fair play is mandatory",
-                        "Decision of the quizmaster is final",
-                      ],
-                      location: "Main Seminar Hall",
-                      registration: "Open until Nov 10",
-                    },
-                    {
-                      id: "hunt4fun",
-                      title: "Hunt 4 Fun",
-                      department: "bsh",
-                      departmentName: "BSH",
-                      description:
-                        "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
-                      entryFee: 100,
-                      prize: 5000,
-                      date: "Nov 14",
-                      time: "2:00 PM",
-                      icon: <Brain className="h-5 w-5 text-neon-general" />,
-                      bannerImage: "/images/quizard-banner.png",
-                      rules: [
-                        "Teams of 2-3 members",
-                        "Multiple rounds including rapid fire and buzzer",
-                        "No use of electronic devices",
-                        "Fair play is mandatory",
-                        "Decision of the quizmaster is final",
-                      ],
-                      location: "Main Seminar Hall",
-                      registration: "Open until Nov 10",
-                    },
-                    {
-                      id: "sudoku",
-                      title: "Sudoku",
-                      department: "bsh",
-                      departmentName: "BSH",
-                      description:
-                        "A thrilling quiz competition testing your knowledge in science, logic, and general awareness. Fast-paced rounds and challenging questions await!",
-                      entryFee: 100,
-                      prize: 5000,
-                      date: "Nov 14",
-                      time: "2:00 PM",
-                      icon: <Brain className="h-5 w-5 text-neon-general" />,
-                      bannerImage: "/images/quizard-banner.png",
-                      rules: [
-                        "Teams of 2-3 members",
-                        "Multiple rounds including rapid fire and buzzer",
-                        "No use of electronic devices",
-                        "Fair play is mandatory",
-                        "Decision of the quizmaster is final",
-                      ],
-                      location: "Main Seminar Hall",
-                      registration: "Open until Nov 10",
-                    },
+    bsh: {
+      name: "Basic Science & Humanities",
+      shortName: "BSH",
+      color: "neon-bsh",
+      icon: <FlaskConical className="h-6 w-6" />,
+      description: "The Basic Science department serves as the foundation of engineering education, nurturing analytical thinking and scientific principles across physics, chemistry, and mathematics.",
+      coordinator: "Dr. Marie Curie",
+      studentCoordinator: "Erica Sinclair",
+      events: [
+        {
+          id: "sudoku",
+          title: "SUDOKU",
+          department: "bsh",
+          departmentName: "BSH",
+          description: "Challenge your logical thinking in this timed number puzzle event.",
+          entryFee: 100,
+          prize: 2000,
+          date: "Nov 15",
+          time: "10:00 AM",
+          icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
+          bannerImage: "/images/sudoku.webp",
+          rules: [
+            "Individual participation",
+            "Multiple difficulty levels",
+            "Timed rounds",
+            "No electronic devices allowed",
+            "Fastest correct solution wins"
           ],
-          teamMembers: [
-            {
-              name: "Max Mayfield",
-              role: "Student Coordinator",
-              avatar:
-                "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            },
-            {
-              name: "Eddie Munson",
-              role: "Technical Lead",
-              avatar:
-                "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            },
-            {
-              name: "Robin Buckley",
-              role: "Event Manager",
-              avatar:
-                "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            },
-            {
-              name: "Steve Harrington",
-              role: "Equipment Manager",
-              avatar:
-                "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            },
-          ],
+          location: "BSH Seminar Hall",
+          registration: "Open until Nov 13"
         },
+        {
+          id: "hunt-for-fun",
+          title: "HUNT FOR FUN",
+          department: "bsh",
+          departmentName: "BSH",
+          description: "A campus-wide treasure hunt with fun clues and exciting challenges.",
+          entryFee: 100,
+          prize: 2500,
+          date: "Nov 16",
+          time: "02:00 PM",
+          icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
+          bannerImage: "/images/hunt-for-fun.webp",
+          rules: [
+            "Teams of 3-4 members",
+            "Solve clues to find locations",
+            "Complete challenges at each location",
+            "Time limit of 2 hours",
+            "Team that completes all tasks fastest wins"
+          ],
+          location: "Campus-wide",
+          registration: "Open until Nov 14"
+        }
+      ],
+      teamMembers: [
+        { name: "Erica Sinclair", role: "Student Coordinator", avatar: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Dustin Henderson", role: "Technical Support", avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Suzie Bingham", role: "Event Manager", avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Mike Wheeler", role: "Logistics Coordinator", avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
+      ]
+    },
+    general: {
+      name: "General Events",
+      shortName: "GENERAL",
+      color: "neon-general",
+      icon: <Brain className="h-6 w-6" />,
+      description: "General events are open to all disciplines and focus on cross-domain challenges that promote teamwork, creativity, and well-rounded skills.",
+      coordinator: "Dr. Albert Einstein",
+      studentCoordinator: "Nancy Wheeler",
+      events: [
+        {
+          id: "quizzard",
+          title: "QUIZZARD",
+          department: "general",
+          departmentName: "GENERAL",
+          description: "Put your general knowledge to the test in this fast-paced quiz battle.",
+          entryFee: 50,
+          prize: 2000,
+          date: "Nov 17",
+          time: "02:00 PM",
+          icon: <Brain className="h-5 w-5 text-neon-general" />,
+          bannerImage: "/images/quizzard.webp",
+          rules: [
+            "Teams of 2-3 members",
+            "Multiple rounds including rapid fire and buzzer",
+            "No use of electronic devices",
+            "Fair play is mandatory",
+            "Decision of the quizmaster is final"
+          ],
+          location: "Main Seminar Hall",
+          registration: "Open until Nov 15"
+        },
+        {
+          id: "model-display",
+          title: "MODEL DISPLAY",
+          department: "general",
+          departmentName: "GENERAL",
+          description: "Showcase creative models and prototypes across engineering domains.",
+          entryFee: 100,
+          prize: 4000,
+          date: "Nov 18",
+          time: "10:00 AM",
+          icon: <Brain className="h-5 w-5 text-neon-general" />,
+          bannerImage: "/images/Banner.webp",
+          rules: [
+            "Teams of 1-4 members",
+            "Models must be original work",
+            "Submit project documentation",
+            "Live demonstration required",
+            "Judging based on innovation, practicality, and presentation"
+          ],
+          location: "Exhibition Hall",
+          registration: "Open until Nov 16"
+        }
+      ],
+      teamMembers: [
+        { name: "Nancy Wheeler", role: "Student Coordinator", avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Jonathan Byers", role: "Event Manager", avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Robin Buckley", role: "Technical Support", avatar: "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+        { name: "Argyle", role: "Logistics Coordinator", avatar: "https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
+      ]
+    }
   };
-  
+
+
    // Find department and event
    const departmentInfo = dept && departments[dept as keyof typeof departments];
 
