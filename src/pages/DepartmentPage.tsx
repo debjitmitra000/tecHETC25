@@ -17,6 +17,7 @@ import {
   CreditCard,
   BadgeCheck,
   Bolt,
+  Brain,
 } from "lucide-react";
 
 const DepartmentPage: React.FC = () => {
@@ -597,7 +598,7 @@ const DepartmentPage: React.FC = () => {
       name: "Basic Science Engineering",
       shortName: "BSH",
       color: "primary",
-      icon: <Bolt className="h-6 w-6" />,
+      icon: <Brain className="h-6 w-6" />,
       description:
         "The Basic Science department serves as the foundation of engineering education, nurturing analytical thinking and scientific principles across physics, chemistry, and mathematics.",
       coordinator: "Dr. Michael Faraday",
@@ -614,7 +615,7 @@ const DepartmentPage: React.FC = () => {
           prize: 5000,
           date: "Nov 14",
           time: "2:00 PM",
-          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizard-banner.png",
           rules: [
             "Teams of 2-3 members",
@@ -637,7 +638,7 @@ const DepartmentPage: React.FC = () => {
           prize: 5000,
           date: "Nov 14",
           time: "2:00 PM",
-          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizard-banner.png",
           rules: [
             "Teams of 2-3 members",
@@ -660,7 +661,7 @@ const DepartmentPage: React.FC = () => {
           prize: 5000,
           date: "Nov 14",
           time: "2:00 PM",
-          icon: <Bolt className="h-5 w-5 text-neon-general" />,
+          icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizard-banner.png",
           rules: [
             "Teams of 2-3 members",
