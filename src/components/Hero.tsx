@@ -232,7 +232,7 @@ const Hero: React.FC = () => {
               style={{ transform: calculateTransform(3) }}
             >
               <motion.img 
-                src="/images/robo.gif" 
+                src="/robo.gif" 
                 alt="Animated Robot"
                 className="w-full h-auto object-contain max-w-lg xl:max-w-xl mx-auto"
                 animate={{

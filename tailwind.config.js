@@ -24,6 +24,7 @@ export default {
   'neon-me': '#FFC857',  // Gentle Gold
   'neon-ce': '#6FCF97',  // Calming Teal
   'neon-ee': '#D37676',
+  'neon-bsh': '#11a69e',
   'neon-general':'#A3A3FF'
   // Muted Red
       },
@@ -65,6 +66,8 @@ export default {
         'neon-me': '0 0 5px #FFFF00, 0 0 10px #FFFF00',
         'neon-ce': '0 0 5px #00FF00, 0 0 10px #00FF00',
         'neon-ee': '0 0 5px #FF8800, 0 0 10px #FF8800',
+        'neon-bsh': '0 0 5px #FF8800, 0 0 10px #FF8800',
+        'neon-general': '0 0 5px #FF8800, 0 0 10px #FF8800',
       },
     },
   },

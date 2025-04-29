@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu, Zap, Cog, Building2, Bolt, Brain } from 'lucide-react';
+import { Menu, X, Cpu, Zap, Cog, Building2, Bolt, Brain, FlaskConical  } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -37,7 +37,8 @@ const Navbar: React.FC = () => {
     { path: '/department/ece', label: 'ECE', icon: <Zap className="w-4 h-4 inline mr-1 text-neon-ece" /> },
     { path: '/department/me', label: 'ME', icon: <Cog className="w-4 h-4 inline mr-1 text-neon-me" /> },
     { path: '/department/ce', label: 'CE', icon: <Building2 className="w-4 h-4 inline mr-1 text-neon-ce" /> },
-    { path: '/department/ee', label: 'EE', icon: <Bolt className="w-4 h-4 inline mr-1 text-neon-ee" /> }
+    { path: '/department/ee', label: 'EE', icon: <Bolt className="w-4 h-4 inline mr-1 text-neon-ee" /> },
+    { path: '/department/bsh', label: 'BSH', icon: <FlaskConical  className="w-4 h-4 inline mr-1 text-neon-bsh" /> },
   ];
 
   return (
