@@ -45,10 +45,14 @@ const Navbar: React.FC = () => {
  
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
-            <span className="text-primary">Tec</span>
+          {/* <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
+            <span className="text-primary">TEC</span>
             <span className="text-secondary">H</span>
-            <span className="text-accent">ETC</span>
+            <span className="text-accent">etc</span>
+          </Link> */}
+
+          <Link to="/" className="font-pixel text-xl tracking-wider" style={{ zIndex: 60 }}>
+            <span className="text-gradient">TECHETC</span>
           </Link>
 
           {/* Desktop Nav */}

@@ -146,19 +146,19 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="text-xl sm:text-2xl md:text-3xl mb-6 text-gray-300"
+              className="text-xl sm:text-2xl md:text-3xl mb-6 text-gradient-2"
             >
-              Retro Genesis: Where 8-bit Meets Innovation
+              Hooghly Engineering & Technology College
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
-              className="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8"
+              className="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 "
             >
-              Join us for the ultimate tech fest showcasing the most innovative projects 
-              across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines.
+              {/* Join us for the ultimate tech fest showcasing the most innovative projects across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines. */}
+              Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology. Whether you're a student, tech enthusiast, or industry professional, TechETC promises a day filled with inspiration and learning.
             </motion.p>
             
             {/* Date information with proper alignment - centered on small screens, left on large */}
