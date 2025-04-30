@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search, Check } from 'lucide-react';
 import { useRegistration } from '../contexts/RegistrationContext';
-import axios from "axios";
+// Remove axios import and use fetch instead
+// import axios from "axios";
+
 interface Event {
   id: string;
   title: string;
   department: string;
   departmentName: string;
 }
-
 
 const RegistrationModal: React.FC = () => {
   const { isModalOpen, closeModal, selectedEvents, toggleEventSelection } = useRegistration();
@@ -21,15 +22,35 @@ const RegistrationModal: React.FC = () => {
     department: '',
     year: '',
   });
-  async function submitEvents(){
-    const {name, email, phoneNumber, department, year} = formData;
-    const response =  await axios.post('http://localhost:3000/register', {
-      name, email, department, phone: phoneNumber,
-      year, events:selectedEvents
-    });
-    alert(response.data.msg);
-
+  
+  // Replace axios with fetch API
+  async function submitEvents() {
+    try {
+      const { name, email, phoneNumber, department, year } = formData;
+      const response = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name, 
+          email, 
+          department, 
+          phone: phoneNumber,
+          year, 
+          events: selectedEvents
+        }),
+      });
+      
+      const data = await response.json();
+      alert(data.msg);
+      closeModal();
+    } catch (error) {
+      console.error('Error submitting registration:', error);
+      alert('Failed to register. Please try again.');
+    }
   }
+
   const allEvents: Event[] = [
     { id: "hackathon", title: "Hackathon", department: "cse", departmentName: "CSE" },
     { id: "code-sprint", title: "Code Sprint", department: "cse", departmentName: "CSE" },
@@ -48,12 +69,7 @@ const RegistrationModal: React.FC = () => {
     event.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', { ...formData, events: selectedEvents });
-    closeModal();
-  };
-
+  // Remove unused handleSubmit function and use submitEvents directly
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -61,14 +77,15 @@ const RegistrationModal: React.FC = () => {
     });
   };
 
-  const getDepartmentColor = (dept: string) => {
+  // Use a safer approach for dynamic class names
+  const getDepartmentClass = (dept: string, type: 'bg' | 'text' | 'border') => {
     switch(dept) {
-      case 'cse': return 'neon-cse';
-      case 'ece': return 'neon-ece';
-      case 'me': return 'neon-me';
-      case 'ce': return 'neon-ce';
-      case 'ee': return 'neon-ee';
-      default: return 'primary';
+      case 'cse': return `${type}-primary`;
+      case 'ece': return `${type}-purple-500`;
+      case 'me': return `${type}-green-500`;
+      case 'ce': return `${type}-blue-500`;
+      case 'ee': return `${type}-yellow-500`;
+      default: return `${type}-primary`;
     }
   };
 
@@ -98,7 +115,8 @@ const RegistrationModal: React.FC = () => {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Changed form to div since we're handling submission manually */}
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-mono mb-2">Name</label>
@@ -125,8 +143,8 @@ const RegistrationModal: React.FC = () => {
                   <div>
                     <label className="block text-sm font-mono mb-2">Phone No</label>
                     <input
-                      type="number"
-                      name="phoneNumber"  // changed
+                      type="tel" // Changed from number to tel for better phone input
+                      name="phoneNumber"
                       required
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
@@ -183,27 +201,34 @@ const RegistrationModal: React.FC = () => {
                   </div>
 
                   <div className="max-h-48 overflow-y-auto space-y-2 bg-background p-4 rounded-md border border-primary">
-                    {filteredEvents.map((event) => (
-                      <div
-                        key={event.id}
-                        onClick={() => toggleEventSelection(event.id)}
-                        className={`flex items-center justify-between p-2 rounded cursor-pointer transition-colors ${
-                          selectedEvents.includes(event.id)
-                            ? `bg-${getDepartmentColor(event.department)} bg-opacity-20 border border-${getDepartmentColor(event.department)}`
-                            : 'hover:bg-gray-800'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className={`text-${getDepartmentColor(event.department)} mr-2`}>
-                            {event.departmentName}
-                          </span>
-                          <span>{event.title}</span>
+                    {filteredEvents.map((event) => {
+                      // Pre-compute classes to avoid dynamic class generation issues with Tailwind
+                      const bgClass = selectedEvents.includes(event.id) 
+                        ? `${getDepartmentClass(event.department, 'bg')} bg-opacity-20` 
+                        : 'hover:bg-gray-800';
+                      const borderClass = selectedEvents.includes(event.id) 
+                        ? `border ${getDepartmentClass(event.department, 'border')}` 
+                        : '';
+                      const textClass = getDepartmentClass(event.department, 'text');
+                      
+                      return (
+                        <div
+                          key={event.id}
+                          onClick={() => toggleEventSelection(event.id)}
+                          className={`flex items-center justify-between p-2 rounded cursor-pointer transition-colors ${bgClass} ${borderClass}`}
+                        >
+                          <div className="flex items-center">
+                            <span className={`${textClass} mr-2`}>
+                              {event.departmentName}
+                            </span>
+                            <span>{event.title}</span>
+                          </div>
+                          {selectedEvents.includes(event.id) && (
+                            <Check className={`h-5 w-5 ${textClass}`} />
+                          )}
                         </div>
-                        {selectedEvents.includes(event.id) && (
-                          <Check className={`h-5 w-5 text-${getDepartmentColor(event.department)}`} />
-                        )}
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -216,17 +241,14 @@ const RegistrationModal: React.FC = () => {
                     Cancel
                   </button>
                   <button
-                  onClick={()=>{
-                    submitEvents();
-                  }}
-                    type="submit"
+                    type="button"
+                    onClick={submitEvents}
                     className="px-4 py-2 bg-primary bg-opacity-20 border border-primary rounded-md hover:bg-opacity-30 transition-colors font-mono text-primary"
-                  
                   >
                     Register
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -235,4 +257,4 @@ const RegistrationModal: React.FC = () => {
   );
 };
 
-export default RegistrationModal
+export default RegistrationModal;
