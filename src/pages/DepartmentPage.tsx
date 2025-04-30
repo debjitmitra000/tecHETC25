@@ -190,7 +190,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 17",
           time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
-          bannerImage: "/images/Banner.webp",
+          bannerImage: "/images/electrotech-exploration.webp",
           rules: [
             "Teams of 2-3 members",
             "Create innovative electronic solutions",
@@ -351,7 +351,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 17",
           time: "10:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
-          bannerImage: "/images/Banner.webp",
+          bannerImage: "/images/electromat.webp",
           rules: [
             "Individual or teams of 2",
             "Multiple rounds with electromagnetic challenges",
@@ -473,7 +473,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 18",
           time: "10:00 AM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
-          bannerImage: "/images/Banner.webp",
+          bannerImage: "/images/model-display.webp",
           rules: [
             "Teams of 1-4 members",
             "Models must be original work",
