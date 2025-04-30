@@ -53,7 +53,7 @@ const DepartmentPage: React.FC = () => {
           title: "CODE – 2 – DUO",
           department: "cse",
           departmentName: "CSE",
-          description: "Pair up and compete in this coding challenge designed for speed and logic.",
+          description: "CODE-2-DUO will consist of 2 rounds, consisting of problems, testing your logic, algorithmic and problem-solving skills. The rounds are as follows: \n\n Round 1 (Prelims): 15 code snippets written in C language will be provided in Google form whose outputs are to be given by the participants. Time: 30 minutes.\n\n Round 2 (Finals): 4 problem statements ranging from easy, medium and hard levels for which a solution is to be given by the teams in C / C++ / JAVA. Time: 2 hours (120 minutes).",
           entryFee: 150,
           prize: 5000,
           date: "Nov 15",
@@ -61,11 +61,13 @@ const DepartmentPage: React.FC = () => {
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/code-2-duo.webp",
           rules: [
-            "Teams must consist of 2 members",
-            "All code must be written during the event",
-            "Use of open-source libraries is permitted",
-            "Time constraints will be enforced",
-            "Judging based on logic, efficiency, and correctness"
+            "Teams must consist of atleast and atmost 2 members, Solo is not allowed. ",
+            "This round will be hosted on HackerRank (www.hackerrank.com) as private/closed contests, of which the link will be shared right before the contest. Languages allowed: C / C++ / JAVA.",
+            "Any one member must have an account in hackerRank. If you don’t have one, get yourself an account at Hackerrank. DO CARRY YOUR USERNAME and PASSWORD TO THE EVENT LOCATION ON THE EVENT DAY.",
+            "Round 1 will have 15 code snippets written in C language, and participants need to give outputs of the snippets within 30 minutes.",
+            "In Round 1, there will be negative marking in this round. In case of tie in scores, submission time will be considered. Top 25% teams will move to next round.",
+            "Round 2 will have 4 problems, ranging from easy, medium to hard difficulty for 2 hours. All code must be written during the event. Teams must report at least 30 minutes before starting of the contest.",
+            "No team member can open any tab on the browser other than the Google form or HackerRank provided by coordinators. Also, if any team is caught researching, or cheating, or communicating with other teams during the contest, involved team(s) will be disqualified."
           ],
           location: "CSE Labs, Main Building",
           registration: "Open until Nov 10"
@@ -83,11 +85,11 @@ const DepartmentPage: React.FC = () => {
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/user-interface-user-experience.webp",
           rules: [
-            "Teams of 1-2 members",
-            "Design must be created during the event",
-            "Use any design software of your choice",
-            "Submit wireframes, mockups, and prototype",
-            "Judging based on creativity, usability, and adherence to design principles"
+            "It is a solo event where each participant can choose a theme from a given list and design and build a UI/UX interface.",
+            "VS CODE along with NODE JS will be installed in the machines. Also, Participants will be given 10–15 minutes to install any required extensions.",
+            "Use of any frontend stack is allowed – HTML/CSS/JS/React/Next.js or others",
+            "Internet access is allowed and encouraged for research and resources",
+            "Judging will be based on Creativity, Originality, Responsiveness, Theme Adaptation, Optimization and Time taken to complete the design."
           ],
           location: "Design Lab, Tech Building",
           registration: "Open until Nov 12"
@@ -105,11 +107,12 @@ const DepartmentPage: React.FC = () => {
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/battle-grounds-mobile-india.webp",
           rules: [
-            "Teams of 4 members",
-            "Players must bring their own devices",
-            "Classic mode matches",
-            "Tournament structure will be announced on event day",
-            "Fair play is mandatory"
+            "Every Team should have atleast 3 players. No duo or solo players allowed.",
+            "Players must bring their own Mobile Phones, Chargers and Headphones. WIFI will be provided but in case of any inconvinence, every Player have to use there own Mobile data.",
+            "Classic mode matches, ID Pass will be given at the time mentioned after registration by the Coordinator.",
+            "Points will be calculated according to the points table. If Final points came out to be same, Kill points will be considered. If Kills points also comes out to be same then Position of Last match would be considered.",
+            "Fair play is mandatory. If any player from any team found using any cheats, the whole team will be eliminated.",
+            "Regarding any disputes, the decision of the coordinators will be considered as final."
           ],
           location: "Gaming Arena, CSE Building",
           registration: "Open until Nov 14"
@@ -380,19 +383,23 @@ const DepartmentPage: React.FC = () => {
           title: "SUDOKU",
           department: "bsh",
           departmentName: "BSH",
-          description: "Challenge your logical thinking in this timed number puzzle event.",
-          entryFee: 100,
+          description: "Challenge your logical thinking in this timed number puzzle event. Contestants must complete a 9×9 Sudoku grid by filling in numbers from 1 to 9. No number should repeat within the same row, column, or 3×3 sub-grid.",
+          entryFee: 10,
           prize: 2000,
           date: "Nov 15",
           time: "10:00 AM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/sudoku.webp",
           rules: [
-            "Individual participation",
-            "Multiple difficulty levels",
-            "Timed rounds",
-            "No electronic devices allowed",
-            "Fastest correct solution wins"
+            "Contestants are not permitted to alter any numbers already provided in the grid.",
+            "Each contestant will have a maximum of 15 minutes to solve the Sudoku puzzle.",
+            "Only one winner will be declared for this event. The organizers will award the first position only.",
+            "The winner will be the first contestant to submit a completely correct solution.",
+            "If two or more contestants solve the puzzle correctly at the same time, a tie-breaker Sudoku puzzle will be given. The maximum time allotted for the tie-breaker will be 5 minutes.",
+            "If no contestant completes the puzzle correctly within the given time: Scores will be calculated as '+1' point for each correct entry, '–1' point for each incorrect entry. The contestant with the highest positive score will be declared the winner.",
+            "If there is still a tie, the tie-breaker rule (as above) will apply.",
+            "Any participant engaging in disruptive or disorderly behavior will be immediately disqualified.",
+            "In case of any conflict or dispute, the decision of the evaluators will be final and binding."
           ],
           location: "BSH Seminar Hall",
           registration: "Open until Nov 13"
@@ -402,19 +409,20 @@ const DepartmentPage: React.FC = () => {
           title: "HUNT FOR FUN",
           department: "bsh",
           departmentName: "BSH",
-          description: "A campus-wide treasure hunt with fun clues and exciting challenges.",
-          entryFee: 100,
+          description: "Think you have what it takes to crack mysteries and chase hidden treasures? Have you ever imagined yourself donning a detective’s hat, solving puzzles and chasing clues?\n\nWell, it's time to live that dream! TECHetc 2K25 proudly presents Hunt for Fun — the ultimate adventure where treasure hunters race against time, solving riddles and uncovering secrets. \nUse your wits, follow the clues, and unlock new levels of excitement at every turn. More thrill. More madness. More treasures.\n\n Get ready — the hunt is about to begin!",
+          entryFee: 60,
           prize: 2500,
           date: "Nov 16",
           time: "02:00 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/hunt-for-fun.webp",
           rules: [
-            "Teams of 3-4 members",
-            "Solve clues to find locations",
-            "Complete challenges at each location",
-            "Time limit of 2 hours",
-            "Team that completes all tasks fastest wins"
+            "Only team participation is allowed. Each team must have a minimum of 2 members and a maximum of 3 members.",
+            "Mixed teams (with members from different colleges) are allowed, but at least one team member must be a student of HETC.",
+            "The event consists of four rounds. Teams must successfully solve each round’s clue to progress to the next round.",
+            "10 minutes will be allotted for the 1st round. Only the top 12 teams from Round 1 will qualify for the next round. Teams failing to complete within the time limit will be eliminated.",
+            "Judges and Coordinators reserve the right to modify the rules or adjust timings. Any changes will be communicated to all teams.",
+            "The decision of the jury is final — no arguments or appeals will be entertained."
           ],
           location: "Campus-wide",
           registration: "Open until Nov 14"
@@ -441,7 +449,7 @@ const DepartmentPage: React.FC = () => {
           title: "QUIZZARD",
           department: "general",
           departmentName: "GENERAL",
-          description: "Put your general knowledge to the test in this fast-paced quiz battle.",
+          description: "Put your general knowledge to the test in this fast-paced quiz battle. \nThe details of each Round are as follows: \n\n Round 1: Current Affairs & G.K \n Round 2: Double Trouble (Basic Engineering) \n\n The Final Round are as follows:\nRound 3: Audio & Visual Round: (Movie, Music, Puzzle, Sports, Personality,Politics).\nRound 4: Guess/ Clue Round.\nRound 5: Rapid Fire Round.",
           entryFee: 50,
           prize: 2000,
           date: "Nov 17",
@@ -449,11 +457,16 @@ const DepartmentPage: React.FC = () => {
           icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizzard.webp",
           rules: [
-            "Teams of 2-3 members",
-            "Multiple rounds including rapid fire and buzzer",
-            "No use of electronic devices",
-            "Fair play is mandatory",
-            "Decision of the quizmaster is final"
+            "The competition carries prizes and certificates for 1st, 2nd & 3rd place holders only.",
+            "Participants should form a group of two students only.",
+            "Each round has its own special rules which will be announced on the spot.",
+            "Details of Quiz Question category: G.K & Current Affairs, Basic Engineering, Mix Bag (Music, Movie, Sports, Personality, Puzzle and Politics), books & Author, Life Style & Food Habit, Mythology, social media and Women Empowerment.",
+            "If more than eight teams register, all of them need to appear for a written screening test, which includes Multiple Choice Questions (MCQ).",
+            "Best eight qualifying teams (in terms of marks) will take part in the final quiz contest.",
+            "In case of a conflict regarding a question, decision of the jury panel will be final.",
+            "In case of tie between two or more teams, further provision of tie breaker will be proclaimed for next round.",
+            "No use of electronic devices. Any type of false move/ adopting unfair means by any member or members of any team will lead to disqualification of the whole team immediately.",
+            "Decision of the quizmaster is final. In case of unavoidable circumstances, rules may be changed."
           ],
           location: "Main Seminar Hall",
           registration: "Open until Nov 15"
@@ -662,8 +675,13 @@ const DepartmentPage: React.FC = () => {
                    {/* Rest of the modal content remains the same */}
                    <div className="p-6">
                      <p className="text-gray-300 mb-6">
-                       {selectedEvent.description}
-                     </p>
+                      {selectedEvent.description.split('\n').map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </p>
  
                      {/* Event details sections */}
                      <div className="grid grid-cols-2 gap-4 mb-6">
