@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useRegistration } from "../contexts/RegistrationContext";
-
 import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { EventProps } from "../components/EventCard";
@@ -18,8 +17,9 @@ import {
   BadgeCheck,
   FlaskConical,
   Bolt,
-  Brain
+  Brain,
 } from "lucide-react";
+import "../app.css";
 
 const DepartmentPage: React.FC = () => {
   const { dept } = useParams<{ dept: string }>();
@@ -495,577 +495,654 @@ const DepartmentPage: React.FC = () => {
   };
 
 
-   // Find department and event
-   const departmentInfo = dept && departments[dept as keyof typeof departments];
+  // Find department and event
+  const departmentInfo = dept && departments[dept as keyof typeof departments];
 
-   useEffect(() => {
-     if (departmentInfo && eventId) {
-       const event = departmentInfo.events.find((e) => e.id === eventId);
-       if (event) {
-         setSelectedEvent(event);
-       }
-     }
-   }, []);
-   // }, [dept, eventId, departmentInfo]);
- 
-   // Add this effect to detect scrolling within the modal
-   useEffect(() => {
-     if (selectedEvent) {
-       const modalContent = document.querySelector('.modal-content');
-       if (modalContent) {
-         const handleScroll = () => {
-           setIsScrolled(modalContent.scrollTop > 10);
-         };
-         modalContent.addEventListener('scroll', handleScroll);
-         return () => modalContent.removeEventListener('scroll', handleScroll);
-       }
-     }
-   }, [selectedEvent]);
- 
-   if (!departmentInfo) {
-     return (
-       <div className="pt-24 pb-16 text-center">
-         <h2 className="section-title">Department Not Found</h2>
-         <p>The requested department does not exist.</p>
-       </div>
-     );
-   }
- 
-   const color = departmentInfo.color;
- 
-   return (
-     <motion.div
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-       transition={{ duration: 0.5 }}
-       className="pt-24 pb-16"
-     >
-       <div className="container my-32 mx-auto px-4">
-         {/* Department Header */}
-         <div
-           className={`mb-10 p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden`}
-         >
-           <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5"></div>
- 
-           <div className="relative z-50 flex flex-col md:flex-row items-center gap-6">
-             <div
-               className={`w-20 h-20 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color}`}
-             >
-               {React.cloneElement(departmentInfo.icon as React.ReactElement, {
-                 className: `h-10 w-10 text-${color}`,
-               })}
-             </div>
- 
-             <div className="text-center md:text-left">
-               <h1
-                 className={`font-pixel text-3xl md:text-4xl text-${color} mb-2`}
-               >
-                 {departmentInfo.name}
-               </h1>
-               <p className="text-gray-300 max-w-2xl">
-                 {departmentInfo.description}
-               </p>
-             </div>
-           </div>
-         </div>
- 
-         {/* Navigation Tabs */}
-         <div className="flex justify-center mb-10">
-           <div
-             className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
-           >
-             <button
-               onClick={() => setActiveTab("events")}
-               className={`px-6 py-3 font-mono ${
-                 activeTab === "events"
-                   ? `bg-${color} text-white`
-                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-               }`}
-             >
-               EVENTS
-             </button>
-             <button
-               onClick={() => setActiveTab("team")}
-               className={`px-6 py-3 font-mono ${
-                 activeTab === "team"
-                   ? `bg-${color} text-white`
-                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-               }`}
-             >
-               TEAM
-             </button>
-             <button
-               onClick={() => setActiveTab("about")}
-               className={`px-6 py-3 font-mono ${
-                 activeTab === "about"
-                   ? `bg-${color} text-white`
-                   : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-               }`}
-             >
-               ABOUT
-             </button>
-           </div>
-         </div>
- 
-         {/* Event Detail Modal */}
-         {selectedEvent && (
-           <motion.div
-             initial={{ opacity: 0, scale: 0.9 }}
-             animate={{ opacity: 1, scale: 1 }}
-             exit={{ opacity: 0 }}
-             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75"
-             onClick={() => setSelectedEvent(null)}
-           >
-             <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
-               <div className="flex items-center justify-center h-full p-4 pt-16 pb-16">
-                 <div
-                   className={`modal-content bg-surface border-2 border-${color} rounded-lg pixel-corners max-w-3xl w-full max-h-[80vh] overflow-y-auto`}
-                   onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal content
-                 >
-                   <div
-                     className={`p-4 ${isScrolled ? `bg-${color}` : `bg-${color} bg-opacity-20`} 
+  useEffect(() => {
+    if (departmentInfo && eventId) {
+      const event = departmentInfo.events.find((e) => e.id === eventId);
+      if (event) {
+        setSelectedEvent(event);
+      }
+    }
+  }, []);
+  // }, [dept, eventId, departmentInfo]);
+
+  // Add this effect to detect scrolling within the modal
+  useEffect(() => {
+    if (selectedEvent) {
+      const modalContent = document.querySelector(".modal-content");
+      if (modalContent) {
+        const handleScroll = () => {
+          setIsScrolled(modalContent.scrollTop > 10);
+        };
+        modalContent.addEventListener("scroll", handleScroll);
+        return () => modalContent.removeEventListener("scroll", handleScroll);
+      }
+    }
+  }, [selectedEvent]);
+
+  if (!departmentInfo) {
+    return (
+      <div className="pt-24 pb-16 text-center">
+        <h2 className="section-title">Department Not Found</h2>
+        <p>The requested department does not exist.</p>
+      </div>
+    );
+  }
+
+  const color = departmentInfo.color;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="pt-24 pb-16"
+    >
+      <div className="container my-32 mx-auto px-4">
+        {/* Department Header */}
+        <div
+          className={`mb-10 p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden`}
+        >
+          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5"></div>
+
+          <div className="relative z-50 flex flex-col md:flex-row items-center gap-6">
+            <div
+              className={`w-20 h-20 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color}`}
+            >
+              {React.cloneElement(departmentInfo.icon as React.ReactElement, {
+                className: `h-10 w-10 text-${color}`,
+              })}
+            </div>
+
+            <div className="text-center md:text-left">
+              <h1
+                className={`font-pixel text-3xl md:text-4xl text-${color} mb-2`}
+              >
+                {departmentInfo.name}
+              </h1>
+              <p className="text-gray-300 max-w-2xl">
+                {departmentInfo.description}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="flex justify-center mb-10">
+          <div
+            className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
+          >
+            <button
+              onClick={() => setActiveTab("events")}
+              className={`px-6 py-3 font-mono ${
+                activeTab === "events"
+                  ? `bg-${color} text-white`
+                  : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+              }`}
+            >
+              EVENTS
+            </button>
+            <button
+              onClick={() => setActiveTab("team")}
+              className={`px-6 py-3 font-mono ${
+                activeTab === "team"
+                  ? `bg-${color} text-white`
+                  : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+              }`}
+            >
+              TEAM
+            </button>
+            <button
+              onClick={() => setActiveTab("about")}
+              className={`px-6 py-3 font-mono ${
+                activeTab === "about"
+                  ? `bg-${color} text-white`
+                  : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+              }`}
+            >
+              ABOUT
+            </button>
+          </div>
+        </div>
+
+        {/* Event Detail Modal */}
+        {selectedEvent && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75"
+            onClick={() => setSelectedEvent(null)}
+          >
+            <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+              <div className="flex items-center justify-center h-full p-4 pt-16 pb-16">
+                <div
+                  className={`modal-content bg-surface border-2 border-${color} rounded-lg pixel-corners max-w-3xl w-full max-h-[80vh] overflow-y-auto`}
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal content
+                >
+                  <div
+                    className={`p-4 ${
+                      isScrolled ? `bg-${color}` : `bg-${color} bg-opacity-20`
+                    } 
                      flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
-                   >
-                     <h3 className={`font-pixel text-xl ${isScrolled ? 'text-white' : `text-${color}`}`}>
-                       {selectedEvent.title}
-                     </h3>
-                     <button
-                       onClick={closeModal}
-                       className="p-1 rounded-full hover:bg-black hover:bg-opacity-20"
-                       aria-label="Close modal"
-                     >
-                       <svg
-                         xmlns="http://www.w3.org/2000/svg"
-                         className="h-6 w-6"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor"
-                       >
-                         <path
-                           strokeLinecap="round"
-                           strokeLinejoin="round"
-                           strokeWidth={2}
-                           d="M6 18L18 6M6 6l12 12"
-                         />
-                       </svg>
-                     </button>
-                   </div>
- 
-                   {/* Banner image */}
-                   {selectedEvent.bannerImage && (
-                     <div className="w-full h-48 relative overflow-hidden">
-                       <img
-                         src={selectedEvent.bannerImage}
-                         alt="Event Banner"
-                         className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity"
-                       />
-                     </div>
-                   )}
- 
-                   {/* Rest of the modal content remains the same */}
-                   <div className="p-6">
-                     <p className="text-gray-300 mb-6">
-                       {selectedEvent.description}
-                     </p>
- 
-                     {/* Event details sections */}
-                     <div className="grid grid-cols-2 gap-4 mb-6">
-                       <div
-                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
-                       >
-                         <Calendar className={`h-5 w-5 mr-2 text-${color}`} />
-                         <div>
-                           <span className="text-gray-400 text-sm block">
-                             Date
-                           </span>
-                           <span className="font-mono">
-                             {selectedEvent.date}
-                           </span>
-                         </div>
-                       </div>
- 
-                       <div
-                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
-                       >
-                         <Clock className={`h-5 w-5 mr-2 text-${color}`} />
-                         <div>
-                           <span className="text-gray-400 text-sm block">
-                             Time
-                           </span>
-                           <span className="font-mono">
-                             {selectedEvent.time}
-                           </span>
-                         </div>
-                       </div>
- 
-                       <div
-                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
-                       >
-                         <MapPin className={`h-5 w-5 mr-2 text-${color}`} />
-                         <div>
-                           <span className="text-gray-400 text-sm block">
-                             Location
-                           </span>
-                           <span className="font-mono">
-                             {selectedEvent.location}
-                           </span>
-                         </div>
-                       </div>
- 
-                       <div
-                         className={`flex items-center p-3 bg-background rounded border border-${color}`}
-                       >
-                         <CreditCard className={`h-5 w-5 mr-2 text-${color}`} />
-                         <div>
-                           <span className="text-gray-400 text-sm block">
-                             Entry Fee
-                           </span>
-                           <span className="font-mono">
-                             ₹{selectedEvent.entryFee}
-                           </span>
-                         </div>
-                       </div>
-                     </div>
- 
-                     <div
-                       className={`mb-6 p-4 bg-background rounded border border-${color}`}
-                     >
-                       <div className="flex items-center mb-3">
-                         <Trophy className={`h-5 w-5 mr-2 text-${color}`} />
-                         <h4 className="font-mono text-lg">Prize Pool</h4>
-                       </div>
-                       <div className={`text-2xl font-pixel text-${color}`}>
-                         ₹{selectedEvent.prize}
-                       </div>
-                     </div>
- 
-                     <div className="mb-6">
-                       <h4
-                         className={`font-mono text-lg border-b border-${color} pb-2 mb-3`}
-                       >
-                         Rules & Guidelines
-                       </h4>
-                       <ul className="space-y-2">
-                         {selectedEvent.rules.map((rule, index) => (
-                           <li key={index} className="flex items-start">
-                             <BadgeCheck
-                               className={`h-5 w-5 mr-2 text-${color} mt-0.5 flex-shrink-0`}
-                             />
-                             <span className="text-gray-300">{rule}</span>
-                           </li>
-                         ))}
-                       </ul>
-                     </div>
- 
-                     <div className="text-center">
-                       <div className="mb-2 text-gray-400">
-                         <span>Registration: </span>
-                         <span className="font-mono">
-                           {selectedEvent.registration}
-                         </span>
-                       </div>
-                       <button
-                         onClick={() => {
-                           setSelectedEvents([selectedEvent.id]);
-                           openModal();
-                         }}
-                         className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}
-                       >
-                         Register Now
-                       </button>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </motion.div>
-         )}
- 
-         {/* Content Tabs */}
-         <div>
-           {/* Events Tab */}
-           {activeTab === "events" && (
-             <div>
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                 {departmentInfo.events.map((event, index) => (
-                   <motion.div
-                     key={event.id}
-                     initial={{ opacity: 0, y: 20 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                     className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-102 transition-all duration-300 shadow-${color} hover:shadow-lg`}
-                   >
-                     <div
-                       className={`p-4 bg-${color} bg-opacity-10 flex items-center justify-between`}
-                     >
-                       <div className="flex items-center">
-                         <span className="mr-2">{event.icon}</span>
-                         <h3 className={`font-pixel text-lg text-${color}`}>
-                           {event.title}
-                         </h3>
-                       </div>
-                     </div>
- 
-                     <div className="p-4">
-                       <p className="text-gray-300 mb-4">{event.description}</p>
- 
-                       <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
-                         <div className="bg-background rounded p-2">
-                           <span className="block text-gray-400">Entry Fee</span>
-                           <span className="font-mono text-white">
-                             ₹{event.entryFee}
-                           </span>
-                         </div>
-                         <div className="bg-background rounded p-2">
-                           <span className="block text-gray-400">Prize</span>
-                           <span className="font-mono text-white">
-                             ₹{event.prize}
-                           </span>
-                         </div>
-                         <div className="bg-background rounded p-2">
-                           <span className="block text-gray-400">Date</span>
-                           <span className="font-mono text-white">
-                             {event.date}
-                           </span>
-                         </div>
-                         <div className="bg-background rounded p-2">
-                           <span className="block text-gray-400">Time</span>
-                           <span className="font-mono text-white">
-                             {event.time}
-                           </span>
-                         </div>
-                       </div>
- 
-                       <button
-                         onClick={() => setSelectedEvent(event)}
-                         className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
-                       >
-                         View Details
-                       </button>
-                     </div>
-                   </motion.div>
-                 ))}
-               </div>
-             </div>
-           )}
- 
-           {/* Team Tab */}
-           {activeTab === "team" && (
-             <div>
-               <div
-                 className={`p-6 mb-8 bg-surface border border-${color} rounded-lg pixel-corners`}
-               >
-                 <h2 className={`font-pixel text-xl text-${color} mb-4`}>
-                   Faculty & Coordinators
-                 </h2>
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                   <div className="flex items-center bg-background p-4 rounded-lg">
-                     <div
-                       className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
-                     >
-                       <Users className={`h-6 w-6 text-${color}`} />
-                     </div>
-                     <div>
-                       <div className="font-mono text-lg">
-                         {departmentInfo.coordinator}
-                       </div>
-                       <div className="text-gray-400">Faculty Coordinator</div>
-                     </div>
-                   </div>
-                   <div className="flex items-center bg-background p-4 rounded-lg">
-                     <div
-                       className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
-                     >
-                       <Users className={`h-6 w-6 text-${color}`} />
-                     </div>
-                     <div>
-                       <div className="font-mono text-lg">
-                         {departmentInfo.studentCoordinator}
-                       </div>
-                       <div className="text-gray-400">Student Coordinator</div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
- 
-               <h2 className={`font-pixel text-xl text-${color} mb-6`}>
-                 Team Members
-               </h2>
-               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                 {departmentInfo.teamMembers.map((member, index) => (
-                   <motion.div
-                     key={index}
-                     initial={{ opacity: 0, y: 20 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                     className={`bg-surface border border-${color} rounded-lg pixel-corners overflow-hidden`}
-                   >
-                     <div className="aspect-square overflow-hidden">
-                       <img
-                         src={member.avatar}
-                         alt={member.name}
-                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                       />
-                     </div>
-                     <div className="p-4">
-                       <h3 className="font-mono text-lg">{member.name}</h3>
-                       <p className={`text-${color} text-sm`}>{member.role}</p>
-                     </div>
-                   </motion.div>
-                 ))}
-               </div>
-             </div>
-           )}
- 
-           {/* About Tab */}
-           {activeTab === "about" && (
-             <div className="max-w-4xl mx-auto">
-               <div
-                 className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners mb-8`}
-               >
-                 <h2 className={`font-pixel text-xl text-${color} mb-4`}>
-                   About {departmentInfo.shortName} Department
-                 </h2>
-                 <p className="text-gray-300 mb-4">
-                   {departmentInfo.description} Our department is committed to
-                   fostering innovation and technical excellence through hands-on
-                   competitions and collaborative events.
-                 </p>
-                 <p className="text-gray-300">
-                   The {departmentInfo.name} department at TecHETC features a
-                   series of challenging events designed to test students'
-                   technical knowledge, creativity, and problem-solving
-                   abilities. Our competitions are judged by faculty experts and
-                   industry professionals.
-                 </p>
-               </div>
- 
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                 <div
-                   className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
-                 >
-                   <h3 className={`font-pixel text-lg text-${color} mb-4`}>
-                     Participation Guidelines
-                   </h3>
-                   <ul className="space-y-3">
-                     <li className="flex items-start">
-                       <span
-                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
-                       ></span>
-                       <span>Registration is mandatory for all events</span>
-                     </li>
-                     <li className="flex items-start">
-                       <span
-                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
-                       ></span>
-                       <span>Participants must carry valid ID proof</span>
-                     </li>
-                     <li className="flex items-start">
-                       <span
-                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
-                       ></span>
-                       <span>Teams must adhere to the specified team size</span>
-                     </li>
-                     <li className="flex items-start">
-                       <span
-                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
-                       ></span>
-                       <span>Event-specific rules must be followed</span>
-                     </li>
-                     <li className="flex items-start">
-                       <span
-                         className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
-                       ></span>
-                       <span>Judges' decisions are final</span>
-                     </li>
-                   </ul>
-                 </div>
- 
-                 <div
-                   className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
-                 >
-                   <h3 className={`font-pixel text-lg text-${color} mb-4`}>
-                     Contact Information
-                   </h3>
-                   <ul className="space-y-4">
-                     <li className="flex items-start">
-                       <span className={`mr-3 text-${color}`}>
-                         <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           className="h-5 w-5"
-                           fill="none"
-                           viewBox="0 0 24 24"
-                           stroke="currentColor"
-                         >
-                           <path
-                             strokeLinecap="round"
-                             strokeLinejoin="round"
-                             strokeWidth={2}
-                             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                           />
-                         </svg>
-                       </span>
-                       <span>
-                         {departmentInfo.shortName.toLowerCase()}@techetc.edu
-                       </span>
-                     </li>
-                     <li className="flex items-start">
-                       <span className={`mr-3 text-${color}`}>
-                         <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           className="h-5 w-5"
-                           fill="none"
-                           viewBox="0 0 24 24"
-                           stroke="currentColor"
-                         >
-                           <path
-                             strokeLinecap="round"
-                             strokeLinejoin="round"
-                             strokeWidth={2}
-                             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                           />
-                         </svg>
-                       </span>
-                       <span>+91 9876543210</span>
-                     </li>
-                     <li className="flex items-start">
-                       <span className={`mr-3 text-${color}`}>
-                         <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           className="h-5 w-5"
-                           fill="none"
-                           viewBox="0 0 24 24"
-                           stroke="currentColor"
-                         >
-                           <path
-                             strokeLinecap="round"
-                             strokeLinejoin="round"
-                             strokeWidth={2}
-                             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                           />
-                           <path
-                             strokeLinecap="round"
-                             strokeLinejoin="round"
-                             strokeWidth={2}
-                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                           />
-                         </svg>
-                       </span>
-                       <span>
-                         {departmentInfo.shortName} Department, Engineering
-                         College Campus, Tech Avenue
-                       </span>
-                     </li>
-                   </ul>
-                 </div>
-               </div>
-             </div>
-           )}
-         </div>
-       </div>
-     </motion.div>
-   );
- };
- 
- export default DepartmentPage;
+                  >
+                    <h3
+                      className={`font-pixel text-xl ${
+                        isScrolled ? "text-white" : `text-${color}`
+                      }`}
+                    >
+                      {selectedEvent.title}
+                    </h3>
+                    <button
+                      onClick={closeModal}
+                      className="p-1 rounded-full hover:bg-black hover:bg-opacity-20"
+                      aria-label="Close modal"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {/* Cyberpunk banner with enhanced animation */}
+                  {selectedEvent.bannerImage && (
+                    <div className="w-full h-48 relative overflow-hidden group">
+                      {/* Banner Image */}
+                      <img
+                        src={selectedEvent.bannerImage}
+                        alt="Event Banner"
+                        className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.07] group-hover:brightness-125"
+                      />
+
+                      {/* Color Gradient Overlay */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r from-${color} to-transparent opacity-0 group-hover:opacity-40 mix-blend-screen transition-opacity duration-500 pointer-events-none`}
+                      ></div>
+
+                      {/* Grid Overlay */}
+                      <div className="absolute inset-0 bg-grid-pattern bg-[length:20px_20px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
+
+                      {/* Scanning Line */}
+                      <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div
+                          className={`absolute h-full w-1 bg-${color} blur-sm left-0 group-hover:left-full transition-all ease-in-out duration-[1500ms] opacity-80`}
+                        ></div>
+                      </div>
+
+                      {/* Digital Frame with Neon Corners */}
+                      <div
+                        className={`absolute inset-0 border border-${color} opacity-0 group-hover:opacity-100 scale-105 group-hover:scale-100 transition-all duration-500 pointer-events-none animate-neon-border`}
+                      >
+                        {/* Corners */}
+                        <div
+                          className={`absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-${color} transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-100`}
+                        ></div>
+                        <div
+                          className={`absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-${color} transform translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-200`}
+                        ></div>
+                        <div
+                          className={`absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-${color} transform -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-300`}
+                        ></div>
+                        <div
+                          className={`absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-${color} transform translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-400`}
+                        ></div>
+                      </div>
+
+                      {/* Horizontal Scan Lines */}
+                      <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div
+                          className={`absolute h-px w-full bg-${color} top-1/4 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 delay-200 opacity-70`}
+                        ></div>
+                        <div
+                          className={`absolute h-px w-full bg-${color} top-2/4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-700 delay-300 opacity-70`}
+                        ></div>
+                        <div
+                          className={`absolute h-px w-full bg-${color} top-3/4 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 delay-400 opacity-70`}
+                        ></div>
+                      </div>
+
+                      {/* Glitch Flash */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div className="absolute inset-0 bg-black opacity-0 group-hover:animate-glitch-flash"></div>
+                      </div>
+
+                      {/* Diagonal Scan Lines */}
+                      <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+                        <div
+                          className={`absolute w-1/2 h-px bg-${color} rotate-45 -left-full -top-12 group-hover:left-full group-hover:top-full transition-all duration-1500 delay-300`}
+                        ></div>
+                        <div
+                          className={`absolute w-1/2 h-px bg-${color} rotate-45 -left-full -top-24 group-hover:left-full group-hover:top-full transition-all duration-1500 delay-600`}
+                        ></div>
+                        <div
+                          className={`absolute w-1/2 h-px bg-${color} rotate-45 -left-full -top-36 group-hover:left-full group-hover:top-full transition-all duration-1500 delay-900`}
+                        ></div>
+                      </div>
+
+                      {/* Edge Glow Pulse */}
+                      <div
+                        className={`absolute inset-0 border-2 border-${color} opacity-0 group-hover:opacity-20 blur-sm scale-105 group-hover:scale-100 transition-all duration-500 pointer-events-none group-hover:animate-pulse-glow`}
+                      ></div>
+                    </div>
+                  )}
+
+                  {/* Rest of the modal content remains the same */}
+                  <div className="p-6">
+                    <p className="text-gray-300 mb-6">
+                      {selectedEvent.description}
+                    </p>
+
+                    {/* Event details sections */}
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div
+                        className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                      >
+                        <Calendar className={`h-5 w-5 mr-2 text-${color}`} />
+                        <div>
+                          <span className="text-gray-400 text-sm block">
+                            Date
+                          </span>
+                          <span className="font-mono">
+                            {selectedEvent.date}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                      >
+                        <Clock className={`h-5 w-5 mr-2 text-${color}`} />
+                        <div>
+                          <span className="text-gray-400 text-sm block">
+                            Time
+                          </span>
+                          <span className="font-mono">
+                            {selectedEvent.time}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                      >
+                        <MapPin className={`h-5 w-5 mr-2 text-${color}`} />
+                        <div>
+                          <span className="text-gray-400 text-sm block">
+                            Location
+                          </span>
+                          <span className="font-mono">
+                            {selectedEvent.location}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex items-center p-3 bg-background rounded border border-${color}`}
+                      >
+                        <CreditCard className={`h-5 w-5 mr-2 text-${color}`} />
+                        <div>
+                          <span className="text-gray-400 text-sm block">
+                            Entry Fee
+                          </span>
+                          <span className="font-mono">
+                            ₹{selectedEvent.entryFee}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className={`mb-6 p-4 bg-background rounded border border-${color}`}
+                    >
+                      <div className="flex items-center mb-3">
+                        <Trophy className={`h-5 w-5 mr-2 text-${color}`} />
+                        <h4 className="font-mono text-lg">Prize Pool</h4>
+                      </div>
+                      <div className={`text-2xl font-pixel text-${color}`}>
+                        ₹{selectedEvent.prize}
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4
+                        className={`font-mono text-lg border-b border-${color} pb-2 mb-3`}
+                      >
+                        Rules & Guidelines
+                      </h4>
+                      <ul className="space-y-2">
+                        {selectedEvent.rules.map((rule, index) => (
+                          <li key={index} className="flex items-start">
+                            <BadgeCheck
+                              className={`h-5 w-5 mr-2 text-${color} mt-0.5 flex-shrink-0`}
+                            />
+                            <span className="text-gray-300">{rule}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="text-center">
+                      <div className="mb-2 text-gray-400">
+                        <span>Registration: </span>
+                        <span className="font-mono">
+                          {selectedEvent.registration}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => {
+                          setSelectedEvents([selectedEvent.id]);
+                          openModal();
+                        }}
+                        className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}
+                      >
+                        Register Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Content Tabs */}
+        <div>
+          {/* Events Tab */}
+          {activeTab === "events" && (
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {departmentInfo.events.map((event, index) => (
+                  <motion.div
+                    key={event.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`bg-surface border-2 border-${color} rounded-lg overflow-hidden pixel-corners hover:scale-102 transition-all duration-300 shadow-${color} hover:shadow-lg`}
+                  >
+                    <div
+                      className={`p-4 bg-${color} bg-opacity-10 flex items-center justify-between`}
+                    >
+                      <div className="flex items-center">
+                        <span className="mr-2">{event.icon}</span>
+                        <h3 className={`font-pixel text-lg text-${color}`}>
+                          {event.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="p-4">
+                      <p className="text-gray-300 mb-4">{event.description}</p>
+
+                      <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
+                        <div className="bg-background rounded p-2">
+                          <span className="block text-gray-400">Entry Fee</span>
+                          <span className="font-mono text-white">
+                            ₹{event.entryFee}
+                          </span>
+                        </div>
+                        <div className="bg-background rounded p-2">
+                          <span className="block text-gray-400">Prize</span>
+                          <span className="font-mono text-white">
+                            ₹{event.prize}
+                          </span>
+                        </div>
+                        <div className="bg-background rounded p-2">
+                          <span className="block text-gray-400">Date</span>
+                          <span className="font-mono text-white">
+                            {event.date}
+                          </span>
+                        </div>
+                        <div className="bg-background rounded p-2">
+                          <span className="block text-gray-400">Time</span>
+                          <span className="font-mono text-white">
+                            {event.time}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => setSelectedEvent(event)}
+                        className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Team Tab */}
+          {activeTab === "team" && (
+            <div>
+              <div
+                className={`p-6 mb-8 bg-surface border border-${color} rounded-lg pixel-corners`}
+              >
+                <h2 className={`font-pixel text-xl text-${color} mb-4`}>
+                  Faculty & Coordinators
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-center bg-background p-4 rounded-lg">
+                    <div
+                      className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
+                    >
+                      <Users className={`h-6 w-6 text-${color}`} />
+                    </div>
+                    <div>
+                      <div className="font-mono text-lg">
+                        {departmentInfo.coordinator}
+                      </div>
+                      <div className="text-gray-400">Faculty Coordinator</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center bg-background p-4 rounded-lg">
+                    <div
+                      className={`w-12 h-12 rounded-full bg-${color} bg-opacity-20 flex items-center justify-center mr-4`}
+                    >
+                      <Users className={`h-6 w-6 text-${color}`} />
+                    </div>
+                    <div>
+                      <div className="font-mono text-lg">
+                        {departmentInfo.studentCoordinator}
+                      </div>
+                      <div className="text-gray-400">Student Coordinator</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 className={`font-pixel text-xl text-${color} mb-6`}>
+                Team Members
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {departmentInfo.teamMembers.map((member, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={`bg-surface border border-${color} rounded-lg pixel-corners overflow-hidden`}
+                  >
+                    <div className="aspect-square overflow-hidden">
+                      <img
+                        src={member.avatar}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-mono text-lg">{member.name}</h3>
+                      <p className={`text-${color} text-sm`}>{member.role}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* About Tab */}
+          {activeTab === "about" && (
+            <div className="max-w-4xl mx-auto">
+              <div
+                className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners mb-8`}
+              >
+                <h2 className={`font-pixel text-xl text-${color} mb-4`}>
+                  About {departmentInfo.shortName} Department
+                </h2>
+                <p className="text-gray-300 mb-4">
+                  {departmentInfo.description} Our department is committed to
+                  fostering innovation and technical excellence through hands-on
+                  competitions and collaborative events.
+                </p>
+                <p className="text-gray-300">
+                  The {departmentInfo.name} department at TecHETC features a
+                  series of challenging events designed to test students'
+                  technical knowledge, creativity, and problem-solving
+                  abilities. Our competitions are judged by faculty experts and
+                  industry professionals.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                  className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
+                >
+                  <h3 className={`font-pixel text-lg text-${color} mb-4`}>
+                    Participation Guidelines
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                      ></span>
+                      <span>Registration is mandatory for all events</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                      ></span>
+                      <span>Participants must carry valid ID proof</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                      ></span>
+                      <span>Teams must adhere to the specified team size</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                      ></span>
+                      <span>Event-specific rules must be followed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full bg-${color} mt-2 mr-3`}
+                      ></span>
+                      <span>Judges' decisions are final</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div
+                  className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
+                >
+                  <h3 className={`font-pixel text-lg text-${color} mb-4`}>
+                    Contact Information
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <span className={`mr-3 text-${color}`}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        {departmentInfo.shortName.toLowerCase()}@techetc.edu
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className={`mr-3 text-${color}`}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                      </span>
+                      <span>+91 9876543210</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className={`mr-3 text-${color}`}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        {departmentInfo.shortName} Department, Engineering
+                        College Campus, Tech Avenue
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default DepartmentPage;
