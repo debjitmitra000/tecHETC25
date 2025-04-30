@@ -27,7 +27,6 @@ const DepartmentPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
   const { dept } = useParams<{ dept: string }>();
-  const { openModal, setSelectedEvents } = useRegistration();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate(); // Add this hook for programmatic navigation
   const eventId = searchParams.get("event");
@@ -993,15 +992,7 @@ const DepartmentPage: React.FC = () => {
                           {selectedEvent.registration}
                         </span>
                       </div>
-                      <button
-                        onClick={() => {
-                          setSelectedEvents([selectedEvent.id]);
-                          openModal();
-                        }}
-                        className={`btn border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20`}
-                      >
-                        Register Now
-                      </button>
+                      
                     </div>
                   </div>
                 </div>
