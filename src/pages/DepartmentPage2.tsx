@@ -225,7 +225,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 16",
           time: "11:00 AM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
-          bannerImage: "/images/Banner.webp",
+          bannerImage: "/images/cadmania.webp",
           rules: [
             "Individual participation",
             "4-hour time limit",
@@ -286,7 +286,7 @@ const DepartmentPage: React.FC = () => {
           date: "Nov 17",
           time: "11:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-          bannerImage: "/images/Banner.webp",
+          bannerImage: "/images/insta-plan.webp",
           rules: [
             "Teams of 2-3 members",
             "Plans must be created within time limit",

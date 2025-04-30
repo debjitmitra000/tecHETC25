@@ -99,7 +99,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 16",
       time: "11:00 AM",
       icon: <Cog className="h-5 w-5 text-neon-me" />,
-      bannerImage: "/images/Banner.webp",
+      bannerImage: "/images/cadmania.webp",
     },
     {
       id: "user-interface-user-experience",
@@ -164,7 +164,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 17",
       time: "11:00 AM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
-      bannerImage: "/images/Banner.webp",
+      bannerImage: "/images/insta-plan.webp",
     },
     {
       id: "battle-grounds-mobile-india",
