@@ -38,7 +38,7 @@ const EventsPage: React.FC = () => {
     },
     {
       id: "code-2-duo",
-      title: "CODE – 2 – DUO",
+      title: "CODE–2–DUO",
       department: "cse",
       departmentName: "CSE",
       description: "Pair up and compete in this coding challenge designed for speed and logic.",
@@ -103,7 +103,7 @@ const EventsPage: React.FC = () => {
     },
     {
       id: "user-interface-user-experience",
-      title: "USER INTERFACE – USER EXPERIENCE (UI – UX)",
+      title: "UI–UX Design",
       department: "cse",
       departmentName: "CSE",
       description: "Design modern and user-friendly interfaces with top-notch UX principles.",
@@ -151,7 +151,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 17",
       time: "10:00 AM",
       icon: <Bolt className="h-5 w-5 text-neon-ee" />,
-      bannerImage: "/images/Banner.webp",
+      bannerImage: "/images/electromat.webp",
     },
     {
       id: "insta-plan",
@@ -168,7 +168,7 @@ const EventsPage: React.FC = () => {
     },
     {
       id: "battle-grounds-mobile-india",
-      title: "BATTLE GROUNDS MOBILE INDIA (BGMI)",
+      title: "BGMI",
       department: "cse",
       departmentName: "CSE",
       description: "Compete in the ultimate mobile battle royale tournament.",
@@ -203,7 +203,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 17",
       time: "03:00 PM",
       icon: <Zap className="h-5 w-5 text-neon-ece" />,
-      bannerImage: "/images/Banner.webp",
+      bannerImage: "/images/electrotech-exploration.webp",
     },
     {
       id: "model-display",
@@ -216,7 +216,7 @@ const EventsPage: React.FC = () => {
       date: "Nov 18",
       time: "10:00 AM",
       icon: <Brain className="h-5 w-5 text-neon-general" />,
-      bannerImage: "/images/Banner.webp",
+      bannerImage: "/images/model-display.webp",
     },
   ];
 

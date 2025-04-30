@@ -52,7 +52,7 @@ const EventsSection: React.FC = () => {
     },
     {
       id: "battle-grounds-mobile-india",
-      title: "BATTLE GROUNDS MOBILE INDIA (BGMI)",
+      title: "BGMI",
       department: "cse",
       departmentName: "CSE",
       description: "Compete in the ultimate mobile battle royale tournament.",
