@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search, Check } from 'lucide-react';
 import { useRegistration } from '../contexts/RegistrationContext';
-
+import axios from "axios";
 interface Event {
   id: string;
   title: string;
@@ -10,16 +10,26 @@ interface Event {
   departmentName: string;
 }
 
+
 const RegistrationModal: React.FC = () => {
   const { isModalOpen, closeModal, selectedEvents, toggleEventSelection } = useRegistration();
   const [searchTerm, setSearchTerm] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phoneNumber: '',
     department: '',
     year: '',
   });
+  async function submitEvents(){
+    const {name, email, phoneNumber, department, year} = formData;
+    const response =  await axios.post('http://localhost:3000/register', {
+      name, email, department, phone: phoneNumber,
+      year, events:selectedEvents
+    });
+    alert(response.data.msg);
 
+  }
   const allEvents: Event[] = [
     { id: "hackathon", title: "Hackathon", department: "cse", departmentName: "CSE" },
     { id: "code-sprint", title: "Code Sprint", department: "cse", departmentName: "CSE" },
@@ -118,7 +128,7 @@ const RegistrationModal: React.FC = () => {
                       type="number"
                       name="phoneNumber"  // changed
                       required
-                      value={formData.number}
+                      value={formData.phoneNumber}
                       onChange={handleInputChange}
                       className="w-full bg-background border border-primary rounded-md p-2 font-mono focus:outline-none focus:ring-2 focus:ring-primary"
                     />
@@ -206,8 +216,12 @@ const RegistrationModal: React.FC = () => {
                     Cancel
                   </button>
                   <button
+                  onClick={()=>{
+                    submitEvents();
+                  }}
                     type="submit"
                     className="px-4 py-2 bg-primary bg-opacity-20 border border-primary rounded-md hover:bg-opacity-30 transition-colors font-mono text-primary"
+                  
                   >
                     Register
                   </button>
