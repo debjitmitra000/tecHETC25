@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <h3 className="font-pixel text-xl mb-4">
-              <span className="text-primary">Tec</span>
-              <span className="text-secondary">H</span>
-              <span className="text-accent">ETC</span>
+              <span className="text-gradient">TECHetc</span>
+              {/* <span className="text-secondary">H</span>
+              <span className="text-accent">ETC</span> */}
             </h3>
             <p className="text-gray-400 mb-4">
               The ultimate college tech fest celebrating innovation across all engineering disciplines.

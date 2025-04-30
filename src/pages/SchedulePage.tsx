@@ -50,7 +50,7 @@ const SchedulePage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title">Event Schedule</h1>
+        <h1 className="section-title text-gradient-1">Event Schedule</h1>
         
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-center mb-10">

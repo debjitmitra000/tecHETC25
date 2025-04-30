@@ -112,75 +112,8 @@ const FaqPage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title">Frequently Asked Questions</h1>
+        <h1 className="section-title text-gradient-1">Frequently Asked Questions</h1>
         
-        <div className="max-w-4xl mx-auto mb-10">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-grow relative">
-              <input
-                type="text"
-                placeholder="Search questions..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full py-3 px-4 pl-10 bg-surface border-2 border-primary rounded-lg font-mono focus:outline-none focus:ring-2 focus:ring-primary pixel-corners"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            </div>
-            
-            <div className="flex space-x-2 overflow-x-auto pb-2">
-              <button
-                onClick={() => setCategoryFilter('all')}
-                className={`px-4 py-2 whitespace-nowrap rounded-md font-mono ${
-                  categoryFilter === 'all' 
-                    ? 'bg-primary text-white' 
-                    : 'bg-surface text-primary border border-primary'
-                }`}
-              >
-                All
-              </button>
-              <button
-                onClick={() => setCategoryFilter('general')}
-                className={`px-4 py-2 whitespace-nowrap rounded-md font-mono ${
-                  categoryFilter === 'general' 
-                    ? 'bg-neon-cse bg-opacity-20 text-neon-cse border border-neon-cse' 
-                    : 'bg-surface text-gray-300 border border-gray-700'
-                }`}
-              >
-                General
-              </button>
-              <button
-                onClick={() => setCategoryFilter('registration')}
-                className={`px-4 py-2 whitespace-nowrap rounded-md font-mono ${
-                  categoryFilter === 'registration' 
-                    ? 'bg-neon-ece bg-opacity-20 text-neon-ece border border-neon-ece' 
-                    : 'bg-surface text-gray-300 border border-gray-700'
-                }`}
-              >
-                Registration
-              </button>
-              <button
-                onClick={() => setCategoryFilter('events')}
-                className={`px-4 py-2 whitespace-nowrap rounded-md font-mono ${
-                  categoryFilter === 'events' 
-                    ? 'bg-neon-me bg-opacity-20 text-neon-me border border-neon-me' 
-                    : 'bg-surface text-gray-300 border border-gray-700'
-                }`}
-              >
-                Events
-              </button>
-              <button
-                onClick={() => setCategoryFilter('logistics')}
-                className={`px-4 py-2 whitespace-nowrap rounded-md font-mono ${
-                  categoryFilter === 'logistics' 
-                    ? 'bg-neon-ce bg-opacity-20 text-neon-ce border border-neon-ce' 
-                    : 'bg-surface text-gray-300 border border-gray-700'
-                }`}
-              >
-                Logistics
-              </button>
-            </div>
-          </div>
-        </div>
         
         {filteredFaqs.length > 0 ? (
           <div className="max-w-3xl mx-auto">

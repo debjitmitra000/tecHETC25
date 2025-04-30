@@ -43,7 +43,7 @@ const FaqSection: React.FC = () => {
   return (
     <section id="faq" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Frequently Asked Questions</h2>
+        <h2 className="section-title text-gradient">Frequently Asked Questions</h2>
         
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
