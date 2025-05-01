@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import G8 from '../picture/G8.jpg';
-import G23 from '../picture/G23.jpg';
-import G24 from '../picture/G24.jpg';
-import G25 from '../picture/G25.jpg';
-import G26 from '../picture/G26.jpg';
-import G27 from '../picture/G27.jpg';
-import G14 from '../picture/G14.jpg';
-import G29 from '../picture/G29.jpg';
-import G30 from '../picture/G30.jpg';
+import G8 from '../picture/G8.webp';
+import G23 from '../picture/G23.webp';
+import G24 from '../picture/G24.webp';
+import G25 from '../picture/G25.webp';
+import G26 from '../picture/G26.webp';
+import G27 from '../picture/G27.webp';
+import G14 from '../picture/G14.webp';
+import G30 from '../picture/G30.webp';
 
 const GallerySection = () => {
   const [isMobile, setIsMobile] = useState(false);
