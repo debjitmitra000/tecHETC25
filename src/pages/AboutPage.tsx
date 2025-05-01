@@ -146,7 +146,7 @@ const AboutPage: React.FC = () => {
       className="pt-24 pb-16"
     >
       <div className="container mx-auto px-4">
-        <h1 className="section-title text-white bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text drop-shadow-[0_0_10px_rgba(59,130,246,0.7)] animate-glowE">
+        <h1 className="section-title text-gradient bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text drop-shadow-[0_0_10px_rgba(59,130,246,0.7)] animate-glowE">
           About TECHetc
         </h1>
 
