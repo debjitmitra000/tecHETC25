@@ -23,7 +23,7 @@ const RegistrationModal: React.FC = () => {
   // Open Google Form in a new tab
   const openGoogleForm = () => {
     // Replace with your actual Google Form URL
-    const googleFormUrl = "https://forms.gle/yourFormLinkHere";
+    const googleFormUrl = "https://forms.gle/52J8CSrtBtnhXFnC9";
     window.open(googleFormUrl, "_blank");
   };
 
