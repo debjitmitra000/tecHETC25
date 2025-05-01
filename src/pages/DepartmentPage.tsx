@@ -79,6 +79,8 @@ const DepartmentPage: React.FC = () => {
             "In Round 1, there will be negative marking in this round. In case of tie in scores, submission time will be considered. Top 25% teams will move to next round.",
             "Round 2 will have 4 problems, ranging from easy, medium to hard difficulty for 2 hours. All code must be written during the event. Teams must report at least 30 minutes before starting of the contest.",
             "No team member can open any tab on the browser other than the Google form or HackerRank provided by coordinators. Also, if any team is caught researching, or cheating, or communicating with other teams during the contest, involved team(s) will be disqualified.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "CSE Labs, Main Building",
           registration: "Open until Nov 10",
@@ -115,6 +117,8 @@ const DepartmentPage: React.FC = () => {
             "Use of any frontend stack is allowed – HTML/CSS/JS/React/Next.js or others",
             "Internet access is allowed and encouraged for research and resources",
             "Judging will be based on Creativity, Originality, Responsiveness, Theme Adaptation, Optimization and Time taken to complete the design.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Design Lab, Tech Building",
           registration: "Open until Nov 12",
@@ -147,6 +151,8 @@ const DepartmentPage: React.FC = () => {
             "Points will be calculated according to the points table. If Final points came out to be same, Kill points will be considered. If Kills points also comes out to be same then Position of Last match would be considered.",
             "Fair play is mandatory. If any player from any team found using any cheats, the whole team will be eliminated.",
             "Regarding any disputes, the decision of the coordinators will be considered as final.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Gaming Arena, CSE Building",
           registration: "Open until Nov 14",
@@ -190,6 +196,8 @@ const DepartmentPage: React.FC = () => {
             "Bot must fit within 30x30x30cm box",
             "Matches last 5 minutes",
             "Standard robot soccer rules apply",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "ECE Robotics Lab",
           registration: "Open until Nov 10",
@@ -220,6 +228,8 @@ const DepartmentPage: React.FC = () => {
             "Time trial format",
             "Path includes curves and intersections",
             "Best time wins",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "ECE Lab 2",
           registration: "Open until Nov 12",
@@ -253,6 +263,8 @@ const DepartmentPage: React.FC = () => {
             "Limited components provided",
             "Project must serve a practical purpose",
             "Judging based on innovation and functionality",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "ECE Innovation Lab",
           registration: "Open until Nov 14",
@@ -299,6 +311,8 @@ const DepartmentPage: React.FC = () => {
             "Use provided CAD software",
             "Model must meet given specifications",
             "Judging based on accuracy, efficiency, and innovation",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "ME Design Studio",
           registration: "Open until Nov 12",
@@ -345,6 +359,8 @@ const DepartmentPage: React.FC = () => {
             "Maximum dimensions: 60cm length, 15cm width, 20cm height",
             "Bridge must support minimum weight specified",
             "Judging based on strength-to-weight ratio and aesthetics",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "CE Courtyard",
           registration: "Open until Nov 14",
@@ -376,6 +392,8 @@ const DepartmentPage: React.FC = () => {
             "Use provided software or manual drafting",
             "Design must meet given requirements",
             "Judging based on creativity, functionality, and adherence to constraints",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "CE Design Studio",
           registration: "Open until Nov 15",
@@ -416,6 +434,8 @@ const DepartmentPage: React.FC = () => {
             "Circuit must be assembled within specified time",
             "Circuit must perform the specified function",
             "Judging based on speed, efficiency, and functionality",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "EE Lab 1",
           registration: "Open until Nov 12",
@@ -446,6 +466,8 @@ const DepartmentPage: React.FC = () => {
             "Both theoretical and practical components",
             "Time limits for each challenge",
             "Highest combined score wins",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Electromagnetic Lab",
           registration: "Open until Nov 15",
@@ -490,6 +512,8 @@ const DepartmentPage: React.FC = () => {
             "If there is still a tie, the tie-breaker rule (as above) will apply.",
             "Any participant engaging in disruptive or disorderly behavior will be immediately disqualified.",
             "In case of any conflict or dispute, the decision of the evaluators will be final and binding.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "BSH Seminar Hall",
           registration: "Open until Nov 13",
@@ -525,6 +549,8 @@ const DepartmentPage: React.FC = () => {
             "10 minutes will be allotted for the 1st round. Only the top 12 teams from Round 1 will qualify for the next round. Teams failing to complete within the time limit will be eliminated.",
             "Judges and Coordinators reserve the right to modify the rules or adjust timings. Any changes will be communicated to all teams.",
             "The decision of the jury is final — no arguments or appeals will be entertained.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Campus-wide",
           registration: "Open until Nov 14",
@@ -570,6 +596,8 @@ const DepartmentPage: React.FC = () => {
             "In case of tie between two or more teams, further provision of tie breaker will be proclaimed for next round.",
             "No use of electronic devices. Any type of false move/ adopting unfair means by any member or members of any team will lead to disqualification of the whole team immediately.",
             "Decision of the quizmaster is final. In case of unavoidable circumstances, rules may be changed.",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Main Seminar Hall",
           registration: "Open until Nov 15",
@@ -604,6 +632,8 @@ const DepartmentPage: React.FC = () => {
             "Submit project documentation",
             "Live demonstration required",
             "Judging based on innovation, practicality, and presentation",
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
+
           ],
           location: "Exhibition Hall",
           registration: "Open until Nov 16",

@@ -76,7 +76,7 @@ const AboutPage: React.FC = () => {
   const techTeam = [
     {
       name: "Soham De",
-      contribution: "Theme Development & Tech Lead",
+      contribution: "Theme Development & Tech ",
       image: "/public/team/soham.jpeg",
       icon: <Monitor className="h-6 w-6 text-neon-cse" />,
       github: "https://github.com/alexchen",
