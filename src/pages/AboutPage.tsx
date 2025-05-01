@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Server, Database, Github, Linkedin } from 'lucide-react';
+import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Server, Database, Github, Bolt, Linkedin } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -77,7 +77,7 @@ const AboutPage: React.FC = () => {
     {
       name: "Soham De",
       contribution: "Theme Development & Tech ",
-      image: "/team/soham.jpeg",
+      image: "/team/soham.webp",
       icon: <Monitor className="h-6 w-6 text-neon-cse" />,
       github: "https://github.com/alexchen",
       linkedin: "https://linkedin.com/in/alexchen"
@@ -85,23 +85,31 @@ const AboutPage: React.FC = () => {
     {
       name: "Debjit Mitra",
       contribution: "Developer & Designer",
-      image: "/team/debjit.png",
-      icon: <Cpu className="h-6 w-6 text-neon-ece" />,
+      image: "/team/debjit.webp",
+      icon: <Cpu className="h-6 w-6 text-neon-bsh" />,
       github: "https://github.com/priyasharma",
       linkedin: "https://linkedin.com/in/priyasharma"
     },
     {
       name: "Devjyoti Banerjee",
-      contribution: "Content Writer and UI/UX",
-      image: "/team/dev.jpeg",
+      contribution: "Content Writer & UI/UX",
+      image: "/team/dev.webp",
       icon: <Database className="h-6 w-6 text-neon-me" />,
       github: "https://github.com/marcusjohnson",
       linkedin: "https://linkedin.com/in/marcusjohnson"
     },
     {
+      name: "Sayan Genri",
+      contribution: "Content Writer & Event Management",
+      image: "/team/sayan.webp",
+      icon: <Bolt className="h-6 w-6 text-neon-ee" />,
+      github: "https://github.com/marcusjohnson",
+      linkedin: "https://linkedin.com/in/marcusjohnson"
+    },
+    {
       name: "Sayar Paul",
-      contribution: "Multimedia and Event Management",
-      image: "/team/sayar.jpeg",
+      contribution: "Multimedia & Event Management",
+      image: "/team/sayar.webp",
       icon: <Laptop className="h-6 w-6 text-neon-ce" />,
       github: "https://github.com/sophiarodriguez",
       linkedin: "https://linkedin.com/in/sophiarodriguez"
@@ -376,7 +384,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Tech Team Section (Replaces Get Involved) */}
+          {/* Tech Team Section - IMPROVED VERSION */}
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="font-pixel text-3xl text-neon-ce inline-block relative">
@@ -395,11 +403,11 @@ const AboutPage: React.FC = () => {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4"
             >
               {techTeam.map((member, index) => {
                 // Assign a specific neon color based on member index
-                const neonColors = ['neon-cse', 'neon-ece', 'neon-me', 'neon-ce'];
+                const neonColors = ['neon-cse', 'neon-bsh', 'neon-me', 'neon-ee', 'neon-ce'];
                 const memberColor = neonColors[index % neonColors.length];
                 
                 return (
@@ -428,14 +436,14 @@ const AboutPage: React.FC = () => {
                     }}
                   />
                   
-                  {/* Member image with hexagonal mask effect */}
+                  {/* Member image with hexagonal mask effect - KEEPING THIS UNCHANGED AS REQUESTED */}
                   <div className="relative w-full pt-[100%] overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center p-4">
                       <div className={`w-full h-full relative overflow-hidden hexagon-clip shadow-lg`}>
                         <img 
                           src={member.image} 
                           alt={member.name} 
-                          className="absolute inset-0 w-full h-full object-cover filter  group-hover:grayscale-0 scale-125 group-hover:scale-100 transition-all duration-500"
+                          className="absolute inset-0 w-full h-full object-cover filter group-hover:grayscale-0 scale-125 group-hover:scale-100 transition-all duration-500"
                         />
                       </div>
                     </div>
@@ -462,23 +470,27 @@ const AboutPage: React.FC = () => {
                     />
                   </div>
                   
-                  {/* Member details with enhanced styling */}
-                  <div className="p-6 relative">
+                  {/* Member details with enhanced styling - IMPROVED LAYOUT */}
+                  <div className="p-3 relative">
                     {/* Digital line decoration */}
                     <div className={`absolute top-0 left-0 w-full h-1 bg-${memberColor} opacity-20`} />
                     
-                    <h3 className={`font-pixel text-xl text-${memberColor} mb-2 tracking-wide`}>
-                      {member.name}
-                    </h3>
+                    {/* Name container with smaller text size to fit longer names */}
+                    <div className="flex items-center justify-center">
+                      <h3 className={`font-pixel text-sm text-${memberColor} tracking-wide w-full text-center leading-tight`}>
+                        {member.name}
+                      </h3>
+                    </div>
                     
-                    <div className="h-16"> {/* Fixed height container for contribution text */}
-                      <p className="font-mono text-sm text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    {/* Contribution text with smaller size */}
+                    <div className="flex items-center justify-center h-8 mt-1"> 
+                      <p className="font-mono text-xs text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300 text-center">
                         {member.contribution}
                       </p>
                     </div>
                     
                     {/* Animated tech bar - indicates skill level */}
-                    <div className="mt-4 w-full h-1 bg-gray-800">
+                    <div className="mt-1 w-full h-1 bg-gray-800">
                       <motion.div 
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
@@ -487,23 +499,23 @@ const AboutPage: React.FC = () => {
                       />
                     </div>
                     
-                    {/* Social media links - Added GitHub and LinkedIn icons */}
-                    <div className="mt-4 flex justify-center space-x-3">
+                    {/* Social media links - more compact */}
+                    <div className="mt-1 flex justify-center space-x-3">
                       <a 
                         href={member.github} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className={`p-2 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                        className={`p-1 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
                       >
-                        <Github className={`h-5 w-5 text-${memberColor}`} />
+                        <Github className={`h-4 w-4 text-${memberColor}`} />
                       </a>
                       <a 
                         href={member.linkedin} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className={`p-2 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                        className={`p-1 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
                       >
-                        <Linkedin className={`h-5 w-5 text-${memberColor}`} />
+                        <Linkedin className={`h-4 w-4 text-${memberColor}`} />
                       </a>
                     </div>
                   </div>
