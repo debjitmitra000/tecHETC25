@@ -773,8 +773,7 @@ const DepartmentPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75"
-            onClick={() => setSelectedEvent(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-100"
           >
             <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
               <div className="flex items-center justify-center h-full p-4 pt-16 pb-16">
@@ -786,7 +785,7 @@ const DepartmentPage: React.FC = () => {
                     className={`p-4 ${
                       isScrolled ? `bg-${color}` : `bg-${color} bg-opacity-20`
                     } 
-               flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
+              flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
                   >
                     <h3
                       className={`font-pixel text-xl ${
@@ -1090,7 +1089,7 @@ const DepartmentPage: React.FC = () => {
                                             <div
                                               key={i}
                                               className={`w-5 h-8 bg-${color} bg-opacity-20 border border-${color} rounded-sm flex items-center justify-center
-                           ${i === 0 ? "animate-pulse" : ""}`}
+                          ${i === 0 ? "animate-pulse" : ""}`}
                                             >
                                               <User
                                                 className={`h-4 w-4 text-${color}`}
@@ -1120,7 +1119,7 @@ const DepartmentPage: React.FC = () => {
                                               <div
                                                 key={i}
                                                 className={`w-5 h-8 bg-${color} bg-opacity-20 border border-${color} rounded-sm flex items-center justify-center
-                             ${i === minVisualCount ? "animate-pulse" : ""}`}
+                            ${i === minVisualCount ? "animate-pulse" : ""}`}
                                               >
                                                 <User
                                                   className={`h-4 w-4 text-${color}`}
