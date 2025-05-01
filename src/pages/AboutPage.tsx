@@ -77,15 +77,15 @@ const AboutPage: React.FC = () => {
     {
       name: "Soham De",
       contribution: "Theme Development & Tech ",
-      image: "/public/team/soham.jpeg",
+      image: "/team/soham.jpeg",
       icon: <Monitor className="h-6 w-6 text-neon-cse" />,
       github: "https://github.com/alexchen",
       linkedin: "https://linkedin.com/in/alexchen"
     },
     {
       name: "Debjit Mitra",
-      contribution: "Pixel art & Developer",
-      image: "/public/team/debjit.png",
+      contribution: "Developer & Designer",
+      image: "/team/debjit.png",
       icon: <Cpu className="h-6 w-6 text-neon-ece" />,
       github: "https://github.com/priyasharma",
       linkedin: "https://linkedin.com/in/priyasharma"
@@ -93,7 +93,7 @@ const AboutPage: React.FC = () => {
     {
       name: "Devjyoti Banerjee",
       contribution: "Content Writer and UI/UX",
-      image: "/public/team/dev.jpeg",
+      image: "/team/dev.jpeg",
       icon: <Database className="h-6 w-6 text-neon-me" />,
       github: "https://github.com/marcusjohnson",
       linkedin: "https://linkedin.com/in/marcusjohnson"
@@ -101,7 +101,7 @@ const AboutPage: React.FC = () => {
     {
       name: "Sayar Paul",
       contribution: "Multimedia and Event Management",
-      image: "/public/team/sayar.jpeg",
+      image: "/team/sayar.jpeg",
       icon: <Laptop className="h-6 w-6 text-neon-ce" />,
       github: "https://github.com/sophiarodriguez",
       linkedin: "https://linkedin.com/in/sophiarodriguez"
