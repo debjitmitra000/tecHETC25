@@ -30,6 +30,14 @@ body::before {
   opacity: 0.2;
 }
 
+/* html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
 ::-webkit-scrollbar {
   width: 10px;
 }

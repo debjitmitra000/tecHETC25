@@ -4,10 +4,10 @@ import { Home, ArrowLeft } from 'lucide-react';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-gray-50">
+    <div className="min-h-[80vh] flex items-center justify-center bg-background">
       <div className="text-center px-4">
-        <h1 className="text-9xl font-bold text-gray-800">404</h1>
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-700 mt-4">Page Not Found</h2>
+        <h1 className="text-9xl font-bold text-gradient-2">404</h1>
+        <h2 className="text-2xl md:text-4xl font-bold text-cyan-500 mt-4">Page Not Found</h2>
         <p className="text-gray-500 mt-4 max-w-lg mx-auto">
           Sorry, we couldn't find the page you're looking for. The page might have been removed, had its name changed, or is temporarily unavailable.
         </p>
@@ -28,6 +28,13 @@ const NotFoundPage: React.FC = () => {
           </button>
         </div>
       </div>
+      {/* <div className="fixed top-0 left-0 w-screen h-screen m-0 p-0">
+  <img
+    src="/images/nf.png"
+    alt="You are lost, mah friend. Okk nice, now fcuk off."
+    className="w-full h-full object-cover"
+  />
+</div> */}
     </div>
   );
 };

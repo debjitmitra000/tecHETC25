@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Rocket, Target, Users, Trophy } from 'lucide-react';
+import { color, motion } from 'framer-motion';
+import { Rocket, Target, Users, Trophy, BadgeCheck } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const features = [
@@ -25,7 +25,13 @@ const AboutSection: React.FC = () => {
       description: "Win prizes and gain recognition for your technical prowess and innovative solutions."
     }
   ];
-
+  const grules= [
+            "Teams of 1-4 members",
+            "Models must be original work",
+            "Submit project documentation",
+            "Live demonstration required",
+            "Judging based on innovation, practicality, and presentation"
+          ];
   // Animation variants
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -125,12 +131,22 @@ const AboutSection: React.FC = () => {
             viewport={{ once: true }}
           >
             <motion.p 
-              className="text-lg mb-6 text-gray-300"
+              className="text-lg mb-6 text-white"
               variants={textItemVariants}
             >
               TecHETC is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines.
             </motion.p>
-            <motion.p 
+            <ul className="space-y-2">
+              {grules.map((rule, index) => (
+                <li key={index} className="flex items-start">
+                  <BadgeCheck
+                    className={`h-5 w-5 mr-2 text-${color} mt-0.5 flex-shrink-0`}
+                  />
+                  <span className="text-white">{rule}</span>
+                </li>
+              ))}
+            </ul>
+            {/* <motion.p 
               className="mb-6 text-gray-400"
               variants={textItemVariants}
             >
@@ -158,9 +174,9 @@ const AboutSection: React.FC = () => {
               variants={textItemVariants}
             >
               Each department contributes unique events that highlight their specific domains while encouraging cross-disciplinary collaboration and learning.
-            </motion.p>
+            </motion.p>*/}
           </motion.div>
-          
+           
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             variants={featureContainerVariants}

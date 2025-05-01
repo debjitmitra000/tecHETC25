@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Instagram, Facebook, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Instagram, Facebook, Twitter, Youtube, Mail, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-3">
               <a href="#" className="hover:text-primary transition-colors">
-                <Github size={20} />
+                <Youtube size={20} />
               </a>
               <a href="#" className="hover:text-secondary transition-colors">
                 <Instagram size={20} />
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <h4 className="font-mono text-lg mb-4 text-neon-ece">Departments</h4>
             <ul className="space-y-2">
-              <li><Link to="/department/general" className="text-gray-400 hover:text-neon-general transition-colors">General</Link></li>
+              <li><Link to="/department/bsh" className="text-gray-400 hover:text-neon-bsh transition-colors">Basic Science & Humanities</Link></li>
               <li><Link to="/department/cse" className="text-gray-400 hover:text-neon-cse transition-colors">Computer Science</Link></li>
               <li><Link to="/department/ece" className="text-gray-400 hover:text-neon-ece transition-colors">Electronics</Link></li>
               <li><Link to="/department/me" className="text-gray-400 hover:text-neon-me transition-colors">Mechanical</Link></li>
