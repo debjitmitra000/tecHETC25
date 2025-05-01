@@ -19,13 +19,13 @@ const FaqPage: React.FC = () => {
   const faqs: FaqItem[] = [
     // General
     {
-      question: "What is TecHETC?",
-      answer: "TecHETC is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, challenges, tech talks, and networking opportunities for students passionate about technology.",
+      question: "What is TECHtec?",
+      answer: "TECHtec is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, challenges, tech talks, and networking opportunities for students passionate about technology.",
       category: "general"
     },
     {
-      question: "When and where will TecHETC 2025 be held?",
-      answer: "TecHETC 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
+      question: "When and where will TECHtec 2K25 be held?",
+      answer: "TECHtec 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
       category: "general"
     },
     {
@@ -35,7 +35,7 @@ const FaqPage: React.FC = () => {
     },
     // Registration
     {
-      question: "How can I register for TecHETC events?",
+      question: "How can I register for TECHtec events?",
       answer: "Registration for all events can be done through our online Registration form. Navigate to the specific event you're interested in and click the 'Register' button. You'll need to povide your details to complete your registration.",
       category: "registration"
     },
@@ -46,12 +46,12 @@ const FaqPage: React.FC = () => {
     },
     {
       question: "Can students from other colleges participate?",
-      answer: "Absolutely! TecHETC welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment.",
+      answer: "Absolutely! TECHtec welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment.",
       category: "registration"
     },
     {
       question: "What is the last date for registration?",
-      answer: "The registration deadline for most events is May 12, 2025. However, some popular events may close registrations earlier if all slots are filled, so we recommend registering as soon as possible.",
+      answer: "The registration deadline for most events is May 14, 2025. However, some popular events may close registrations earlier if all slots are filled, so we recommend registering as soon as possible.",
       category: "registration"
     },
     // Event Specific
@@ -186,19 +186,19 @@ const FaqPage: React.FC = () => {
         )}
         
         <div className="max-w-3xl mx-auto mt-16 p-6 bg-surface rounded-lg border-2 border-primary pixel-corners">
-          <h2 className="font-pixel text-xl mb-4 text-center">Still have questions?</h2>
+          <h2 className="font-pixel text-xl mb-4 text-center">  Still have questions?</h2>
           <p className="text-center text-gray-300 mb-6">
             If you couldn't find the answer to your question, feel free to reach out to us directly.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
+            {/* <a 
               href="mailto:info@techetc.edu" 
               className="btn btn-secondary text-center"
             >
               Email Us
-            </a>
+            </a> */}
             <a 
-              href="#" 
+              href="https://forms.gle/f9gcSDFbNmm1nNnz9" 
               className="btn btn-green text-center"
             >
               Contact Form

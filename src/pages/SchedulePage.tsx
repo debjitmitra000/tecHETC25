@@ -99,9 +99,9 @@ const SchedulePage: React.FC = () => {
                 </div>
               </div>
               
-              <div className="hidden lg:block">
+              {/* <div className="hidden lg:block">
                 <div className="aspect-square relative">
-                  {/* Day 1 Image */}
+                  
                   {activeDay === 1 && (
                     <img 
                       src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
@@ -110,7 +110,7 @@ const SchedulePage: React.FC = () => {
                     />
                   )}
                   
-                  {/* Day 2 Image */}
+                  
                   {activeDay === 2 && (
                     <img 
                       src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
@@ -119,10 +119,10 @@ const SchedulePage: React.FC = () => {
                     />
                   )}
                   
-                  {/* Pixel overlay */}
+                  
                   <div className="absolute inset-0 bg-grid-pattern bg-[length:10px_10px] opacity-30 pointer-events-none"></div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           
