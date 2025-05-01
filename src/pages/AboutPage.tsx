@@ -5,8 +5,8 @@ import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Moni
 const AboutPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    // Add hexagonal clip path for team member images
+  }, []);
+  useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       .hexagon-clip {
