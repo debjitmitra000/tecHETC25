@@ -103,7 +103,8 @@ const AboutSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          About <motion.span 
+          About TECHetc 2k25
+          {/* <motion.span 
             className="text-neon-cse"
             initial={{ textShadow: "0 0 0px #ff0055" }}
             whileInView={{ textShadow: "0 0 10px #ff0055" }}
@@ -120,7 +121,7 @@ const AboutSection: React.FC = () => {
             initial={{ textShadow: "0 0 0px #00ff8a" }}
             whileInView={{ textShadow: "0 0 10px #00ff8a" }}
             transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.6 }}
-          >ETC</motion.span>
+          >ETC</motion.span> */}
         </motion.h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -130,6 +131,11 @@ const AboutSection: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
+            <motion.h2 
+          className="underline text-gradient-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6"
+          variants={textItemVariants}
+        >General Rules & Guidelines:</motion.h2>
+
             <motion.p 
               className="text-lg mb-6 text-white"
               variants={textItemVariants}
@@ -178,7 +184,7 @@ const AboutSection: React.FC = () => {
           </motion.div>
            
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            className="hidden sm:grid sm:grid-cols-2 gap-6"
             variants={featureContainerVariants}
             initial="hidden"
             whileInView="visible"

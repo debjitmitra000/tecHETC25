@@ -166,13 +166,13 @@ const ScheduleSection: React.FC = () => {
                     >
                       <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                         <h3 className={`font-pixel text-${getDepartmentColor(item.department)}`}>{item.event}</h3>
-                        <span className="font-mono text-white">{item.time}</span>
+                        <span className="text-lg font-mono text-white">{item.time}</span>
                       </div>
-                      <div className="flex flex-col md:flex-row justify-between text-sm">
+                      <div className="flex flex-col md:flex-row justify-between text-xl">
                         <span className="text-gray-400">{item.location}</span>
-                        <span className={`text-${getDepartmentColor(item.department)} uppercase font-mono`}>
+                        {/* <span className={`text-${getDepartmentColor(item.department)} uppercase font-mono`}>
                           {item.department === 'all' ? 'All Departments' : item.department}
-                        </span>
+                        </span> */}
                       </div>
                     </motion.div>
                   </motion.div>

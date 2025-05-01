@@ -107,8 +107,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="font-mono text-lg mb-2"
             >
-              Students' Activity committee in collaboration with IIC-HETC<br/>
-              presents Annual Technical Fest - Tech Fest 2025 <br/>
+              Tech Fest 2025
             </motion.h4>
 
             <div className="overflow-hidden mb-4 mt-5">
@@ -149,7 +148,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
               className="text-xl sm:text-2xl md:text-3xl mb-6 text-gradient-2"
             >
-              Hooghly Engineering & Technology College
+              Presented by Students' Activity committee along with IIC-HETC
             </motion.h2>
 
             <motion.p
@@ -159,7 +158,7 @@ const Hero: React.FC = () => {
               className="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 "
             >
               {/* Join us for the ultimate tech fest showcasing the most innovative projects across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines. */}
-              The ultimate college tech fest celebrating innovation across all engineering disciplines. Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology.
+              The ultimate college tech fest celebrating innovation across all engineering disciplines. <span className='hidden sm:inline'>Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology.</span>
               {/* Whether you're a student, tech enthusiast, or industry professional, TechETC promises a day filled with inspiration and learning. */}
             </motion.p>
             
