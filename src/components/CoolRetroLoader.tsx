@@ -58,13 +58,6 @@ export default function CoolRetroLoader({ onLoadComplete }) {
 
   if (isLoaded) return null;
 
-  // Pixel art symbols for each phase
-  const phaseSymbols = [
-    "▮▯▮", // Initial
-    "◨◧◨", // Mid 1
-    "◢◣◤", // Mid 2
-    "◉◎●"  // Final
-  ];
   
   return (
     <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
@@ -103,33 +96,7 @@ export default function CoolRetroLoader({ onLoadComplete }) {
             ))}
           </div>
           
-          {/* Rotating pixel frame */}
-          <div 
-            className="absolute inset-4 border-4 border-dashed border-accent opacity-70"
-            style={{ 
-              animation: 'spin 10s linear infinite',
-              clipPath: 'polygon(0% 0%, 100% 0%, 95% 5%, 95% 95%, 5% 95%, 5% 5%)'
-            }}
-          ></div>
           
-          {/* Center loading indicator */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className={`font-pixel text-3xl ${glitch ? 'text-secondary transform scale-110' : 'text-primary'}`}
-                 style={{ 
-                   textShadow: '0 0 10px rgba(139, 92, 246, 0.7)',
-                   transition: 'all 150ms ease'
-                 }}>
-              {phaseSymbols[currentPhase].split('').map((char, i) => (
-                <span 
-                  key={i} 
-                  className={i === 1 ? 'text-accent' : ''}
-                  style={{ animation: `pulse ${0.8 + i * 0.2}s infinite alternate` }}
-                >
-                  {char}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
         
         {/* Pixel dots at bottom */}
@@ -146,23 +113,7 @@ export default function CoolRetroLoader({ onLoadComplete }) {
           ))}
         </div>
         
-        {/* Loading text */}
-        <div className="mt-2 text-center">
-          <div 
-            className="font-mono text-xs tracking-widest"
-            style={{ 
-              opacity: glitch ? 0.7 : 1,
-              color: glitch ? '#EC4899' : '#8B5CF6',
-              transform: glitch ? 'translateX(-2px)' : 'translateX(0)',
-              transition: 'all 100ms ease'
-            }}
-          >
-            {currentPhase === 0 ? 'RENDERING' : 
-             currentPhase === 1 ? 'ASSEMBLING' : 
-             currentPhase === 2 ? 'DIGITIZING' : 
-             'INITIALIZING'}
-          </div>
-        </div>
+        
       </div>
     </div>
   );

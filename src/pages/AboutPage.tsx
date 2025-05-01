@@ -1,12 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Server, Database, Github, Bolt, Linkedin } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
+  // Create a ref for the top of the page
+  const topRef = useRef(null);
+
+  // Improved useEffect for scrolling to top
   useEffect(() => {
+    // Scroll to top immediately
     window.scrollTo(0, 0);
     
-    // Add hexagonal clip path for team member images
+    // As a fallback, also try scrolling with behavior: smooth 
+    setTimeout(() => {
+      topRef.current?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }, 100);
+    
+    // Force scroll position on first render
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, []);
+  
+  useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       .hexagon-clip {
@@ -147,6 +162,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <motion.div
+      ref={topRef} // Add ref to the top of the page
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
