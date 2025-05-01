@@ -20,12 +20,12 @@ const FaqPage: React.FC = () => {
     // General
     {
       question: "What is TecHETC?",
-      answer: "TecHETC is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, workshops, tech talks, and networking opportunities for students passionate about technology.",
+      answer: "TecHETC is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, challenges, tech talks, and networking opportunities for students passionate about technology.",
       category: "general"
     },
     {
       question: "When and where will TecHETC 2025 be held?",
-      answer: "TecHETC 2025 will be held on November 15-16, 2025 at the Engineering College Campus, Tech Avenue, Digital City.",
+      answer: "TecHETC 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
       category: "general"
     },
     {
@@ -36,12 +36,12 @@ const FaqPage: React.FC = () => {
     // Registration
     {
       question: "How can I register for TecHETC events?",
-      answer: "Registration for all events can be done through our online portal. Navigate to the specific event you're interested in and click the 'Register' button. You'll need to create an account or log in to complete your registration.",
+      answer: "Registration for all events can be done through our online Registration form. Navigate to the specific event you're interested in and click the 'Register' button. You'll need to povide your details to complete your registration.",
       category: "registration"
     },
     {
       question: "Is there a fee to participate in the events?",
-      answer: "Yes, most events have an entry fee that varies based on the competition. Details about entry fees can be found on each event's page. Some workshops and seminars are free to attend.",
+      answer: "Yes, most events have an entry fee that varies based on the competition. Details about entry fees can be found on each event's page. Some events and competitions are free to attend.",
       category: "registration"
     },
     {
@@ -51,18 +51,18 @@ const FaqPage: React.FC = () => {
     },
     {
       question: "What is the last date for registration?",
-      answer: "The registration deadline for most events is November 5, 2025. However, some popular events may close registrations earlier if all slots are filled, so we recommend registering as soon as possible.",
+      answer: "The registration deadline for most events is May 12, 2025. However, some popular events may close registrations earlier if all slots are filled, so we recommend registering as soon as possible.",
       category: "registration"
     },
     // Event Specific
     {
-      question: "What should I bring to the hackathon?",
-      answer: "Participants should bring their own laptops, chargers, and any hardware components they might need for their projects. We provide Wi-Fi, power outlets, and basic refreshments. For specialty hardware, please check the hackathon page for available resources.",
+      question: "What should I bring to the Tech Fest?",
+      answer: "Participants should bring their own laptops, chargers, and any hardware components they might need for the events they are participating. We provide Wi-Fi, power outlets, and basic refreshments. For specialty hardware, please check the events page for required resources.",
       category: "events"
     },
     {
       question: "Are there team size restrictions for group events?",
-      answer: "Yes, each event has specific team size requirements. Most events allow 2-4 members per team, but this varies by competition. Check the rules section of each event for detailed information.",
+      answer: "Yes, each event has specific team size requirements that varies by competition. Check the rules section of each event for detailed information.",
       category: "events"
     },
     {
@@ -71,19 +71,19 @@ const FaqPage: React.FC = () => {
       category: "events"
     },
     // Logistics
-    {
-      question: "Will accommodation be provided for outstation participants?",
-      answer: "Limited accommodation is available for outstation participants on a first-come, first-served basis. You can request accommodation during the registration process. A nominal fee may apply.",
-      category: "logistics"
-    },
+    // {
+    //   question: "Will accommodation be provided for outstation participants?",
+    //   answer: "Limited accommodation is available for outstation participants on a first-come, first-served basis. You can request accommodation during the registration process. A nominal fee may apply.",
+    //   category: "logistics"
+    // },
     {
       question: "Is food provided during the events?",
-      answer: "Yes, food and refreshments will be available throughout the event. Lunch and dinner are provided on both days for all registered participants. Snacks and beverages will be available at multiple stations across the venue.",
+      answer: "Yes, food and refreshments will be available throughout the event. Snacks and beverages will be available at multiple stations across the venue.",
       category: "logistics"
     },
     {
       question: "Is there parking available at the venue?",
-      answer: "Yes, limited parking is available at the venue. We recommend carpooling or using public transportation if possible. A parking pass will be issued upon registration if you indicate that you need parking.",
+      answer: "Yes, limited parking is available at the venue. We recommend carpooling or using public transportation if possible.",
       category: "logistics"
     }
   ];

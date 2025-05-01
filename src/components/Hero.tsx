@@ -107,10 +107,11 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="font-mono text-lg mb-2"
             >
-              2025 Tech Fest
+              Students' Activity committee in collaboration with IIC-HETC<br/>
+              presents Annual Technical Fest - Tech Fest 2025 <br/>
             </motion.h4>
 
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-4 mt-5">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -158,7 +159,8 @@ const Hero: React.FC = () => {
               className="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 "
             >
               {/* Join us for the ultimate tech fest showcasing the most innovative projects across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines. */}
-              Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology. Whether you're a student, tech enthusiast, or industry professional, TechETC promises a day filled with inspiration and learning.
+              The ultimate college tech fest celebrating innovation across all engineering disciplines. Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology.
+              {/* Whether you're a student, tech enthusiast, or industry professional, TechETC promises a day filled with inspiration and learning. */}
             </motion.p>
             
             {/* Date information with proper alignment - centered on small screens, left on large */}
@@ -200,14 +202,14 @@ const Hero: React.FC = () => {
               </Link>
             </motion.div>
             
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.6 }}
               className="mt-8 text-sm text-gray-500"
             >
               <p>Press ` key to access the command console</p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
           
           {/* Robot GIF Animation - only visible on large screens with proper spacing and larger size */}

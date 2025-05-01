@@ -30,7 +30,7 @@ const EventsPage: React.FC = () => {
       departmentName: "BSH",
       description:
         "Challenge your logical thinking in this timed number puzzle event.",
-      entryFee: 100,
+      entryFee: 10,
       teamSize: 1,
       date: "Nov 15",
       time: "10:00 AM",
@@ -115,7 +115,7 @@ const EventsPage: React.FC = () => {
       description:
         "Design modern and user-friendly interfaces with top-notch UX principles.",
       entryFee: 200,
-      teamSize: 2,
+      teamSize: 1,
       date: "Nov 16",
       time: "01:00 PM",
       icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -128,8 +128,8 @@ const EventsPage: React.FC = () => {
       departmentName: "BSH",
       description:
         "A campus-wide treasure hunt with fun clues and exciting challenges.",
-      entryFee: 100,
-      teamSize: 2,
+      entryFee: "60 per team",
+      teamSize: "2 to 3",
       date: "Nov 16",
       time: "02:00 PM",
       icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
@@ -183,8 +183,8 @@ const EventsPage: React.FC = () => {
       department: "cse",
       departmentName: "CSE",
       description: "Compete in the ultimate mobile battle royale tournament.",
-      entryFee: 100,
-      teamSize: 2,
+      entryFee: "100 per team",
+      teamSize: "3 - 4",
       date: "Nov 17",
       time: "01:00 PM",
       icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -197,7 +197,7 @@ const EventsPage: React.FC = () => {
       departmentName: "GENERAL",
       description:
         "Put your general knowledge to the test in this fast-paced quiz battle.",
-      entryFee: 50,
+      entryFee: 0,
       teamSize: 2,
       date: "Nov 17",
       time: "02:00 PM",

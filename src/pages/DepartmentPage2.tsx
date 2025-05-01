@@ -122,7 +122,7 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "Compete in the ultimate mobile battle royale tournament.",
-          entryFee: 100,
+          entryFee: "100 per team",
           date: "Nov 17",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -227,7 +227,7 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Dive into exciting electronics experiments and innovations.",
-          entryFee: 150,
+          entryFee: 60,
           date: "Nov 17",
           time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
@@ -315,7 +315,7 @@ const DepartmentPage: React.FC = () => {
           department: "ce",
           departmentName: "CE",
           description:
-            "Design and build model bridges to test structural strength and creativity.",
+            "Design and build model bridges to test structural strength and creativity. \n\n Each team will be given 200 flat Popsicle sticks (ice-cream sticks) and a limited quantity of white adhesive (finical) as bridge-building material. Minimum length of the bridge is 50 cm. Bridge will be placed on an abutment with a 40 cm clear span. Load will be placed across the bridge span. Pin joints and clipping are strictly prohibited. ",
           entryFee: 150,
           date: "Nov 16",
           time: "10:00 AM",
@@ -497,7 +497,7 @@ const DepartmentPage: React.FC = () => {
           departmentName: "BSH",
           description:
             "Think you have what it takes to crack mysteries and chase hidden treasures? Have you ever imagined yourself donning a detective's hat, solving puzzles and chasing clues?\n\nWell, it's time to live that dream! TECHetc 2K25 proudly presents Hunt for Fun — the ultimate adventure where treasure hunters race against time, solving riddles and uncovering secrets. \nUse your wits, follow the clues, and unlock new levels of excitement at every turn. More thrill. More madness. More treasures.\n\n Get ready — the hunt is about to begin!",
-          entryFee: 60,
+          entryFee: "60 per team",
           date: "Nov 16",
           time: "02:00 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
@@ -844,8 +844,13 @@ const DepartmentPage: React.FC = () => {
 
                   {/* Rest of the modal content remains the same */}
                   <div className="p-6">
-                    <p className="text-gray-300 mb-6">
-                      {selectedEvent.description}
+                    <p className="text-white mb-9">
+                      {selectedEvent.description.split('\n').map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
                     </p>
 
                     {/* Event details sections */}
