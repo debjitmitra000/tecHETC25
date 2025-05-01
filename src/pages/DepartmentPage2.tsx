@@ -35,10 +35,10 @@ const DepartmentPage: React.FC = () => {
   );
   const [selectedEvent, setSelectedEvent] = useState<EventProps | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-
   const closeModal = () => {
     navigate("/events", { replace: true });
   };
+
   const departments = {
     cse: {
       name: "Computer Science Engineering",
@@ -55,7 +55,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "CODE-2-DUO will consist of 2 rounds, consisting of problems, testing your logic, algorithmic and problem-solving skills. The rounds are as follows: \n\n Round 1 (Prelims): 15 code snippets written in C language will be provided in Google form whose outputs are to be given by the participants. Time: 30 minutes.\n\n Round 2 (Finals): 4 problem statements ranging from easy, medium and hard levels for which a solution is to be given by the teams in C / C++ / JAVA. Time: 2 hours (120 minutes).",
-          minidesc: "Pair up and compete in this coding challenge designed for speed and logic.",
+          minidesc:
+            "Pair up and compete in this coding challenge designed for speed and logic.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 15",
@@ -75,8 +76,7 @@ const DepartmentPage: React.FC = () => {
             "In Round 1, there will be negative marking in this round. In case of tie in scores, submission time will be considered. Top 25% teams will move to next round.",
             "Round 2 will have 4 problems, ranging from easy, medium to hard difficulty for 2 hours. All code must be written during the event. Teams must report at least 30 minutes before starting of the contest.",
             "No team member can open any tab on the browser other than the Google form or HackerRank provided by coordinators. Also, if any team is caught researching, or cheating, or communicating with other teams during the contest, involved team(s) will be disqualified.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "CSE Labs, Main Building",
           registration: "Open until Nov 10",
@@ -88,9 +88,10 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "Design modern and user-friendly interfaces with top-notch UX principles.",
-          minidesc: "Design modern and user-friendly interfaces with top-notch UX principles.",
+          minidesc:
+            "Design modern and user-friendly interfaces with top-notch UX principles.",
           entryFee: 200,
-          teamSize: 1,
+          teamSize: "1-2",
           date: "Nov 16",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -115,8 +116,7 @@ const DepartmentPage: React.FC = () => {
             "Use of any frontend stack is allowed – HTML/CSS/JS/React/Next.js or others",
             "Internet access is allowed and encouraged for research and resources",
             "Judging will be based on Creativity, Originality, Responsiveness, Theme Adaptation, Optimization and Time taken to complete the design.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Design Lab, Tech Building",
           registration: "Open until Nov 12",
@@ -130,7 +130,7 @@ const DepartmentPage: React.FC = () => {
             "Compete in the ultimate mobile battle royale tournament.",
           minidesc: "Compete in the ultimate mobile battle royale tournament.",
           entryFee: 100,
-          teamSize: 1,
+          teamSize: "3 - 4",
           date: "Nov 17",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -151,8 +151,7 @@ const DepartmentPage: React.FC = () => {
             "Points will be calculated according to the points table. If Final points came out to be same, Kill points will be considered. If Kills points also comes out to be same then Position of Last match would be considered.",
             "Fair play is mandatory. If any player from any team found using any cheats, the whole team will be eliminated.",
             "Regarding any disputes, the decision of the coordinators will be considered as final.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Gaming Arena, CSE Building",
           registration: "Open until Nov 14",
@@ -174,7 +173,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Program and control your bots to score goals and defeat your opponents.",
-          minidesc: "Program and control your bots to score goals and defeat your opponents.",
+          minidesc:
+            "Program and control your bots to score goals and defeat your opponents.",
           entryFee: 200,
           teamSize: 1,
           date: "Nov 15",
@@ -198,8 +198,7 @@ const DepartmentPage: React.FC = () => {
             "Bot must fit within 30x30x30cm box",
             "Matches last 5 minutes",
             "Standard robot soccer rules apply",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "ECE Robotics Lab",
           registration: "Open until Nov 10",
@@ -211,7 +210,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Build a robot that can smartly follow a line across complex paths.",
-          minidesc: "Build a robot that can smartly follow a line across complex paths.",
+          minidesc:
+            "Build a robot that can smartly follow a line across complex paths.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 16",
@@ -232,8 +232,7 @@ const DepartmentPage: React.FC = () => {
             "Time trial format",
             "Path includes curves and intersections",
             "Best time wins",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "ECE Lab 2",
           registration: "Open until Nov 12",
@@ -245,7 +244,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Dive into exciting electronics experiments and innovations.",
-          minidesc: "Dive into exciting electronics experiments and innovations.",
+          minidesc:
+            "Dive into exciting electronics experiments and innovations.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 17",
@@ -269,8 +269,7 @@ const DepartmentPage: React.FC = () => {
             "Limited components provided",
             "Project must serve a practical purpose",
             "Judging based on innovation and functionality",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "ECE Innovation Lab",
           registration: "Open until Nov 14",
@@ -292,7 +291,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ME",
           description:
             "Showcase your design and drafting skills using CAD software.",
-          minidesc: "Showcase your design and drafting skills using CAD software.",
+          minidesc:
+            "Showcase your design and drafting skills using CAD software.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 16",
@@ -319,8 +319,7 @@ const DepartmentPage: React.FC = () => {
             "Use provided CAD software",
             "Model must meet given specifications",
             "Judging based on accuracy, efficiency, and innovation",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "ME Design Studio",
           registration: "Open until Nov 12",
@@ -342,7 +341,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CE",
           description:
             "Design and build model bridges to test structural strength and creativity.",
-          minidesc: "Design and build model bridges to test structural strength and creativity.",
+          minidesc:
+            "Design and build model bridges to test structural strength and creativity.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 16",
@@ -369,8 +369,7 @@ const DepartmentPage: React.FC = () => {
             "Maximum dimensions: 60cm length, 15cm width, 20cm height",
             "Bridge must support minimum weight specified",
             "Judging based on strength-to-weight ratio and aesthetics",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "CE Courtyard",
           registration: "Open until Nov 14",
@@ -382,7 +381,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CE",
           description:
             "Create quick architectural plans under real-world constraints.",
-          minidesc: "Create quick architectural plans under real-world constraints.",
+          minidesc:
+            "Create quick architectural plans under real-world constraints.",
           entryFee: 150,
           teamSize: 1,
           date: "Nov 17",
@@ -404,8 +404,7 @@ const DepartmentPage: React.FC = () => {
             "Use provided software or manual drafting",
             "Design must meet given requirements",
             "Judging based on creativity, functionality, and adherence to constraints",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "CE Design Studio",
           registration: "Open until Nov 15",
@@ -427,7 +426,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "EE",
           description:
             "Quick-fire circuit building under pressure using provided components.",
-          minidesc: "Quick-fire circuit building under pressure using provided components.",
+          minidesc:
+            "Quick-fire circuit building under pressure using provided components.",
           entryFee: 100,
           teamSize: 1,
           date: "Nov 15",
@@ -448,8 +448,7 @@ const DepartmentPage: React.FC = () => {
             "Circuit must be assembled within specified time",
             "Circuit must perform the specified function",
             "Judging based on speed, efficiency, and functionality",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "EE Lab 1",
           registration: "Open until Nov 12",
@@ -461,7 +460,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "EE",
           description:
             "Solve electromagnetism-based challenges in this electrifying competition.",
-          minidesc: "Solve electromagnetism-based challenges in this electrifying competition.",
+          minidesc:
+            "Solve electromagnetism-based challenges in this electrifying competition.",
           entryFee: 100,
           teamSize: 1,
           date: "Nov 17",
@@ -482,8 +482,7 @@ const DepartmentPage: React.FC = () => {
             "Both theoretical and practical components",
             "Time limits for each challenge",
             "Highest combined score wins",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Electromagnetic Lab",
           registration: "Open until Nov 15",
@@ -505,7 +504,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "BSH",
           description:
             "Challenge your logical thinking in this timed number puzzle event. Contestants must complete a 9×9 Sudoku grid by filling in numbers from 1 to 9. No number should repeat within the same row, column, or 3×3 sub-grid.",
-          minidesc: "Challenge your logical thinking in this timed number puzzle event.",
+          minidesc:
+            "Challenge your logical thinking in this timed number puzzle event.",
           entryFee: 10,
           teamSize: 1,
           date: "Nov 15",
@@ -530,8 +530,7 @@ const DepartmentPage: React.FC = () => {
             "If there is still a tie, the tie-breaker rule (as above) will apply.",
             "Any participant engaging in disruptive or disorderly behavior will be immediately disqualified.",
             "In case of any conflict or dispute, the decision of the evaluators will be final and binding.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "BSH Seminar Hall",
           registration: "Open until Nov 13",
@@ -543,7 +542,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "BSH",
           description:
             "Think you have what it takes to crack mysteries and chase hidden treasures? Have you ever imagined yourself donning a detective's hat, solving puzzles and chasing clues?\n\nWell, it's time to live that dream! TECHetc 2K25 proudly presents Hunt for Fun — the ultimate adventure where treasure hunters race against time, solving riddles and uncovering secrets. \nUse your wits, follow the clues, and unlock new levels of excitement at every turn. More thrill. More madness. More treasures.\n\n Get ready — the hunt is about to begin!",
-          minidesc: "A campus-wide treasure hunt with fun clues and exciting challenges.",
+          minidesc:
+            "A campus-wide treasure hunt with fun clues and exciting challenges.",
           entryFee: 60,
           teamSize: 1,
           date: "Nov 16",
@@ -569,8 +569,7 @@ const DepartmentPage: React.FC = () => {
             "10 minutes will be allotted for the 1st round. Only the top 12 teams from Round 1 will qualify for the next round. Teams failing to complete within the time limit will be eliminated.",
             "Judges and Coordinators reserve the right to modify the rules or adjust timings. Any changes will be communicated to all teams.",
             "The decision of the jury is final — no arguments or appeals will be entertained.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Campus-wide",
           registration: "Open until Nov 14",
@@ -592,7 +591,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "GENERAL",
           description:
             "Put your general knowledge to the test in this fast-paced quiz battle. \nThe details of each Round are as follows: \n\n Round 1: Current Affairs & G.K \n Round 2: Double Trouble (Basic Engineering) \n\n The Final Round are as follows:\nRound 3: Audio & Visual Round: (Movie, Music, Puzzle, Sports, Personality,Politics).\nRound 4: Guess/ Clue Round.\nRound 5: Rapid Fire Round.",
-          minidesc: "Put your general knowledge to the test in this fast-paced quiz battle.",
+          minidesc:
+            "Put your general knowledge to the test in this fast-paced quiz battle.",
           entryFee: 50,
           teamSize: 1,
           date: "Nov 17",
@@ -618,8 +618,7 @@ const DepartmentPage: React.FC = () => {
             "In case of tie between two or more teams, further provision of tie breaker will be proclaimed for next round.",
             "No use of electronic devices. Any type of false move/ adopting unfair means by any member or members of any team will lead to disqualification of the whole team immediately.",
             "Decision of the quizmaster is final. In case of unavoidable circumstances, rules may be changed.",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Main Seminar Hall",
           registration: "Open until Nov 15",
@@ -631,7 +630,8 @@ const DepartmentPage: React.FC = () => {
           departmentName: "GENERAL",
           description:
             "Showcase creative models and prototypes across engineering domains.",
-          minidesc: "Showcase creative models and prototypes across engineering domains.",
+          minidesc:
+            "Showcase creative models and prototypes across engineering domains.",
           entryFee: 100,
           teamSize: 1,
           date: "Nov 18",
@@ -656,8 +656,7 @@ const DepartmentPage: React.FC = () => {
             "Submit project documentation",
             "Live demonstration required",
             "Judging based on innovation, practicality, and presentation",
-            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program"
-
+            "Eligibility: All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
           ],
           location: "Exhibition Hall",
           registration: "Open until Nov 16",
@@ -787,7 +786,7 @@ const DepartmentPage: React.FC = () => {
                     className={`p-4 ${
                       isScrolled ? `bg-${color}` : `bg-${color} bg-opacity-20`
                     } 
-                      flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
+               flex justify-between items-center sticky top-0 z-10 transition-colors duration-200`}
                   >
                     <h3
                       className={`font-pixel text-xl ${
@@ -965,6 +964,196 @@ const DepartmentPage: React.FC = () => {
                       </div>
                     </div>
 
+                    {/* TEAM SIZE COMPONENT - ADD HERE */}
+                    {/* Team Size Section with Cyberpunk Design */}
+                    {/* Team Size Section with Cyberpunk Design */}
+                    {/* Team Size Section with Cyberpunk Design */}
+                    <div className="mb-6">
+                      <div
+                        className={`p-4 bg-background rounded-lg border-2 border-${color} relative overflow-hidden group`}
+                      >
+                        {/* Background elements */}
+                        <div className="absolute inset-0 bg-grid-pattern bg-[length:15px_15px] opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
+                        <div
+                          className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${color} to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-300`}
+                        ></div>
+
+                        {/* Header with icon */}
+                        <div className="flex items-center mb-3">
+                          <Users className={`h-6 w-6 mr-2 text-${color}`} />
+                          <h4 className="font-pixel text-lg">
+                            Team Configuration
+                          </h4>
+                        </div>
+
+                        {/* Team size display with animated elements */}
+                        <div className="flex items-center justify-center relative py-4">
+                          {/* Corner decorations */}
+                          <div
+                            className={`absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-${color} opacity-60`}
+                          ></div>
+                          <div
+                            className={`absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-${color} opacity-60`}
+                          ></div>
+                          <div
+                            className={`absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-${color} opacity-60`}
+                          ></div>
+                          <div
+                            className={`absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-${color} opacity-60`}
+                          ></div>
+
+                          {/* Team size value with emphasis */}
+                          <div className="text-center group-hover:scale-105 transition-all duration-300">
+                            <span className="block text-gray-400 text-sm mb-1">
+                              TEAM SIZE
+                            </span>
+                            <div className="flex items-center justify-center">
+                              {typeof selectedEvent.teamSize === "number" ||
+                              !isNaN(parseInt(selectedEvent.teamSize)) ? (
+                                // For numeric team sizes
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize}
+                                </span>
+                              ) : (
+                                // For range team sizes (like "1-2" or "3 - 4")
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize.replace(/\s/g, "")}
+                                </span>
+                              )}
+                              <span className="font-mono text-white ml-3">
+                                {selectedEvent.teamSize === 1
+                                  ? "INDIVIDUAL"
+                                  : "MEMBERS"}
+                              </span>
+                            </div>
+
+                            {/* Visual representation of team size */}
+                            <div className="mt-3">
+                              {(() => {
+                                // Extract min and max values
+                                let minSize = 1;
+                                let maxSize = 1;
+                                const teamSizeStr = String(
+                                  selectedEvent.teamSize
+                                );
+
+                                // Check if it's a range format (contains a hyphen)
+                                if (teamSizeStr.includes("-")) {
+                                  // Split by hyphen and clean up spaces
+                                  const parts = teamSizeStr
+                                    .split("-")
+                                    .map((part) => parseInt(part.trim()));
+                                  if (
+                                    parts.length === 2 &&
+                                    !isNaN(parts[0]) &&
+                                    !isNaN(parts[1])
+                                  ) {
+                                    minSize = parts[0];
+                                    maxSize = parts[1];
+                                  }
+                                } else if (
+                                  typeof selectedEvent.teamSize === "number"
+                                ) {
+                                  minSize = maxSize = selectedEvent.teamSize;
+                                } else if (!isNaN(parseInt(teamSizeStr))) {
+                                  minSize = maxSize = parseInt(teamSizeStr);
+                                }
+
+                                // Cap visualization at 6 members
+                                const minVisualCount = Math.min(minSize, 6);
+                                const maxVisualCount = Math.min(maxSize, 6);
+
+                                // Determine if we need to show both min and max
+                                const showBoth = teamSizeStr.includes("-");
+
+                                return (
+                                  <div className="space-y-3">
+                                    {/* Min team size visualization */}
+                                    <div className="flex flex-col items-center">
+                                      {showBoth ? (
+                                        <span className="text-xs text-gray-400 mb-1">
+                                          MINIMUM ({minSize})
+                                        </span>
+                                      ) : (
+                                        <span className="text-xs text-gray-400 mb-1">
+                                          TEAM SIZE
+                                        </span>
+                                      )}
+                                      <div className="flex items-center justify-center space-x-1">
+                                        {Array(minVisualCount)
+                                          .fill(null)
+                                          .map((_, i) => (
+                                            <div
+                                              key={i}
+                                              className={`w-5 h-8 bg-${color} bg-opacity-20 border border-${color} rounded-sm flex items-center justify-center
+                           ${i === 0 ? "animate-pulse" : ""}`}
+                                            >
+                                              <User
+                                                className={`h-4 w-4 text-${color}`}
+                                              />
+                                            </div>
+                                          ))}
+                                        {minSize > 6 && (
+                                          <div
+                                            className={`w-5 h-8 flex items-center justify-center text-${color} border border-${color} rounded-sm`}
+                                          >
+                                            +{minSize - 6}
+                                          </div>
+                                        )}
+                                      </div>
+                                    </div>
+
+                                    {/* Max team size visualization - only show if in range format */}
+                                    {showBoth && (
+                                      <div className="flex flex-col items-center">
+                                        <span className="text-xs text-gray-400 mb-1">
+                                          MAXIMUM ({maxSize})
+                                        </span>
+                                        <div className="flex items-center justify-center space-x-1">
+                                          {Array(maxVisualCount)
+                                            .fill(null)
+                                            .map((_, i) => (
+                                              <div
+                                                key={i}
+                                                className={`w-5 h-8 bg-${color} bg-opacity-20 border border-${color} rounded-sm flex items-center justify-center
+                             ${i === minVisualCount ? "animate-pulse" : ""}`}
+                                              >
+                                                <User
+                                                  className={`h-4 w-4 text-${color}`}
+                                                />
+                                              </div>
+                                            ))}
+                                          {maxSize > 6 && (
+                                            <div
+                                              className={`w-5 h-8 flex items-center justify-center text-${color} border border-${color} rounded-sm`}
+                                            >
+                                              +{maxSize - 6}
+                                            </div>
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              })()}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Scanline animation */}
+                        <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                          <div
+                            className={`absolute h-px w-full bg-${color} top-1/2 transform -translate-x-full group-hover:translate-x-full transition-all duration-1000 opacity-70`}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* END OF TEAM SIZE COMPONENT */}
+
                     <div className="mb-6">
                       <h4
                         className={`font-mono text-lg border-b border-${color} pb-2 mb-3`}
@@ -1078,7 +1267,6 @@ const DepartmentPage: React.FC = () => {
                         </h3>
                       </div>
                     </div>
-                    
 
                     <div className="p-4">
                       <p className="text-gray-300 mb-4">{event.minidesc}</p>
