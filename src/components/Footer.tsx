@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Instagram, Facebook, Twitter, Youtube, Mail, Heart } from 'lucide-react';
+import { Github, Facebook, Youtube, Mail, Heart, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <h3 className="font-pixel text-xl mb-4">
-              <span className="text-gradient">TECHetc</span>
+              <span className="text-gradient">TECHetc 2K25</span>
               {/* <span className="text-secondary">H</span>
               <span className="text-accent">ETC</span> */}
             </h3>
@@ -17,16 +17,13 @@ const Footer: React.FC = () => {
               The ultimate college tech fest celebrating innovation across all engineering disciplines.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.youtube.com/@youtubehetc582" className="hover:text-primary transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="hover:text-secondary transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors">
+              <a href="https://www.facebook.com/hooghlyengineeringandtechnologycollege" className="hover:text-secondary transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-neon-ece transition-colors">
+              <a href="https://x.com/nsshetc" className="hover:text-neon-ece transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
@@ -83,4 +80,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer
+export default Footer;

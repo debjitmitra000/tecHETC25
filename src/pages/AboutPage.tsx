@@ -472,9 +472,9 @@ const AboutPage: React.FC = () => {
                     </h3>
                     
                     <div className="h-16"> {/* Fixed height container for contribution text */}
-                      {/* <p className="font-mono text-sm text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="font-mono text-sm text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                         {member.contribution}
-                      </p> */}
+                      </p>
                     </div>
                     
                     {/* Animated tech bar - indicates skill level */}
