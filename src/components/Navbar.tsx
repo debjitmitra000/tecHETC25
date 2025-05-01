@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   ];
 
   const departmentItems = [
-    { path: '/department/general', label: 'GENERAL', icon: <Brain className="w-4 h-4 inline mr-1 text-neon-general" /> },
+    // { path: '/department/general', label: 'GENERAL', icon: <Brain className="w-4 h-4 inline mr-1 text-neon-general" /> },
     { path: '/department/cse', label: 'CSE', icon: <Cpu className="w-4 h-4 inline mr-1 text-neon-cse" /> },
     { path: '/department/ece', label: 'ECE', icon: <Zap className="w-4 h-4 inline mr-1 text-neon-ece" /> },
     { path: '/department/me', label: 'ME', icon: <Cog className="w-4 h-4 inline mr-1 text-neon-me" /> },
