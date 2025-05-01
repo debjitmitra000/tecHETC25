@@ -18,18 +18,23 @@ const FaqSection: React.FC = () => {
       question: "Can students from other colleges participate?",
       answer: "Absolutely! TecHETC welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment."
     },
+    // {
+    //   question: "What should I bring to the hackathon?",
+    //   answer: "Participants should bring their own laptops, chargers, and any hardware components they might need for their projects. We provide Wi-Fi, power outlets, and basic refreshments. For specialty hardware, please check the hackathon page for available resources."
+    // },
     {
-      question: "What should I bring to the hackathon?",
-      answer: "Participants should bring their own laptops, chargers, and any hardware components they might need for their projects. We provide Wi-Fi, power outlets, and basic refreshments. For specialty hardware, please check the hackathon page for available resources."
+      question: "What should I bring to the Tech Fest?",
+      answer: "Participants should bring their own laptops, chargers, and any hardware components they might need for the events they are participating. We provide Wi-Fi, power outlets, and basic refreshments. For specialty hardware, please check the events page for required resources.",
+      category: "events"
     },
     {
       question: "Are there team size restrictions for group events?",
       answer: "Yes, each event has specific team size requirements. Most events allow 2-4 members per team, but this varies by competition. Check the rules section of each event for detailed information."
     },
-    {
-      question: "Will accommodation be provided for outstation participants?",
-      answer: "Limited accommodation is available for outstation participants on a first-come, first-served basis. You can request accommodation during the registration process. A nominal fee may apply."
-    }
+    // {
+    //   question: "Will accommodation be provided for outstation participants?",
+    //   answer: "Limited accommodation is available for outstation participants on a first-come, first-served basis. You can request accommodation during the registration process. A nominal fee may apply."
+    // }
   ];
   
   const toggleFaq = (index: number) => {
