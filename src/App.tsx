@@ -44,12 +44,13 @@ function App() {
               <Route path="gallery" element={<GalleryPage />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="faq" element={<FaqPage />} />
-              <Route path="YjadZJ0X9X!64bQIl^G'vlMO8btcX49EY" element={<AdminPage />} />
+              <Route path="bysvgbbgysghixai" element={<AdminPage />} />
               <Route path="department/:dept" element={<DepartmentPage />} />
               <Route path="departmentpage/:dept" element={<DepartmentPage2 />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
             <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <RegistrationModal />
         </>
