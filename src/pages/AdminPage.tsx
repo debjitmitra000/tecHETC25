@@ -7,19 +7,19 @@ type EventProps = {
 };
 
 const events: EventProps[] = [
-  { title: "SUDOKU", customLink: "https://example.com/sudoku", department: "bsh" },
-  { title: "CODE – 2 – DUO", customLink: "https://example.com/code-2-duo", department: "cse" },
-  { title: "INSTANT CIRCUIT MAKING", customLink: "https://example.com/instant-circuit", department: "ee" },
-  { title: "ROBO SOCCER", customLink: "https://example.com/robo-soccer", department: "ece" },
-  { title: "BRIDGE THE GAP", customLink: "https://example.com/bridge-the-gap", department: "ce" },
-  { title: "CADMANIA", customLink: "https://example.com/cadmania", department: "me" },
-  { title: "USER INTERFACE – USER EXPERIENCE (UI – UX)", customLink: "https://example.com/ui-ux", department: "cse" },
-  { title: "HUNT FOR FUN", customLink: "https://example.com/hunt-for-fun", department: "bsh" },
-  { title: "LINE FOLLOWER ROBOT", customLink: "https://example.com/line-follower", department: "ece" },
-  { title: "ELECTROMAT", customLink: "https://example.com/electromat", department: "ee" },
-  { title: "INSTA-PLAN", customLink: "https://example.com/insta-plan", department: "ce" },
-  { title: "BATTLE GROUNDS MOBILE INDIA (BGMI)", customLink: "https://example.com/bgmi", department: "cse" },
-  { title: "QUIZZARD", customLink: "https://example.com/quizzard", department: "general" },
+  { title: "SUDOKU", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1425751823#gid=1425751823", department: "bsh" },
+  { title: "CODE – 2 – DUO", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1647719954#gid=1647719954", department: "cse" },
+  { title: "INSTANT CIRCUIT MAKING", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=782022369#gid=782022369", department: "ee" },
+  { title: "ROBO SOCCER", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=621376593#gid=621376593", department: "ece" },
+  { title: "BRIDGE THE GAP", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1839840652#gid=1839840652", department: "ce" },
+  { title: "CADMANIA", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1627694009#gid=1627694009", department: "me" },
+  { title: "USER INTERFACE – USER EXPERIENCE (UI – UX)", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1408151784#gid=1408151784", department: "cse" },
+  { title: "HUNT FOR FUN", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1172496601#gid=1172496601", department: "bsh" },
+  { title: "LINE FOLLOWER ROBOT", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=403359527#gid=403359527", department: "ece" },
+  { title: "ELECTROMAT", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=712761987#gid=712761987", department: "ee" },
+  { title: "INSTA-PLAN", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=180155482#gid=180155482", department: "ce" },
+  { title: "BATTLE GROUNDS MOBILE INDIA (BGMI)", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=1534992018#gid=1534992018", department: "cse" },
+  { title: "QUIZZARD", customLink: "https://docs.google.com/spreadsheets/d/1BGIZTGqrG5MMSQbccljK8BYhozY4FDtzSxLvX5Gj20M/edit?gid=0#gid=0", department: "general" },
 ];
 
 const departmentColors: Record<string, string> = {
@@ -35,7 +35,7 @@ const departmentColors: Record<string, string> = {
 const AdminPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
-      <h1 className="text-3xl font-bold mb-8 text-center">Admin Panel</h1>
+      <h1 className="text-3xl mt-10 font-bold mb-8 text-center">Admin Panel</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {events.map((event) => (
           <button
@@ -46,7 +46,7 @@ const AdminPage: React.FC = () => {
             } bg-gray-800`}
           >
             <span className="font-semibold text-lg">{event.title}</span>
-            <p className="text-sm mt-1 text-gray-400">{event.customLink}</p>
+            <p className="text-sm mt-1 overflow-hidden text-gray-400">{event.customLink}</p>
           </button>
         ))}
       </div>

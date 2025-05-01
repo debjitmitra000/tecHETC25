@@ -1,10 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, Calendar, Users, MapPin, Cpu, Zap, Code, Terminal } from 'lucide-react';
+import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Server, Database, Github, Linkedin } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Add hexagonal clip path for team member images
+    const style = document.createElement('style');
+    style.textContent = `
+      .hexagon-clip {
+        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   const [activeEvent, setActiveEvent] = useState<number>(0);
@@ -60,6 +73,41 @@ const AboutPage: React.FC = () => {
     }
   ];
 
+  const techTeam = [
+    {
+      name: "Soham De",
+      contribution: "Theme Development & Tech ",
+      image: "/public/team/soham.jpeg",
+      icon: <Monitor className="h-6 w-6 text-neon-cse" />,
+      github: "https://github.com/alexchen",
+      linkedin: "https://linkedin.com/in/alexchen"
+    },
+    {
+      name: "Debjit Mitra",
+      contribution: "Pixel art & Developer",
+      image: "/public/team/debjit.png",
+      icon: <Cpu className="h-6 w-6 text-neon-ece" />,
+      github: "https://github.com/priyasharma",
+      linkedin: "https://linkedin.com/in/priyasharma"
+    },
+    {
+      name: "Devjyoti Banerjee",
+      contribution: "Content Writer and UI/UX",
+      image: "/public/team/dev.jpeg",
+      icon: <Database className="h-6 w-6 text-neon-me" />,
+      github: "https://github.com/marcusjohnson",
+      linkedin: "https://linkedin.com/in/marcusjohnson"
+    },
+    {
+      name: "Sayar Paul",
+      contribution: "Multimedia and Event Management",
+      image: "/public/team/sayar.jpeg",
+      icon: <Laptop className="h-6 w-6 text-neon-ce" />,
+      github: "https://github.com/sophiarodriguez",
+      linkedin: "https://linkedin.com/in/sophiarodriguez"
+    }
+  ];
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -73,6 +121,20 @@ const AboutPage: React.FC = () => {
     initial: { scale: 1 },
     hover: { scale: 1.2 },
     active: { scale: 1.5 }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    },
+    hover: {
+      y: -10,
+      scale: 1.03,
+      transition: { duration: 0.3, type: "spring", stiffness: 300 }
+    }
   };
 
   return (
@@ -314,25 +376,140 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-surface p-8 rounded-lg border-2 border-neon-ce pixel-corners">
-            <h2 className="font-pixel text-2xl mb-4 text-neon-ce text-center">Get Involved</h2>
-            <p className="text-center mb-6">
-              There are many ways to be a part of TecHETC beyond participating in competitions.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-4">
-                <h3 className="font-mono text-lg mb-2">Volunteer</h3>
-                <p className="text-sm text-gray-400">Join our organizing team and help make the event a success</p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="font-mono text-lg mb-2">Sponsor</h3>
-                <p className="text-sm text-gray-400">Support innovation and connect with talented students</p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="font-mono text-lg mb-2">Mentor</h3>
-                <p className="text-sm text-gray-400">Guide participants with your expertise and experience</p>
-              </div>
+          {/* Tech Team Section (Replaces Get Involved) */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="font-pixel text-3xl text-neon-ce inline-block relative">
+                Tech Team
+                <motion.div 
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-neon-ce"
+                  initial={{ width: 0, x: "50%" }}
+                  animate={{ width: "100%", x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                />
+              </h2>
+              <p className="text-gray-400 mt-4 max-w-xl mx-auto">Meet the team behind this website</p>
             </div>
+            
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              {techTeam.map((member, index) => {
+                // Assign a specific neon color based on member index
+                const neonColors = ['neon-cse', 'neon-ece', 'neon-me', 'neon-ce'];
+                const memberColor = neonColors[index % neonColors.length];
+                
+                return (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  whileHover="hover"
+                  className={`bg-surface border-2 border-${memberColor} rounded-lg overflow-hidden pixel-corners transform transition-all duration-300 relative group`}
+                >
+                  {/* Animated cyber pattern background */}
+                  <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      <pattern id={`cyber-grid-${index}`} patternUnits="userSpaceOnUse" width="10" height="10">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" className={`text-${memberColor}`}/>
+                      </pattern>
+                      <rect width="100" height="100" fill={`url(#cyber-grid-${index})`} />
+                    </svg>
+                  </div>
+                  
+                  {/* Dynamic glow effect on hover */}
+                  <motion.div 
+                    className={`absolute inset-0 bg-${memberColor} opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`}
+                    animate={{ 
+                      opacity: [0, 0.05, 0, 0.05], 
+                      transition: { duration: 4, repeat: Infinity } 
+                    }}
+                  />
+                  
+                  {/* Member image with hexagonal mask effect */}
+                  <div className="relative w-full pt-[100%] overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <div className={`w-full h-full relative overflow-hidden hexagon-clip shadow-lg`}>
+                        <img 
+                          src={member.image} 
+                          alt={member.name} 
+                          className="absolute inset-0 w-full h-full object-cover filter  group-hover:grayscale-0 scale-125 group-hover:scale-100 transition-all duration-500"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Tech icon with animated pulse */}
+                    <div className={`absolute bottom-4 right-4 p-2 bg-background rounded-full border-2 border-${memberColor} shadow-lg`}>
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.1, 1],
+                          transition: { duration: 2, repeat: Infinity, repeatType: "reverse" } 
+                        }}
+                        className={`text-${memberColor}`}
+                      >
+                        {member.icon}
+                      </motion.div>
+                    </div>
+                    
+                    {/* Digital scanner line effect */}
+                    <motion.div
+                      initial={{ y: "-100%" }}
+                      animate={{ y: "100%" }}
+                      transition={{ duration: 2, repeat: Infinity, repeatType: "loop", ease: "linear" }}
+                      className={`absolute inset-x-0 h-1 bg-${memberColor} opacity-30 mix-blend-overlay pointer-events-none`}
+                    />
+                  </div>
+                  
+                  {/* Member details with enhanced styling */}
+                  <div className="p-6 relative">
+                    {/* Digital line decoration */}
+                    <div className={`absolute top-0 left-0 w-full h-1 bg-${memberColor} opacity-20`} />
+                    
+                    <h3 className={`font-pixel text-xl text-${memberColor} mb-2 tracking-wide`}>
+                      {member.name}
+                    </h3>
+                    
+                    <div className="h-16"> {/* Fixed height container for contribution text */}
+                      {/* <p className="font-mono text-sm text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                        {member.contribution}
+                      </p> */}
+                    </div>
+                    
+                    {/* Animated tech bar - indicates skill level */}
+                    <div className="mt-4 w-full h-1 bg-gray-800">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 1, delay: index * 0.2 }}
+                        className={`h-full bg-${memberColor}`}
+                      />
+                    </div>
+                    
+                    {/* Social media links - Added GitHub and LinkedIn icons */}
+                    <div className="mt-4 flex justify-center space-x-3">
+                      <a 
+                        href={member.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`p-2 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                      >
+                        <Github className={`h-5 w-5 text-${memberColor}`} />
+                      </a>
+                      <a 
+                        href={member.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`p-2 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                      >
+                        <Linkedin className={`h-5 w-5 text-${memberColor}`} />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              )})}
+            </motion.div>
           </div>
         </div>
       </div>
