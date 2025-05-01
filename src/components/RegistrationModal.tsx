@@ -68,7 +68,7 @@ const RegistrationModal: React.FC = () => {
                     </ol>
                     <div className="mt-3 pt-2 border-t border-primary border-opacity-30">
                       <p className="font-mono text-xs text-neon-ece mb-1">Note: ₹100 is only the registration fee. Each event has its own additional fee.</p>
-                      <p className="font-mono text-xs text-neon-ce italic">You can also register offline at the registration desk offline.</p>
+                      <p className="font-mono text-xs text-neon-ce italic">You can also register offline at the registration desk.</p>
                     </div>
                   </div>
                   

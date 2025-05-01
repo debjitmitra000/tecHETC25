@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useRegistration } from "../contexts/RegistrationContext";
 import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { EventProps } from "../components/EventCard";
@@ -44,7 +43,7 @@ const DepartmentPage: React.FC = () => {
       eventsSection?.scrollIntoView({ behavior: "smooth" });
     }, 10);
   };
-  
+
   const departments = {
     cse: {
       name: "Computer Science Engineering",
@@ -61,7 +60,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "CODE-2-DUO will consist of 2 rounds, consisting of problems, testing your logic, algorithmic and problem-solving skills. The rounds are as follows: \n\n Round 1 (Prelims): 15 code snippets written in C language will be provided in Google form whose outputs are to be given by the participants. Time: 30 minutes.\n\n Round 2 (Finals): 4 problem statements ranging from easy, medium and hard levels for which a solution is to be given by the teams in C / C++ / JAVA. Time: 2 hours (120 minutes).",
+          minidesc: "Pair up and compete in this coding challenge designed for speed and logic.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 15",
           time: "11:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -90,7 +91,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "Design modern and user-friendly interfaces with top-notch UX principles.",
+          minidesc: "Design modern and user-friendly interfaces with top-notch UX principles.",
           entryFee: 200,
+          teamSize: 1,
           date: "Nov 16",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -126,7 +129,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CSE",
           description:
             "Compete in the ultimate mobile battle royale tournament.",
+          minidesc: "Compete in the ultimate mobile battle royale tournament.",
           entryFee: 100,
+          teamSize: 1,
           date: "Nov 17",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -168,7 +173,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Program and control your bots to score goals and defeat your opponents.",
+          minidesc: "Program and control your bots to score goals and defeat your opponents.",
           entryFee: 200,
+          teamSize: 1,
           date: "Nov 15",
           time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
@@ -201,7 +208,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Build a robot that can smartly follow a line across complex paths.",
+          minidesc: "Build a robot that can smartly follow a line across complex paths.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 16",
           time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
@@ -231,7 +240,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ECE",
           description:
             "Dive into exciting electronics experiments and innovations.",
+          minidesc: "Dive into exciting electronics experiments and innovations.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 17",
           time: "03:00 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
@@ -274,7 +285,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "ME",
           description:
             "Showcase your design and drafting skills using CAD software.",
+          minidesc: "Showcase your design and drafting skills using CAD software.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 16",
           time: "11:00 AM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
@@ -320,7 +333,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CE",
           description:
             "Design and build model bridges to test structural strength and creativity.",
+          minidesc: "Design and build model bridges to test structural strength and creativity.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 16",
           time: "10:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
@@ -356,7 +371,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "CE",
           description:
             "Create quick architectural plans under real-world constraints.",
+          minidesc: "Create quick architectural plans under real-world constraints.",
           entryFee: 150,
+          teamSize: 1,
           date: "Nov 17",
           time: "11:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
@@ -397,7 +414,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "EE",
           description:
             "Quick-fire circuit building under pressure using provided components.",
+          minidesc: "Quick-fire circuit building under pressure using provided components.",
           entryFee: 100,
+          teamSize: 1,
           date: "Nov 15",
           time: "01:00 PM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
@@ -427,7 +446,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "EE",
           description:
             "Solve electromagnetism-based challenges in this electrifying competition.",
+          minidesc: "Solve electromagnetism-based challenges in this electrifying competition.",
           entryFee: 100,
+          teamSize: 1,
           date: "Nov 17",
           time: "10:00 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
@@ -467,7 +488,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "BSH",
           description:
             "Challenge your logical thinking in this timed number puzzle event. Contestants must complete a 9×9 Sudoku grid by filling in numbers from 1 to 9. No number should repeat within the same row, column, or 3×3 sub-grid.",
+          minidesc: "Challenge your logical thinking in this timed number puzzle event.",
           entryFee: 10,
+          teamSize: 1,
           date: "Nov 15",
           time: "10:00 AM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
@@ -501,7 +524,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "BSH",
           description:
             "Think you have what it takes to crack mysteries and chase hidden treasures? Have you ever imagined yourself donning a detective's hat, solving puzzles and chasing clues?\n\nWell, it's time to live that dream! TECHetc 2K25 proudly presents Hunt for Fun — the ultimate adventure where treasure hunters race against time, solving riddles and uncovering secrets. \nUse your wits, follow the clues, and unlock new levels of excitement at every turn. More thrill. More madness. More treasures.\n\n Get ready — the hunt is about to begin!",
+          minidesc: "A campus-wide treasure hunt with fun clues and exciting challenges.",
           entryFee: 60,
+          teamSize: 1,
           date: "Nov 16",
           time: "02:00 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
@@ -546,7 +571,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "GENERAL",
           description:
             "Put your general knowledge to the test in this fast-paced quiz battle. \nThe details of each Round are as follows: \n\n Round 1: Current Affairs & G.K \n Round 2: Double Trouble (Basic Engineering) \n\n The Final Round are as follows:\nRound 3: Audio & Visual Round: (Movie, Music, Puzzle, Sports, Personality,Politics).\nRound 4: Guess/ Clue Round.\nRound 5: Rapid Fire Round.",
+          minidesc: "Put your general knowledge to the test in this fast-paced quiz battle.",
           entryFee: 50,
+          teamSize: 1,
           date: "Nov 17",
           time: "02:00 PM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
@@ -581,7 +608,9 @@ const DepartmentPage: React.FC = () => {
           departmentName: "GENERAL",
           description:
             "Showcase creative models and prototypes across engineering domains.",
+          minidesc: "Showcase creative models and prototypes across engineering domains.",
           entryFee: 100,
+          teamSize: 1,
           date: "Nov 18",
           time: "10:00 AM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
@@ -992,7 +1021,6 @@ const DepartmentPage: React.FC = () => {
                           {selectedEvent.registration}
                         </span>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
@@ -1025,9 +1053,10 @@ const DepartmentPage: React.FC = () => {
                         </h3>
                       </div>
                     </div>
+                    
 
                     <div className="p-4">
-                      <p className="text-gray-300 mb-4">{event.description}</p>
+                      <p className="text-gray-300 mb-4">{event.minidesc}</p>
 
                       <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
                         <div className="bg-background rounded p-2">
@@ -1037,9 +1066,10 @@ const DepartmentPage: React.FC = () => {
                           </span>
                         </div>
                         <div className="bg-background rounded p-2">
-                          <span className="block text-gray-400">Prize</span>
+                          <span className="block text-gray-400">Team Size</span>
                           <span className="font-mono text-white">
-                            ₹{event.prize}
+                            {event.teamSize}{" "}
+                            {event.teamSize === 1 ? "person" : "people"}
                           </span>
                         </div>
                         <div className="bg-background rounded p-2">
