@@ -35,6 +35,7 @@ const DepartmentPage: React.FC = () => {
   );
   const [selectedEvent, setSelectedEvent] = useState<EventProps | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const closeModal = () => {
     navigate("/events", { replace: true });
   };
@@ -57,8 +58,8 @@ const DepartmentPage: React.FC = () => {
             "CODE-2-DUO will consist of 2 rounds, consisting of problems, testing your logic, algorithmic and problem-solving skills. The rounds are as follows: \n\n 🔵Round 1 (Prelims): 15 code snippets written in C language will be provided in Google form whose outputs are to be given by the participants. Time: 30 minutes.\n\n 🔵Round 2 (Finals): 4 problem statements ranging from easy, medium and hard levels for which a solution is to be given by the teams in C / C++ / JAVA. Time: 90 minutes.",
           minidesc:
             "Pair up and compete in this coding challenge designed for speed and logic.",
-          entryFee: 150,
-          teamSize: 1,
+          entryFee: 0,
+          teamSize: 2,
           date: "Nov 15",
           time: "11:00 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -90,8 +91,8 @@ const DepartmentPage: React.FC = () => {
             "Design modern and user-friendly interfaces with top-notch UX principles.",
           minidesc:
             "Design modern and user-friendly interfaces with top-notch UX principles.",
-          entryFee: 200,
-          teamSize: "1-2",
+          entryFee: 50,
+          teamSize: "1",
           date: "Nov 16",
           time: "01:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
@@ -340,11 +341,11 @@ const DepartmentPage: React.FC = () => {
           department: "ce",
           departmentName: "CE",
           description:
-            "Design and build model bridges to test structural strength and creativity.",
+            "Design and build model bridges to test structural strength and creativity.\n\n 🌟Details:\n Each team will be given 200 flat Popsicle sticks (ice-cream sticks) and a limited quantity of white adhesive (finical) as bridge-building material. Minimum length of the bridge is 50 cm. Bridge will be placed on an abutment with a 40 cm clear span. Load will be placed across the bridge span. Pin joints and clipping are strictly prohibited.",
           minidesc:
             "Design and build model bridges to test structural strength and creativity.",
-          entryFee: 150,
-          teamSize: 1,
+          entryFee: 100,
+          teamSize: "2 - 4",
           date: "Nov 16",
           time: "10:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
@@ -364,13 +365,19 @@ const DepartmentPage: React.FC = () => {
             },
           ],
           rules: [
-            "Teams of 2-3 members",
-            "Bridge must be built only with provided materials",
-            "Maximum dimensions: 60cm length, 15cm width, 20cm height",
-            "Bridge must support minimum weight specified",
-            "Judging based on strength-to-weight ratio and aesthetics",
+            "Each group may consist of maximum four & minimum two participants.",
+            "Each team will be given 200 flat Popsicle sticks (ice-cream sticks) and limited quantity of white adhesive (finical) as bridge building material. Minimum length of the bridge is 50 cm. Bridge will be placed on an abutment with 40 cm clear span.",
+            "Participants can use a knife, pencil and ordinary scale to build the bridge (Scissors and clips are not allowed).",
+            "Load will be placed across the bridge span.",
+            "Minimum clear passage of roadway along the span should be 6 cm x 6 cm (height x width).",
+            "Participants should provide enough space to insert two 8 mm diameter steel bars in the middle zone with a gapping of not more than 4 cm for loading.",
+            "Participants should enroll their Group No. on their respective bridge model by the volunteers after completion of the bridge.",
+            "Pin joints and clipping are strictly prohibited. Any unfair means will lead to the termination of the participating group.",
+            "Final judgment will be based on the “Maximum Ratio of Collapse load of the bridge to the Final Weight of the bridge”.",
+            "Violating any of the above rules will lead to a penalty.",
+            "Decision of the judges will be final.",
             ],
-          eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
+          eligibility: "All Participants should have proper College ID card on them, and should be able to produce the same in original when asked for verification, failing which they will not be allowed to participate. Each participant should be a student pursuing some field of study in college/university.",
           location: "CE Courtyard",
           registration: "Open until Nov 14",
         },
@@ -380,11 +387,11 @@ const DepartmentPage: React.FC = () => {
           department: "ce",
           departmentName: "CE",
           description:
-            "Create quick architectural plans under real-world constraints.",
+            " Are you ready to put your planning skills to the test? Welcome to Insta-Plan! Teams from different parts of West Bengal will compete in a series of challenges designed to test their ability to plan and execute complex projects. These challenges will push the limits of what you thought was possible. \n Our expert judges will be watching closely, looking for the best-planned solutions and most effective execution. But only one team can come out on top and take home the grand prize. \n Think you have what it takes to win Insta-Plan? Register now and show us your skills! \n\n🌟Details: \nA Line Plan has to be prepared as per the given scale with proper orientation according to the standard norms. Judgement will be based on the most economic utilization of built-up area satisfying the standard norms of planning.",
           minidesc:
             "Create quick architectural plans under real-world constraints.",
-          entryFee: 150,
-          teamSize: 1,
+          entryFee: 0,
+          teamSize: 2,
           date: "Nov 17",
           time: "11:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
@@ -399,15 +406,17 @@ const DepartmentPage: React.FC = () => {
             { name: "Murray Bauman", contact: "9876543210" },
           ],
           rules: [
-            "Teams of 2-3 members",
-            "Plans must be created within time limit",
-            "Use provided software or manual drafting",
-            "Design must meet given requirements",
-            "Judging based on creativity, functionality, and adherence to constraints",
+            "A plot area with random dimensions, Road alignment and North direction will be given. Built up area with proper clearance have to be determined.",
+            "A Line Plan has to be prepared as per the given scale with proper orientation according to the standard norms.",
+            "Judgement will be based on the most economic utilization of built-up area satisfying the standard norms of planning.",
+            "A-4 drawing sheet will be provided. Participants must bring the necessary drawing equipments.",
+            "Only two participants are allowed in a group. Maximum duration of the event will be one hour.",
+            "In case of ‘Tie’, preference will be given to the group doing early submission.",
+            "Decision of the judges will be final.",
             ],
-          eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
+          eligibility: "All participants should have a valid College ID cards and be able to produce the same when asked for verification, failing which they will not be allowed to participate. Each player should be a student pursuing some field of study in Undergraduate courses only.",
           location: "CE Design Studio",
-          registration: "Open until Nov 15",
+          registration: "Open until Nov 13",
         },
       ],
     },
@@ -503,7 +512,7 @@ const DepartmentPage: React.FC = () => {
           department: "bsh",
           departmentName: "BSH",
           description:
-            "Challenge your logical thinking in this timed number puzzle event. Contestants must complete a 9×9 Sudoku grid by filling in numbers from 1 to 9. No number should repeat within the same row, column, or 3×3 sub-grid.",
+            "Challenge your logical thinking in this timed number puzzle event. \n\n 🌟Details:\nContestants must complete a 9×9 Sudoku grid by filling in numbers from 1 to 9. No number should repeat within the same row, column, or 3×3 sub-grid.",
           minidesc:
             "Challenge your logical thinking in this timed number puzzle event.",
           entryFee: 10,
@@ -513,12 +522,12 @@ const DepartmentPage: React.FC = () => {
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/sudoku.webp",
           coordinators: [
-            { name: "Dr. Marie Curie", contact: "9876543210" },
-            {
-              name: "Erica Sinclair",
-              contact: "9876543210",
-            },
-            { name: "Will Byers", contact: "9876543210" },
+            { name: "Mr. Saurav Chowdhury", contact: "9331614668" },
+            // {
+            //   name: "Erica Sinclair",
+            //   contact: "9876543210",
+            // },
+            // { name: "Will Byers", contact: "9876543210" },
           ],
           rules: [
             "Contestants are not permitted to alter any numbers already provided in the grid.",
@@ -545,22 +554,22 @@ const DepartmentPage: React.FC = () => {
           minidesc:
             "A campus-wide treasure hunt with fun clues and exciting challenges.",
           entryFee: 60,
-          teamSize: 1,
+          teamSize: "2 - 3",
           date: "Nov 16",
           time: "02:00 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/hunt-for-fun.webp",
           coordinators: [
             {
-              name: "Dr. Richard Feynman",
-              contact: "9876543210",
+              name: "Mr. Saurav Chowdhury",
+              contact: "9331614668",
             },
-            { name: "Nancy Wheeler", contact: "9876543210" },
-            { name: "Mike Wheeler", contact: "9876543210" },
-            {
-              name: "Dustin Henderson",
-              contact: "9876543210",
-            },
+            // { name: "Nancy Wheeler", contact: "9876543210" },
+            // { name: "Mike Wheeler", contact: "9876543210" },
+            // {
+            //   name: "Dustin Henderson",
+            //   contact: "9876543210",
+            // },
           ],
           rules: [
             "Only team participation is allowed. Each team must have a minimum of 2 members and a maximum of 3 members.",
@@ -593,19 +602,19 @@ const DepartmentPage: React.FC = () => {
             "Put your general knowledge to the test in this fast-paced quiz battle. \nThe details of each Round are as follows: \n\n 🟣Round 1: Current Affairs & G.K \n 🟣Round 2: Double Trouble (Basic Engineering) \n\n The Final Round are as follows:\n🟣Round 3: Audio & Visual Round: (Movie, Music, Puzzle, Sports, Personality,Politics).\n🟣Round 4: Guess/ Clue Round.\n🟣Round 5: Rapid Fire Round.",
           minidesc:
             "Put your general knowledge to the test in this fast-paced quiz battle.",
-          entryFee: 50,
-          teamSize: 1,
+          entryFee: 0,
+          teamSize: 2,
           date: "Nov 17",
           time: "02:00 PM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizzard.webp",
           coordinators: [
             {
-              name: "Dr. Albert Einstein",
-              contact: "9876543210",
+              name: "Manab Kumar Saha",
+              contact: "9433565643",
             },
-            { name: "Nancy Wheeler", contact: "9876543210" },
-            { name: "Suzie Bingham", contact: "9876543210" },
+            // { name: "Nancy Wheeler", contact: "9876543210" },
+            // { name: "Suzie Bingham", contact: "9876543210" },
           ],
           rules: [
             "The competition carries prizes and certificates for 1st, 2nd & 3rd place holders only.",
@@ -629,11 +638,11 @@ const DepartmentPage: React.FC = () => {
           department: "general",
           departmentName: "GENERAL",
           description:
-            "Showcase creative models and prototypes across engineering domains.",
+            "Showcase creative models and prototypes across engineering domains. \n\n 🌟Details:\nThe team must bring a layout of the project mentioning the project name, the aim of the project, working principles, and practical applications. Also, the project's expenditure is to be mentioned on a chart paper.",
           minidesc:
             "Showcase creative models and prototypes across engineering domains.",
-          entryFee: 100,
-          teamSize: 1,
+          entryFee: 0,
+          teamSize: 4,
           date: "Nov 18",
           time: "10:00 AM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
@@ -651,15 +660,15 @@ const DepartmentPage: React.FC = () => {
             { name: "Karen Wheeler", contact: "9876543210" },
           ],
           rules: [
-            "Teams of 1-4 members",
-            "Models must be original work",
-            "Submit project documentation",
-            "Live demonstration required",
-            "Judging based on innovation, practicality, and presentation",
+            "Dimension of the project base must not exceed (3x4) ft.",
+            "The team must bring a layout of the project mentioning the project name, the aim of the project, working principles, and practical applications. Also, the project's expenditure is to be mentioned on a chart paper.",
+            "At least two (2) group members should always remain present for the project demonstration during the exhibition period, i.e., 10.00 am - 5.00 pm.",
+            "Virtual projects like web applications will also be allowed for the competition.",
+            "Each group must carry an extension cord for Electric Connection. Otherwise, the organizing committee will be unable to provide an electrical connection to the models/ projects if required.",
             ],
-          eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
+          eligibility: "All Participants should have proper College ID card on them, and should be able to produce the same in original when asked for verification, failing which they will not be allowed to participate. Each participant should be a student pursuing some field of study in college/university.",
           location: "Exhibition Hall",
-          registration: "Open until Nov 16",
+          registration: "Open until May 13th",
         },
       ],
     },
