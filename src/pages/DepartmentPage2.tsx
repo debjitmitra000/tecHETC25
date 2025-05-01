@@ -1297,13 +1297,6 @@ const DepartmentPage: React.FC = () => {
                           </span>
                         </div>
                       </div>
-
-                      <button
-                        onClick={() => setSelectedEvent(event)}
-                        className={`flex items-center justify-center w-full py-2 border border-${color} text-${color} hover:bg-${color} hover:bg-opacity-20 transition-all rounded font-mono`}
-                      >
-                        View Details
-                      </button>
                     </div>
                   </motion.div>
                 ))}
