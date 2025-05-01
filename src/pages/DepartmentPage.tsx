@@ -37,7 +37,7 @@ const DepartmentPage: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const closeModal = () => {
-    navigate("/events", { replace: true });
+    navigate("/", { replace: true });
     setTimeout(() => {
       const eventsSection = document.getElementById("events");
       eventsSection?.scrollIntoView({ behavior: "smooth" });
