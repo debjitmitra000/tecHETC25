@@ -92,7 +92,7 @@ const departments = {
           department: "cse",
           departmentName: "CSE",
           description:
-            "Design modern and user-friendly interfaces with top-notch UX principles.",
+            "The UI–UX Design competition challenges participants to blend creativity with usability by crafting modern, user-centered digital interfaces. From wireframes to high-fidelity prototypes, contestants will apply design thinking principles, accessibility standards, and UX best practices to build seamless, intuitive experiences. This is your chance to showcase your skills in visual design, user research, and interaction flow—whether you're designing apps, websites, or systems. Think beyond aesthetics—design for real users, real needs, and real impact.",
           minidesc:
             "Design modern and user-friendly interfaces with top-notch UX principles.",
           entryFee: 0,
@@ -132,8 +132,8 @@ const departments = {
           department: "cse",
           departmentName: "CSE",
           description:
-            "Compete in the ultimate mobile battle royale tournament.",
-          minidesc: "Compete in the ultimate mobile battle royale tournament.",
+            "Get ready for an adrenaline-pumping experience in the ultimate mobile battle royale — BATTLE GROUNDS MOBILE INDIA (BGMI) Tournament! Assemble your squad, strategize in real-time, and face off against rival teams in a high-stakes environment where only the sharpest survive. With intense gameplay, tactical combat, and fierce competition, this is your chance to dominate the battleground and prove your skills. Glory, prizes, and bragging rights await the victors!",
+          minidesc: "Drop in, gear up, and battle your way to Compete in the ultimate mobile battle royale tournament.",
           entryFee: 200,
           teamSize: "3 - 4",
           date: "May 16",
@@ -482,9 +482,9 @@ const departments = {
           department: "ee",
           departmentName: "EE",
           description:
-            "Solve electromagnetism-based challenges in this electrifying competition.",
+            "ELECTROMAT is a dynamic competition tailored for electrical engineering enthusiasts, combining the fundamentals of electromagnetism with the power of MATLAB programming. Participants will face a series of thought-provoking challenges designed to test their analytical thinking, coding skills, and understanding of real-world electrical engineering concepts.",
           minidesc:
-            "Solve electromagnetism-based challenges in this electrifying competition.",
+            "Put your problem-solving skills to the test in this hands-on electromagnetism and MATLAB-based coding competition.",
           entryFee: 0,
           teamSize: "1 - 2",
           date: "May 15",

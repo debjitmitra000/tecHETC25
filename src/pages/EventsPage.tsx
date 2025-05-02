@@ -155,7 +155,7 @@ const EventsPage: React.FC = () => {
       department: "ee",
       departmentName: "EE",
       description:
-        "Solve electromagnetism-based challenges in this electrifying competition.",
+        "Put your problem-solving skills to the test in this hands-on electromagnetism and MATLAB-based coding competition.",
       entryFee: 0,
       teamSize: "1 - 2",
       date: "May 15",
@@ -182,7 +182,7 @@ const EventsPage: React.FC = () => {
       title: "BGMI",
       department: "cse",
       departmentName: "CSE",
-      description: "Compete in the ultimate mobile battle royale tournament.",
+      description: "Drop in, gear up, and battle your way to Compete in the ultimate mobile battle royale tournament.",
       entryFee: "200 per team",
       teamSize: "3 - 4",
       date: "May 17",
@@ -210,7 +210,7 @@ const EventsPage: React.FC = () => {
       department: "ece",
       departmentName: "ECE",
       description:
-        "Dive into exciting electronics experiments and inMayations.",
+        "Dive into exciting electronics experiments and innovations.",
       entryFee: 0,
       teamSize: 1,
       date: "May 16",
