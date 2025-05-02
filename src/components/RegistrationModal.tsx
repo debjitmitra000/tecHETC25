@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Camera, Zap } from 'lucide-react';
+import { X, ExternalLink, Camera, Zap, AlertTriangle, CreditCard, ArrowRight, QrCode, Info } from 'lucide-react';
 import { useRegistration } from '../contexts/RegistrationContext';
 
-const RegistrationModal: React.FC = () => {
+const RegistrationModal = () => {
   const { isModalOpen, closeModal } = useRegistration();
   const [animateQR, setAnimateQR] = useState(false);
   const [showNote, setShowNote] = useState(false);
@@ -22,7 +22,7 @@ const RegistrationModal: React.FC = () => {
 
   // Open Google Form in a new tab
   const openGoogleForm = () => {
-    // Replace with your actual Google Form URL
+    // Google Form URL
     const googleFormUrl = "https://forms.gle/52J8CSrtBtnhXFnC9";
     window.open(googleFormUrl, "_blank");
   };
@@ -34,96 +34,230 @@ const RegistrationModal: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black bg-opacity-100"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-surface w-full max-w-lg rounded-lg border-2 border-primary pixel-corners"
+            className="bg-gray-900 w-full max-w-2xl rounded-lg border-2 border-primary pixel-corners"
           >
-            <div className="flex flex-col h-full max-h-[80vh]">
+            <div className="flex flex-col h-full max-h-[90vh] sm:max-h-[80vh]">
               {/* Header */}
-              <div className="flex justify-between items-center p-4 border-b border-primary bg-primary">
-                <h2 className="font-pixel text-base text-white">Register For TECHetc 2K25</h2>
+              <div className="flex justify-between items-center p-3 sm:p-4 border-b border-primary bg-primary">
+                <h2 className="font-pixel text-lg sm:text-xl text-white">Register For TECHetc 2K25</h2>
                 <button
                   onClick={closeModal}
-                  className="p-2 hover:text-black transition-colors"
+                  className="p-1 sm:p-2 hover:text-black transition-colors"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </button>
               </div>
 
               {/* Content - Scrollable */}
-              <div className="p-4 overflow-y-auto">
-                <div className="flex flex-col items-center">
-
-
-                  <div className="bg-background border border-primary rounded-md p-3 mb-4 w-full">
-                    <h4 className="font-pixel text-primary text-sm mb-2">Online Registration Steps:</h4>
-                    <ol className="font-mono text-sm text-left list-decimal pl-5 space-y-1.5">
-                      <li>Scan QR code to pay ₹100 registration fee</li>
-                      <li>Take screenshot of payment confirmation</li>
-                      <li>Fill Google Form and upload screenshot</li>
-                    </ol>
-                    <div className="mt-3 pt-2 border-t border-primary border-opacity-30">
-                      <p className="font-mono text-xs text-neon-ece mb-1">Note: ₹100 is only the registration fee. Each event has its own additional fee.</p>
-                      <p className="font-mono text-xs text-neon-ce italic">You can also register offline at the registration desk.</p>
+              <div className="p-3 sm:p-6 overflow-y-auto bg-gray-900 text-gray-200">
+                <div className="flex flex-col">
+                  {/* Important Notice Banners */}
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                    {/* Registration Fee Notice */}
+                    <div className="w-full bg-gray-800 border-l-4 border-primary p-3 sm:p-4 rounded-r-md">
+                      <div className="flex items-start">
+                        <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2 sm:mr-3 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-pixel text-sm sm:text-base text-primary">REGISTRATION FEE</h3>
+                          <p className="font-mono text-xs sm:text-sm mt-1">Registration fee: ₹100/- per candidate. Each group member must register individually for group events.</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Event Fee Notice */}
+                    <div className="w-full bg-gray-800 border-l-4 border-primary p-3 sm:p-4 rounded-r-md">
+                      <div className="flex items-start">
+                        <Info className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2 sm:mr-3 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-pixel text-sm sm:text-base text-primary">EVENT ENTRY FEES</h3>
+                          <p className="font-mono text-xs sm:text-sm mt-1">Besides the registration fee, separate entry fees apply for some individual and group events. Check the Events section for details. Event fees will be collected on-site before participation.</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <motion.div
-                    animate={{
-                      boxShadow: animateQR ? '0 0 25px rgba(124, 58, 237, 0.6)' : '0 0 5px rgba(124, 58, 237, 0.2)'
-                    }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                    className="border-3 border-primary p-2 bg-white rounded-md mb-4"
-                  >
-                    {/* Placeholder QR Code */}
-                    <div className="w-40 h-40 bg-black flex items-center justify-center relative overflow-hidden">
-                      <div className="text-white font-mono text-xs z-10">QR Code Placeholder</div>
-                      <motion.div
-                        className="absolute w-full h-8 bg-primary bg-opacity-20"
-                        animate={{
-                          y: ["-100%", "400%"],
-                          opacity: [0.2, 0.5, 0.2]
-                        }}
-                        transition={{
-                          repeat: Infinity,
-                          duration: 2.5,
-                          ease: "linear"
-                        }}
-                      />
+                  {/* Step Timeline */}
+                  <div className="mb-4 sm:mb-6 relative">
+                    <div className="hidden sm:block absolute left-0 top-6 h-full w-1 bg-primary opacity-30 ml-3"></div>
+                    <h4 className="font-pixel text-primary text-base sm:text-lg mb-4 sm:mb-6">Registration Process</h4>
+                    
+                    <div className="space-y-4 sm:space-y-8 relative">
+                      {/* Step 1: Account Details */}
+                      <div className="sm:ml-10 relative">
+                        <div className="hidden sm:flex absolute -left-10 top-0 items-center justify-center w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full">
+                          <span className="text-white font-bold text-xs sm:text-sm">1</span>
+                        </div>
+                        
+                        <div className="bg-gray-800 border border-gray-700 p-3 sm:p-5 rounded-lg shadow-lg">
+                          <div className="flex items-center mb-2 sm:mb-3">
+                            <div className="sm:hidden bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 font-bold text-xs">1</div>
+                            <h5 className="font-pixel text-white text-sm sm:text-base flex items-center">
+                              <CreditCard className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
+                              Payment Details
+                            </h5>
+                          </div>
+                          
+                          <div className="ml-0 sm:ml-2 bg-gray-900 p-3 sm:p-4 rounded-md border-l-4 border-primary">
+                            <p className="font-mono text-xs sm:text-sm mb-2 sm:mb-3">Transfer ₹100/- to the following account:</p>
+                            <div className="font-mono text-xs sm:text-sm space-y-1 sm:space-y-2">
+                              <div className="flex justify-between border-b border-gray-700 pb-1">
+                                <span className="text-gray-400">A/C holder's Name:</span>
+                                <span className="text-white">Hooghly Engineering & Technology College</span>
+                              </div>
+                              <div className="flex justify-between border-b border-gray-700 pb-1">
+                                <span className="text-gray-400">A/C Number:</span>
+                                <span className="text-white">50339432106</span>
+                              </div>
+                              <div className="flex justify-between border-b border-gray-700 pb-1">
+                                <span className="text-gray-400">Bank Name:</span>
+                                <span className="text-white">Indian Bank</span>
+                              </div>
+                              <div className="flex justify-between border-b border-gray-700 pb-1">
+                                <span className="text-gray-400">IFSC Code:</span>
+                                <span className="text-white">IDIB000C593</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-gray-400">Branch:</span>
+                                <span className="text-white">Chinsurah Main</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Step 2: Take Screenshot */}
+                      <div className="sm:ml-10 relative">
+                        <div className="hidden sm:flex absolute -left-10 top-0 items-center justify-center w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full">
+                          <span className="text-white font-bold text-xs sm:text-sm">2</span>
+                        </div>
+                        
+                        <div className="bg-gray-800 border border-gray-700 p-3 sm:p-5 rounded-lg shadow-lg">
+                          <div className="flex items-center mb-2 sm:mb-3">
+                            <div className="sm:hidden bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 font-bold text-xs">2</div>
+                            <h5 className="font-pixel text-white text-sm sm:text-base flex items-center">
+                              <Camera className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
+                              Save Payment Proof
+                            </h5>
+                          </div>
+                          
+                          <div className="ml-0 sm:ml-2">
+                            <div className="bg-gray-900 p-3 sm:p-4 rounded-md border border-gray-700">
+                              <div className="flex items-start">
+                                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-primary mt-1 flex-shrink-0" />
+                                <p className="font-mono text-xs sm:text-sm">Take a screenshot or download the receipt of your payment transaction.</p>
+                              </div>
+                            </div>
+                            
+                            <div className="mt-2 sm:mt-3 bg-gray-900 p-3 sm:p-4 rounded-md border border-primary border-opacity-50">
+                              <p className="font-mono text-xs sm:text-sm text-white">This payment proof will be required in the next step when filling the registration form.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Step 3: Fill Google Form */}
+                      <div className="sm:ml-10 relative">
+                        <div className="hidden sm:flex absolute -left-10 top-0 items-center justify-center w-6 h-6 sm:w-7 sm:h-7 bg-primary rounded-full">
+                          <span className="text-white font-bold text-xs sm:text-sm">3</span>
+                        </div>
+                        
+                        <div className="bg-gray-800 border border-gray-700 p-3 sm:p-5 rounded-lg shadow-lg">
+                          <div className="flex items-center mb-2 sm:mb-3">
+                            <div className="sm:hidden bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 font-bold text-xs">3</div>
+                            <h5 className="font-pixel text-white text-sm sm:text-base flex items-center">
+                              <Zap className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
+                              Complete Registration
+                            </h5>
+                          </div>
+                          
+                          <div className="ml-0 sm:ml-2">
+                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                              {/* Form Details */}
+                              <div className="flex-1 bg-gray-900 rounded-lg p-3 sm:p-4 border border-gray-700">
+                                <div>
+                                  <p className="font-mono text-xs sm:text-sm mb-2 sm:mb-3">Fill in all required details and upload your payment proof:</p>
+                                  <ul className="text-xs sm:text-sm font-mono space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                                    <li className="flex items-start">
+                                      <span className="text-primary mr-2">•</span>
+                                      Personal details
+                                    </li>
+                                    <li className="flex items-start">
+                                      <span className="text-primary mr-2">•</span>
+                                      College information
+                                    </li>
+                                    <li className="flex items-start">
+                                      <span className="text-primary mr-2">•</span>
+                                      Payment screenshot
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              
+                              {/* QR Code */}
+                              <div className="flex-1 bg-gray-900 rounded-lg p-3 sm:p-4 border border-gray-700 flex flex-col items-center justify-center">
+                                <motion.div
+                                  animate={{
+                                    boxShadow: animateQR ? '0 0 20px rgba(124, 58, 237, 0.6)' : '0 0 5px rgba(124, 58, 237, 0.2)'
+                                  }}
+                                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                                  className="border-2 border-primary p-1 sm:p-2 bg-black rounded-md mb-2 sm:mb-3 relative overflow-hidden"
+                                >
+                                  <img src="/qr.webp" alt="Registration QR Code" className="w-24 h-24 sm:w-32 sm:h-32 object-cover" />
+                                  <motion.div
+                                    className="absolute w-full h-6 sm:h-8 bg-primary bg-opacity-20"
+                                    animate={{
+                                      y: ["-100%", "400%"],
+                                      opacity: [0.2, 0.5, 0.2]
+                                    }}
+                                    transition={{
+                                      repeat: Infinity,
+                                      duration: 2.5,
+                                      ease: "linear"
+                                    }}
+                                  />
+                                </motion.div>
+                                <div className="flex items-center text-xs sm:text-sm font-mono mb-1 sm:mb-2">
+                                  <QrCode className="h-3 w-3 sm:h-4 sm:w-4 text-primary mr-1 sm:mr-2" />
+                                  Scan QR code
+                                </div>
+                                
+                                <motion.div
+                                  initial={{ opacity: 0, y: 8 }}
+                                  animate={{ opacity: showNote ? 1 : 0, y: showNote ? 0 : 8 }}
+                                  transition={{ delay: 0.3, duration: 0.5 }}
+                                  className="text-center"
+                                >
+                                  <p className="text-xs mb-1 font-mono text-gray-400">If QR code doesn't work</p>
+                                  <a 
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLScptNQVmM__o-r4myA1wQ_PhS6AImDK37BpGhaywCtngBaezg/closedform" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="font-mono text-primary hover:text-purple-400 text-xs sm:text-sm flex items-center justify-center transition-colors"
+                                  >
+                                    <ExternalLink className="mr-1 h-2 w-2 sm:h-3 sm:w-3" />
+                                    Click here to open form
+                                  </a>
+                                </motion.div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </motion.div>
+                  </div>
 
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: showNote ? 1 : 0, opacity: showNote ? 1 : 0 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 20 }}
-                    className="flex items-center justify-center space-x-1.5 mb-3 bg-primary bg-opacity-10 px-3 py-1.5 rounded-full"
-                  >
-                    <Camera className="h-4 w-4 text-primary" />
-                    <p className="font-mono text-xs text-primary">
-                      Remember to screenshot your payment!
+                  {/* Offline Registration Notice */}
+                  <div className="bg-gray-800 p-3 sm:p-4 rounded-md border border-gray-700 w-full">
+                    <p className="font-mono text-xs sm:text-sm">
+                      <span className="font-bold text-primary">Note:</span> You can also register offline at the college campus.
                     </p>
-                  </motion.div>
-                </div>
-              </div>
-
-              {/* Footer - Fixed */}
-              <div className="p-4 border-t border-primary mt-auto flex justify-center">
-                <div className="flex justify-center w-96">
-                  <motion.button
-                    onClick={openGoogleForm}
-                    whileTap={{ scale: 0.95 }}
-                    whileHover={{ scale: 1.02 }}
-                    className="w-full py-2.5 bg-primary bg-opacity-20 border-2 border-primary rounded-md hover:bg-opacity-30 transition-colors font-pixel text-primary flex items-center justify-center"
-                  >
-                    <Zap className="mr-2 h-4 w-4" />
-                    Registration Form
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </motion.button>
+                  </div>
                 </div>
               </div>
             </div>
