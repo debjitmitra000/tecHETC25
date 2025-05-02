@@ -101,14 +101,14 @@ const Hero: React.FC = () => {
             transition={{ duration: 1 }}
             className="text-center lg:text-left lg:pr-8"
           >
-            <motion.h4 
+            {/* <motion.h4 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="font-mono text-lg mb-2"
             >
               Tech Fest 2025
-            </motion.h4>
+            </motion.h4> */}
 
             <div className="overflow-hidden mb-4 mt-5">
               <motion.div

@@ -1,10 +1,10 @@
-import FuturisticNeonCountdown from './CountDown';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
 import { Award, Calendar, Users, MapPin } from 'lucide-react';
+import Countdown from './Countdown';
 
-const AboutSection: React.FC = () => {
+const AboutSection = () => {
   const stats = [
     { value: '15', label: 'Events', icon: <Award className="h-10 w-10 text-neon-cse" /> },
     { value: '2', label: 'Days', icon: <Calendar className="h-10 w-10 text-neon-ece" /> },
@@ -27,42 +27,38 @@ const AboutSection: React.FC = () => {
   ];
 
   // Animation variants
-  const timerVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: { 
-      opacity: 1, 
-      scale: 1,
+      opacity: 1,
       transition: { 
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100
-      } 
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
     }
   };
 
   const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, y: -15 },
     visible: { 
       opacity: 1, 
-      y: 0, 
+      y: 0,
       transition: { 
-        duration: 0.7,
+        duration: 0.5,
         ease: "easeOut"
-      } 
+      }
     }
   };
 
-  const introTextVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const textVariants = {
+    hidden: { opacity: 0, y: 10 },
     visible: { 
       opacity: 1, 
-      y: 0, 
+      y: 0,
       transition: { 
-        duration: 0.5,
-        delay: 0.3,
+        duration: 0.4,
         ease: "easeOut"
-      } 
+      }
     }
   };
 
@@ -71,62 +67,53 @@ const AboutSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.5
+        staggerChildren: 0.1,
+        delayChildren: 0.3
       }
     }
   };
 
   const statsItemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   };
 
   const rulesContainerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1,
+      y: 0,
       transition: { 
-        staggerChildren: 0.1,
-        delayChildren: 0.6,
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   };
 
   const ruleItemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { 
+    hidden: { opacity: 0, x: -10 },
+    visible: index => ({ 
       opacity: 1, 
       x: 0,
       transition: { 
-        type: "spring",
-        damping: 12,
-        stiffness: 100
+        duration: 0.3,
+        delay: 0.1 + (index * 0.05),
+        ease: "easeOut"
       }
-    }
+    })
   };
 
   return (
     <section id="about" className="py-20 bg-surface overflow-hidden">
       <div className="container mx-auto px-4">
-        {/* Timer with entrance animation */}
-        <motion.div
-          className="mb-16"
-          variants={timerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <FuturisticNeonCountdown />
-        </motion.div>
+        
 
         {/* Section title */}
         <motion.h2 
@@ -142,13 +129,25 @@ const AboutSection: React.FC = () => {
         {/* About paragraph - Left aligned */}
         <motion.p 
           className="text-lg text-white mb-16"
-          variants={introTextVariants}
+          variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           TECHetc is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines. Join us for two days of excitement, competition, and collaboration as we showcase the best of engineering talent from across the country.
         </motion.p>
+
+
+        {/* Timer with simplified animation */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <Countdown />
+        </motion.div>
         
         {/* Stats - two per row on small screens, four on large */}
         <motion.div 
@@ -163,28 +162,15 @@ const AboutSection: React.FC = () => {
               key={index}
               variants={statsItemVariants}
               whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 0 15px rgba(120, 120, 255, 0.3)",
-                transition: { type: "spring", stiffness: 400, damping: 10 }
+                scale: 1.03,
+                transition: { duration: 0.2 }
               }}
               className="bg-background p-4 border border-primary rounded-lg pixel-corners flex flex-col items-center text-center"
             >
-              <motion.div 
-                className="mb-4"
-                animate={{ 
-                  y: [0, -5, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  delay: index * 0.3
-                }}
-              >
+              <div className="mb-4">
                 {stat.icon}
-              </motion.div>
-              <h3 className="font-pixel text-2xl mb-1 text-gradient">{stat.value}</h3>
+              </div>
+              <h3 className="font-pixel text-2xl mb-1 text-white">{stat.value}</h3>
               <p className="text-gray-300 text-sm">{stat.label}</p>
             </motion.div>
           ))}
@@ -200,7 +186,7 @@ const AboutSection: React.FC = () => {
         >
           <motion.h2 
             className="underline text-gradient-2 text-2xl sm:text-3xl md:text-4xl mb-8"
-            variants={ruleItemVariants}
+            variants={titleVariants}
           >
             General Rules & Guidelines
           </motion.h2>
@@ -211,6 +197,10 @@ const AboutSection: React.FC = () => {
                 key={index} 
                 className="flex items-start"
                 variants={ruleItemVariants}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
               >
                 <BadgeCheck
                   className="h-6 w-6 mr-3 text-primary mt-0.5 flex-shrink-0"
