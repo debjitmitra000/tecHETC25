@@ -65,9 +65,9 @@ const DepartmentPage: React.FC = () => {
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/code-2-duo.webp",
           coordinators: [
-            { name: "Dr. Alan Turing", contact: "9876543210" },
-            { name: "Jane Hopper", contact: "9876543210" },
-            { name: "Mike Wheeler", contact: "9876543210" },
+            { name: "Dr. Mousumi Roy", contact: "7044324745" },
+            { name: "MR. Chiranjeet Sarkar", contact: "8617761378" },
+            { name: "MS. Dipanwita Saha", contact: "8240981600" },
           ],
           rules: [
             "Teams must consist of atleast and atmost 2 members, Solo is not allowed. ",
@@ -99,16 +99,16 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/user-interface-user-experience.webp",
           coordinators: [
             {
-              name: "Dr. Grace Hopper",
-              contact: "9876543210",
+              name: "Ms. Sanghamitra Das",
+              contact: "8240091124",
             },
             {
-              name: "Dustin Henderson",
-              contact: "9876543210",
+              name: "Ms. Anumita Singha Roy",
+              contact: "8961674224",
             },
             {
-              name: "Lucas Sinclair",
-              contact: "9876543210",
+              name: "Mr. Sourav Banik",
+              contact: "8001772466",
             },
           ],
           rules: [
@@ -137,13 +137,10 @@ const DepartmentPage: React.FC = () => {
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/battle-grounds-mobile-india.webp",
           coordinators: [
-            {
-              name: "Steve Harrington",
-              contact: "9876543210",
-            },
-            { name: "Robin Buckley", contact: "9876543210" },
-            { name: "Eddie Munson", contact: "9876543210" },
-            { name: "Max Mayfield", contact: "9876543210" },
+            
+            { name: "Mr. Shyamal Pal", contact: "9433568345" },
+            { name: "Ms. Agnimita Banerjee", contact: "7584937713" },
+            { name: "Ms. Rakhi Chakraborty", contact: "9748847413" },
           ],
           rules: [
             "Every Team should have atleast 3 players. No duo or solo players allowed.",
