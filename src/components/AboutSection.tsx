@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
 import { Award, Calendar, Users, MapPin } from 'lucide-react';
-import Countdown from './Countdown';
+import Countdown from './CountDown';
 
 const AboutSection = () => {
   const stats = [
