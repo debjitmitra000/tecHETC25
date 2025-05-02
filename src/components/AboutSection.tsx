@@ -109,7 +109,7 @@ const AboutSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          About TECHetc 2k25
+          General Rules & Guidelines
           {/* <motion.span 
             className="text-neon-cse"
             initial={{ textShadow: "0 0 0px #ff0055" }}
@@ -137,17 +137,17 @@ const AboutSection: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h2 
+            {/* <motion.h2 
           className="underline text-gradient-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6"
           variants={textItemVariants}
-        >General Rules & Guidelines:</motion.h2>
+        >General Rules & Guidelines:</motion.h2> */}
 
-            <motion.p 
+            {/* <motion.p 
               className="text-lg mb-6 text-white"
               variants={textItemVariants}
             >
               TECHetc is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines.
-            </motion.p>
+            </motion.p> */}
             <ul className="space-y-2">
               {grules.map((rule, index) => (
                 <li key={index} className="flex items-start">
