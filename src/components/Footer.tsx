@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-4 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} TecHETC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} TECHetc. All rights reserved.</p>
           <p className="mt-1 flex items-center justify-center">
             Made with <Heart size={12} className="mx-1 text-secondary" /> for all tech enthusiasts
           </p>
