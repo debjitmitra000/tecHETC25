@@ -53,7 +53,7 @@ const EventsSection: React.FC = () => {
       title: "BGMI",
       department: "cse",
       departmentName: "CSE",
-      description: "Compete in the ultimate mobile battle royale tournament.",
+      description: "Drop in, gear up, and battle your way to Compete in the ultimate mobile battle royale tournament.",
       entryFee: 200,
       teamSize: "3 - 4",
       date: "Nov 17",
