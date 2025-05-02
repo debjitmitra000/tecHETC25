@@ -1,3 +1,4 @@
+import FuturisticNeonCountdown from './CountDown';
 import React from 'react';
 import { color, motion } from 'framer-motion';
 import { Rocket, Target, Users, Trophy, BadgeCheck } from 'lucide-react';
@@ -102,6 +103,16 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-surface overflow-hidden">
       <div className="container mx-auto px-4">
+      <motion.div
+          className="  mb-10"
+ 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+        {/* {<FuturisticNeonCountdown targetDate='2025-04-15T00:00:00'/>} */}
+        {<FuturisticNeonCountdown />}
+          </motion.div>
         <motion.h2 
           className="section-title text-gradient"
           variants={titleVariants}
@@ -128,7 +139,7 @@ const AboutSection: React.FC = () => {
             whileInView={{ textShadow: "0 0 10px #00ff8a" }}
             transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", delay: 0.6 }}
           >ETC</motion.span> */}
-        </motion.h2>
+        </motion.h2>  
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
