@@ -7,7 +7,7 @@ const RegistrationModal: React.FC = () => {
   const { isModalOpen, closeModal } = useRegistration();
   const [animateQR, setAnimateQR] = useState(false);
   const [showNote, setShowNote] = useState(false);
-  
+
   // Animate QR code with pulsing effect
   useEffect(() => {
     if (isModalOpen) {
@@ -19,7 +19,7 @@ const RegistrationModal: React.FC = () => {
       };
     }
   }, [isModalOpen]);
-  
+
   // Open Google Form in a new tab
   const openGoogleForm = () => {
     // Replace with your actual Google Form URL
@@ -48,17 +48,17 @@ const RegistrationModal: React.FC = () => {
                 <h2 className="font-pixel text-base text-white">Register For TECHetc 2K25</h2>
                 <button
                   onClick={closeModal}
-                  className="p-2 hover:text-primary transition-colors"
+                  className="p-2 hover:text-black transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              
+
               {/* Content - Scrollable */}
               <div className="p-4 overflow-y-auto">
                 <div className="flex flex-col items-center">
-                  
-                  
+
+
                   <div className="bg-background border border-primary rounded-md p-3 mb-4 w-full">
                     <h4 className="font-pixel text-primary text-sm mb-2">Online Registration Steps:</h4>
                     <ol className="font-mono text-sm text-left list-decimal pl-5 space-y-1.5">
@@ -71,9 +71,9 @@ const RegistrationModal: React.FC = () => {
                       <p className="font-mono text-xs text-neon-ce italic">You can also register offline at the registration desk.</p>
                     </div>
                   </div>
-                  
-                  <motion.div 
-                    animate={{ 
+
+                  <motion.div
+                    animate={{
                       boxShadow: animateQR ? '0 0 25px rgba(124, 58, 237, 0.6)' : '0 0 5px rgba(124, 58, 237, 0.2)'
                     }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -82,22 +82,22 @@ const RegistrationModal: React.FC = () => {
                     {/* Placeholder QR Code */}
                     <div className="w-40 h-40 bg-black flex items-center justify-center relative overflow-hidden">
                       <div className="text-white font-mono text-xs z-10">QR Code Placeholder</div>
-                      <motion.div 
-                        className="absolute w-full h-8 bg-primary bg-opacity-20" 
-                        animate={{ 
-                          y: ["-100%", "400%"], 
-                          opacity: [0.2, 0.5, 0.2] 
+                      <motion.div
+                        className="absolute w-full h-8 bg-primary bg-opacity-20"
+                        animate={{
+                          y: ["-100%", "400%"],
+                          opacity: [0.2, 0.5, 0.2]
                         }}
-                        transition={{ 
-                          repeat: Infinity, 
+                        transition={{
+                          repeat: Infinity,
                           duration: 2.5,
                           ease: "linear"
                         }}
                       />
                     </div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: showNote ? 1 : 0, opacity: showNote ? 1 : 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 20 }}
@@ -110,7 +110,7 @@ const RegistrationModal: React.FC = () => {
                   </motion.div>
                 </div>
               </div>
-              
+
               {/* Footer - Fixed */}
               <div className="p-4 border-t border-primary mt-auto flex justify-center">
                 <div className="flex justify-center w-96">

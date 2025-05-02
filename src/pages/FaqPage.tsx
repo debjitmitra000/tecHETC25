@@ -19,13 +19,13 @@ const FaqPage: React.FC = () => {
   const faqs: FaqItem[] = [
     // General
     {
-      question: "What is TECHtec?",
-      answer: "TECHtec is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, challenges, tech talks, and networking opportunities for students passionate about technology.",
+      question: "What is TECHetc?",
+      answer: "TECHetc is our annual technology festival that celebrates innovation across all engineering disciplines. It features competitions, challenges, tech talks, and networking opportunities for students passionate about technology.",
       category: "general"
     },
     {
-      question: "When and where will TECHtec 2K25 be held?",
-      answer: "TECHtec 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
+      question: "When and where will TECHetc 2K25 be held?",
+      answer: "TECHetc 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
       category: "general"
     },
     {
@@ -35,7 +35,7 @@ const FaqPage: React.FC = () => {
     },
     // Registration
     {
-      question: "How can I register for TECHtec events?",
+      question: "How can I register for TECHetc events?",
       answer: "Registration for all events can be done through our online Registration form. Navigate to the specific event you're interested in and click the 'Register' button. You'll need to povide your details to complete your registration.",
       category: "registration"
     },
@@ -46,7 +46,7 @@ const FaqPage: React.FC = () => {
     },
     {
       question: "Can students from other colleges participate?",
-      answer: "Absolutely! TECHtec welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment.",
+      answer: "Absolutely! TECHetc welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment.",
       category: "registration"
     },
     {

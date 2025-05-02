@@ -44,7 +44,7 @@ const EventsPage: React.FC = () => {
       departmentName: "CSE",
       description:
         "Pair up and compete in this coding challenge designed for speed and logic.",
-      entryFee: 150,
+      entryFee: 0,
       teamSize: 2,
       date: "Nov 15",
       time: "11:00 AM",
@@ -86,8 +86,8 @@ const EventsPage: React.FC = () => {
       departmentName: "CE",
       description:
         "Design and build model bridges to test structural strength and creativity.",
-      entryFee: 150,
-      teamSize: 3,
+      entryFee: "100 per tean",
+      teamSize: "2 - 4",
       date: "Nov 16",
       time: "10:00 AM",
       icon: <Building2 className="h-5 w-5 text-neon-ce" />,
@@ -114,7 +114,7 @@ const EventsPage: React.FC = () => {
       departmentName: "CSE",
       description:
         "Design modern and user-friendly interfaces with top-notch UX principles.",
-      entryFee: 200,
+      entryFee: 20,
       teamSize: 1,
       date: "Nov 16",
       time: "01:00 PM",
@@ -170,7 +170,7 @@ const EventsPage: React.FC = () => {
       departmentName: "CE",
       description:
         "Create quick architectural plans under real-world constraints.",
-      entryFee: 150,
+      entryFee: 0,
       teamSize: 2,
       date: "Nov 17",
       time: "11:00 AM",
@@ -225,8 +225,8 @@ const EventsPage: React.FC = () => {
       departmentName: "GENERAL",
       description:
         "Showcase creative models and prototypes across engineering domains.",
-      entryFee: 100,
-      teamSize: 2,
+      entryFee: 0,
+      teamSize: 4,
       date: "Nov 18",
       time: "10:00 AM",
       icon: <Brain className="h-5 w-5 text-neon-general" />,

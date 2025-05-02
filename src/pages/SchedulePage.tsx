@@ -59,19 +59,19 @@ const SchedulePage: React.FC = () => {
                 onClick={() => setActiveDay(1)}
                 className={`px-8 py-4 font-pixel ${activeDay === 1 ? 'bg-primary text-white' : 'bg-surface text-primary hover:bg-primary hover:bg-opacity-20'}`}
               >
-                DAY 1 <span className="font-mono text-sm block mt-1">NOV 15</span>
+                DAY 1 <span className="font-mono text-sm block mt-1">MAY 15</span>
               </button>
               <button
                 onClick={() => setActiveDay(2)}
                 className={`px-8 py-4 font-pixel ${activeDay === 2 ? 'bg-primary text-white' : 'bg-surface text-primary hover:bg-primary hover:bg-opacity-20'}`}
               >
-                DAY 2 <span className="font-mono text-sm block mt-1">NOV 16</span>
+                DAY 2 <span className="font-mono text-sm block mt-1">MAY 16</span>
               </button>
             </div>
           </div>
           
           <div className="bg-surface rounded-lg p-6 border border-primary pixel-corners mb-10">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="col-span-1 lg:col-span-2">
                 <h2 className="font-pixel text-xl mb-4">Day {activeDay} Overview</h2>
                 <p className="text-gray-300 mb-4">

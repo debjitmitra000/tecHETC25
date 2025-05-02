@@ -39,17 +39,17 @@ const AboutPage: React.FC = () => {
   const [expandedMobile, setExpandedMobile] = useState<boolean>(true);
   
   const stats = [
-    { value: '8', label: 'Events', icon: <Award className="h-8 w-8 text-neon-cse" /> },
+    { value: '15', label: 'Events', icon: <Award className="h-8 w-8 text-neon-cse" /> },
     { value: '2', label: 'Days', icon: <Calendar className="h-8 w-8 text-neon-ece" /> },
     { value: '500+', label: 'Participants', icon: <Users className="h-8 w-8 text-neon-me" /> },
-    { value: '20+', label: 'Colleges', icon: <MapPin className="h-8 w-8 text-neon-ce" /> }
+    { value: '30+', label: 'Colleges', icon: <MapPin className="h-8 w-8 text-neon-ce" /> }
   ];
 
   const timelineEvents = [
     { 
       year: '2015', 
       title: 'First Edition', 
-      description: 'TecHETC was born with just 3 events and 100 participants.', 
+      description: 'TECHetc was born with just 3 events and 100 participants.', 
       color: 'neon-cse',
       icon: <Terminal className="h-6 w-6" />,
       highlight: 'Version 1.0 Launch'
@@ -198,7 +198,7 @@ const AboutPage: React.FC = () => {
           <div className="prose prose-invert max-w-none mb-16">
             <h2 className="font-pixel text-2xl mb-4 text-neon-cse">Our Story</h2>
             <p className="mb-4">
-              TecHETC was first conceived in 2015 by a group of passionate engineering students who wanted to create a platform for showcasing technical talent beyond the classroom. What began as a small departmental event has grown into one of the region's most anticipated technical festivals.
+              TECHetc was first conceived in 2015 by a group of passionate engineering students who wanted to create a platform for showcasing technical talent beyond the classroom. What began as a small departmental event has grown into one of the region's most anticipated technical festivals.
             </p>
             <p className="mb-4">
               Each year, we choose a theme that reflects current technological trends while encouraging participants to think innovatively. This year's theme celebrates the foundations of computing while looking toward the cutting-edge future of technology.

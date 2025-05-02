@@ -26,12 +26,18 @@ const AboutSection: React.FC = () => {
     }
   ];
   const grules= [
-            "Teams of 1-4 members",
-            "Models must be original work",
-            "Submit project documentation",
-            "Live demonstration required",
-            "Judging based on innovation, practicality, and presentation"
-          ];
+    "The College identity card must be produced at the time of registration by every paryicipants.",
+    "The decision of the jury will be final and binding for all events.",
+    "Any or all of the rules are subject to change at any time.",
+    "The registered participants will receive a participation certificate, welcome kit and refreshments.",
+    "Participants are responsible for their projects and related accessories as mentioned in that event's rules.",
+    "Students from different colleges may mix and match to form a team for the group events. However, in the HUNT FOR FUN event, at least one group member should be from HETC.",
+    "Using unfair means like approach to judges etc. will lead to disqualification.",
+    "No obscene/vulgar statements/gestures are tolerable under any circumstances and will undoubtedly lead to the disqualification of the entire team.",
+    "Any damage to the institute property or any other indiscipline is not tolerable. Strict disciplinary action will be initiated against the defaulter(s) as per the institutes' rules.",
+    "A particular event will be cancelled if the number of participating candidates/ groups is less than five.",
+    "The organising committee will not provide T.A. and accommodation facilities."
+  ];
   // Animation variants
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -140,7 +146,7 @@ const AboutSection: React.FC = () => {
               className="text-lg mb-6 text-white"
               variants={textItemVariants}
             >
-              TecHETC is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines.
+              TECHetc is our annual technology festival that celebrates innovation, creativity, and technical excellence across all engineering disciplines.
             </motion.p>
             <ul className="space-y-2">
               {grules.map((rule, index) => (

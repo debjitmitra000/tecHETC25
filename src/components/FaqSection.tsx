@@ -7,7 +7,7 @@ const FaqSection: React.FC = () => {
   
   const faqs = [
     {
-      question: "How can I register for TecHETC events?",
+      question: "How can I register for TECHetc events?",
       answer: "Registration for all events can be done through our online portal. Navigate to the specific event you're interested in and click the 'Register' button. You'll need to create an account or log in to complete your registration."
     },
     {
@@ -16,7 +16,7 @@ const FaqSection: React.FC = () => {
     },
     {
       question: "Can students from other colleges participate?",
-      answer: "Absolutely! TecHETC welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment."
+      answer: "Absolutely! TECHetc welcomes participants from all colleges and universities. Inter-college participation is encouraged to foster a diverse competitive environment."
     },
     // {
     //   question: "What should I bring to the hackathon?",
