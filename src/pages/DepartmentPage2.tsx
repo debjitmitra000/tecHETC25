@@ -1037,32 +1037,7 @@ const DepartmentPage: React.FC = () => {
 
                           {/* Team size value with emphasis */}
                           <div className="text-center group-hover:scale-105 transition-all duration-300">
-                            <span className="block text-gray-400 text-sm mb-1">
-                              TEAM SIZE
-                            </span>
-                            <div className="flex items-center justify-center">
-                              {typeof selectedEvent.teamSize === "number" ||
-                              !isNaN(parseInt(selectedEvent.teamSize)) ? (
-                                // For numeric team sizes
-                                <span
-                                  className={`font-mono text-${color} text-3xl font-bold`}
-                                >
-                                  {selectedEvent.teamSize}
-                                </span>
-                              ) : (
-                                // For range team sizes (like "1-2" or "3 - 4")
-                                <span
-                                  className={`font-mono text-${color} text-3xl font-bold`}
-                                >
-                                  {selectedEvent.teamSize.replace(/\s/g, "")}
-                                </span>
-                              )}
-                              <span className="font-mono text-white ml-3">
-                                {selectedEvent.teamSize === 1
-                                  ? "INDIVIDUAL"
-                                  : "MEMBERS"}
-                              </span>
-                            </div>
+                            
 
                             {/* Visual representation of team size */}
                             <div className="mt-3">
@@ -1173,6 +1148,29 @@ const DepartmentPage: React.FC = () => {
                                   </div>
                                 );
                               })()}
+                            </div>
+                            <div className="flex items-center justify-center">
+                              {typeof selectedEvent.teamSize === "number" ||
+                              !isNaN(parseInt(selectedEvent.teamSize)) ? (
+                                // For numeric team sizes
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize}
+                                </span>
+                              ) : (
+                                // For range team sizes (like "1-2" or "3 - 4")
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize.replace(/\s/g, "")}
+                                </span>
+                              )}
+                              <span className="font-mono text-white ml-3">
+                                {selectedEvent.teamSize === 1
+                                  ? "INDIVIDUAL"
+                                  : "MEMBERS"}
+                              </span>
                             </div>
                           </div>
                         </div>

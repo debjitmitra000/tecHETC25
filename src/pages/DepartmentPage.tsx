@@ -43,7 +43,8 @@ const DepartmentPage: React.FC = () => {
       eventsSection?.scrollIntoView({ behavior: "smooth" });
     }, 10);
   };
-const departments = {
+
+  const departments = {
     cse: {
       name: "Computer Science Engineering",
       shortName: "CSE",
@@ -1040,32 +1041,7 @@ const departments = {
 
                           {/* Team size value with emphasis */}
                           <div className="text-center group-hover:scale-105 transition-all duration-300">
-                            <span className="block text-gray-400 text-sm mb-1">
-                              TEAM SIZE
-                            </span>
-                            <div className="flex items-center justify-center">
-                              {typeof selectedEvent.teamSize === "number" ||
-                              !isNaN(parseInt(selectedEvent.teamSize)) ? (
-                                // For numeric team sizes
-                                <span
-                                  className={`font-mono text-${color} text-3xl font-bold`}
-                                >
-                                  {selectedEvent.teamSize}
-                                </span>
-                              ) : (
-                                // For range team sizes (like "1-2" or "3 - 4")
-                                <span
-                                  className={`font-mono text-${color} text-3xl font-bold`}
-                                >
-                                  {selectedEvent.teamSize.replace(/\s/g, "")}
-                                </span>
-                              )}
-                              <span className="font-mono text-white ml-3">
-                                {selectedEvent.teamSize === 1
-                                  ? "INDIVIDUAL"
-                                  : "MEMBERS"}
-                              </span>
-                            </div>
+                            
 
                             {/* Visual representation of team size */}
                             <div className="mt-3">
@@ -1176,6 +1152,29 @@ const departments = {
                                   </div>
                                 );
                               })()}
+                            </div>
+                            <div className="flex items-center justify-center">
+                              {typeof selectedEvent.teamSize === "number" ||
+                              !isNaN(parseInt(selectedEvent.teamSize)) ? (
+                                // For numeric team sizes
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize}
+                                </span>
+                              ) : (
+                                // For range team sizes (like "1-2" or "3 - 4")
+                                <span
+                                  className={`font-mono text-${color} text-3xl font-bold`}
+                                >
+                                  {selectedEvent.teamSize.replace(/\s/g, "")}
+                                </span>
+                              )}
+                              <span className="font-mono text-white ml-3">
+                                {selectedEvent.teamSize === 1
+                                  ? "INDIVIDUAL"
+                                  : "MEMBERS"}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1373,7 +1372,7 @@ const departments = {
                 </p>
               </div>
 
-              {/* <div
+              <div
                 className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
               >
                 <h3 className={`font-pixel text-lg text-${color} mb-4`}>
@@ -1449,7 +1448,7 @@ const departments = {
                     </span>
                   </li>
                 </ul>
-              </div> */}
+              </div>
             </div>
           )}
         </div>
