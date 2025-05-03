@@ -72,7 +72,7 @@ const EventsPage: React.FC = () => {
       departmentName: "ECE",
       description:
         "Program and control your bots to score goals and defeat your opponents.",
-      entryFee: 200,
+      entryFee: 0,
       teamSize: "3 - 4",
       date: "May 15",
       time: "03:00 PM",
@@ -114,7 +114,7 @@ const EventsPage: React.FC = () => {
       departmentName: "CSE",
       description:
         "Design modern and user-friendly interfaces with top-notch UX principles.",
-      entryFee: 20,
+      entryFee: 0,
       teamSize: 1,
       date: "May 16",
       time: "01:00 PM",
