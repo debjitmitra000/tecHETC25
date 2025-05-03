@@ -10,7 +10,9 @@ const CommandConsole: React.FC = () => {
     outputHistory,
     currentCommand,
     setCurrentCommand,
-    executeCommand
+    executeCommand,
+    isThemeActive,
+    setIsThemeActive,
   } = useCommand();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -56,6 +58,12 @@ const CommandConsole: React.FC = () => {
 
   return (
     <div
+    style={isThemeActive ? {
+      backgroundImage: "url('https://i.pinimg.com/originals/34/16/fc/3416fc4113b69a0bf1cc75a772c4b5c4.gif')",
+      backgroundSize: "cover",
+      backgroundBlendMode: "multiply",
+      backgroundPosition: "center"
+    } : {}}
       className={`fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-[#111] to-[#1a1a1a] border-t border-primary shadow-lg px-6 py-4 transition-transform duration-300 transform ${
       isConsoleOpen ? 'translate-y-0' : 'translate-y-full'
       }`}

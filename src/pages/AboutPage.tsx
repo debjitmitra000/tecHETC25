@@ -520,6 +520,7 @@ const AboutPage: React.FC = () => {
                       </p>
                     </div>
                     
+                    
                     {/* Animated tech bar - indicates skill level */}
                     <div className="mt-1 w-full h-1 bg-gray-800">
                       <motion.div 
