@@ -352,7 +352,7 @@ const AboutPage: React.FC = () => {
                           {/* Timeline node */}
                           <div className="absolute -left-10 mt-1.5">
                             <motion.div
-                              className={`w-8 h-8 rounded-full flex items-center justify-center border-2 border-${event.color} bg-background z-10 relative overflow-hidden`}
+                              className={`ml-1 w-8 h-8 rounded-full flex items-center justify-center border-2 border-${event.color} bg-background z-10 relative overflow-hidden`}
                               whileHover={{ scale: 1.2 }}
                               animate={activeEvent === index ? { scale: 1.2 } : { scale: 1 }}
                             >
@@ -362,12 +362,12 @@ const AboutPage: React.FC = () => {
                             {/* Pulse effect when active */}
                             {activeEvent === index && (
                               <motion.div
-                                className={`absolute top-0 left-0 w-8 h-8 rounded-full border border-${event.color}`}
+                                className={`absolute top-0 left-0 ml-1 w-8 h-8 rounded-full border border-${event.color}`}
                                 initial={{ opacity: 0.7, scale: 1 }}
                                 animate={{ 
                                   opacity: 0,
                                   scale: 1.8,
-                                  transition: { duration: 1.5, repeat: Infinity }
+                                  transition: { duration: 2.5, repeat: Infinity, ease: "easeIn"  }
                                 }}
                               />
                             )}
@@ -375,7 +375,7 @@ const AboutPage: React.FC = () => {
                           
                           {/* Content card */}
                           <div 
-                            className={`pl-4 ${activeEvent === index ? `border-l-4 border-${event.color}` : ''}`}
+                            className={`pl-5 ${activeEvent === index ? `border-l-4 ml-2 border-${event.color}` : ''}`}
                           >
                             <div className="flex items-center">
                               <h3 className={`font-mono text-lg text-${event.color} mr-2`}>{event.year}</h3>
