@@ -1363,7 +1363,6 @@ const DepartmentPage: React.FC = () => {
                   About {departmentInfo.shortName} Department
                 </h2>
                 <p className="text-gray-300 mb-4">
-                  {departmentInfo.about}
                   {departmentInfo.about.split('\n').map((line, index) => (
                         <span key={index}>
                           {line}
