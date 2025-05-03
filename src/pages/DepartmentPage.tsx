@@ -1373,7 +1373,7 @@ const departments = {
                 </p>
               </div>
 
-              <div
+              {/* <div
                 className={`bg-surface p-6 border border-${color} rounded-lg pixel-corners`}
               >
                 <h3 className={`font-pixel text-lg text-${color} mb-4`}>
@@ -1449,7 +1449,7 @@ const departments = {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
