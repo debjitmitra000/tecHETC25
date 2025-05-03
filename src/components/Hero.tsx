@@ -101,43 +101,52 @@ const Hero: React.FC = () => {
             transition={{ duration: 1 }}
             className="text-center lg:text-left lg:pr-8"
           >
-            {/* <motion.h4 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="font-mono text-lg mb-2"
-            >
-              Tech Fest 2025
-            </motion.h4> */}
-
             <div className="overflow-hidden mb-4 mt-5">
               <motion.div
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className="font-pixel text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  <motion.span
-                    className={`inline-block text-${currentColor}`}
-                    animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    TEC
-                  </motion.span>
-                  <motion.span
-                    className="inline-block text-neon-ece"
-                    animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
-                    transition={{ duration: 2, delay: 0.3, repeat: Infinity }}
-                  >
-                    H
-                  </motion.span>
-                  <motion.span
-                    className="inline-block text-neon-me"
-                    animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
-                    transition={{ duration: 2, delay: 0.6, repeat: Infinity }}
-                  >
-                    etc
-                  </motion.span>
+                <h1 className="font-pixel text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
+                  <div className="flex flex-col justify-center lg:justify-start gap-2">
+                    <div className="inline-flex justify-center lg:justify-start">
+                      <motion.span
+                        className={`inline-block text-${currentColor}`}
+                        animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        TEC
+                      </motion.span>
+                      <motion.span
+                        className="inline-block text-neon-ece"
+                        animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
+                        transition={{ duration: 2, delay: 0.3, repeat: Infinity }}
+                      >
+                        H
+                      </motion.span>
+                      <motion.span
+                        className="inline-block text-neon-me"
+                        animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
+                        transition={{ duration: 2, delay: 0.6, repeat: Infinity }}
+                      >
+                        etc
+                      </motion.span>
+                    </div>
+                    <div className="inline-flex justify-center lg:justify-start">
+                      <motion.span
+                        className={`inline-block text-${currentColor} text-xl sm:text-2xl md:text-3xl lg:text-4xl`}
+                        animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >2k</motion.span>
+                      <motion.span
+                        className="inline-block text-neon-ece text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+                        animate={{ scale: [1, 1.02, 1], filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }}
+                        transition={{ duration: 2, delay: 0.3, repeat: Infinity }}
+                      >
+                        25
+                      </motion.span>
+                    </div>
+                  </div>
                 </h1>
               </motion.div>
             </div>
@@ -148,7 +157,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
               className="text-xl sm:text-2xl md:text-3xl mb-6 text-gradient-2"
             >
-              Presented by Students' Activity committee along with IIC-HETC
+              Presented by IIC-HETC in collaboration with Students' Activity Committee
             </motion.h2>
 
             <motion.p
@@ -157,9 +166,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1.2 }}
               className="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 "
             >
-              {/* Join us for the ultimate tech fest showcasing the most innovative projects across Computer Science, Electronics, Mechanical, and Civil Engineering disciplines. */}
               The ultimate college tech fest celebrating innovation across all engineering disciplines. <span className='hidden sm:inline'>Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology.</span>
-              {/* Whether you're a student, tech enthusiast, or industry professional, TechETC promises a day filled with inspiration and learning. */}
             </motion.p>
             
             {/* Date information with proper alignment - centered on small screens, left on large */}
@@ -169,14 +176,6 @@ const Hero: React.FC = () => {
               transition={{ delay: 1.3 }}
               className="font-pixel mb-8 mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start"
             >
-              <motion.div
-                animate={{ y: [-2, 2, -2] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                style={{ color: themeColors[currentDateColor] }}
-                className="text-2xl mb-2"
-              >
-                2025
-              </motion.div>
               <motion.div
                 animate={{ y: [2, -2, 2] }}
                 transition={{ duration: 2, repeat: Infinity }}
@@ -200,15 +199,6 @@ const Hero: React.FC = () => {
                 Explore Events
               </Link>
             </motion.div>
-            
-            {/* <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.6 }}
-              className="mt-8 text-sm text-gray-500"
-            >
-              <p>Press ` key to access the command console</p>
-            </motion.div> */}
           </motion.div>
           
           {/* Robot GIF Animation - only visible on large screens with proper spacing and larger size */}

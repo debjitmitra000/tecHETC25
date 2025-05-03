@@ -226,7 +226,7 @@ const EventsPage: React.FC = () => {
       description:
         "Showcase creative models and prototypes across engineering domains.",
       entryFee: 0,
-      teamSize: 4,
+      teamSize: "2 - 4",
       date: "May 18",
       time: "10:00 AM",
       icon: <Brain className="h-5 w-5 text-neon-general" />,
