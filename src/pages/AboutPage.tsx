@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
     { 
       year: '2015', 
       title: 'First Edition', 
-      description: 'TECHetc was born with just 3 events and 100 participants.', 
+      description: 'TECHetc was born with just 20 events and 100 participants.', 
       color: 'neon-cse',
       icon: <Terminal className="h-6 w-6" />,
       highlight: 'Version 1.0 Launch'
@@ -92,6 +92,7 @@ const AboutPage: React.FC = () => {
   const techTeam = [
     {
       name: "Soham De",
+      yd:"3rd year, CSE",
       contribution: "Theme Development & Tech ",
       image: "/team/soham.webp",
       icon: <Monitor className="h-6 w-6 text-neon-cse" />,
@@ -101,6 +102,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Debjit Mitra",
+      yd:"3rd year, CSE",
       contribution: "Developer & Designer",
       image: "/team/debjit.webp",
       icon: <Cpu className="h-6 w-6 text-neon-bsh" />,
@@ -110,6 +112,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Devjyoti Banerjee",
+      yd:"3rd year, CSE",
       contribution: "Content Writer & UI/UX",
       image: "/team/dev.webp",
       icon: <Database className="h-6 w-6 text-neon-me" />,
@@ -119,6 +122,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Sayan Genri",
+      yd:"3rd year, CSE",
       contribution: "Content Writer & Event Management",
       image: "/team/sayan.webp",
       icon: <Bolt className="h-6 w-6 text-neon-ee" />,
@@ -128,6 +132,7 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Sayar Paul",
+      yd:"3rd year, CSE",
       contribution: "Multimedia & Event Management",
       image: "/team/sayar.webp",
       icon: <Laptop className="h-6 w-6 text-neon-ce" />,
@@ -215,11 +220,11 @@ const AboutPage: React.FC = () => {
             
             <h2 className="font-pixel text-2xl mt-12 mb-4 text-neon-ece">Our Mission</h2>
             <ul className="space-y-2">
-              <li>To foster technical creativity and innovation among engineering students</li>
-              <li>To provide a platform for students to showcase their technical expertise</li>
-              <li>To encourage cross-disciplinary collaboration between different engineering branches</li>
-              <li>To bridge the gap between academic learning and practical implementation</li>
-              <li>To connect students with industry professionals and potential employers</li>
+              <li>✨ To foster technical creativity and innovation among engineering students</li>
+              <li>✨ To provide a platform for students to showcase their technical expertise</li>
+              <li>✨ To encourage cross-disciplinary collaboration between different engineering branches</li>
+              <li>✨ To bridge the gap between academic learning and practical implementation</li>
+              {/* <li>To connect students with industry professionals and potential employers</li> */}
             </ul>
           </div>
           
@@ -503,7 +508,11 @@ const AboutPage: React.FC = () => {
                         {member.name}
                       </h3>
                     </div>
-                    
+                    <div className="flex items-center justify-center h-8 mt-1"> 
+                      <p className="font-mono text-xs text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                        {member.yd}
+                      </p>
+                    </div>
                     {/* Contribution text with smaller size */}
                     <div className="flex items-center justify-center h-8 mt-1"> 
                       <p className="font-mono text-xs text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300 text-center">

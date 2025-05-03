@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 1 }}
               className="text-xl sm:text-2xl md:text-3xl mb-6 text-gradient-2"
             >
-              Presented by Students' Activity committee along with IIC-HETC
+              Presented by IIC-HETC in collaboration with Students' Activity Committee
             </motion.h2>
 
             <motion.p

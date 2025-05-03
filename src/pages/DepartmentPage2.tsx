@@ -229,14 +229,18 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/line-follower-robot.webp",
           coordinators: [
             {
-              name: "Jagadish Bhattacharyya",
+              name: "Mr. Jagadish Bhattacharyya",
               contact: "9830602422",
             },
-            { name: "Subhajit Roy", contact: "7980083295" },
-            { name: "Manish Kumar Singh", contact: "9007566269" },
-            { name: "Bidisha Sengupta", contact: "7003047434" },
+            { name: "Mr. Subhajit Roy", contact: "7980083295" },
+            { name: "Mr. Manish Kumar Singh", contact: "9007566269" },
+            { name: "Ms. Bidisha Sengupta", contact: "7003047434" },
           ],
           rules: [
+            "It should be wireless and autonomous. No wireless communication between Bot and operator will be allowed. Bluetooth RF Module, etc. not allowed on bot.",
+            "Batteries must be sealed, immobilized electrolyte type type (gel cell, NiCad, or dry cells).",
+            "Infrared light-reflecting materials must not be used on the outside. If robots are painted, they must be painted matte. Minor parts that reflect infrared light could be used only if other robots are not affected. Robots must not produce magnetic interference for other robots on the field.",
+            "Power Supply max 15V DC. Weight max 5 Kg with 5% tolerance.",
             "The Judges' decision shall be considered as final and indisputable.",
             "The Robot has to follow the black line on white background and complete the track in least possible time.",
             "No hand touch is preferable. For each hand touch, marks will be deducted as penalty.",
@@ -268,15 +272,15 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/electrotech-exploration.webp",
           coordinators: [
             {
-              name: "Mrs. Swagata Mallik",
+              name: "Ms. Swagata Mallik",
               contact: "9433122291",
             },
             {
               name: "Mr. Swarup Samanta",
               contact: "7003557478",
             },
-            { name: "Mrs. Samayita Sarkar", contact: "8327296998" },
-            { name: "Mrs. Parna Satapathi", contact: "9330508890" },
+            { name: "Ms. Samayita Sarkar", contact: "8327296998" },
+            { name: "Ms. Parna Satapathi", contact: "9330508890" },
           ],
           rules: [
             "Every round is time-dependent. Each round will start and end as per scheduled time. No extra time will be given.",
@@ -360,17 +364,17 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/bridge-the-gap.webp",
           coordinators: [
             {
-              name: "Dr. Robert Hooke",
-              contact: "9876543210",
+              name: "Mr. Shibashish Deb",
+              contact: "9936057817",
             },
-            {
-              name: "Lucas Sinclair",
-              contact: "9876543210",
-            },
-            {
-              name: "Erica Sinclair",
-              contact: "9876543210",
-            },
+            // {
+            //   name: "Lucas Sinclair",
+            //   contact: "9876543210",
+            // },
+            // {
+            //   name: "Erica Sinclair",
+            //   contact: "9876543210",
+            // },
           ],
           rules: [
             "Each group may consist of maximum four & minimum two participants.",
@@ -405,13 +409,13 @@ const DepartmentPage: React.FC = () => {
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
           bannerImage: "/images/insta-plan.webp",
           coordinators: [
-            {
-              name: "Dr. Gustave Eiffel",
-              contact: "9876543210",
-            },
-            { name: "Robin Buckley", contact: "9876543210" },
-            { name: "Joyce Byers", contact: "9876543210" },
-            { name: "Murray Bauman", contact: "9876543210" },
+            // {
+            //   name: "Dr. Gustave Eiffel",
+            //   contact: "9876543210",
+            // },
+            { name: "Mr. Saikat Dutta", contact: "9874130569" },
+            // { name: "Joyce Byers", contact: "9876543210" },
+            // { name: "Murray Bauman", contact: "9876543210" },
           ],
           rules: [
             "A plot area with random dimensions, Road alignment and North direction will be given. Built up area with proper clearance have to be determined.",
@@ -453,7 +457,7 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/instant-circuit-making.webp",
           coordinators: [
             {
-              name: "Prof. Anikendu Maitra",
+              name: "Mr. Anikendu Maitra",
               contact: "9874305070",
             },
             // { name: "Max Mayfield", contact: "9876543210" },
@@ -490,14 +494,14 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/electromat.webp",
           coordinators: [
             {
-              name: "Ms. Shilpi Saha,",
-              contact: "9876543210",
+              name: "Ms. Shilpi Saha",
+              contact: "6290497754",
             },
-            { name: "Dr. Suravi Thakur", contact: "9876543210" },
-            { name: "Mr. Sibam Golder", contact: "9876543210" },
-             {name: "Mr. Debasish Mitra", contact: "9876543210" },
-              {name: "Ms. Swati De", contact: "9876543210" },
-               {name: "Ms. Priyanka Ghosh", contact: "9876543210" },
+            // { name: "Dr. Suravi Thakur", contact: "9876543210" },
+            // { name: "Mr. Sibam Golder", contact: "9876543210" },
+            //  {name: "Mr. Debasish Mitra", contact: "9876543210" },
+            //   {name: "Ms. Swati De", contact: "9876543210" },
+            //    {name: "Ms. Priyanka Ghosh" },
           ],
           rules: [
             "Each group may have a maximum of two participants for the event.",
@@ -630,7 +634,7 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/quizzard.webp",
           coordinators: [
             {
-              name: "Manab Kumar Saha",
+              name: "Mr. Manab Kumar Saha",
               contact: "9433565643",
             },
             // { name: "Nancy Wheeler", contact: "9876543210" },
@@ -662,22 +666,20 @@ const DepartmentPage: React.FC = () => {
           minidesc:
             "Showcase creative models and prototypes across engineering domains.",
           entryFee: 0,
-          teamSize: 4,
+          teamSize: "2 - 4",
           date: "May 18",
           time: "10:00 AM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/model-display.webp",
           coordinators: [
             {
-              name: "Dr. Stephen Hawking",
-              contact: "9876543210",
+              name: "Dr. Ankan Bhattacharya",
+              contact: "9433782630",
             },
             {
-              name: "Jonathan Byers",
-              contact: "9876543210",
+              name: "Dr. Tanumoy Ghosh",
+              contact: "8961115386",
             },
-            { name: "Robin Buckley", contact: "9876543210" },
-            { name: "Karen Wheeler", contact: "9876543210" },
           ],
           rules: [
             "Dimension of the project base must not exceed (3x4) ft.",
@@ -1268,14 +1270,14 @@ const DepartmentPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="text-center">
+                    {/* <div className="text-center">
                       <div className="mb-2 text-gray-400">
                         <span>Registration: </span>
                         <span className="font-mono">
                           {selectedEvent.registration}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
