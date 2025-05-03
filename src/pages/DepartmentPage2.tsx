@@ -47,7 +47,8 @@ const DepartmentPage: React.FC = () => {
       color: "neon-cse",
       icon: <Cpu className="h-6 w-6" />,
       description:
-        "The Computer Science department hosts coding challenges, hackathons, and software development competitions that push the boundaries of digital innovation.",
+        "The Department of Computer Science and Engineering fosters innovation and excellence in computing technologies. Known for its cutting-edge research and robust academic programs, CSE equips students with skills in software development, artificial intelligence, cybersecurity, and more.",
+        about: "The Department of Computer Science and Engineering at HETC is a vibrant hub of innovation, research, and academic excellence. The department offers a comprehensive curriculum that combines theoretical foundations with hands-on programming and real-world problem-solving. Students gain expertise in a wide range of domains including artificial intelligence, machine learning, data science, cloud computing, cybersecurity, blockchain, and software engineering. With access to state-of-the-art labs, coding competitions, hackathons, and research opportunities, students are encouraged to think creatively and build scalable technological solutions.\n\nThe department regularly collaborates with leading industries and academic institutions, offering students internships, workshops, guest lectures, and mentorship from professionals in the field. Alumni of the department have made their mark in top tech companies, research organizations, and startups. Through its focus on innovation, critical thinking, and entrepreneurship, the CSE department plays a key role in shaping the digital future and grooming the next generation of tech leaders.",
       events: [
         {
           id: "code-2-duo",
@@ -162,7 +163,8 @@ const DepartmentPage: React.FC = () => {
       color: "neon-ece",
       icon: <Zap className="h-6 w-6" />,
       description:
-        "The Electronics department specializes in circuit design, IoT innovations, and electronic systems that bridge the gap between hardware and software.",
+        "The Department of Electronics and Communication Engineering focuses on advancing communication technologies and electronic systems. Students here delve into areas like signal processing, telecommunications, embedded systems, and digital electronics, preparing them for a dynamic career in the field.",
+        about: "The Department of Electronics and Communication Engineering at HETC is dedicated to the advancement of modern communication systems and electronics technologies. The curriculum is designed to provide a deep understanding of electronic circuits, microprocessors, embedded systems, communication protocols, digital signal processing, and wireless technologies. Students receive hands-on training in simulation tools and hardware platforms to bridge the gap between theory and practical applications.\n\nResearch and innovation are at the core of the department’s activities, with active student participation in projects related to the Internet of Things (IoT), robotics, satellite communication, and VLSI design. The department also hosts workshops, seminars, and industrial visits that help students stay aligned with emerging trends. Graduates from ECE are well-equipped to pursue careers in both core electronics sectors and software industries, with a strong foundation in design, analysis, and implementation of communication systems.",
       events: [
         {
           id: "robo-soccer",
@@ -301,7 +303,8 @@ const DepartmentPage: React.FC = () => {
       color: "neon-me",
       icon: <Cog className="h-6 w-6" />,
       description:
-        "The Mechanical department focuses on robotics, CAD design, and physical engineering challenges that test structural integrity and mechanical precision.",
+        "The Department of Mechanical Engineering stands at the forefront of mechanical innovation. Offering expertise in thermal engineering, materials science, manufacturing processes, and robotics, ME students explore diverse fields and contribute to advancements in industry and technology.",
+        about: "The Department of Mechanical Engineering at HETC is one of the core engineering branches, focusing on the design, analysis, manufacturing, and maintenance of mechanical systems. The curriculum covers a broad spectrum of topics including thermodynamics, fluid mechanics, heat transfer, manufacturing processes, materials science, robotics, and automotive engineering. Students are trained in modern tools such as CAD/CAM software, CNC machines, and 3D printers, preparing them for the challenges of industrial design and production.\n\nBeyond academics, the department promotes innovation through student-led clubs, design competitions, and research projects in areas such as renewable energy, automation, mechatronics, and aerodynamics. Regular industry visits and guest lectures ensure that students gain insights into current industrial practices and technologies. The Mechanical Engineering department prides itself on producing versatile engineers capable of contributing across industries including manufacturing, aerospace, energy, and automotive sectors.",
       events: [
         {
           id: "cadmania",
@@ -345,8 +348,9 @@ const DepartmentPage: React.FC = () => {
       color: "neon-ce",
       icon: <Building2 className="h-6 w-6" />,
       description:
-        "The Civil department challenges focus on structural design, earthquake resistance, and sustainable construction techniques for the modern world.",
-      events: [
+        "The Department of Civil Engineering is committed to shaping the infrastructure of tomorrow. From structural design and construction management to environmental engineering and urban planning, CE students contribute to sustainable development and resilience in the built environment.",
+      about: "The Department of Civil Engineering at HETC is committed to developing engineers who can design, build, and maintain infrastructure that supports modern society. The program includes core subjects such as structural engineering, transportation, geotechnical engineering, water resources, construction management, and environmental engineering. Students receive hands-on experience through surveying, CAD modeling, and material testing labs, helping them understand the practical aspects of civil design and construction.\n\nWith a focus on sustainability and smart infrastructure, the department encourages students to work on green building technologies, disaster-resilient structures, and urban planning solutions. Site visits, internships, and expert sessions bridge the academic curriculum with real-world engineering practices. Civil Engineering graduates are well-prepared to contribute to public and private sector infrastructure projects, taking on roles that demand both technical competence and environmental responsibility.",
+        events: [
         {
           id: "bridge-the-gap",
           title: "BRIDGE THE GAP",
@@ -438,8 +442,9 @@ const DepartmentPage: React.FC = () => {
       color: "neon-ee",
       icon: <Bolt className="h-6 w-6" />,
       description:
-        "The Electrical Engineering department focuses on power systems, electrical machines, and innovative solutions in energy management and control systems.",
-      events: [
+        "The Department of Electrical Engineering emphasizes the fundamental principles and applications of electrical systems. With a strong emphasis on renewable energy, power systems, control systems, and electronics, EE students gain hands-on experience through practical projects and industry collaborations.",
+      about: "The Department of Electrical Engineering at HETC offers a comprehensive education in the principles of electricity, electromagnetism, and electronics. The program covers key areas such as power systems, electrical machines, control systems, renewable energy technologies, instrumentation, and smart grid solutions. Students develop technical proficiency through practical lab work, project-based learning, and design simulations using modern engineering tools.\n\nThe department emphasizes interdisciplinary learning and industry-oriented education. Students are encouraged to engage in research and innovation projects, particularly in energy efficiency, automation, and electric vehicle technology. With a focus on sustainability and real-world applicability, the department has a strong record of student placements and higher education opportunities. The Electrical Engineering department nurtures professionals who can address global energy challenges and lead innovations in electrical infrastructure.",
+        events: [
         {
           id: "instant-circuit-making",
           title: "INSTANT CIRCUIT MAKING",
@@ -528,8 +533,9 @@ const DepartmentPage: React.FC = () => {
       color: "neon-bsh",
       icon: <FlaskConical className="h-6 w-6" />,
       description:
-        "The Basic Science department serves as the foundation of engineering education, nurturing analytical thinking and scientific principles across physics, chemistry, and mathematics.",
-      events: [
+        "The Basic Science and Humanities (BSH) Department forms the academic foundation for all engineering disciplines. It equips students with essential knowledge in Physics, Chemistry, Mathematics, and Communication Skills, fostering analytical thinking, scientific inquiry, and strong interpersonal abilities crucial for engineering success",
+      about: "The Department of Basic Science and Humanities (BSH) at HETC plays a vital role in shaping the academic and professional foundation of first-year engineering students. The department offers courses in Engineering Physics, Chemistry, Mathematics, Environmental Science, and English Communication—subjects that are fundamental to understanding and excelling in core engineering disciplines. By nurturing a deep understanding of scientific principles and mathematical techniques, the BSH department helps students develop strong analytical and problem-solving skills from the outset of their academic journey.\n\nIn addition to scientific and technical education, the department emphasizes the development of soft skills, ethics, and professional communication through language labs, presentations, and workshops. These skills are critical for teamwork, leadership, and effective communication in a global engineering environment. Faculty members are dedicated to creating a supportive and intellectually stimulating atmosphere that encourages curiosity, critical thinking, and holistic development. The BSH department stands as a pillar of support, bridging school-level academics with advanced engineering studies and laying the groundwork for future innovation and success.",
+        events: [
         {
           id: "sudoku",
           title: "SUDOKU",
@@ -1357,17 +1363,21 @@ const DepartmentPage: React.FC = () => {
                   About {departmentInfo.shortName} Department
                 </h2>
                 <p className="text-gray-300 mb-4">
-                  {departmentInfo.description} Our department is committed to
-                  fostering innovation and technical excellence through hands-on
-                  competitions and collaborative events.
+                  {departmentInfo.about}
+                  {departmentInfo.about.split('\n').map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
                 </p>
-                <p className="text-gray-300">
+                {/* <p className="text-gray-300">
                   The {departmentInfo.name} department at TecHETC features a
                   series of challenging events designed to test students'
                   technical knowledge, creativity, and problem-solving
                   abilities. Our competitions are judged by faculty experts and
                   industry professionals.
-                </p>
+                </p> */}
               </div>
             </div>
           )}
