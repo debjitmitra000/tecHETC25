@@ -503,6 +503,13 @@ const AboutPage: React.FC = () => {
                         {member.name}
                       </h3>
                     </div>
+
+                    {/* Contribution text with smaller size */}
+                    <div className="flex items-center justify-center h-8 mt-0"> 
+                      <p className="font-mono text-xs text-gray-300 opacity-80 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                        3rd Year, CSE
+                      </p>
+                    </div>
                     
                     {/* Contribution text with smaller size */}
                     <div className="flex items-center justify-center h-8 mt-1"> 
@@ -510,6 +517,7 @@ const AboutPage: React.FC = () => {
                         {member.contribution}
                       </p>
                     </div>
+                    
                     
                     {/* Animated tech bar - indicates skill level */}
                     <div className="mt-1 w-full h-1 bg-gray-800">

@@ -65,7 +65,7 @@ const RegistrationModal = () => {
                         <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2 sm:mr-3 flex-shrink-0 mt-1" />
                         <div>
                           <h3 className="font-pixel text-sm sm:text-base text-primary">REGISTRATION FEE</h3>
-                          <p className="font-mono text-xs sm:text-sm mt-1">Registration fee: ₹100/- per candidate. Each group member must register individually for group events.</p>
+                          <p className="font-mono text-xs sm:text-sm mt-1">Each candidate must register for TECHetc 2k25 by paying  ₹100.</p>
                         </div>
                       </div>
                     </div>
@@ -76,7 +76,7 @@ const RegistrationModal = () => {
                         <Info className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2 sm:mr-3 flex-shrink-0 mt-1" />
                         <div>
                           <h3 className="font-pixel text-sm sm:text-base text-primary">EVENT ENTRY FEES</h3>
-                          <p className="font-mono text-xs sm:text-sm mt-1">Besides the registration fee, separate entry fees apply for some individual and group events. Check the Events section for details. Event fees will be collected on-site before participation.</p>
+                          <p className="font-mono text-xs sm:text-sm mt-1">Besides the registration fee, separate entry fees apply for some individual and group events. Check the Events section for details. Event fees will be collected on-site prior to participation.</p>
                         </div>
                       </div>
                     </div>
@@ -142,20 +142,19 @@ const RegistrationModal = () => {
                             <div className="sm:hidden bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center mr-2 font-bold text-xs">2</div>
                             <h5 className="font-pixel text-white text-sm sm:text-base flex items-center">
                               <Camera className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
-                              Save Payment Proof
+                              Save Payment Receipt
                             </h5>
                           </div>
                           
                           <div className="ml-0 sm:ml-2">
                             <div className="bg-gray-900 p-3 sm:p-4 rounded-md border border-gray-700">
                               <div className="flex items-start">
-                                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-primary mt-1 flex-shrink-0" />
                                 <p className="font-mono text-xs sm:text-sm">Take a screenshot or download the receipt of your payment transaction.</p>
                               </div>
                             </div>
                             
                             <div className="mt-2 sm:mt-3 bg-gray-900 p-3 sm:p-4 rounded-md border border-primary border-opacity-50">
-                              <p className="font-mono text-xs sm:text-sm text-white">This payment proof will be required in the next step when filling the registration form.</p>
+                              <p className="font-mono text-xs sm:text-sm text-white">This payment receipt will be required when filling out the registration form.</p>
                             </div>
                           </div>
                         </div>
@@ -179,25 +178,6 @@ const RegistrationModal = () => {
                           <div className="ml-0 sm:ml-2">
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                               {/* Form Details */}
-                              <div className="flex-1 bg-gray-900 rounded-lg p-3 sm:p-4 border border-gray-700">
-                                <div>
-                                  <p className="font-mono text-xs sm:text-sm mb-2 sm:mb-3">Fill in all required details and upload your payment proof:</p>
-                                  <ul className="text-xs sm:text-sm font-mono space-y-1 sm:space-y-2 mb-3 sm:mb-4">
-                                    <li className="flex items-start">
-                                      <span className="text-primary mr-2">•</span>
-                                      Personal details
-                                    </li>
-                                    <li className="flex items-start">
-                                      <span className="text-primary mr-2">•</span>
-                                      College information
-                                    </li>
-                                    <li className="flex items-start">
-                                      <span className="text-primary mr-2">•</span>
-                                      Payment screenshot
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
                               
                               {/* QR Code */}
                               <div className="flex-1 bg-gray-900 rounded-lg p-3 sm:p-4 border border-gray-700 flex flex-col items-center justify-center">
@@ -233,7 +213,7 @@ const RegistrationModal = () => {
                                   transition={{ delay: 0.3, duration: 0.5 }}
                                   className="text-center"
                                 >
-                                  <p className="text-xs mb-1 font-mono text-gray-400">If QR code doesn't work</p>
+                                  <p className="text-xs mb-1 font-mono text-gray-400">If the QR code doesn’t work</p>
                                   <a 
                                     href="https://docs.google.com/forms/d/e/1FAIpQLScptNQVmM__o-r4myA1wQ_PhS6AImDK37BpGhaywCtngBaezg/closedform" 
                                     target="_blank" 
