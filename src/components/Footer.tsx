@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Facebook, Youtube, Mail, Heart, Twitter } from 'lucide-react';
+import { Facebook, Youtube, Mail, Heart } from 'lucide-react';
+
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   return (
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
                 <Facebook size={20} />
               </a>
               <a href="https://x.com/nsshetc" className="hover:text-neon-ece transition-colors">
-                <Twitter size={20} />
+                <FaXTwitter size={19} />
               </a>
             </div>
           </div>

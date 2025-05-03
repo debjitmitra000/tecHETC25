@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award,  Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Server, Database, Github, Bolt, Linkedin } from 'lucide-react';
+import { Award, Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Database, Github, Bolt, Linkedin } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 
 const AboutPage: React.FC = () => {
   // Create a ref for the top of the page
@@ -94,40 +95,45 @@ const AboutPage: React.FC = () => {
       contribution: "Theme Development & Tech ",
       image: "/team/soham.webp",
       icon: <Monitor className="h-6 w-6 text-neon-cse" />,
-      github: "https://github.com/alexchen",
-      linkedin: "https://linkedin.com/in/alexchen"
+      github: "https://github.com/Snedit",
+      linkedin: "https://www.linkedin.com/in/soham-de-b5bb2b25b/",
+      twitter: "https://x.com/TheSnedit"
     },
     {
       name: "Debjit Mitra",
       contribution: "Developer & Designer",
       image: "/team/debjit.webp",
       icon: <Cpu className="h-6 w-6 text-neon-bsh" />,
-      github: "https://github.com/priyasharma",
-      linkedin: "https://linkedin.com/in/priyasharma"
+      github: "https://github.com/debjitmitra000",
+      linkedin: "https://www.linkedin.com/in/debjitmitra000/",
+      twitter: "https://x.com/debjitmitra000"
     },
     {
       name: "Devjyoti Banerjee",
       contribution: "Content Writer & UI/UX",
       image: "/team/dev.webp",
       icon: <Database className="h-6 w-6 text-neon-me" />,
-      github: "https://github.com/marcusjohnson",
-      linkedin: "https://linkedin.com/in/marcusjohnson"
+      github: "https://github.com/Devjyoti03",
+      linkedin: "https://in.linkedin.com/in/devjyoti-banerjee-31a3b1255",
+      twitter: "https://x.com/Dev_Banerjee_0"
     },
     {
       name: "Sayan Genri",
       contribution: "Content Writer & Event Management",
       image: "/team/sayan.webp",
       icon: <Bolt className="h-6 w-6 text-neon-ee" />,
-      github: "https://github.com/marcusjohnson",
-      linkedin: "https://linkedin.com/in/marcusjohnson"
+      github: "https://github.com/Sayangenri",
+      linkedin: "https://www.linkedin.com/in/sayangenri/",
+      twitter: "https://x.com/Sayan__Genri?t=nEg5AKKSWeFpZNK8Gvkdow&s=09"
     },
     {
       name: "Sayar Paul",
       contribution: "Multimedia & Event Management",
       image: "/team/sayar.webp",
       icon: <Laptop className="h-6 w-6 text-neon-ce" />,
-      github: "https://github.com/sophiarodriguez",
-      linkedin: "https://linkedin.com/in/sophiarodriguez"
+      github: "https://github.com/Sayar-21223",
+      linkedin: "https://linkedin.com/in/sayar-paul-9b7535254",
+      twitter: "https://x.com/sayar_paul"
     }
   ];
 
@@ -400,7 +406,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Tech Team Section - IMPROVED VERSION */}
+          {/* Tech Team Section - WITH ADDED TWITTER/X LINKS */}
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="font-pixel text-3xl text-neon-ce inline-block relative">
@@ -452,7 +458,7 @@ const AboutPage: React.FC = () => {
                     }}
                   />
                   
-                  {/* Member image with hexagonal mask effect - KEEPING THIS UNCHANGED AS REQUESTED */}
+                  {/* Member image with hexagonal mask effect */}
                   <div className="relative w-full pt-[100%] overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center p-4">
                       <div className={`w-full h-full relative overflow-hidden hexagon-clip shadow-lg`}>
@@ -486,7 +492,7 @@ const AboutPage: React.FC = () => {
                     />
                   </div>
                   
-                  {/* Member details with enhanced styling - IMPROVED LAYOUT */}
+                  {/* Member details with enhanced styling */}
                   <div className="p-3 relative">
                     {/* Digital line decoration */}
                     <div className={`absolute top-0 left-0 w-full h-1 bg-${memberColor} opacity-20`} />
@@ -515,13 +521,14 @@ const AboutPage: React.FC = () => {
                       />
                     </div>
                     
-                    {/* Social media links - more compact */}
-                    <div className="mt-1 flex justify-center space-x-3">
+                    {/* Social media links - updated to include Twitter/X */}
+                    <div className="mt-1 flex justify-center space-x-2">
                       <a 
                         href={member.github} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className={`p-1 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                        aria-label="GitHub"
                       >
                         <Github className={`h-4 w-4 text-${memberColor}`} />
                       </a>
@@ -530,8 +537,18 @@ const AboutPage: React.FC = () => {
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className={`p-1 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                        aria-label="LinkedIn"
                       >
                         <Linkedin className={`h-4 w-4 text-${memberColor}`} />
+                      </a>
+                      <a 
+                        href={member.twitter} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`p-1 rounded-full bg-surface hover:bg-${memberColor} hover:bg-opacity-20 transition-colors duration-300`}
+                        aria-label="Twitter/X"
+                      >
+                        <FaXTwitter className={`h-4 w-4 text-${memberColor}`} />
                       </a>
                     </div>
                   </div>
