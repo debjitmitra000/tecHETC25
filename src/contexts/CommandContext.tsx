@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useAudio } from './AudioContext';
 interface CommandContextType {
   isConsoleOpen: boolean;
+ 
   toggleConsole: () => void;
   closeConsole: () => void;
   commandHistory: string[];
@@ -10,6 +11,9 @@ interface CommandContextType {
   currentCommand: string;
   setCurrentCommand: (command: string) => void;
   executeCommand: () => void;
+  isThemeActive: boolean;
+  setIsThemeActive: (isThemeActive: boolean)=> void;
+
 }
 
 const CommandContext = createContext<CommandContextType | undefined>(undefined);
@@ -19,11 +23,13 @@ interface CommandProviderProps {
 }
 
 export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) => {
+  const [isThemeActive, setIsThemeActive] = useState<boolean>(false);
   const [isConsoleOpen, setIsConsoleOpen] = useState<boolean>(false);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [outputHistory, setOutputHistory] = useState<string[]>(['Welcome to TecHETC Terminal. Type /help for available commands.']);
   const [currentCommand, setCurrentCommand] = useState<string>('');
   const navigate = useNavigate();
+  const {isMuted, toggleMute} = useAudio();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -31,6 +37,7 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
         e.preventDefault();
         toggleConsole();
       } else if (e.key === 'Escape' && isConsoleOpen) {
+        setIsThemeActive(false);
         closeConsole();
       }
     };
@@ -40,10 +47,13 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
   }, [isConsoleOpen]);
 
   const toggleConsole = () => {
+    if(!isConsoleOpen)
+      setIsThemeActive(false);
     setIsConsoleOpen(!isConsoleOpen);
   };
 
   const closeConsole = () => {
+    setIsThemeActive(false);
     setIsConsoleOpen(false);
   };
 
@@ -67,7 +77,7 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
       return [
         'Available commands:',
         '/help - Show this help message',
-        '/goto [home|events|schedule|gallery|about|faq|department/cse|department/ece|department/me|department/ce] - Navigate to a page',
+        '/goto [home|events|schedule|gallery|about|faq|department/cse|department/ece|department/me|department/ce|department/ee|department/bsh] - Navigate to a page',
         '/events - List all events',
         '/schedule - Show event schedule',
         '/departments - List all departments',
@@ -86,17 +96,26 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
       return ['Invalid path. Use /help to see available paths.'];
     } else if (command === '/events') {
       return [
-        'Events:',
-        '- Hackathon (CSE): 24-hour coding competition',
-        '- Circuit Design (ECE): Build innovative circuits',
-        '- RoboWars (ME): Robot fighting competition',
-        '- Bridge Building (CE): Structural design challenge',
-        '- Code Sprint (CSE): Fast-paced coding challenge',
-        '- IoT Challenge (ECE): Internet of Things project competition',
-        '- CAD Contest (ME): 3D design contest',
-        '- Earthquake Resistant Structures (CE): Stability competition',
-        'Use /goto events for more details',
-      ];
+        
+          'Events:',
+          '- SUDOKU (BSH): Challenge your logical thinking in this timed number puzzle event.',
+          '- CODE–2–DUO (CSE): Pair up and compete in this coding challenge designed for speed and logic.',
+          '- INSTANT CIRCUIT MAKING (EE): Quick-fire circuit building under pressure using provided components.',
+          '- ROBO SOCCER (ECE): Program and control your bots to score goals and defeat your opponents.',
+          '- BRIDGE THE GAP (CE): Design and build model bridges to test structural strength and creativity.',
+          '- CADMANIA (ME): Showcase your design and drafting skills using CAD software.',
+          '- UI–UX Design (CSE): Design modern and user-friendly interfaces with top-notch UX principles.',
+          '- HUNT FOR FUN (BSH): A campus-wide treasure hunt with fun clues and exciting challenges.',
+          '- LINE FOLLOWER ROBOT (ECE): Build a robot that can smartly follow a line across complex paths.',
+          '- ELECTROMAT (EE): Hands-on electromagnetism and MATLAB-based coding competition.',
+          '- INSTA-PLAN (CE): Create quick architectural plans under real-world constraints.',
+          '- BGMI (CSE): Battle in the ultimate mobile battle royale tournament.',
+          '- QUIZZARD (GENERAL): Test your general knowledge in this fast-paced quiz battle.',
+          '- ELECTROTECH EXPLORATION (ECE): Dive into exciting electronics experiments and innovations.',
+          '- MODEL DISPLAY (GENERAL): Showcase creative models and prototypes across engineering domains.',
+          'Use /goto events for more details',
+        ];
+        
     } else if (command === '/schedule') {
       return [
         'Schedule:',
@@ -120,15 +139,25 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
         '- ECE (Electronics & Communication Engineering)',
         '- ME (Mechanical Engineering)',
         '- CE (Civil Engineering)',
+        '- EE (Electrical Engineering)',
+        '- BSH (Basic Science and Humanities)',
+        
         'Use /goto department/[dept-code] to view department pages',
       ];
     } else if (command === '/theme') {
+      if(isMuted)
+          toggleMute();
+
+      setIsThemeActive(true);
       return [
-        'TecHETC Theme 2025:',
-        'Retro Genesis: Where 8-bit Meets Innovation',
-        'Celebrating the blend of nostalgic computing with',
-        'cutting-edge technology. Each department showcases',
-        'how past innovations influence future developments.',
+          "TecHETC Theme 2025:",
+          "Retro Genesis — Where 8-bit Meets Innovation",
+          "Get ready for our biggest tech fest yet!",
+          "Celebrating the fusion of nostalgic computing with",
+          "modern-day breakthroughs, showcasing how classic",
+          "innovations continue to inspire the future of technology."
+        
+        
       ];
     } else if (command === '/clear') {
       setTimeout(() => {
@@ -153,6 +182,8 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
         currentCommand,
         setCurrentCommand,
         executeCommand,
+        isThemeActive,
+        setIsThemeActive
       }}
     >
       {children}
