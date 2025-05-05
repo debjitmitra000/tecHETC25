@@ -10,24 +10,26 @@ const SchedulePage: React.FC = () => {
   
   const scheduleData = {
     1: [
-      { time: "09:00 - 10:00", event: "Opening Ceremony", location: "Main Auditorium", department: "all" },
-      { time: "10:00 - 18:00", event: "Hackathon (Day 1)", location: "CSE Labs", department: "cse" },
-      { time: "10:30 - 12:30", event: "Circuit Design Workshop", location: "ECE Lab 1", department: "ece" },
-      { time: "12:30 - 13:30", event: "Lunch Break", location: "Central Cafeteria", department: "all" },
-      { time: "13:00 - 15:00", event: "RoboWars Preliminary", location: "ME Workshop", department: "me" },
-      { time: "15:30 - 17:30", event: "Bridge Building Setup", location: "CE Courtyard", department: "ce" },
-      { time: "18:00 - 20:00", event: "Tech Talks", location: "Seminar Hall", department: "all" },
-      { time: "20:00 - 22:00", event: "Networking Dinner", location: "College Lawn", department: "all" }
+      { time: "10:00 AM - 10:30 AM", event: "Opening Ceremony", location: "College Premises", department: "all" },
+      { time: "10:30 AM", event: "Bridge The Gap", location: "Academic Building (A-201, A-202, A-203, A-204)", department: "ce" },
+      { time: "10:30 AM", event: "Electrotech Exploration", location: "Academic Building (A-209)", department: "ece" },
+      { time: "10:30 AM", event: "Model Display", location: "R C Paul Memorial Auditorium", department: "all" },
+      { time: "11:00 AM", event: "Code - 2 - Duo", location: "Computer Lab 2 & 3", department: "cse" },
+      { time: "11:30 AM", event: "Quizard", location: "Reading Room (Screening) & Seminar Hall (Final)", department: "bsh" },
+      { time: "12:00 PM", event: "Instant Circuit Making", location: "Academic Building (Power System Lab)", department: "ee" },
+      { time: "02:30 PM", event: "Robo Soccer", location: "Academic Building (A-209)", department: "ece" },
+      { time: "02:30 PM", event: "Electromat", location: "Admin Building (Control Lab)", department: "ee" },
+      { time: "03:30 PM", event: "Sudoku", location: "Reading Room", department: "bsh" }
     ],
     2: [
-      { time: "09:00 - 17:00", event: "Hackathon (Day 2)", location: "CSE Labs", department: "cse" },
-      { time: "10:00 - 12:00", event: "IoT Challenge", location: "ECE Lab 2", department: "ece" },
-      { time: "12:00 - 13:00", event: "Lunch Break", location: "Central Cafeteria", department: "all" },
-      { time: "13:00 - 15:00", event: "CAD Contest", location: "ME Design Studio", department: "me" },
-      { time: "15:30 - 17:00", event: "Structural Testing", location: "CE Courtyard", department: "ce" },
-      { time: "17:30 - 18:30", event: "RoboWars Finals", location: "Main Arena", department: "me" },
-      { time: "19:00 - 21:00", event: "Closing Ceremony & Awards", location: "Main Auditorium", department: "all" },
-      { time: "21:00 - 23:00", event: "Afterparty", location: "College Lawn", department: "all" }
+      { time: "10:00 AM", event: "Insta-Plan", location: "Academic Building (A-206, A-208)", department: "ce" },
+      { time: "10:45 AM", event: "Bridge The Gap (Testing)", location: "Workshop", department: "all" },
+      { time: "11:00 AM", event: "Line Follower Robot", location: "Academic Building (A-209)", department: "ece" },
+      { time: "11:30 AM", event: "BGMI", location: "Computer Lab 2 & 3", department: "cse" },
+      { time: "11:30 AM", event: "CADMANIA", location: "NE Building AutoCAD Lab", department: "me" },
+      { time: "12:00 PM", event: "UI/UX Design", location: "Computer Lab 2 & 3", department: "cse" },
+      { time: "12:30 PM", event: "Hunt For Fun", location: "R C Paul Memorial Auditorium & Academic building (A-105)", department: "bsh" },
+      { time: "04:30 PM", event: "Prize Distribution Ceremony", location: "R C Paul Memorial Auditorium", department: "all" }
     ]
   };
   
@@ -37,6 +39,7 @@ const SchedulePage: React.FC = () => {
       case 'ece': return 'neon-ece';
       case 'me': return 'neon-me';
       case 'ce': return 'neon-ce';
+      case 'bsh': return 'neon-bsh'
       default: return 'primary';
     }
   };
@@ -76,24 +79,24 @@ const SchedulePage: React.FC = () => {
                 <h2 className="font-pixel text-xl mb-4">Day {activeDay} Overview</h2>
                 <p className="text-gray-300 mb-4">
                   {activeDay === 1 
-                    ? "The first day kicks off with our grand opening ceremony followed by preliminary rounds of major competitions. Don't miss the evening tech talks featuring industry experts!" 
-                    : "The second day features the culmination of multi-day events and finals for all competitions, concluding with our awards ceremony celebrating the champions of TecHETC 2025!"}
+                    ? "The first day kicks off with our grand opening ceremony at 10:00 AM, setting the tone for two thrilling days ahead!🎉 Get ready for preliminary rounds of major competitions like QUIZZARD, BRIDGE THE GAP, CODE-2-DUO, and more.🧠⚙️🤖" 
+                    : "The second day brings the heat with final rounds, high-stakes showdowns, and fresh challenges across gaming, design, robotics, and creativity! 🎮💡🛠️Look out for crowd favorites like BGMI, LINE FOLLOWER ROBOT, UI/UX Design, and BGMI.We wrap it all up with the prize distribution ceremony at 4:30 PM, celebrating the brightest minds of TECHetc 2k25! 🏆🎓"}
                 </p>
                 <div className="flex flex-wrap gap-4 mt-6">
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-gray-300">
-                      {activeDay === 1 ? "9:00 AM - 10:00 PM" : "9:00 AM - 11:00 PM"}
+                      {activeDay === 1 ? "9:00 AM - 04:00 PM" : "9:00 AM - 06:00 PM"}
                     </span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 mr-2 text-secondary" />
-                    <span className="text-gray-300">Engineering College Campus</span>
+                    <span className="text-gray-300">Hooghly Engineering & Technology College</span>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="h-5 w-5 mr-2 text-accent" />
                     <span className="text-gray-300">
-                      {activeDay === 1 ? "November 15, 2025" : "November 16, 2025"}
+                      {activeDay === 1 ? "May 15, 2025" : "May 16, 2025"}
                     </span>
                   </div>
                 </div>

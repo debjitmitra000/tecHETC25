@@ -100,7 +100,7 @@ const departments = {
           entryFee: 0,
           teamSize: "1",
           date: "May 16",
-          time: "01:00 PM",
+          time: "12:00 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/user-interface-user-experience.webp",
           coordinators: [
@@ -139,7 +139,7 @@ const departments = {
           entryFee: 200,
           teamSize: "3 - 4",
           date: "May 16",
-          time: "01:00 PM",
+          time: "11:30 PM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/battle-grounds-mobile-india.webp",
           coordinators: [
@@ -182,7 +182,7 @@ const departments = {
           entryFee: 0,
           teamSize: "3 - 4",
           date: "May 15",
-          time: "03:00 PM",
+          time: "02:30 PM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
           bannerImage: "/images/robo-soccer.webp",
           coordinators: [
@@ -230,7 +230,7 @@ const departments = {
           entryFee: 0,
           teamSize: "2 - 4",
           date: "May 16",
-          time: "03:00 PM",
+          time: "11:00 AM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
           bannerImage: "/images/line-follower-robot.webp",
           coordinators: [
@@ -272,8 +272,8 @@ const departments = {
             "Dive into exciting electronics experiments and innovations.  ",
           entryFee: 0,
           teamSize: 1,
-          date: "May 16",
-          time: "03:00 PM",
+          date: "May 15",
+          time: "10:30 AM",
           icon: <Zap className="h-5 w-5 text-neon-ece" />,
           bannerImage: "/images/electrotech-exploration.webp",
           coordinators: [
@@ -322,7 +322,7 @@ const departments = {
           entryFee: 150,
           teamSize: 1,
           date: "May 16",
-          time: "11:00 AM",
+          time: "11:30 AM",
           icon: <Cog className="h-5 w-5 text-neon-me" />,
           bannerImage: "/images/cadmania.webp",
           coordinators: [
@@ -366,8 +366,8 @@ const departments = {
             "Design and build model bridges to test structural strength and creativity.",
           entryFee: 100,
           teamSize: "2 - 4",
-          date: "May 16",
-          time: "10:00 AM",
+          date: "May 15 & 16",
+          time: "10:30 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
           bannerImage: "/images/bridge-the-gap.webp",
           coordinators: [
@@ -412,8 +412,8 @@ const departments = {
             "Create quick architectural plans under real-world constraints.",
           entryFee: 0,
           teamSize: 2,
-          date: "May 17",
-          time: "11:00 AM",
+          date: "May 16",
+          time: "10:00 AM",
           icon: <Building2 className="h-5 w-5 text-neon-ce" />,
           bannerImage: "/images/insta-plan.webp",
           coordinators: [
@@ -461,7 +461,7 @@ const departments = {
           entryFee: 0,
           teamSize: 2,
           date: "May 15",
-          time: "01:00 PM",
+          time: "12:00 PM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
           bannerImage: "/images/instant-circuit-making.webp",
           coordinators: [
@@ -498,7 +498,7 @@ const departments = {
           entryFee: 0,
           teamSize: "1 - 2",
           date: "May 15",
-          time: "10:00 AM",
+          time: "02:30 PM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
           bannerImage: "/images/electromat.webp",
           coordinators: [
@@ -552,7 +552,7 @@ const departments = {
           entryFee: 10,
           teamSize: 1,
           date: "May 15",
-          time: "10:00 AM",
+          time: "03:30 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/sudoku.webp",
           coordinators: [
@@ -590,7 +590,7 @@ const departments = {
           entryFee: 60,
           teamSize: "2 - 3",
           date: "May 16",
-          time: "02:00 PM",
+          time: "12:30 PM",
           icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,
           bannerImage: "/images/hunt-for-fun.webp",
           coordinators: [
