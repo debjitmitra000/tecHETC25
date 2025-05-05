@@ -120,18 +120,28 @@ export const CommandProvider: React.FC<CommandProviderProps> = ({ children }) =>
       return [
         'Schedule:',
         'Day 1:',
-        '09:00 - Opening Ceremony',
-        '10:00 - Hackathon & Circuit Design Begin',
-        '14:00 - RoboWars Preliminary Round',
-        '16:00 - Bridge Building Competition',
+        '10:00 AM - 10:30 AM: Opening Ceremony (College Premises)',
+        '10:30 AM: Bridge The Gap (Academic Building - A-201, A-202, A-203, A-204)',
+        '10:30 AM: Electrotech Exploration (Academic Building - A-209)',
+        '10:30 AM: Model Display (R C Paul Memorial Auditorium)',
+        '11:00 AM: Code - 2 - Duo (Computer Lab 2 & 3)',
+        '11:30 AM: Quizard (Reading Room & Seminar Hall)',
+        '12:00 PM: Instant Circuit Making (Academic Building - Power System Lab)',
+        '02:30 PM: Robo Soccer (Academic Building - A-209)',
+        '02:30 PM: Electromat (Admin Building - Control Lab)',
+        '03:30 PM: Sudoku (Reading Room)',
         'Day 2:',
-        '09:00 - Code Sprint',
-        '11:00 - IoT Challenge Showcase',
-        '14:00 - CAD Contest Judging',
-        '16:00 - RoboWars Finals',
-        '18:00 - Awards Ceremony',
-        'Use /goto schedule for detailed timeline',
+        '10:00 AM: Insta-Plan (Academic Building - A-206, A-208)',
+        '10:45 AM: Bridge The Gap (Testing) (Workshop)',
+        '11:00 AM: Line Follower Robot (Academic Building - A-209)',
+        '11:30 AM: BGMI (Computer Lab 2 & 3)',
+        '11:30 AM: CADMANIA (NE Building AutoCAD Lab)',
+        '12:00 PM: UI/UX Design (Computer Lab 2 & 3)',
+        '12:30 PM: Hunt For Fun (R C Paul Memorial Auditorium & A-105)',
+        '04:30 PM: Prize Distribution Ceremony (R C Paul Memorial Auditorium)',
+        'Use /goto schedule for detailed timeline'
       ];
+      
     } else if (command === '/departments') {
       return [
         'Departments:',

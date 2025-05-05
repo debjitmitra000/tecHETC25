@@ -80,8 +80,8 @@ const SchedulePage: React.FC = () => {
                 <h2 className="font-pixel text-xl mb-4">Day {activeDay} Overview</h2>
                 <p className="text-gray-300 mb-4">
                   {activeDay === 1 
-                    ? "The first day kicks off with our grand opening ceremony at 10:00 AM, setting the tone for two thrilling days ahead!🎉 Get ready for preliminary rounds of major competitions like QUIZZARD, BRIDGE THE GAP, CODE-2-DUO, and more.🧠⚙️🤖" 
-                    : "The second day brings the heat with final rounds, high-stakes showdowns, and fresh challenges across gaming, design, robotics, and creativity! 🎮💡🛠️Look out for crowd favorites like BGMI, LINE FOLLOWER ROBOT, UI/UX Design, and BGMI.We wrap it all up with the prize distribution ceremony at 4:30 PM, celebrating the brightest minds of TECHetc 2k25! 🏆🎓"}
+                    ? "The first day kicks off with our grand opening ceremony at 10:00 AM, setting the tone for two thrilling days ahead! Get ready for preliminary rounds of major competitions like QUIZZARD, BRIDGE THE GAP, CODE-2-DUO, and more!💡🛠️ " 
+                    : "The second day brings the heat with final rounds, high-stakes showdowns, and fresh challenges across gaming, design, robotics, and creativity! Look out for crowd favorites like BGMI, LINE FOLLOWER ROBOT, UI/UX Design, and BGMI.We wrap it all up with the prize distribution ceremony at 4:30 PM, celebrating the brightest minds of TECHetc 2k25! 🏆🎓"}
                 </p>
                 <div className="flex flex-wrap gap-4 mt-6">
                   <div className="flex items-center">
