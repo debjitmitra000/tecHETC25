@@ -213,7 +213,7 @@ const RegistrationModal = () => {
                                   transition={{ delay: 0.3, duration: 0.5 }}
                                   className="text-center"
                                 >
-                                  <p className="text-xs mb-1 font-mono text-gray-400">If the QR code doesn’t work</p>
+                                  <p className="text-xs mb-1 font-mono text-gray-400">Or</p>
                                   <a 
                                     href="https://docs.google.com/forms/d/e/1FAIpQLScptNQVmM__o-r4myA1wQ_PhS6AImDK37BpGhaywCtngBaezg/closedform" 
                                     target="_blank" 

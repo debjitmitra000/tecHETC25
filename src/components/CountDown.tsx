@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const Countdown = ({ targetDate = "2025-05-15T00:00:00" }) => {
+const Countdown = ({ targetDate = new Date(2025, 4, 15, 10, 0, 0) }) => {
   // Calculate time left until target date
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();

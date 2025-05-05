@@ -40,6 +40,7 @@ const SchedulePage: React.FC = () => {
       case 'me': return 'neon-me';
       case 'ce': return 'neon-ce';
       case 'bsh': return 'neon-bsh'
+      case 'ee': return 'neon-ee'
       default: return 'primary';
     }
   };
@@ -141,7 +142,7 @@ const SchedulePage: React.FC = () => {
                 className="flex mb-8"
               >
                 <div className="mr-6 md:mr-10 relative">
-                  <div className={`w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface border-2 border-${getDepartmentColor(item.department)} shadow-${getDepartmentColor(item.department)} flex items-center justify-center z-10 relative`}>
+                  <div className={`w-10 h-10 md:w-14 md:h-14 rounded-full bg-surface border-2 border-${getDepartmentColor(item.department)} flex items-center justify-center z-10 relative`}>
                     <Clock className={`w-5 h-5 md:w-6 md:h-6 text-${getDepartmentColor(item.department)}`} />
                   </div>
                 </div>
@@ -157,11 +158,11 @@ const SchedulePage: React.FC = () => {
                     <span>{item.location}</span>
                   </div>
                   
-                  <div className="mt-4">
+                  {/* <div className="mt-4">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-mono uppercase bg-${getDepartmentColor(item.department)} bg-opacity-20 text-${getDepartmentColor(item.department)}`}>
                       {item.department === 'all' ? 'All Departments' : item.department}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             ))}

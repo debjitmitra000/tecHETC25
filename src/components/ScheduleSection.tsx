@@ -37,6 +37,7 @@ const ScheduleSection: React.FC = () => {
       case 'me': return 'neon-me';
       case 'ce': return 'neon-ce';
       case 'bsh': return 'neon-bsh'
+      case 'ee': return 'neon-ee'
       default: return 'primary';
     }
   };
