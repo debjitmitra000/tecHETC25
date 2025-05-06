@@ -64,7 +64,7 @@ const FaqSection: React.FC = () => {
                 onClick={() => toggleFaq(index)}
                 className="flex justify-between items-center w-full p-4 text-left bg-surface hover:bg-surface/80 transition-colors"
               >
-                <span className="font-mono font-semibold">{faq.question}</span>
+                <span className="font-mono font-thin">{faq.question}</span>
                 {activeIndex === index ? (
                   <ChevronUp className="h-5 w-5 text-primary" />
                 ) : (
