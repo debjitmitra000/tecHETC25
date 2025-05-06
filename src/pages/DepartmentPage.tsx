@@ -44,13 +44,13 @@ const DepartmentPage: React.FC = () => {
     }, 10);
   };
 
-const departments = {
+  const departments = {
     cse: {
       name: "Computer Science Engineering",
       shortName: "CSE",
       color: "neon-cse",
       icon: <Cpu className="h-6 w-6" />,
-     description:
+      description:
         "The Department of Computer Science and Engineering fosters innovation and excellence in computing technologies. Known for its cutting-edge research and robust academic programs, CSE equips students with skills in software development, artificial intelligence, cybersecurity, and more.",
         about: "The Department of Computer Science and Engineering at HETC is a vibrant hub of innovation, research, and academic excellence. The department offers a comprehensive curriculum that combines theoretical foundations with hands-on programming and real-world problem-solving. Students gain expertise in a wide range of domains including artificial intelligence, machine learning, data science, cloud computing, cybersecurity, blockchain, and software engineering. With access to state-of-the-art labs, coding competitions, hackathons, and research opportunities, students are encouraged to think creatively and build scalable technological solutions.\n\nThe department regularly collaborates with leading industries and academic institutions, offering students internships, workshops, guest lectures, and mentorship from professionals in the field. Alumni of the department have made their mark in top tech companies, research organizations, and startups. Through its focus on innovation, critical thinking, and entrepreneurship, the CSE department plays a key role in shaping the digital future and grooming the next generation of tech leaders.",
       events: [
@@ -85,7 +85,7 @@ const departments = {
             "No team member can open any tab on the browser other than the Google form or HackerRank provided by coordinators. Also, if any team is caught researching, or cheating, or communicating with other teams during the contest, involved team(s) will be disqualified.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "CSE Labs, Main Building",
+          location: "Computer Lab 2 & 3",
           registration: "Open until May 11",
         },
         {
@@ -122,10 +122,11 @@ const departments = {
             "VS CODE along with NODE JS will be installed in the machines. Also, Participants will be given 10–15 minutes to install any required extensions.",
             "Use of any frontend stack is allowed – HTML/CSS/JS/React/Next.js or others",
             "Internet access is allowed and encouraged for research and resources",
-            "Judging will be based on Creativity, Originality, Responsiveness, Theme Adaptation, Optimization and Time taken to complete the design.",
+            "Judging will be based on Creativity, Originality, Responsiveness, Theme Adaptation, Optimization and Time taken to complete the design",
+            "If number of participants exeed the limit then 2 rounds will be conducted.",
             ],
             eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "Design Lab, Tech Building",
+          location: "Computer Lab 2 & 3",
           registration: "Open until May 12",
         },
         {
@@ -139,7 +140,7 @@ const departments = {
           entryFee: 200,
           teamSize: "3 - 4",
           date: "May 16",
-          time: "11:30 PM",
+          time: "11:30 AM",
           icon: <Cpu className="h-5 w-5 text-neon-cse" />,
           bannerImage: "/images/battle-grounds-mobile-india.webp",
           coordinators: [
@@ -156,17 +157,17 @@ const departments = {
             "Regarding any disputes, the decision of the coordinators will be considered as final.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "Gaming Arena, CSE Building",
+          location: "Academic Building: A-201, A-202, A-203",
           registration: "Open until May 14",
         },
       ],
     },
     ece: {
-      name: "Electronics & Communication Engineering",
+      name: "Electronics and Communication Engineering",
       shortName: "ECE",
       color: "neon-ece",
       icon: <Zap className="h-6 w-6" />,
-     description:
+      description:
         "The Department of Electronics and Communication Engineering focuses on advancing communication technologies and electronic systems. Students here delve into areas like signal processing, telecommunications, embedded systems, and digital electronics, preparing them for a dynamic career in the field.",
         about: "The Department of Electronics and Communication Engineering at HETC is dedicated to the advancement of modern communication systems and electronics technologies. The curriculum is designed to provide a deep understanding of electronic circuits, microprocessors, embedded systems, communication protocols, digital signal processing, and wireless technologies. Students receive hands-on training in simulation tools and hardware platforms to bridge the gap between theory and practical applications.\n\nResearch and innovation are at the core of the department’s activities, with active student participation in projects related to the Internet of Things (IoT), robotics, satellite communication, and VLSI design. The department also hosts workshops, seminars, and industrial visits that help students stay aligned with emerging trends. Graduates from ECE are well-equipped to pursue careers in both core electronics sectors and software industries, with a strong foundation in design, analysis, and implementation of communication systems.",
       events: [
@@ -176,7 +177,7 @@ const departments = {
           department: "ece",
           departmentName: "ECE",
           description:
-                        "Get ready to ride the future! Robo Scooter is an exciting tech fest event where participants design and build a small robot controlled wirelessly via a mobile phone. Using Wi-Fi technology, teams will navigate the robot across a small soccer field to score goals against the opponent. \n\n 🤖Robot Specifications: \n ▶ The robot should fit inside a box of 30cm*30cm*30cm, should not exceed 1 kg and should be wirelessly controlled through a mobile. \n ▶ It is expected to use ESP32 micro-controller at the higher end.\n ▶ The robot should be self-powered with a supply not exceeding 12V (on-board power supply).\n ▶ Power supply (only DC) should be on board. Participants cannot draw power from outside during the match.",
+                        "Get ready to ride the future! Robo Scooter is an exciting tech fest event where participants design and build a small robot controlled wirelessly via a mobile phone. Using Wi-Fi technology, teams will navigate the robot across a small soccer field to score goals against the opponent. \n\n 🤖Robot Specifications: \n ▶ The robot should be of length 25.7cm, width 14.9cm, height 3.4cm without wheels, should not exceed 600g and should be wirelessly controlled through a mobile. \n▶ Diameter of wheel should be approx 6.6cm and 2.6cm of thickness. \n ▶ Overall car Height 7.6cm approx \n▶ It is expected to use ESP32 micro-controller at the higher end.\n ▶ The robot should be self-powered with a supply not exceeding 12V (on-board power supply).\n ▶ Power supply (only DC) should be on board. Participants cannot draw power from outside during the match.",
           minidesc:
             "Program and control your bots to score goals and defeat your opponents.",
           entryFee: 0,
@@ -215,7 +216,7 @@ const departments = {
             "Rules & Regulations may change without prior notice, by the Event organizers.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program.",
-          location: "ECE Robotics Lab",
+          location: "Academic Building: A-209",
           registration: "Open until May 10",
         },
         {
@@ -224,7 +225,7 @@ const departments = {
           department: "ece",
           departmentName: "ECE",
           description:
-            "The Line Follower Robot is a mobile bot that can detect and follow the line drawn on the floor. Generally, the path is predefined and can be visible like a black line on a white surface with a high contrasted colour. Participants should have to complete the paths as per rules and regulations.\n\n In 1 st and 2 nd Round there will be Line Follower. Participants who will complete each round in less time will be given preference to proceed in next round. \n\n 🤖Robot Specifications: \n ▶ Each team must have Autonomous Robot. \n ▶ The width of the black line will be less than 4 cm. \n ▶ Dimensions of the Robot should be less than 28 cm * 18 cm * 5 cm ( l x b x h). \n ▶ Weight of the Robot should be less than 750 grams. \n ▶ Diameter of the wheel should be less than 7 cm. \n ▶ Thickness of the wheel should be less than 3 cm. \n ▶ The Power Supply should be 15 V (maximum). \n ▶ The participants have to ensure that room lighting, photography etc. does not affect the functioning of the sensors.",
+            "The Line Follower Robot is a mobile bot that can detect and follow the line drawn on the floor. Generally, the path is predefined and can be visible like a black line on a white surface with a high contrasted colour. Participants should have to complete the paths as per rules and regulations.\n\n In 1 st and 2 nd Round there will be Line Follower. Participants who will complete each round in less time will be given preference to proceed in next round. \n\n 🤖Robot Specifications: \n ▶ Each team must have Autonomous Robot. \n ▶ The width of the black line will be less than 4 cm. \n ▶ Dimensions of the Robot should be less than 28 cm * 18 cm * 5 cm ( l x b x h). \n ▶ Weight of the Robot should be less than 750 grams. \n ▶ Diameter of the wheel should be less than 7 cm. \n ▶ Thickness of the wheel should be less than 3 cm. \n ▶ The Power Supply should be 15 V (maximum). \n ▶ The participants have to ensure that room lighting, photography etc. does not affect the functioning of the sensors.\n▶ It should be wireless and autonomous. No wireless communication between Bot and operator will be allowed.\n▶ Bluetooth RF Module, etc. not allowed on bot.\n▶ Batteries must be sealed, immobilized electrolyte type (gel cell, NiCad, or dry cells).\n▶ Infrared light-reflecting materials must not be used on the outside. If robots are painted, they must be painted matte. Minor parts that reflect infrared light could be used only if other robots are not affected. Robots must not produce magnetic interference for other robots on the field.\n▶ Power Supply max 15V DC. Weight max 5 Kg with 5% tolerance.\n▶ No camera module should be used.",
           minidesc:
             "Build a robot that can smartly follow a line across complex paths.",
           entryFee: 0,
@@ -243,22 +244,21 @@ const departments = {
             { name: "Ms. Bidisha Sengupta", contact: "7003047434" },
           ],
           rules: [
-            "It should be wireless and autonomous. No wireless communication between Bot and operator will be allowed. Bluetooth RF Module, etc. not allowed on bot.",
-            "Batteries must be sealed, immobilized electrolyte type type (gel cell, NiCad, or dry cells).",
-            "Infrared light-reflecting materials must not be used on the outside. If robots are painted, they must be painted matte. Minor parts that reflect infrared light could be used only if other robots are not affected. Robots must not produce magnetic interference for other robots on the field.",
-            "Power Supply max 15V DC. Weight max 5 Kg with 5% tolerance.",
             "The Judges' decision shall be considered as final and indisputable.",
             "The Robot has to follow the black line on white background and complete the track in least possible time.",
+            "Students are adviced to use battery operated motor.",
             "No hand touch is preferable. For each hand touch, marks will be deducted as penalty.",
             "Maximum Four and Minimum Two Participants are allowed in a team.",
+            "A maximum time limit would be enforced for completing the course. Robots must finish its task within this duration to be considered for scoring.",
             "The organizer reserve the rights to disqualify any team indulging in any kind of misbehavior.",
             "The organizer has the right to change any of the rules at any time.",
             "All the tracks will be shown at the starting of each round.",
+            "Robots must not cause any damage to the track or its components",
             "Note 1: The Robot must be stopped at the specific END point.",
             "Note 2: Hand touch and rotation of robot will not be allowed.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "ECE Lab 2",
+          location: "Academic Building: A-209",
           registration: "Open until May 12",
         },
         {
@@ -296,7 +296,7 @@ const departments = {
             "Any rule or instruction is subjected to change as per requirement.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "ECE Innovation Lab",
+          location: "Academic Building: A-209",
           registration: "Open until May 14",
         },
       ],
@@ -309,7 +309,7 @@ const departments = {
       description:
         "The Department of Mechanical Engineering stands at the forefront of mechanical innovation. Offering expertise in thermal engineering, materials science, manufacturing processes, and robotics, ME students explore diverse fields and contribute to advancements in industry and technology.",
         about: "The Department of Mechanical Engineering at HETC is one of the core engineering branches, focusing on the design, analysis, manufacturing, and maintenance of mechanical systems. The curriculum covers a broad spectrum of topics including thermodynamics, fluid mechanics, heat transfer, manufacturing processes, materials science, robotics, and automotive engineering. Students are trained in modern tools such as CAD/CAM software, CNC machines, and 3D printers, preparing them for the challenges of industrial design and production.\n\nBeyond academics, the department promotes innovation through student-led clubs, design competitions, and research projects in areas such as renewable energy, automation, mechatronics, and aerodynamics. Regular industry visits and guest lectures ensure that students gain insights into current industrial practices and technologies. The Mechanical Engineering department prides itself on producing versatile engineers capable of contributing across industries including manufacturing, aerospace, energy, and automotive sectors.",
-     events: [
+      events: [
         {
           id: "cadmania",
           title: "CADMANIA",
@@ -341,7 +341,7 @@ const departments = {
             "The decision of the jury shall be final and binding.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "ME Design Studio",
+          location: "NE Building AutoCAD Lab",
           registration: "Open until May 12",
         },
       ],
@@ -354,7 +354,7 @@ const departments = {
       description:
         "The Department of Civil Engineering is committed to shaping the infrastructure of tomorrow. From structural design and construction management to environmental engineering and urban planning, CE students contribute to sustainable development and resilience in the built environment.",
       about: "The Department of Civil Engineering at HETC is committed to developing engineers who can design, build, and maintain infrastructure that supports modern society. The program includes core subjects such as structural engineering, transportation, geotechnical engineering, water resources, construction management, and environmental engineering. Students receive hands-on experience through surveying, CAD modeling, and material testing labs, helping them understand the practical aspects of civil design and construction.\n\nWith a focus on sustainability and smart infrastructure, the department encourages students to work on green building technologies, disaster-resilient structures, and urban planning solutions. Site visits, internships, and expert sessions bridge the academic curriculum with real-world engineering practices. Civil Engineering graduates are well-prepared to contribute to public and private sector infrastructure projects, taking on roles that demand both technical competence and environmental responsibility.",
-      events: [
+        events: [
         {
           id: "bridge-the-gap",
           title: "BRIDGE THE GAP",
@@ -398,7 +398,7 @@ const departments = {
             "Decision of the judges will be final.",
             ],
           eligibility: "All Participants should have proper College ID card on them, and should be able to produce the same in original when asked for verification, failing which they will not be allowed to participate. Each participant should be a student pursuing some field of study in college/university.",
-          location: "CE Courtyard",
+          location: "EVENT: Academic Building: A-201, A-202, A-203, A-204 & Testing: Workshop",
           registration: "Open until May 14",
         },
         {
@@ -435,7 +435,7 @@ const departments = {
             "Decision of the judges will be final.",
             ],
           eligibility: "All participants should have a valid College ID cards and be able to produce the same when asked for verification, failing which they will not be allowed to participate. Each player should be a student pursuing some field of study in Undergraduate courses only.",
-          location: "CE Design Studio",
+          location: "Academic Building: A-206, A-208",
           registration: "Open until May 13",
         },
       ],
@@ -445,10 +445,10 @@ const departments = {
       shortName: "EE",
       color: "neon-ee",
       icon: <Bolt className="h-6 w-6" />,
-       description:
+      description:
         "The Department of Electrical Engineering emphasizes the fundamental principles and applications of electrical systems. With a strong emphasis on renewable energy, power systems, control systems, and electronics, EE students gain hands-on experience through practical projects and industry collaborations.",
       about: "The Department of Electrical Engineering at HETC offers a comprehensive education in the principles of electricity, electromagnetism, and electronics. The program covers key areas such as power systems, electrical machines, control systems, renewable energy technologies, instrumentation, and smart grid solutions. Students develop technical proficiency through practical lab work, project-based learning, and design simulations using modern engineering tools.\n\nThe department emphasizes interdisciplinary learning and industry-oriented education. Students are encouraged to engage in research and innovation projects, particularly in energy efficiency, automation, and electric vehicle technology. With a focus on sustainability and real-world applicability, the department has a strong record of student placements and higher education opportunities. The Electrical Engineering department nurtures professionals who can address global energy challenges and lead innovations in electrical infrastructure.",
-      events: [
+        events: [
         {
           id: "instant-circuit-making",
           title: "INSTANT CIRCUIT MAKING",
@@ -483,7 +483,7 @@ const departments = {
             "Decision of the judges will be final.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "EE Lab 1",
+          location: "Academic Building: Power System Lab",
           registration: "Open until May 12",
         },
         {
@@ -498,7 +498,7 @@ const departments = {
           entryFee: 0,
           teamSize: "1 - 2",
           date: "May 15",
-          time: "02:30 PM",
+          time: "02:30 AM",
           icon: <Bolt className="h-5 w-5 text-neon-ee" />,
           bannerImage: "/images/electromat.webp",
           coordinators: [
@@ -526,20 +526,20 @@ const departments = {
             "All decisions made by the judges and organizers are final.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "Electromagnetic Lab",
+          location: "Admin Building: Control Lab",
           registration: "Open until May 15",
         },
       ],
     },
     bsh: {
-      name: "Basic Science & Humanities",
+      name: "Basic Science and Humanities",
       shortName: "BSH",
       color: "neon-bsh",
       icon: <FlaskConical className="h-6 w-6" />,
       description:
         "The Basic Science and Humanities (BSH) Department forms the academic foundation for all engineering disciplines. It equips students with essential knowledge in Physics, Chemistry, Mathematics, and Communication Skills, fostering analytical thinking, scientific inquiry, and strong interpersonal abilities crucial for engineering success",
       about: "The Department of Basic Science and Humanities (BSH) at HETC plays a vital role in shaping the academic and professional foundation of first-year engineering students. The department offers courses in Engineering Physics, Chemistry, Mathematics, Environmental Science, and English Communication—subjects that are fundamental to understanding and excelling in core engineering disciplines. By nurturing a deep understanding of scientific principles and mathematical techniques, the BSH department helps students develop strong analytical and problem-solving skills from the outset of their academic journey.\n\nIn addition to scientific and technical education, the department emphasizes the development of soft skills, ethics, and professional communication through language labs, presentations, and workshops. These skills are critical for teamwork, leadership, and effective communication in a global engineering environment. Faculty members are dedicated to creating a supportive and intellectually stimulating atmosphere that encourages curiosity, critical thinking, and holistic development. The BSH department stands as a pillar of support, bridging school-level academics with advanced engineering studies and laying the groundwork for future innovation and success.",
-      events: [
+        events: [
         {
           id: "sudoku",
           title: "SUDOKU",
@@ -575,7 +575,7 @@ const departments = {
             "In case of any conflict or dispute, the decision of the evaluators will be final and binding.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "BSH Seminar Hall",
+          location: "Reading Room",
           registration: "Open until May 13",
         },
         {
@@ -614,7 +614,7 @@ const departments = {
             "The decision of the jury is final — no arguments or appeals will be entertained.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "Campus-wide",
+          location: "R C Pal Memorial Auditorium & A-105",
           registration: "Open until May 14",
         },
       ],
@@ -638,8 +638,8 @@ const departments = {
             "Put your general knowledge to the test in this fast-paced quiz battle.",
           entryFee: 0,
           teamSize: 2,
-          date: "May 17",
-          time: "02:00 PM",
+          date: "May 15",
+          time: "11:30 PM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/quizzard.webp",
           coordinators: [
@@ -663,7 +663,7 @@ const departments = {
             "Decision of the quizmaster is final. In case of unavoidable circumstances, rules may be changed.",
             ],
           eligibility: "All participants must carry a valid college ID card and present the original upon request for verification. Failure to do so will result in disqualification from participation. Each participant must be a student currently enrolled in a recognized college or university program",
-          location: "Main Seminar Hall",
+          location: "Reading Room(Screening Round) & Seminar Hall(Final)",
           registration: "Open until May 15",
         },
         {
@@ -677,8 +677,8 @@ const departments = {
             "Showcase creative models and prototypes across engineering domains.",
           entryFee: 0,
           teamSize: "2 - 4",
-          date: "May 18",
-          time: "10:00 AM",
+          date: "May 15",
+          time: "10:30 AM",
           icon: <Brain className="h-5 w-5 text-neon-general" />,
           bannerImage: "/images/model-display.webp",
           coordinators: [
@@ -699,7 +699,7 @@ const departments = {
             "Each group must carry an extension cord for Electric Connection. Otherwise, the organizing committee will be unable to provide an electrical connection to the models/ projects if required.",
             ],
           eligibility: "All Participants should have proper College ID card on them, and should be able to produce the same in original when asked for verification, failing which they will not be allowed to participate. Each participant should be a student pursuing some field of study in college/university.",
-          location: "Exhibition Hall",
+          location: "R C Pal Memorial Auditorium",
           registration: "Open until May 13th",
         },
       ],

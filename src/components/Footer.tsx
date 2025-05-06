@@ -46,9 +46,9 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <h4 className="font-mono text-lg mb-4 text-neon-ece">Departments</h4>
             <ul className="space-y-2">
-              <li><Link to="/department/bsh" className="text-gray-400 hover:text-neon-bsh transition-colors">Basic Science & Humanities</Link></li>
-              <li><Link to="/department/cse" className="text-gray-400 hover:text-neon-cse transition-colors">Computer Science & Engineering</Link></li>
-              <li><Link to="/department/ece" className="text-gray-400 hover:text-neon-ece transition-colors">Electronics & Communication Engineering</Link></li>
+              <li><Link to="/department/bsh" className="text-gray-400 hover:text-neon-bsh transition-colors">Basic Science and Humanities</Link></li>
+              <li><Link to="/department/cse" className="text-gray-400 hover:text-neon-cse transition-colors">Computer Science Engineering</Link></li>
+              <li><Link to="/department/ece" className="text-gray-400 hover:text-neon-ece transition-colors">Electronics and Communication Engineering</Link></li>
               <li><Link to="/department/me" className="text-gray-400 hover:text-neon-me transition-colors">Mechanical Engineering</Link></li>
               <li><Link to="/department/ce" className="text-gray-400 hover:text-neon-ce transition-colors">Civil Engineering</Link></li>
               <li><Link to="/department/ee" className="text-gray-400 hover:text-neon-ee transition-colors">Electrical Engineering</Link></li>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="flex items-center text-gray-400">
                 <Mail size={16} className="mr-2" />
-                <a href="mailto:info@techetc.edu" className="hover:text-white transition-colors">mail@hetc.ac.in</a>
+                <a href="mailto:info@techetc.edu" className="hover:text-white transition-colors">techetc@hetc.ac.in</a>
               </li>
               <li className="text-gray-400 mt-4">
                 Vivekananda Rd,  <br />

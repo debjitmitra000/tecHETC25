@@ -15,7 +15,7 @@ const SchedulePage: React.FC = () => {
       { time: "10:30 AM", event: "Electrotech Exploration", location: "Academic Building (A-209)", department: "ece" },
       { time: "10:30 AM", event: "Model Display", location: "R C Paul Memorial Auditorium", department: "all" },
       { time: "11:00 AM", event: "Code - 2 - Duo", location: "Computer Lab 2 & 3", department: "cse" },
-      { time: "11:30 AM", event: "Quizard", location: "Reading Room (Screening) & Seminar Hall (Final)", department: "bsh" },
+      { time: "11:30 AM", event: "Quizzard", location: "Reading Room (Screening) & Seminar Hall (Final)", department: "bsh" },
       { time: "12:00 PM", event: "Instant Circuit Making", location: "Academic Building (Power System Lab)", department: "ee" },
       { time: "02:30 PM", event: "Robo Soccer", location: "Academic Building (A-209)", department: "ece" },
       { time: "02:30 PM", event: "Electromat", location: "Admin Building (Control Lab)", department: "ee" },
