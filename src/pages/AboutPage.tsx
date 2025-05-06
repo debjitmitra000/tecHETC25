@@ -1,6 +1,7 @@
+
 import React, {useEffect, useState, useRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Database, Github, Bolt, Linkedin } from 'lucide-react';
+import { Award, Calendar, Users, MapPin, Cpu, Zap, Code, Terminal, Laptop, Monitor, Database, Github, Bolt, Linkedin, Phone, Mail } from 'lucide-react';
 import { FaXTwitter } from "react-icons/fa6";
 
 const AboutPage: React.FC = () => {
@@ -81,11 +82,26 @@ const AboutPage: React.FC = () => {
     },
     { 
       year: '2025', 
-      title: 'Coming Soon', 
+      title: 'Coming Soon...', 
       description: 'Stay tuned for our biggest edition yet!', 
       color: 'neon-general',
       icon: <Cpu className="h-6 w-6" />,
       highlight: 'Loading Next Level...'
+    }
+  ];
+
+  const convenors = [
+    {
+      name: "Arup Mallik",
+      title: "Convenor",
+      phone: "+91 98313 21254",
+      color: "neon-cse"
+    },
+    {
+      name: "Saikat Datta",
+      title: "Joint Convenor",
+      phone: "+91 98741 30569",
+      color: "neon-ce"
     }
   ];
 
@@ -410,6 +426,129 @@ const AboutPage: React.FC = () => {
               </AnimatePresence>
             </div>
           </div>
+
+  {/* Convenors Section - Enhanced with cyberpunk styling without images */}
+<div className="mb-16">
+  <div className="text-center mb-12">
+    <h2 className="font-pixel text-3xl text-neon-general inline-block relative">
+      Convenors
+      <motion.div 
+        className="absolute -bottom-2 left-0 right-0 h-1 bg-neon-general"
+        initial={{ width: 0, x: "50%" }}
+        animate={{ width: "100%", x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      />
+    </h2>
+    <p className="text-gray-400 mt-4 max-w-xl mx-auto">Meet the faculty leading TECHetc 2K25</p>
+  </div>
+  
+  <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
+    {convenors.map((convenor, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+        whileHover={{ 
+          y: -10,
+          transition: { duration: 0.3, type: "spring", stiffness: 300 }
+        }}
+        className={`bg-surface border-2 border-${convenor.color} pixel-corners p-6 w-full max-w-sm relative overflow-hidden group`}
+      >
+        {/* Animated cyber pattern background */}
+        <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <pattern id={`convenor-grid-${index}`} patternUnits="userSpaceOnUse" width="10" height="10">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" className={`text-${convenor.color}`}/>
+            </pattern>
+            <rect width="100" height="100" fill={`url(#convenor-grid-${index})`} />
+          </svg>
+        </div>
+        
+        {/* Dynamic glow effect */}
+        <motion.div 
+          className={`absolute inset-0 bg-${convenor.color} opacity-0`}
+          animate={{ 
+            opacity: [0, 0.08, 0], 
+            transition: { duration: 3, repeat: Infinity } 
+          }}
+        />
+        
+        {/* Decorative circuit lines at top */}
+        <div className="absolute top-0 left-0 w-full h-8 opacity-20">
+          <svg width="100%" height="100%" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path 
+              d={`M0,10 H20 V5 H40 V15 H60 V5 H80 V10 H100`} 
+              stroke={`var(--${convenor.color})`} 
+              strokeWidth="0.5" 
+              fill="none" 
+            />
+          </svg>
+        </div>
+        
+        {/* Content with tech-inspired styling */}
+        <div className="text-center relative z-10 pt-4">
+          
+          {/* Name with neon effect */}
+          <h3 className={`font-pixel text-2xl text-${convenor.color} mb-4 relative inline-block`}>
+            {convenor.name}
+            <motion.div 
+              className={`absolute -bottom-1 left-0 right-0 h-[2px] bg-${convenor.color}`}
+              initial={{ width: "0%", x: "50%" }}
+              animate={{ width: "100%", x: "0%" }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            />
+          </h3>
+          
+          {/* Title in badge/chip style */}
+          <div className={`mx-auto max-w-xs mb-6 relative`}>
+            <div className={`py-1 px-4 rounded-full bg-${convenor.color} bg-opacity-10 inline-block border border-${convenor.color} border-opacity-30`}>
+              <p className="font-mono text-gray-200 text-sm uppercase tracking-wider">{convenor.title}</p>
+            </div>
+          </div>
+          
+          {/* Phone with icon in tech container */}
+          <div className={`flex items-center justify-center space-x-2 mx-auto bg-${convenor.color} bg-opacity-5 border border-${convenor.color} border-opacity-30 rounded-md p-2 max-w-[80%] relative group-hover:bg-opacity-10 transition-all duration-300`}>
+            <Phone className={`h-4 w-4 text-${convenor.color}`} />
+            <span className="text-sm text-gray-300 font-mono">{convenor.phone}</span>
+            
+            {/* Scanner effect */}
+            <motion.div
+              className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+              initial={{ x: "-100%" }}
+              animate={{ x: "100%" }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "linear" }}
+            />
+          </div>
+          
+          {/* Tech bar */}
+          <div className="mt-6 w-full h-1 bg-gray-800 overflow-hidden">
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              className={`h-full bg-${convenor.color}`}
+            />
+          </div>
+          
+          {/* Animated data points */}
+          <div className="flex justify-between mt-2 opacity-50">
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{ 
+                  height: [`${Math.random() * 10 + 5}px`, `${Math.random() * 10 + 5}px`],
+                  transition: { duration: 1, repeat: Infinity, repeatType: "reverse", delay: i * 0.2 }
+                }}
+                className={`w-1 bg-${convenor.color}`}
+              />
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
           
           {/* Tech Team Section - WITH ADDED TWITTER/X LINKS */}
           <div className="mb-16">

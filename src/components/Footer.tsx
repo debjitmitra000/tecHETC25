@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Youtube, Mail, Heart } from 'lucide-react';
+import { Facebook, Youtube, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
 
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -72,12 +74,29 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-4 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} TECHetc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} HETC. All rights reserved.</p>
           <p className="mt-1 flex items-center justify-center">
-            Made with <Heart size={12} className="mx-1 text-secondary" /> for all tech enthusiasts
+            Made with 
+            <motion.div
+              className="mx-1 text-secondary"
+              animate={{
+                scale: [1, 1.3, 1, 1.3, 1],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut"
+              }}
+            >
+              <Heart size={12} />
+            </motion.div> 
+            for all tech enthusiasts
           </p>
         </div>
       </div>
+
+
     </footer>
   );
 };

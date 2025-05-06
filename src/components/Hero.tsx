@@ -169,11 +169,29 @@ const Hero: React.FC = () => {
               The ultimate college tech fest celebrating innovation across all engineering disciplines. <span className='hidden sm:inline'>Discover cutting-edge projects, insightful events, and engaging competitions that celebrate creativity and technology.</span>
             </motion.p>
             
-            {/* Date information with proper alignment - centered on small screens, left on large */}
+            {/* Organized by text with animated color matching the theme */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3 }}
+              className="font-pixel mb-4 mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start"
+            >
+              <motion.div
+                style={{ color: themeColors[currentColor] }}
+                className="text-lg"
+              >
+                Organized by
+              </motion.div>
+              <div className="text-lg text-neon-ece">
+                Hooghly Engineering and Technology College
+              </div>
+            </motion.div>
+            
+            {/* Date information with proper alignment - centered on small screens, left on large */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4 }}
               className="font-pixel mb-8 mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start"
             >
               <motion.div
@@ -182,14 +200,14 @@ const Hero: React.FC = () => {
                 style={{ color: themeColors[currentDateColor] }}
                 className="text-lg"
               >
-                MAY 15-16
+                On MAY 15 & 16
               </motion.div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 1.5 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
               <button onClick={() => openModal()} className="btn btn-primary">

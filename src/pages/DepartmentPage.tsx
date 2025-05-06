@@ -373,7 +373,7 @@ const DepartmentPage: React.FC = () => {
           coordinators: [
             {
               name: "Mr. Shibashish Deb",
-              contact: "9936057817",
+              contact: "9836057817",
             },
             // {
             //   name: "Lucas Sinclair",
@@ -421,7 +421,7 @@ const DepartmentPage: React.FC = () => {
             //   name: "Dr. Gustave Eiffel",
             //   contact: "9876543210",
             // },
-            { name: "Mr. Saikat Dutta", contact: "9874130569" },
+            { name: "Mr. Saikat Datta", contact: "9874130569" },
             // { name: "Joyce Byers", contact: "9876543210" },
             // { name: "Murray Bauman", contact: "9876543210" },
           ],
@@ -753,60 +753,166 @@ const DepartmentPage: React.FC = () => {
     >
       <div className="container my-32 mx-auto px-4">
         {/* Department Header */}
-        <div
-          className={`mb-10 p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden`}
+        
+{/* Department Header - Redesigned with Better Responsiveness */}
+{/* Department Header - Redesigned with Better Responsiveness */}
+<div className="container my-16 md:my-24 lg:my-32 mx-auto px-4">
+  <div
+    className={`mb-10 p-4 md:p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden group`}
+  >
+    {/* Background grid pattern with subtle animation */}
+    <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5 animate-subtle-pulse group-hover:opacity-10 transition-opacity duration-500"></div>
+    
+    {/* Persistent scanning line animation */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+      <div 
+        className={`absolute h-full w-1 bg-${color} blur-md -left-10 animate-scanning-line`}
+      ></div>
+    </div>
+    
+    {/* Hover scanline effects - horizontal */}
+    <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <div className={`absolute h-px w-full bg-${color} top-1/4 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1500 opacity-70`}></div>
+      <div className={`absolute h-px w-full bg-${color} top-3/4 transform translate-x-full group-hover:-translate-x-full transition-transform duration-1500 delay-100 opacity-70`}></div>
+    </div>
+    
+    {/* Hover scanline effects - vertical */}
+    <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <div className={`absolute w-px h-full bg-${color} left-1/4 transform -translate-y-full group-hover:translate-y-full transition-transform duration-1500 delay-200 opacity-70`}></div>
+      <div className={`absolute w-px h-full bg-${color} left-3/4 transform translate-y-full group-hover:-translate-y-full transition-transform duration-1500 delay-300 opacity-70`}></div>
+    </div>
+    
+    {/* Digital glitch flash effect on hover */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none">
+      <div className="absolute inset-0 bg-black opacity-0 group-hover:animate-glitch-flash"></div>
+    </div>
+
+    {/* Content with improved responsive layout */}
+    <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+      {/* Department icon with fixed aspect ratio */}
+      <div className="relative flex-shrink-0">
+        <div 
+          className={`w-20 h-20 flex-shrink-0 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color} transform transition-transform duration-500 group-hover:scale-110`}
         >
-          <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5"></div>
-
-          <div className="relative z-50 flex flex-col md:flex-row items-center gap-6">
-            <div
-              className={`w-20 h-20 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color}`}
-            >
-              {React.cloneElement(departmentInfo.icon as React.ReactElement, {
-                className: `h-10 w-10 text-${color}`,
-              })}
-            </div>
-
-            <div className="text-center md:text-left">
-              <h1
-                className={`font-pixel text-3xl md:text-4xl text-${color} mb-2`}
-              >
-                {departmentInfo.name}
-              </h1>
-              <p className="text-gray-300 max-w-2xl">
-                {departmentInfo.description}
-              </p>
-            </div>
-          </div>
+          {React.cloneElement(departmentInfo.icon as React.ReactElement, {
+            className: `h-10 w-10 text-${color} group-hover:animate-icon-pulse`,
+          })}
         </div>
+        
+        {/* Pulsing glow effect */}
+        <div 
+          className={`absolute inset-0 rounded-full bg-${color} opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300 animate-slow-pulse`}
+        ></div>
+      </div>
 
-        {/* Navigation Tabs */}
-        <div className="flex justify-center mb-10">
-          <div
-            className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
-          >
-            <button
-              onClick={() => setActiveTab("events")}
-              className={`px-6 py-3 font-mono ${
-                activeTab === "events"
-                  ? `bg-${color} text-white`
-                  : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-              }`}
-            >
-              EVENTS
-            </button>
-            <button
-              onClick={() => setActiveTab("about")}
-              className={`px-6 py-3 font-mono ${
-                activeTab === "about"
-                  ? `bg-${color} text-white`
-                  : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-              }`}
-            >
-              ABOUT
-            </button>
-          </div>
-        </div>
+      {/* Text content with improved word wrapping */}
+      <div className="text-center md:text-left flex-grow overflow-hidden">
+        <h1
+          className={`font-pixel text-2xl sm:text-3xl md:text-4xl text-${color} mb-2 break-words relative inline-block`}
+        >
+          {departmentInfo.name}
+          <span className={`absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-${color} transition-all duration-700 ease-in-out`}></span>
+        </h1>
+        <p className="text-gray-300 max-w-3xl break-words">
+          {departmentInfo.description}
+        </p>
+      </div>
+    </div>
+    
+    {/* Corner accents with animated expansion on hover */}
+    <div className={`absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-${color} opacity-60 group-hover:w-8 group-hover:h-8 transition-all duration-300`}></div>
+    <div className={`absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-${color} opacity-60 group-hover:w-8 group-hover:h-8 transition-all duration-300`}></div>
+    <div className={`absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-${color} opacity-60 group-hover:w-8 group-hover:h-8 transition-all duration-300`}></div>
+    <div className={`absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-${color} opacity-60 group-hover:w-8 group-hover:h-8 transition-all duration-300`}></div>
+  </div>
+  
+  {/* Add these animations to your CSS file */}
+  <style jsx>{`
+    @keyframes subtle-pulse {
+      0% { opacity: 0.03; }
+      50% { opacity: 0.07; }
+      100% { opacity: 0.03; }
+    }
+    
+    @keyframes scanning-line {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(1000%); }
+    }
+    
+    @keyframes slow-pulse {
+      0% { transform: scale(0.95); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 0.2; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+    
+    @keyframes icon-pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes glitch-flash {
+      0%, 100% { opacity: 0; }
+      10% { opacity: 0.1; }
+      10.5% { opacity: 0; }
+      11% { opacity: 0.1; }
+      17% { opacity: 0; }
+      27% { opacity: 0.1; }
+      27.5% { opacity: 0; }
+      45% { opacity: 0; }
+      45.5% { opacity: 0.1; }
+      50% { opacity: 0; }
+    }
+    
+    .animate-subtle-pulse {
+      animation: subtle-pulse 4s infinite;
+    }
+    
+    .animate-scanning-line {
+      animation: scanning-line 8s infinite linear;
+    }
+    
+    .animate-slow-pulse {
+      animation: slow-pulse 3s infinite;
+    }
+    
+    .animate-icon-pulse {
+      animation: icon-pulse 2s ease-in-out infinite;
+    }
+    
+    .animate-glitch-flash {
+      animation: glitch-flash 4s infinite;
+    }
+  `}</style>
+</div>
+
+        {/* Navigation Tabs - Redesigned for better responsiveness */}
+<div className="flex justify-center mb-10">
+  <div
+    className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
+  >
+    <button
+      onClick={() => setActiveTab("events")}
+      className={`px-4 md:px-6 py-2 md:py-3 font-mono ${
+        activeTab === "events"
+          ? `bg-${color} text-white`
+          : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+      } transition-all duration-300`}
+    >
+      EVENTS
+    </button>
+    <button
+      onClick={() => setActiveTab("about")}
+      className={`px-4 md:px-6 py-2 md:py-3 font-mono ${
+        activeTab === "about"
+          ? `bg-${color} text-white`
+          : `text-${color} hover:bg-${color} hover:bg-opacity-20`
+      } transition-all duration-300`}
+    >
+      ABOUT
+    </button>
+  </div>
+</div>
 
         {/* Event Detail Modal */}
         {selectedEvent && (
