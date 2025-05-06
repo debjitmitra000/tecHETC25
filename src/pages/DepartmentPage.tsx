@@ -705,7 +705,7 @@ const DepartmentPage: React.FC = () => {
       ],
     },
   };
-  // Find department and event
+// Find department and event
   const departmentInfo = dept && departments[dept as keyof typeof departments];
 
   useEffect(() => {
@@ -755,10 +755,10 @@ const DepartmentPage: React.FC = () => {
         {/* Department Header */}
         
 {/* Department Header - Redesigned with Better Responsiveness */}
-{/* Department Header - Redesigned with Better Responsiveness */}
 <div className="container my-16 md:my-24 lg:my-32 mx-auto px-4">
   <div
     className={`mb-10 p-4 md:p-6 bg-surface border-2 border-${color} rounded-lg pixel-corners relative overflow-hidden group`}
+    style={{ maxWidth: "100%" }}
   >
     {/* Background grid pattern with subtle animation */}
     <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern bg-[length:20px_20px] opacity-5 animate-subtle-pulse group-hover:opacity-10 transition-opacity duration-500"></div>
@@ -787,15 +787,15 @@ const DepartmentPage: React.FC = () => {
       <div className="absolute inset-0 bg-black opacity-0 group-hover:animate-glitch-flash"></div>
     </div>
 
-    {/* Content with improved responsive layout */}
-    <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
-      {/* Department icon with fixed aspect ratio */}
+    {/* Content with improved responsive layout - enhanced for extra long department names */}
+    <div className="relative z-10 flex flex-col md:flex-row items-center gap-5 md:gap-6">
+      {/* Department icon with fixed aspect ratio - improved with consistency */}
       <div className="relative flex-shrink-0">
         <div 
-          className={`w-20 h-20 flex-shrink-0 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color} transform transition-transform duration-500 group-hover:scale-110`}
+          className={`w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full flex items-center justify-center bg-${color} bg-opacity-20 border-2 border-${color} transform transition-transform duration-500 group-hover:scale-110`}
         >
           {React.cloneElement(departmentInfo.icon as React.ReactElement, {
-            className: `h-10 w-10 text-${color} group-hover:animate-icon-pulse`,
+            className: `h-8 w-8 sm:h-10 sm:w-10 text-${color} group-hover:animate-icon-pulse`,
           })}
         </div>
         
@@ -805,13 +805,15 @@ const DepartmentPage: React.FC = () => {
         ></div>
       </div>
 
-      {/* Text content with improved word wrapping */}
-      <div className="text-center md:text-left flex-grow overflow-hidden">
+      {/* Text content with improved word wrapping for long department names */}
+      <div className="text-center md:text-left flex-grow overflow-hidden w-full">
         <h1
-          className={`font-pixel text-2xl sm:text-3xl md:text-4xl text-${color} mb-2 break-words relative inline-block`}
+          className={`font-pixel text-xl sm:text-2xl md:text-3xl lg:text-4xl text-${color} mb-2 break-words relative w-full`}
         >
-          {departmentInfo.name}
-          <span className={`absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-${color} transition-all duration-700 ease-in-out`}></span>
+          <span className="relative inline-block">
+            {departmentInfo.name}
+            <span className={`absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-${color} transition-all duration-700 ease-in-out`}></span>
+          </span>
         </h1>
         <p className="text-gray-300 max-w-3xl break-words">
           {departmentInfo.description}
@@ -886,10 +888,10 @@ const DepartmentPage: React.FC = () => {
   `}</style>
 </div>
 
-        {/* Navigation Tabs - Redesigned for better responsiveness */}
+{/* Navigation Tabs - Redesigned for better responsiveness */}
 <div className="flex justify-center mb-10">
   <div
-    className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden`}
+    className={`inline-flex border-2 border-${color} rounded-lg overflow-hidden shadow-lg`}
   >
     <button
       onClick={() => setActiveTab("events")}
@@ -897,9 +899,15 @@ const DepartmentPage: React.FC = () => {
         activeTab === "events"
           ? `bg-${color} text-white`
           : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-      } transition-all duration-300`}
+      } transition-all duration-300 relative group`}
     >
-      EVENTS
+      <span className="relative z-10">EVENTS</span>
+      {activeTab === "events" && (
+        <div className={`absolute inset-0 bg-${color}`}>
+          <div className="absolute inset-0 bg-grid-pattern bg-[length:8px_8px] opacity-30"></div>
+        </div>
+      )}
+      <div className={`absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-${color} transition-all duration-300 ${activeTab === "events" ? "opacity-0" : "opacity-100"}`}></div>
     </button>
     <button
       onClick={() => setActiveTab("about")}
@@ -907,9 +915,15 @@ const DepartmentPage: React.FC = () => {
         activeTab === "about"
           ? `bg-${color} text-white`
           : `text-${color} hover:bg-${color} hover:bg-opacity-20`
-      } transition-all duration-300`}
+      } transition-all duration-300 relative group`}
     >
-      ABOUT
+      <span className="relative z-10">ABOUT</span>
+      {activeTab === "about" && (
+        <div className={`absolute inset-0 bg-${color}`}>
+          <div className="absolute inset-0 bg-grid-pattern bg-[length:8px_8px] opacity-30"></div>
+        </div>
+      )}
+      <div className={`absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-${color} transition-all duration-300 ${activeTab === "about" ? "opacity-0" : "opacity-100"}`}></div>
     </button>
   </div>
 </div>
