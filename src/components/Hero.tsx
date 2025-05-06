@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
                 Organized by
               </motion.div>
               <div className="text-lg text-neon-ece">
-                Hooghly Engineering and Technology College
+                Hooghly Engineering & Technology College
               </div>
             </motion.div>
             

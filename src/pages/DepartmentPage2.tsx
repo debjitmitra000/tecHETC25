@@ -42,7 +42,7 @@ const DepartmentPage: React.FC = () => {
 
   const departments = {
     cse: {
-      name: "Computer Science Engineering",
+      name: "Computer Science and Engineering",
       shortName: "CSE",
       color: "neon-cse",
       icon: <Cpu className="h-6 w-6" />,

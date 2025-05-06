@@ -92,13 +92,13 @@ const AboutPage: React.FC = () => {
 
   const convenors = [
     {
-      name: "Arup Mallik",
+      name: "Mr. Arup Mallik",
       title: "Convenor",
       phone: "+91 98313 21254",
       color: "neon-cse"
     },
     {
-      name: "Saikat Datta",
+      name: "Mr. Saikat Datta",
       title: "Joint Convenor",
       phone: "+91 98741 30569",
       color: "neon-ce"
@@ -439,7 +439,6 @@ const AboutPage: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       />
     </h2>
-    <p className="text-gray-400 mt-4 max-w-xl mx-auto">Meet the faculty leading TECHetc 2K25</p>
   </div>
   
   <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
@@ -490,7 +489,7 @@ const AboutPage: React.FC = () => {
         <div className="text-center relative z-10 pt-4">
           
           {/* Name with neon effect */}
-          <h3 className={`font-pixel text-2xl text-${convenor.color} mb-4 relative inline-block`}>
+          <h3 className={`font-pixel text-xl text-${convenor.color} mb-4 relative inline-block`}>
             {convenor.name}
             <motion.div 
               className={`absolute -bottom-1 left-0 right-0 h-[2px] bg-${convenor.color}`}
@@ -562,7 +561,6 @@ const AboutPage: React.FC = () => {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 />
               </h2>
-              <p className="text-gray-400 mt-4 max-w-xl mx-auto">Meet the team behind this website</p>
             </div>
             
             <motion.div

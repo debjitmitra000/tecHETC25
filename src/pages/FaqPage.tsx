@@ -28,11 +28,11 @@ const FaqPage: React.FC = () => {
       answer: "TECHetc 2025 will be held on May 15-16, 2025 at the Hooghly Engineering & Technology College Campus, Vivekananda Rd, Pipulpati Post, Chinsurah, West Bengal, 712103.",
       category: "general"
     },
-    {
-      question: "What is this year's theme?",
-      answer: "This year's theme is 'Retro Genesis: Where 8-bit Meets Innovation', celebrating the blend of nostalgic computing with cutting-edge technology across all engineering disciplines.",
-      category: "general"
-    },
+    // {
+    //   question: "What is this year's theme?",
+    //   answer: "This year's theme is 'Retro Genesis: Where 8-bit Meets Innovation', celebrating the blend of nostalgic computing with cutting-edge technology across all engineering disciplines.",
+    //   category: "general"
+    // },
     // Registration
     {
       question: "How can I register for TECHetc events?",
@@ -146,7 +146,7 @@ const FaqPage: React.FC = () => {
                   >
                     <div className="flex items-center">
                       <span className={`inline-block w-2 h-2 rounded-full bg-${getCategoryColor()} mr-3`}></span>
-                      <span className="font-mono font-semibold">{faq.question}</span>
+                      <span className="font-mono font-thin">{faq.question}</span>
                     </div>
                     {activeIndex === index ? (
                       <ChevronUp className={`h-5 w-5 text-${getCategoryColor()}`} />
@@ -199,7 +199,7 @@ const FaqPage: React.FC = () => {
             </a> */}
             <a 
               href="https://forms.gle/f9gcSDFbNmm1nNnz9" 
-              className="btn btn-green text-center"
+              className="btn btn-green text-center" target='blank'
             >
               Contact Form
             </a>
