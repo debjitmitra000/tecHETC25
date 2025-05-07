@@ -129,7 +129,7 @@ const EventsPage: React.FC = () => {
       description:
         "A campus-wide treasure hunt with fun clues and exciting challenges.",
       entryFee: "60 per team",
-      teamSize: "2 to 3",
+      teamSize: "2 - 3",
       date: "May 16",
       time: "12:30 PM",
       icon: <FlaskConical className="h-5 w-5 text-neon-bsh" />,

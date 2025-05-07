@@ -137,7 +137,7 @@ const DepartmentPage: React.FC = () => {
           description:
             "Get ready for an adrenaline-pumping experience in the ultimate mobile battle royale — BATTLE GROUNDS MOBILE INDIA (BGMI) Tournament! Assemble your squad, strategize in real-time, and face off against rival teams in a high-stakes environment where only the sharpest survive. With intense gameplay, tactical combat, and fierce competition, this is your chance to dominate the battleground and prove your skills. Glory, prizes, and bragging rights await the victors!",
           minidesc: "Drop in, gear up, and battle your way to Compete in the ultimate mobile battle royale tournament.",
-          entryFee: 200,
+          entryFee: "200 per team",
           teamSize: "3 - 4",
           date: "May 16",
           time: "11:30 AM",
@@ -319,7 +319,7 @@ const DepartmentPage: React.FC = () => {
             "“The CAD-MANIA event is a 3D modelling and mechanical component assembly competition that uses AutoCAD software, which has been developed by the company Autodesk.” \n\nThe objective of the CADMANIA event aims to provide participants an opportunity to showcase and enhance their design abilities in order to develop innovative solutions to mechanical assembly challenges.",
           minidesc:
             "Showcase your design and drafting skills using CAD software.",
-          entryFee: 150,
+          entryFee: 0,
           teamSize: 1,
           date: "May 16",
           time: "11:30 AM",
@@ -364,7 +364,7 @@ const DepartmentPage: React.FC = () => {
             "Design and build model bridges to test structural strength and creativity.\n\n 🌟Details:\n Each team will be given 200 flat Popsicle sticks (ice-cream sticks) and a limited quantity of white adhesive (finical) as bridge-building material. Minimum length of the bridge is 50 cm. Bridge will be placed on an abutment with a 40 cm clear span. Load will be placed across the bridge span. Pin joints and clipping are strictly prohibited.",
           minidesc:
             "Design and build model bridges to test structural strength and creativity.",
-          entryFee: 100,
+          entryFee: "100 per team",
           teamSize: "2 - 4",
           date: "May 15 & 16",
           time: "10:30 AM",
@@ -372,7 +372,7 @@ const DepartmentPage: React.FC = () => {
           bannerImage: "/images/bridge-the-gap.webp",
           coordinators: [
             {
-              name: "Mr. Shibashish Deb",
+              name: "Mr. Shibasish Deb",
               contact: "9836057817",
             },
             // {
@@ -587,7 +587,7 @@ const DepartmentPage: React.FC = () => {
             "Think you have what it takes to crack mysteries and chase hidden treasures? Have you ever imagined yourself donning a detective's hat, solving puzzles and chasing clues?\n\nWell, it's time to live that dream! TECHetc 2K25 proudly presents Hunt for Fun — the ultimate adventure where treasure hunters race against time, solving riddles and uncovering secrets. \nUse your wits, follow the clues, and unlock new levels of excitement at every turn. More thrill. More madness. More treasures.\n\n Get ready — the hunt is about to begin!",
           minidesc:
             "A campus-wide treasure hunt with fun clues and exciting challenges.",
-          entryFee: 60,
+          entryFee: "60 per team",
           teamSize: "2 - 3",
           date: "May 16",
           time: "12:30 PM",
@@ -598,12 +598,6 @@ const DepartmentPage: React.FC = () => {
               name: "Mr. Saurav Chowdhury",
               contact: "9331614668",
             },
-            // { name: "Nancy Wheeler", contact: "9876543210" },
-            // { name: "Mike Wheeler", contact: "9876543210" },
-            // {
-            //   name: "Dustin Henderson",
-            //   contact: "9876543210",
-            // },
           ],
           rules: [
             "Only team participation is allowed. Each team must have a minimum of 2 members and a maximum of 3 members.",
